@@ -1,24 +1,24 @@
 export interface Education {
   id: string;
-  degree: string;
+  degreeKey: string;
   institution: string;
   period: string;
-  description: string;
+  descriptionKey: string;
 }
 
 export const education: Education[] = [
   {
     id: '1',
-    degree: 'Computer Engineering',
+    degreeKey: 'education.computer.title',
     institution: 'University of Technology',
     period: '2018 - 2022',
-    description: 'Bachelor\'s degree in Computer Engineering with focus on software development and system architecture.'
+    descriptionKey: 'education.computer.description'
   },
   {
     id: '2',
-    degree: 'High School Diploma',
+    degreeKey: 'education.highSchool.title',
     institution: 'Technical High School',
     period: '2015 - 2018',
-    description: 'Specialized in computer science and mathematics with honors.'
+    descriptionKey: 'education.highSchool.description'
   }
 ];

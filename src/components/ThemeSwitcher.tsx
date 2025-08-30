@@ -2,10 +2,25 @@ import React, { useState, useEffect } from 'react';
 
 const ThemeSwitcher: React.FC = () => {
   const [isDark, setIsDark] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const theme = localStorage.getItem('theme') || 'dark';
-    setIsDark(theme === 'dark');
+    setMounted(true);
+    
+    // Get theme from localStorage or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const isDarkTheme = savedTheme === 'dark';
+    
+    setIsDark(isDarkTheme);
+    
+    // Apply theme to document
+    if (isDarkTheme) {
+      document.documentElement.classList.add('dark');
+      document.body.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark');
+    }
   }, []);
 
   const toggleTheme = () => {
@@ -14,25 +29,39 @@ const ThemeSwitcher: React.FC = () => {
     localStorage.setItem('theme', newTheme);
     
     // Update document classes
-    document.documentElement.classList.toggle('dark', !isDark);
-    document.body.classList.toggle('dark', !isDark);
+    if (newTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+      document.body.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark');
+    }
   };
+
+  // Don't render until mounted to avoid SSR issues
+  if (!mounted) {
+    return (
+      <button
+        className="relative w-12 h-6 bg-gray-700 rounded-full p-1 transition-colors duration-300 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+        aria-label="Toggle theme"
+        disabled
+      >
+        <div className="absolute top-1 w-4 h-4 bg-white rounded-full shadow-md" />
+      </button>
+    );
+  }
 
   return (
     <button
       onClick={toggleTheme}
-      className="relative w-12 h-6 bg-gray-700 rounded-full p-1 transition-colors duration-300 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+      className="relative w-16 h-7 bg-gray-700 rounded-full p-1 transition-colors duration-300 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
       aria-label="Toggle theme"
     >
-      <div
-        className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow-md transition-transform duration-300 ${
-          isDark ? 'translate-x-6' : 'translate-x-0'
-        }`}
-      />
-      <div className="flex justify-between items-center h-full px-1">
+      <div className="flex justify-between items-center gap-x-3 h-full px-1">
+        {/* Sun icon (light theme) */}
         <svg
-          className={`w-3 h-3 transition-opacity duration-300 ${
-            isDark ? 'opacity-0' : 'opacity-100'
+          className={`w-5 h-5 z-10 transition-all duration-300 ${
+            isDark ? 'text-gray-400' : 'text-yellow-400 bg-gray-800 rounded-full p-1'
           }`}
           fill="currentColor"
           viewBox="0 0 20 20"
@@ -43,9 +72,10 @@ const ThemeSwitcher: React.FC = () => {
             clipRule="evenodd"
           />
         </svg>
+        {/* Moon icon (dark theme) */}
         <svg
-          className={`w-3 h-3 transition-opacity duration-300 ${
-            isDark ? 'opacity-100' : 'opacity-0'
+          className={`w-5 h-5 z-10 transition-all duration-300 ${
+            isDark ? 'text-blue-400 bg-gray-800 rounded-full p-1' : 'text-gray-400'
           }`}
           fill="currentColor"
           viewBox="0 0 20 20"

@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Florencia Rímolo - Full Stack Developer Portfolio"
+  },
+  "hero": {
+    "tagline": "Full Stack Developer passionate about creating innovative digital experiences",
+    "cta": {
+      "viewWork": "View My Work",
+      "getInTouch": "Get In Touch"
+    }
+  },
+  "sections": {
+    "about": {
+      "title": "About Me",
+      "description1": "I'm a passionate Full Stack Developer with expertise in modern web technologies. I love creating elegant solutions to complex problems and building applications that make a difference in people's lives.",
+      "description2": "With a strong foundation in both frontend and backend development, I specialize in React, Node.js, and cloud technologies. I'm always eager to learn new technologies and contribute to innovative projects.",
+      "status": {
+        "available": "Available for new opportunities",
+        "remote": "Remote work preferred"
+      },
+      "skills": {
+        "title": "Skills & Technologies",
+        "frontend": "Frontend",
+        "backend": "Backend"
+      }
+    },
+    "experience": {
+      "title": "Experience"
+    },
+    "education": {
+      "title": "Education"
+    },
+    "projects": {
+      "title": "Projects",
+      "filters": {
+        "all": "All Projects",
+        "landingPages": "Landing Pages",
+        "ecommerce": "E-commerce",
+        "webApps": "Web Apps",
+        "mobileApps": "Mobile Apps",
+        "apis": "APIs"
+      }
+    },
+    "contact": {
+      "title": "Get In Touch",
+      "subtitle": "Let's work together",
+      "description": "I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!",
+      "contactInfo": {
+        "email": "Email",
+        "github": "GitHub",
+        "linkedin": "LinkedIn"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Florencia Rímolo. All rights reserved."
+  },
+  "projects": {
+    "ecommerce": {
+      "title": "E-commerce Platform",
+      "description": "A modern e-commerce platform built with React and Node.js, featuring real-time inventory management and payment processing."
+    },
+    "landing": {
+      "title": "Landing Page Template",
+      "description": "A responsive landing page template with modern design and smooth animations."
+    },
+    "taskApp": {
+      "title": "Task Management App",
+      "description": "A collaborative task management application with real-time updates and team features."
+    },
+    "weatherApi": {
+      "title": "Weather API",
+      "description": "A RESTful weather API with caching and rate limiting features."
+    },
+    "fitnessApp": {
+      "title": "Mobile Fitness App",
+      "description": "A cross-platform mobile app for tracking workouts and nutrition."
+    },
+    "portfolio": {
+      "title": "Portfolio Website",
+      "description": "A personal portfolio website with dark/light theme and multilingual support."
+    }
+  },
+  "experience": {
+    "senior": {
+      "title": "Senior Full Stack Developer",
+      "description": "Leading development of enterprise web applications using modern technologies. Mentoring junior developers and implementing best practices."
+    },
+    "frontend": {
+      "title": "Frontend Developer",
+      "description": "Developed responsive web applications and improved user experience. Collaborated with design and backend teams."
+    },
+    "junior": {
+      "title": "Junior Developer",
+      "description": "Built features for a SaaS platform and maintained existing codebase. Participated in code reviews and agile development."
+    },
+    "freelance": {
+      "title": "Freelance Developer",
+      "description": "Developed websites and web applications for various clients. Managed projects from conception to deployment."
+    }
+  },
+  "education": {
+    "computer": {
+      "title": "Computer Engineering",
+      "description": "Bachelor's degree in Computer Engineering with focus on software development and system architecture."
+    },
+    "highSchool": {
+      "title": "High School Diploma",
+      "description": "Specialized in computer science and mathematics with honors."
+    }
+  }
+}

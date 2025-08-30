@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Florencia Rímolo - Desarrolladora Full Stack Portfolio"
+  },
+  "hero": {
+    "tagline": "Desarrolladora Full Stack apasionada por crear experiencias digitales innovadoras",
+    "cta": {
+      "viewWork": "Ver Mi Trabajo",
+      "getInTouch": "Contactar"
+    }
+  },
+  "sections": {
+    "about": {
+      "title": "Sobre Mí",
+      "description1": "Soy una Desarrolladora Full Stack apasionada con experiencia en tecnologías web modernas. Me encanta crear soluciones elegantes para problemas complejos y construir aplicaciones que marquen la diferencia en la vida de las personas.",
+      "description2": "Con una sólida base tanto en desarrollo frontend como backend, me especializo en React, Node.js y tecnologías en la nube. Siempre estoy ansiosa por aprender nuevas tecnologías y contribuir a proyectos innovadores.",
+      "status": {
+        "available": "Disponible para nuevas oportunidades",
+        "remote": "Trabajo remoto preferido"
+      },
+      "skills": {
+        "title": "Habilidades y Tecnologías",
+        "frontend": "Frontend",
+        "backend": "Backend"
+      }
+    },
+    "experience": {
+      "title": "Experiencia"
+    },
+    "education": {
+      "title": "Educación"
+    },
+    "projects": {
+      "title": "Proyectos",
+      "filters": {
+        "all": "Todos los Proyectos",
+        "landingPages": "Páginas de Aterrizaje",
+        "ecommerce": "E-commerce",
+        "webApps": "Aplicaciones Web",
+        "mobileApps": "Aplicaciones Móviles",
+        "apis": "APIs"
+      }
+    },
+    "contact": {
+      "title": "Contactar",
+      "subtitle": "Trabajemos juntos",
+      "description": "Siempre estoy interesada en nuevas oportunidades y proyectos emocionantes. Ya sea que tengas una pregunta o solo quieras saludar, ¡no dudes en contactarme!",
+      "contactInfo": {
+        "email": "Email",
+        "github": "GitHub",
+        "linkedin": "LinkedIn"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Florencia Rímolo. Todos los derechos reservados."
+  },
+  "projects": {
+    "ecommerce": {
+      "title": "Plataforma E-commerce",
+      "description": "Una plataforma de e-commerce moderna construida con React y Node.js, con gestión de inventario en tiempo real y procesamiento de pagos."
+    },
+    "landing": {
+      "title": "Plantilla de Página de Aterrizaje",
+      "description": "Una plantilla de página de aterrizaje responsiva con diseño moderno y animaciones suaves."
+    },
+    "taskApp": {
+      "title": "Aplicación de Gestión de Tareas",
+      "description": "Una aplicación colaborativa de gestión de tareas con actualizaciones en tiempo real y funciones de equipo."
+    },
+    "weatherApi": {
+      "title": "API del Clima",
+      "description": "Una API RESTful del clima con funciones de caché y limitación de tasa."
+    },
+    "fitnessApp": {
+      "title": "Aplicación Móvil de Fitness",
+      "description": "Una aplicación móvil multiplataforma para rastrear entrenamientos y nutrición."
+    },
+    "portfolio": {
+      "title": "Sitio Web Portfolio",
+      "description": "Un sitio web de portfolio personal con tema oscuro/claro y soporte multilingüe."
+    }
+  },
+  "experience": {
+    "senior": {
+      "title": "Desarrolladora Full Stack Senior",
+      "description": "Liderando el desarrollo de aplicaciones web empresariales usando tecnologías modernas. Mentorando desarrolladores junior e implementando mejores prácticas."
+    },
+    "frontend": {
+      "title": "Desarrolladora Frontend",
+      "description": "Desarrollé aplicaciones web responsivas y mejoré la experiencia del usuario. Colaboré con equipos de diseño y backend."
+    },
+    "junior": {
+      "title": "Desarrolladora Junior",
+      "description": "Construí características para una plataforma SaaS y mantuve el código existente. Participé en revisiones de código y desarrollo ágil."
+    },
+    "freelance": {
+      "title": "Desarrolladora Freelance",
+      "description": "Desarrollé sitios web y aplicaciones web para varios clientes. Gestioné proyectos desde la concepción hasta el despliegue."
+    }
+  },
+  "education": {
+    "computer": {
+      "title": "Ingeniería en Computación",
+      "description": "Licenciatura en Ingeniería en Computación con enfoque en desarrollo de software y arquitectura de sistemas."
+    },
+    "highSchool": {
+      "title": "Diploma de Secundaria",
+      "description": "Especializada en ciencias de la computación y matemáticas con honores."
+    }
+  }
+}

@@ -14,7 +14,6 @@ const { title, description = "Florencia Rímolo - Full Stack Developer Portfolio
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     
     <!-- Preload fonts -->
@@ -30,7 +29,7 @@ const { title, description = "Florencia Rímolo - Full Stack Developer Portfolio
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
   </head>
-  <body class="bg-gray-900 text-white font-inter antialiased transition-colors duration-300">
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-inter antialiased transition-colors duration-300">
     <div id="root">
       <slot />
     </div>

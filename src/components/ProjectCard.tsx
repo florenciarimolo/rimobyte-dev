@@ -7,6 +7,7 @@ interface ProjectCardProps {
   image: string;
   link?: string;
   github?: string;
+  'data-project'?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -15,25 +16,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies,
   image: _image, // Prefix with underscore to indicate intentionally unused
   link,
-  github
+  github,
+  'data-project': dataProject
 }) => {
   return (
-    <div className="group relative bg-gray-800 rounded-xl overflow-hidden hover:bg-gray-700 transition-all duration-300 border border-gray-700 hover:border-gray-600 hover:shadow-xl hover:shadow-blue-500/10">
+    <div 
+      className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-xl hover:shadow-blue-500/10"
+      data-project={dataProject}
+    >
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-        <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
-          <div className="text-6xl text-gray-600">🚀</div>
+        <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+          <div className="text-6xl text-gray-400 dark:text-gray-600">🚀</div>
         </div>
       </div>
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
           {title}
         </h3>
         
-        <p className="text-gray-300 mb-4 leading-relaxed">
+        <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
           {description}
         </p>
 
@@ -42,7 +47,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {technologies.map((tech, index) => (
             <span
               key={index}
-              className="inline-flex items-center px-3 py-1 text-xs font-medium bg-gray-700 text-gray-300 rounded-full hover:bg-gray-600 transition-colors duration-200"
+              className="inline-flex items-center px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
             >
               <span className="mr-1">⚡</span>
               {tech}

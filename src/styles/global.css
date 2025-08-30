@@ -91,6 +91,71 @@
   color-scheme: dark;
 }
 
+/* Light theme styles */
+.light {
+  color-scheme: light;
+}
+
+/* Theme-aware background colors */
+.bg-theme-primary {
+  @apply bg-white dark:bg-gray-900;
+}
+
+.bg-theme-secondary {
+  @apply bg-gray-50 dark:bg-gray-800;
+}
+
+.bg-theme-tertiary {
+  @apply bg-gray-100 dark:bg-gray-700;
+}
+
+.bg-theme-card {
+  @apply bg-white dark:bg-gray-800;
+}
+
+.bg-theme-navbar {
+  @apply bg-white/95 dark:bg-gray-900/95;
+}
+
+/* Theme-aware text colors */
+.text-theme-primary {
+  @apply text-gray-900 dark:text-white;
+}
+
+.text-theme-secondary {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.text-theme-tertiary {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+.text-theme-muted {
+  @apply text-gray-400 dark:text-gray-500;
+}
+
+/* Theme-aware border colors */
+.border-theme-primary {
+  @apply border-gray-200 dark:border-gray-700;
+}
+
+.border-theme-secondary {
+  @apply border-gray-300 dark:border-gray-600;
+}
+
+.border-theme-tertiary {
+  @apply border-gray-400 dark:border-gray-500;
+}
+
+/* Theme-aware hover states */
+.hover\:bg-theme-hover:hover {
+  @apply hover:bg-gray-100 dark:hover:bg-gray-700;
+}
+
+.hover\:bg-theme-hover-secondary:hover {
+  @apply hover:bg-gray-200 dark:hover:bg-gray-600;
+}
+
 /* Focus styles */
 .focus-visible:focus {
   outline: 2px solid #3b82f6;
