@@ -12,8 +12,8 @@
   "sections": {
     "about": {
       "title": "About Me",
-      "description1": "I'm a passionate Full Stack Developer with expertise in modern web technologies. I love creating elegant solutions to complex problems and building applications that make a difference in people's lives.",
-      "description2": "With a strong foundation in both frontend and backend development, I specialize in React, Node.js, and cloud technologies. I'm always eager to learn new technologies and contribute to innovative projects.",
+      "description1": "Software engineer passionate about web design and development, with versatile experience in WordPress as a freelancer and in front and backend frameworks (Vue.js, Spring Boot, Django) in professional environments.",
+      "description2": "Mastery of tools like Git, Docker and SQL, and knowledge in AI-based solutions like ChatGPT, Perplexity and Microsoft Copilot. Focus on developing efficient, accessible and scalable web solutions.",
       "status": {
         "available": "Available for new opportunities",
         "remote": "Remote work preferred"
@@ -56,57 +56,77 @@
     "copyright": "© 2024 Florencia Rímolo. All rights reserved."
   },
   "projects": {
-    "ecommerce": {
-      "title": "E-commerce Platform",
-      "description": "A modern e-commerce platform built with React and Node.js, featuring real-time inventory management and payment processing."
+    "reset7": {
+      "title": "RESET7 - Personal Trainer Landing",
+      "description": "Complete design and development of the landing page for personal trainer Juancar Garma. Visually attractive and strategically focused on lead conversion, aligned with the program's values and its promise of change in 7 days. Designed from scratch with Elementor, smooth animations and micro-interactions. Implementation of advanced SEO strategy with Yoast, speed optimization and automated marketing campaign with MailerLite.",
+      "link": "juancargarma.com/reset7",
+      "technologies": "Elementor, Yoast SEO, MailerLite"
     },
-    "landing": {
-      "title": "Landing Page Template",
-      "description": "A responsive landing page template with modern design and smooth animations."
+    "decos": {
+      "title": "de cos - Online Store for Handcrafted Jute Sandals",
+      "description": "Migration of online store for handcrafted jute sandals from Prestashop to WordPress with WooCommerce, achieving improvements in performance, customization and security. Implementation of newsletter for customers with news and seasonal discounts.",
+      "link": "decos.es",
+      "technologies": "Elementor, Astra, WooCommerce, Yoast SEO"
     },
-    "taskApp": {
-      "title": "Task Management App",
-      "description": "A collaborative task management application with real-time updates and team features."
+    "rockzone": {
+      "title": "Rockzone Camp - Rock Camp Website",
+      "description": "Website for rock camp in Cádiz designed and developed from Hostinger Builder to WordPress, adding functionalities like forms with intelligent logic. Impactful and attractive design thought for children and teenagers.",
+      "link": "rockzonecamp.com",
+      "technologies": "Elementor, Astra, Yoast SEO"
     },
-    "weatherApi": {
-      "title": "Weather API",
-      "description": "A RESTful weather API with caching and rate limiting features."
+    "luciaNails": {
+      "title": "Lucía Nails - Nail and Aesthetics Center",
+      "description": "Website for nail and aesthetics center designed and developed from WordPress template, completely customized to reflect the unique brand identity. Performance and SEO optimization to ensure speed and good positioning.",
+      "link": "lucianailsart.com",
+      "technologies": "Elementor, Astra, Yoast SEO"
     },
-    "fitnessApp": {
-      "title": "Mobile Fitness App",
-      "description": "A cross-platform mobile app for tracking workouts and nutrition."
+    "vilaLancisV2": {
+      "title": "Vila & Lancis (v2) - Tax, Labor and Accounting Advisory",
+      "description": "Complete redesign of Vila & Lancis website from scratch with WordPress, improving speed and user experience. Added multilingual support, PageSpeed optimization, SEO work with keyword review and image compression for optimal performance.",
+      "link": "vilalancis.com",
+      "technologies": "Elementor, Astra, Yoast SEO, Polylang"
     },
-    "portfolio": {
-      "title": "Portfolio Website",
-      "description": "A personal portfolio website with dark/light theme and multilingual support."
+    "vilaLancisV1": {
+      "title": "Vila i Lancis (v1) - Provisional Version",
+      "description": "Initial version of Vila i Lancis developed with Astro and Resend for emails. Provisional solution while developing the WordPress version, copying existing design and texts due to problems with translations and admin panel access of the previous WordPress.",
+      "link": "vila-i-lancis.vercel.app",
+      "technologies": "Astro, Resend"
     }
   },
   "experience": {
-    "senior": {
-      "title": "Senior Full Stack Developer",
-      "description": "Leading development of enterprise web applications using modern technologies. Mentoring junior developers and implementing best practices."
-    },
-    "frontend": {
-      "title": "Frontend Developer",
-      "description": "Developed responsive web applications and improved user experience. Collaborated with design and backend teams."
-    },
-    "junior": {
-      "title": "Junior Developer",
-      "description": "Built features for a SaaS platform and maintained existing codebase. Participated in code reviews and agile development."
+    "ithinkupc": {
+      "title": "Software Engineer | iThinkUPC",
+      "period": "OCT. 2021-PRESENT",
+      "description": "Design and development of ICT projects for the Polytechnic University of Catalonia: project management, university electoral systems and digital identity management. Technologies: GitLab, Spring Boot, Vue.js, Java, TypeScript, Markdown, Oracle SQL, MongoDB, Jira."
     },
     "freelance": {
-      "title": "Freelance Developer",
-      "description": "Developed websites and web applications for various clients. Managed projects from conception to deployment."
+      "title": "Freelance WordPress",
+      "period": "APR.2021-PRESENT",
+      "description": "Design and development of WordPress sites optimized for SEO, speed and conversion. Comprehensive management of hosting, domains and legal compliance (cookies, GDPR). Experience with Astra, Divi, Elementor, child themes, hooks, CSS and JS. Services at rimobyte.com"
+    },
+    "flanks": {
+      "title": "Software Engineer | Flanks",
+      "period": "NOV.2019-MAY.2021",
+      "description": "Backend development with Django and scraping in the fintech sector. Client meetings, bank aggregator integration and frontend with Vue.js. Docker and Kubernetes for deployment."
+    },
+    "inlabfib": {
+      "title": "Web Developer Intern | inLabFIB",
+      "period": "NOV.2016-OCT.2019",
+      "description": "Development and maintenance of REST APIs with Django REST Framework. Participation in the maintenance of the FIB intranet (Java Servlets, JSP, JDBC). Development of the final degree project: web application to manage academic stays of foreign students, currently in use (mobility.fib.upc.edu)."
     }
   },
   "education": {
     "computer": {
-      "title": "Computer Engineering",
-      "description": "Bachelor's degree in Computer Engineering with focus on software development and system architecture."
+      "title": "Computer Engineering Degree",
+      "institution": "Facultat d'Informàtica de Barcelona | UPC",
+      "period": "2014-2019",
+      "description": "Complete training in computer engineering with specialization in software development and systems."
     },
     "highSchool": {
-      "title": "High School Diploma",
-      "description": "Specialized in computer science and mathematics with honors."
+      "title": "Scientific Baccalaureate",
+      "institution": "Dominiques de l'Ensenyament | Barcelona",
+      "period": "2012-2014",
+      "description": "Scientific baccalaureate with focus on sciences and mathematics."
     }
   }
 }

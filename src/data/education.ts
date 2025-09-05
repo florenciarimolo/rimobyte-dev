@@ -1,24 +1,21 @@
+import { getTranslation } from '../i18n';
+
 export interface Education {
   id: string;
-  degreeKey: string;
+  title: string;
   institution: string;
   period: string;
-  descriptionKey: string;
+  description: string;
 }
 
-export const education: Education[] = [
-  {
-    id: '1',
-    degreeKey: 'education.computer.title',
-    institution: 'University of Technology',
-    period: '2018 - 2022',
-    descriptionKey: 'education.computer.description'
-  },
-  {
-    id: '2',
-    degreeKey: 'education.highSchool.title',
-    institution: 'Technical High School',
-    period: '2015 - 2018',
-    descriptionKey: 'education.highSchool.description'
-  }
-];
+export const getEducation = (translations: any): Education[] => {
+  const educationKeys = ['computer', 'highSchool'];
+  
+  return educationKeys.map(key => ({
+    id: key,
+    title: getTranslation(translations, `education.${key}.title`),
+    institution: getTranslation(translations, `education.${key}.institution`),
+    period: getTranslation(translations, `education.${key}.period`),
+    description: getTranslation(translations, `education.${key}.description`)
+  }));
+};

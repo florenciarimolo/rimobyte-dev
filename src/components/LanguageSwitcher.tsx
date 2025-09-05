@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface LanguageSwitcherProps {
   currentLang: 'en' | 'es';
@@ -15,11 +15,23 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLang
 
   const currentLanguage = languages.find(lang => lang.code === currentLang);
 
+  // close the dropdown when clicking outside
+  const handleClickOutside = (event: MouseEvent) => {
+    if (isOpen && !(event.target as HTMLElement)?.closest('.language-switcher')) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isOpen]);
+
   return (
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="language-switcher flex items-center space-x-2 px-3 py-2 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
         aria-label="Select language"
       >
         <span className="text-lg">{currentLanguage?.flag}</span>
@@ -35,7 +47,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLang
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 bg-gray-800 rounded-lg shadow-lg border border-gray-700 z-50">
+        <div className="absolute right-0 mt-2 w-40 overflow-hidden bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg border border-gray-400 dark:border-gray-700 z-50">
           {languages.map((language) => (
             <button
               key={language.code}
@@ -43,8 +55,8 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLang
                 onLanguageChange(language.code as 'en' | 'es');
                 setIsOpen(false);
               }}
-              className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-700 transition-colors duration-200 ${
-                currentLang === language.code ? 'bg-gray-700' : ''
+              className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 ${
+                currentLang === language.code ? 'bg-gray-200 dark:bg-gray-700' : ''
               }`}
             >
               <span className="text-lg">{language.flag}</span>

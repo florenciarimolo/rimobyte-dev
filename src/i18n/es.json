@@ -12,8 +12,8 @@
   "sections": {
     "about": {
       "title": "Sobre Mí",
-      "description1": "Soy una Desarrolladora Full Stack apasionada con experiencia en tecnologías web modernas. Me encanta crear soluciones elegantes para problemas complejos y construir aplicaciones que marquen la diferencia en la vida de las personas.",
-      "description2": "Con una sólida base tanto en desarrollo frontend como backend, me especializo en React, Node.js y tecnologías en la nube. Siempre estoy ansiosa por aprender nuevas tecnologías y contribuir a proyectos innovadores.",
+      "description1": "Ingeniera de software apasionada por el diseño y desarrollo web, con experiencia polivalente en WordPress como freelance y en frameworks front y backend (Vue.js, Spring Boot, Django) en entornos profesionales.",
+      "description2": "Dominio de herramientas como Git, Docker y SQL, y conocimiento en soluciones basadas en IA como ChatGPT, Perplexity y Microsoft Copilot. Foco en desarrollar soluciones web eficientes, accesibles y escalables.",
       "status": {
         "available": "Disponible para nuevas oportunidades",
         "remote": "Trabajo remoto preferido"
@@ -56,57 +56,77 @@
     "copyright": "© 2024 Florencia Rímolo. Todos los derechos reservados."
   },
   "projects": {
-    "ecommerce": {
-      "title": "Plataforma E-commerce",
-      "description": "Una plataforma de e-commerce moderna construida con React y Node.js, con gestión de inventario en tiempo real y procesamiento de pagos."
+    "reset7": {
+      "title": "RESET7 - Landing para Entrenador Personal",
+      "description": "Diseño y desarrollo completo de la landing page para el entrenador personal Juancar Garma. Página visualmente atractiva y estratégicamente enfocada a la conversión de leads, alineada con los valores del programa y su promesa de cambio en 7 días. Diseñada desde cero con Elementor, animaciones suaves y microinteracciones. Implementación de estrategia SEO avanzada con Yoast, optimización de velocidad y campaña de marketing automatizada con MailerLite.",
+      "link": "juancargarma.com/reset7",
+      "technologies": "Elementor, Yoast SEO, MailerLite"
     },
-    "landing": {
-      "title": "Plantilla de Página de Aterrizaje",
-      "description": "Una plantilla de página de aterrizaje responsiva con diseño moderno y animaciones suaves."
+    "decos": {
+      "title": "de cos - Tienda Online de Sandalias Artesanas",
+      "description": "Migración de tienda online de sandalias artesanas de yute desde Prestashop a WordPress con WooCommerce, obteniendo mejoras en rendimiento, personalización y seguridad. Implementación de newsletter para clientes con novedades y descuentos de temporada.",
+      "link": "decos.es",
+      "technologies": "Elementor, Astra, WooCommerce, Yoast SEO"
     },
-    "taskApp": {
-      "title": "Aplicación de Gestión de Tareas",
-      "description": "Una aplicación colaborativa de gestión de tareas con actualizaciones en tiempo real y funciones de equipo."
+    "rockzone": {
+      "title": "Rockzone Camp - Web para Campamento de Rock",
+      "description": "Sitio web para campamento de rock en Cádiz diseñado y desarrollado desde Hostinger Builder a WordPress, añadiendo funcionalidades como formularios con lógica inteligente. Diseño impactante y atractivo pensado para niños y adolescentes.",
+      "link": "rockzonecamp.com",
+      "technologies": "Elementor, Astra, Yoast SEO"
     },
-    "weatherApi": {
-      "title": "API del Clima",
-      "description": "Una API RESTful del clima con funciones de caché y limitación de tasa."
+    "luciaNails": {
+      "title": "Lucía Nails - Centro de Manicura y Estética",
+      "description": "Sitio web para centro de manicura y estética diseñado y desarrollado desde plantilla de WordPress, personalizada completamente para reflejar la identidad única de la marca. Optimización de rendimiento y SEO para asegurar velocidad y buen posicionamiento.",
+      "link": "lucianailsart.com",
+      "technologies": "Elementor, Astra, Yoast SEO"
     },
-    "fitnessApp": {
-      "title": "Aplicación Móvil de Fitness",
-      "description": "Una aplicación móvil multiplataforma para rastrear entrenamientos y nutrición."
+    "vilaLancisV2": {
+      "title": "Vila & Lancis (v2) - Asesoría Fiscal, Laboral y Contable",
+      "description": "Rediseño completo de la web de Vila & Lancis desde cero con WordPress, mejorando velocidad y experiencia de usuario. Añadido multiidioma, optimización de PageSpeed, trabajo de SEO con revisión de palabras clave y compresión de imágenes para rendimiento óptimo.",
+      "link": "vilalancis.com",
+      "technologies": "Elementor, Astra, Yoast SEO, Polylang"
     },
-    "portfolio": {
-      "title": "Sitio Web Portfolio",
-      "description": "Un sitio web de portfolio personal con tema oscuro/claro y soporte multilingüe."
+    "vilaLancisV1": {
+      "title": "Vila i Lancis (v1) - Versión Provisional",
+      "description": "Versión inicial de Vila i Lancis desarrollada con Astro y Resend para emails. Solución provisional mientras se desarrollaba la versión de WordPress, copiando el diseño y textos existentes debido a problemas con traducciones y acceso al panel de admin del WordPress anterior.",
+      "link": "vila-i-lancis.vercel.app",
+      "technologies": "Astro, Resend"
     }
   },
   "experience": {
-    "senior": {
-      "title": "Desarrolladora Full Stack Senior",
-      "description": "Liderando el desarrollo de aplicaciones web empresariales usando tecnologías modernas. Mentorando desarrolladores junior e implementando mejores prácticas."
-    },
-    "frontend": {
-      "title": "Desarrolladora Frontend",
-      "description": "Desarrollé aplicaciones web responsivas y mejoré la experiencia del usuario. Colaboré con equipos de diseño y backend."
-    },
-    "junior": {
-      "title": "Desarrolladora Junior",
-      "description": "Construí características para una plataforma SaaS y mantuve el código existente. Participé en revisiones de código y desarrollo ágil."
+    "ithinkupc": {
+      "title": "Ingeniera de Software | iThinkUPC",
+      "period": "OCT. 2021-PRESENTE",
+      "description": "Diseño y desarrollo de proyectos TIC para la Universidad Politécnica de Cataluña: gestión de proyectos, sistemas electorales universitarios y gestión de identidad digital. Tecnologías: GitLab, Spring Boot, Vue.js, Java, TypeScript, Markdown, Oracle SQL, MongoDB, Jira."
     },
     "freelance": {
-      "title": "Desarrolladora Freelance",
-      "description": "Desarrollé sitios web y aplicaciones web para varios clientes. Gestioné proyectos desde la concepción hasta el despliegue."
+      "title": "Freelance WordPress",
+      "period": "ABR.2021-PRESENTE",
+      "description": "Diseño y desarrollo de sitios WordPress optimizados para SEO, velocidad y conversión. Gestión integral de hosting, dominios y legalidad (cookies, RGPD). Experiencia con Astra, Divi, Elementor, child themes, hooks, CSS y JS. Servicios en rimobyte.com"
+    },
+    "flanks": {
+      "title": "Ingeniera de Software | Flanks",
+      "period": "NOV.2019-MAY.2021",
+      "description": "Desarrollo backend con Django y scraping en el sector fintech. Reuniones con clientes, integración de agregadores bancarios y frontend con Vue.js. Docker y Kubernetes para despliegue."
+    },
+    "inlabfib": {
+      "title": "Desarrolladora Web en prácticas | inLabFIB",
+      "period": "NOV.2016-OCT.2019",
+      "description": "Desarrollo y mantenimiento de API REST con Django REST Framework. Participación en el mantenimiento de la intranet de la FIB (Java Servlets, JSP, JDBC). Desarrollo del TFG: aplicación web para gestionar estancias académicas de estudiantes extranjeros, actualmente en uso (mobility.fib.upc.edu)."
     }
   },
   "education": {
     "computer": {
-      "title": "Ingeniería en Computación",
-      "description": "Licenciatura en Ingeniería en Computación con enfoque en desarrollo de software y arquitectura de sistemas."
+      "title": "Grado de Ingeniería Informática",
+      "institution": "Facultat d'Informàtica de Barcelona | UPC",
+      "period": "2014-2019",
+      "description": "Formación completa en ingeniería informática con especialización en desarrollo de software y sistemas."
     },
     "highSchool": {
-      "title": "Diploma de Secundaria",
-      "description": "Especializada en ciencias de la computación y matemáticas con honores."
+      "title": "Bachillerato Científico",
+      "institution": "Dominiques de l'Ensenyament | Barcelona",
+      "period": "2012-2014",
+      "description": "Bachillerato científico con enfoque en ciencias y matemáticas."
     }
   }
 }

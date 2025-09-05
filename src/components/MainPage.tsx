@@ -3,10 +3,10 @@ import Navbar from './Navbar';
 import TimelineItem from './TimelineItem';
 import ProjectCard from './ProjectCard';
 import ContactForm from './ContactForm';
-import { projects, categories } from '../data/projects';
-import { experience } from '../data/experience';
-import { education } from '../data/education';
 import { getI18N, getTranslation } from '../i18n';
+import { getProjects, categories } from '../data/projects';
+import { getExperience } from '../data/experience';
+import { getEducation } from '../data/education';
 
 const MainPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'en' | 'es'>('es');
@@ -40,6 +40,11 @@ const MainPage: React.FC = () => {
     document.addEventListener('click', handleAnchorClick);
     return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
+
+  // Get data from translation files
+  const projects = getProjects(translations);
+  const experienceData = getExperience(translations);
+  const educationData = getEducation(translations);
 
   // Project filtering functionality
   React.useEffect(() => {
@@ -222,15 +227,15 @@ const MainPage: React.FC = () => {
           </div>
           
           <div className="space-y-8">
-            {experience.map((exp, index) => (
+            {experienceData.map((exp, index) => (
               <TimelineItem
                 key={exp.id}
-                title={getTranslation(translations, exp.titleKey)}
+                title={exp.title}
                 subtitle={exp.company}
                 period={exp.period}
-                description={getTranslation(translations, exp.descriptionKey)}
+                description={exp.description}
                 technologies={exp.technologies}
-                isLast={index === experience.length - 1}
+                isLast={index === experienceData.length - 1}
               />
             ))}
           </div>
@@ -246,14 +251,14 @@ const MainPage: React.FC = () => {
           </div>
           
           <div className="space-y-8">
-            {education.map((edu, index) => (
+            {educationData.map((edu, index) => (
               <TimelineItem
                 key={edu.id}
-                title={getTranslation(translations, edu.degreeKey)}
+                title={edu.title}
                 subtitle={edu.institution}
                 period={edu.period}
-                description={getTranslation(translations, edu.descriptionKey)}
-                isLast={index === education.length - 1}
+                description={edu.description}
+                isLast={index === educationData.length - 1}
               />
             ))}
           </div>
@@ -272,7 +277,11 @@ const MainPage: React.FC = () => {
               {categories.map((category) => (
                 <button
                   key={category.id}
-                  className="px-6 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                  className={`px-6 py-2 rounded-full transition-colors duration-200 ${
+                    category.id === 'all' 
+                      ? 'bg-blue-500 text-white' 
+                      : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-white'
+                  }`}
                   data-category={category.id}
                 >
                   {getTranslation(translations, category.labelKey)}
@@ -285,8 +294,8 @@ const MainPage: React.FC = () => {
             {projects.map((project) => (
               <ProjectCard
                 key={project.id}
-                title={getTranslation(translations, project.titleKey)}
-                description={getTranslation(translations, project.descriptionKey)}
+                title={project.title}
+                description={project.description}
                 technologies={project.technologies}
                 image={project.image}
                 link={project.link}

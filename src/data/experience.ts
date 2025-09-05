@@ -1,43 +1,30 @@
+import { getTranslation } from '../i18n';
+
 export interface Experience {
   id: string;
-  titleKey: string;
+  title: string;
   company: string;
   period: string;
-  descriptionKey: string;
+  description: string;
   technologies: string[];
 }
 
-export const experience: Experience[] = [
-  {
-    id: '1',
-    titleKey: 'experience.senior.title',
-    company: 'TechCorp Solutions',
-    period: '2023 - Present',
-    descriptionKey: 'experience.senior.description',
-    technologies: ['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'AWS']
-  },
-  {
-    id: '2',
-    titleKey: 'experience.frontend.title',
-    company: 'Digital Innovations Ltd',
-    period: '2021 - 2023',
-    descriptionKey: 'experience.frontend.description',
-    technologies: ['Vue.js', 'JavaScript', 'CSS3', 'REST APIs', 'Git']
-  },
-  {
-    id: '3',
-    titleKey: 'experience.junior.title',
-    company: 'StartUp Hub',
-    period: '2020 - 2021',
-    descriptionKey: 'experience.junior.description',
-    technologies: ['React', 'Python', 'Django', 'MySQL', 'Docker']
-  },
-  {
-    id: '4',
-    titleKey: 'experience.freelance.title',
-    company: 'Self-employed',
-    period: '2019 - 2020',
-    descriptionKey: 'experience.freelance.description',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'WordPress']
-  }
-];
+export const getExperience = (translations: any): Experience[] => {
+  const experienceKeys = ['ithinkupc', 'freelance', 'flanks', 'inlabfib'];
+  
+  const technologiesMap = {
+    'ithinkupc': ['GitLab', 'Spring Boot', 'Vue.js', 'Java', 'TypeScript', 'Markdown', 'Oracle SQL', 'MongoDB', 'Jira'],
+    'freelance': ['WordPress', 'Elementor', 'Astra', 'Divi', 'WooCommerce', 'Yoast SEO', 'CSS', 'JavaScript'],
+    'flanks': ['Django', 'Vue.js', 'Docker', 'Kubernetes', 'Python', 'Scraping'],
+    'inlabfib': ['Django REST Framework', 'Java Servlets', 'JSP', 'JDBC', 'Python', 'MySQL']
+  };
+  
+  return experienceKeys.map(key => ({
+    id: key,
+    title: getTranslation(translations, `experience.${key}.title`),
+    company: key === 'ithinkupc' ? 'iThinkUPC' : key === 'freelance' ? 'Freelance' : key === 'flanks' ? 'Flanks' : 'inLabFIB',
+    period: getTranslation(translations, `experience.${key}.period`),
+    description: getTranslation(translations, `experience.${key}.description`),
+    technologies: technologiesMap[key as keyof typeof technologiesMap]
+  }));
+};
