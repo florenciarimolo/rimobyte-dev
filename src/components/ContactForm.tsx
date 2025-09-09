@@ -84,11 +84,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
   };
 
   return (
-    <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
+    <div className="bg-white dark:bg-gray-800 rounded-xl p-8 border dark:border-gray-700 border-gray-200">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-900 dark:text-gray-300 mb-2">
               {t.name}
             </label>
             <input
@@ -99,12 +99,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
               onChange={handleChange}
               placeholder={t.placeholder.name}
               required
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+              className="w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border dark:border-gray-600 border-gray-200 rounded-lg dark:text-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
             />
           </div>
           
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-900 dark:text-gray-300 mb-2">
               {t.email}
             </label>
             <input
@@ -115,13 +115,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
               onChange={handleChange}
               placeholder={t.placeholder.email}
               required
-              className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+              className="w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border dark:border-gray-600 border-gray-200 rounded-lg dark:text-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+          <label htmlFor="subject" className="block text-sm font-medium text-gray-900 dark:text-gray-300 mb-2">
             {t.subject}
           </label>
           <input
@@ -132,12 +132,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
             onChange={handleChange}
             placeholder={t.placeholder.subject}
             required
-            className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+            className="w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border dark:border-gray-600 border-gray-200 rounded-lg dark:text-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+          <label htmlFor="message" className="block text-sm font-medium text-gray-900 dark:text-gray-300 mb-2">
             {t.message}
           </label>
           <textarea
@@ -148,13 +148,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
             placeholder={t.placeholder.message}
             required
             rows={6}
-            className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
+            className="w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border dark:border-gray-600 border-gray-200 rounded-lg dark:text-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
           />
         </div>
 
         {/* Status Messages */}
         {submitStatus === 'success' && (
-          <div className="p-4 bg-green-900/50 border border-green-500 rounded-lg text-green-400">
+          <div className="p-4 bg-green-900/50 border border-green-500 rounded-lg text-green-400 dark:text-green-400">
             {t.success}
           </div>
         )}
