@@ -333,7 +333,9 @@ const MainPage: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">{getTranslation(translations, 'sections.contact.contactInfo.email')}</h4>
-                    <p className="text-gray-700 dark:text-gray-300">florencia@rimobyte.dev</p>
+                    <a href="mailto:info@rimobyte.com" className="text-gray-700 dark:text-gray-300 hover:text-blue-400 transition-colors duration-200">
+                      info@rimobyte.com
+                    </a>
                   </div>
                 </div>
                 
@@ -345,8 +347,8 @@ const MainPage: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">{getTranslation(translations, 'sections.contact.contactInfo.github')}</h4>
-                    <a href="https://github.com/rimobyte" className="text-gray-700 dark:text-gray-300 hover:text-blue-400 transition-colors duration-200">
-                      github.com/rimobyte
+                    <a href="https://github.com/florenciarimolo" target="_blank" className="text-gray-700 dark:text-gray-300 hover:text-blue-400 transition-colors duration-200">
+                      github.com/florenciarimolo
                     </a>
                   </div>
                 </div>
@@ -359,8 +361,8 @@ const MainPage: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">{getTranslation(translations, 'sections.contact.contactInfo.linkedin')}</h4>
-                    <a href="https://linkedin.com/in/florencia-rimolo" className="text-gray-700 dark:text-gray-300 hover:text-blue-400 transition-colors duration-200">
-                      linkedin.com/in/florencia-rimolo
+                    <a href="https://www.linkedin.com/in/florencia-rimolofigueira/" target="_blank" className="text-gray-700 dark:text-gray-300 hover:text-blue-400 transition-colors duration-200">
+                    linkedin.com/in/florencia-rimolofigueira
                     </a>
                   </div>
                 </div>
