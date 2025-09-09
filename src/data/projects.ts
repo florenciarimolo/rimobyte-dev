@@ -4,7 +4,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  category: 'landing-page' | 'ecommerce' | 'web-app' | 'mobile-app' | 'api';
+  category: string;
   technologies: string[];
   image: string;
   link?: string;
@@ -20,13 +20,15 @@ export const getProjects = (translations: any): Project[] => {
     description: getTranslation(translations, `projects.${key}.description`),
     technologies: getTranslation(translations, `projects.${key}.technologies`).split(', '),
     link: getTranslation(translations, `projects.${key}.link`),
-    image: '/assets/images/placeholder.jpg',
-    category: key === 'decos' ? 'ecommerce' : 'web-app'
+    image: '/assets/images/' + getTranslation(translations, `projects.${key}.image`),
+    category: getTranslation(translations, `projects.${key}.category`)
   }));
 };
 
 export const categories = [
   { id: 'all', labelKey: 'sections.projects.filters.all' },
   { id: 'ecommerce', labelKey: 'sections.projects.filters.ecommerce' },
-  { id: 'web-app', labelKey: 'sections.projects.filters.webApps' }
+  { id: 'web-app', labelKey: 'sections.projects.filters.webApps' },
+  { id: 'services', labelKey: 'sections.projects.filters.services' },
+  { id: 'events', labelKey: 'sections.projects.filters.events' }
 ];

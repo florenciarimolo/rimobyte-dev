@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import SpainFlag from '@/components/flags/Spain';
+import UnitedKingdomFlag from '@/components/flags/UnitedKingdom';
+import { LANG } from '@/i18n';
+import { LANGUAGES } from '@/i18n/ui';
 
 interface LanguageSwitcherProps {
   currentLang: 'en' | 'es';
@@ -9,11 +13,12 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLang
   const [isOpen, setIsOpen] = useState(false);
 
   const languages = [
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' }
+    { code: LANG.ENGLISH, name: 'English', flag: UnitedKingdomFlag },
+    { code: LANG.SPANISH, name: 'Español', flag: SpainFlag }
   ];
 
   const currentLanguage = languages.find(lang => lang.code === currentLang);
+  const currentLocaleData = LANGUAGES[currentLang]
 
   // close the dropdown when clicking outside
   const handleClickOutside = (event: MouseEvent) => {
@@ -34,7 +39,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLang
         className="language-switcher flex items-center space-x-2 px-3 py-2 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
         aria-label="Select language"
       >
-        <span className="text-lg">{currentLanguage?.flag}</span>
+        <currentLocaleData.flag />
         <span className="text-sm font-medium">{currentLanguage?.code.toUpperCase()}</span>
         <svg
           className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
@@ -59,7 +64,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLang
                 currentLang === language.code ? 'bg-gray-200 dark:bg-gray-700' : ''
               }`}
             >
-              <span className="text-lg">{language.flag}</span>
+              <language.flag />
               <span className="text-sm font-medium">{language.name}</span>
             </button>
           ))}

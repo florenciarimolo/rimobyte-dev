@@ -1,4 +1,6 @@
-import React from 'react';
+import { getI18N, getTranslation } from '@/i18n';
+import React, { useMemo, useState } from 'react';
+import { getLangFromUrl } from '@/i18n/utils';
 
 interface ProjectCardProps {
   title: string;
@@ -10,11 +12,14 @@ interface ProjectCardProps {
   'data-project'?: string;
 }
 
+const lang = getLangFromUrl(new URL(window.location.href));
+const i18n = getI18N({ currentLocale: lang });
+
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   technologies,
-  image: _image, // Prefix with underscore to indicate intentionally unused
+  image, // Prefix with underscore to indicate intentionally unused
   link,
   github,
   'data-project': dataProject
@@ -26,10 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-        <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
-          <div className="text-6xl text-gray-400 dark:text-gray-600">🚀</div>
-        </div>
+        <img src={image} alt={title} className="w-full h-full object-cover object-top" />
       </div>
 
       {/* Content */}
@@ -67,7 +69,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
-              Live Demo
+              {getTranslation(i18n, 'sections.projects.visit')}
             </a>
           )}
           

@@ -38,8 +38,11 @@
         "ecommerce": "E-commerce",
         "webApps": "Web Apps",
         "mobileApps": "Mobile Apps",
-        "apis": "APIs"
-      }
+        "apis": "APIs",
+        "services": "Services",
+        "events": "Events"
+      },
+      "visit": "Visit"
     },
     "contact": {
       "title": "Get In Touch",
@@ -53,44 +56,56 @@
     }
   },
   "footer": {
-    "copyright": "© 2024 Florencia Rímolo. All rights reserved."
+    "copyright": "© 2025 Florencia Rímolo. All rights reserved."
   },
   "projects": {
     "reset7": {
       "title": "RESET7 - Personal Trainer Landing",
-      "description": "Complete design and development of the landing page for personal trainer Juancar Garma. Visually attractive and strategically focused on lead conversion, aligned with the program's values and its promise of change in 7 days. Designed from scratch with Elementor, smooth animations and micro-interactions. Implementation of advanced SEO strategy with Yoast, speed optimization and automated marketing campaign with MailerLite.",
-      "link": "juancargarma.com/reset7",
-      "technologies": "Elementor, Yoast SEO, MailerLite"
+      "image": "reset7.webp",
+      "description": "Complete design and development of the landing page for personal trainer Juancar Garma. Designed from scratch with Elementor, smooth animations and micro-interactions. Implementation of advanced SEO strategy with Yoast, speed optimization and automated marketing campaign with MailerLite.",
+      "link": "https://juancargarma.com/reset7",
+      "technologies": "Elementor, Yoast SEO, MailerLite",
+      "category": "landing-page"
     },
     "decos": {
       "title": "de cos - Online Store for Handcrafted Jute Sandals",
+      "image": "decos.webp",
       "description": "Migration of online store for handcrafted jute sandals from Prestashop to WordPress with WooCommerce, achieving improvements in performance, customization and security. Implementation of newsletter for customers with news and seasonal discounts.",
-      "link": "decos.es",
-      "technologies": "Elementor, Astra, WooCommerce, Yoast SEO"
+      "link": "https://decos.es",
+      "technologies": "Elementor, Astra, WooCommerce, Yoast SEO",
+      "category": "ecommerce"
     },
     "rockzone": {
       "title": "Rockzone Camp - Rock Camp Website",
+      "image": "rockzone.webp",
       "description": "Website for rock camp in Cádiz designed and developed from Hostinger Builder to WordPress, adding functionalities like forms with intelligent logic. Impactful and attractive design thought for children and teenagers.",
-      "link": "rockzonecamp.com",
-      "technologies": "Elementor, Astra, Yoast SEO"
+      "link": "https://rockzonecamp.com",
+      "technologies": "Elementor, Astra, Yoast SEO",
+      "category": "events"
     },
     "luciaNails": {
       "title": "Lucía Nails - Nail and Aesthetics Center",
+      "image": "lucia-nails.webp",
       "description": "Website for nail and aesthetics center designed and developed from WordPress template, completely customized to reflect the unique brand identity. Performance and SEO optimization to ensure speed and good positioning.",
-      "link": "lucianailsart.com",
-      "technologies": "Elementor, Astra, Yoast SEO"
+      "link": "https://lucianailsart.com",
+      "technologies": "Elementor, Astra, Yoast SEO",
+      "category": "services"
     },
     "vilaLancisV2": {
       "title": "Vila & Lancis (v2) - Tax, Labor and Accounting Advisory",
+      "image": "vila-lancis-v2.webp",
       "description": "Complete redesign of Vila & Lancis website from scratch with WordPress, improving speed and user experience. Added multilingual support, PageSpeed optimization, SEO work with keyword review and image compression for optimal performance.",
-      "link": "vilalancis.com",
-      "technologies": "Elementor, Astra, Yoast SEO, Polylang"
+      "link": "https://vilalancis.com",
+      "technologies": "Elementor, Astra, Yoast SEO, Polylang",
+      "category": "services"
     },
     "vilaLancisV1": {
       "title": "Vila i Lancis (v1) - Provisional Version",
+      "image": "vila-lancis-v1.webp",
       "description": "Initial version of Vila i Lancis developed with Astro and Resend for emails. Provisional solution while developing the WordPress version, copying existing design and texts due to problems with translations and admin panel access of the previous WordPress.",
-      "link": "vila-i-lancis.vercel.app",
-      "technologies": "Astro, Resend"
+      "link": "https://vila-i-lancis.vercel.app",
+      "technologies": "Astro, Resend",
+      "category": "services"
     }
   },
   "experience": {
