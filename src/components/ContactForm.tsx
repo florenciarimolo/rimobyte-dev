@@ -163,13 +163,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
 
         {/* Status Messages */}
         {submitStatus === 'success' && (
-          <div className="p-4 bg-green-900/50 border border-green-500 rounded-lg text-green-400 dark:text-green-400">
+          <div className="p-4 bg-green-300 border border-green-500 rounded-lg text-green-700 dark:text-green-700">
             {t.success}
           </div>
         )}
         
         {submitStatus === 'error' && (
-          <div className="p-4 bg-red-900/50 border border-red-500 rounded-lg text-red-400">
+          <div className="p-4 bg-red-400 border border-red-500 rounded-lg text-red-900 dark:text-red-900">
             {t.error}
           </div>
         )}
