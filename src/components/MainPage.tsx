@@ -171,22 +171,34 @@ const MainPage: React.FC = () => {
                 <div className="space-y-3">
                   <h4 className="text-lg font-medium text-blue-400">{getTranslation(translations, 'sections.about.skills.frontend')}</h4>
                   <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700 dark:text-gray-300">React</span>
+                    <div className="flex items-center gap-2 justify-between">
+                      <span className="text-gray-700 dark:text-gray-300">Vue.js</span>
                       <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 justify-between">
+                      <span className="text-gray-700 dark:text-gray-300">Astro</span>
+                      <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '85%' }}></div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 justify-between">
                       <span className="text-gray-700 dark:text-gray-300">TypeScript</span>
                       <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div className="bg-blue-500 h-2 rounded-full" style={{ width: '85%' }}></div>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 justify-between">
                       <span className="text-gray-700 dark:text-gray-300">TailwindCSS</span>
                       <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div className="bg-blue-500 h-2 rounded-full" style={{ width: '95%' }}></div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 justify-between">
+                      <span className="text-gray-700 dark:text-gray-300">React</span>
+                      <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '65%' }}></div>
                       </div>
                     </div>
                   </div>
@@ -195,22 +207,34 @@ const MainPage: React.FC = () => {
                 <div className="space-y-3">
                   <h4 className="text-lg font-medium text-purple-400">{getTranslation(translations, 'sections.about.skills.backend')}</h4>
                   <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700 dark:text-gray-300">Node.js</span>
+                    <div className="flex items-center gap-2 justify-between">
+                      <span className="text-gray-700 dark:text-gray-300">Java</span>
                       <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div className="bg-purple-500 h-2 rounded-full" style={{ width: '88%' }}></div>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 justify-between">
                       <span className="text-gray-700 dark:text-gray-300">Python</span>
                       <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div className="bg-purple-500 h-2 rounded-full" style={{ width: '75%' }}></div>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 justify-between">
                       <span className="text-gray-700 dark:text-gray-300">PostgreSQL</span>
                       <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div className="bg-purple-500 h-2 rounded-full" style={{ width: '80%' }}></div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 justify-between">
+                      <span className="text-gray-700 dark:text-gray-300">Firebase</span>
+                      <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div className="bg-purple-500 h-2 rounded-full" style={{ width: '65%' }}></div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 justify-between">
+                      <span className="text-gray-700 dark:text-gray-300">MongoDB</span>
+                      <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div className="bg-purple-500 h-2 rounded-full" style={{ width: '75%' }}></div>
                       </div>
                     </div>
                   </div>
