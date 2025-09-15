@@ -101,7 +101,10 @@ const MainPage: React.FC = () => {
           <div className="absolute bottom-20 right-10 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div className="flex flex-col items-center relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <div className="w-[200px] h-[200px] rounded-full mb-4 p-1 bg-gradient-to-r from-blue-500 to-purple-500">
+            <img src="assets/images/programadora-web.webp" alt="Florencia Rímolo" className="w-full h-full rounded-full object-cover" />
+          </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
               Florencia Rímolo
