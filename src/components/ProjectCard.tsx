@@ -1,6 +1,7 @@
 import { getI18N, getTranslation } from '@/i18n';
 import React, { useMemo, useState } from 'react';
 import { getLangFromUrl } from '@/i18n/utils';
+import TechPill from './TechPill';
 
 interface ProjectCardProps {
   title: string;
@@ -47,13 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 mb-4">
           {technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="inline-flex items-center px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
-            >
-              <span className="mr-1">⚡</span>
-              {tech}
-            </span>
+            <TechPill key={index} tech={tech.trim()} />
           ))}
         </div>
 

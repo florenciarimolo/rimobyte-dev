@@ -1,4 +1,5 @@
 import React from 'react';
+import TechPill from './TechPill';
 
 interface TimelineItemProps {
   title: string;
@@ -49,12 +50,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         {technologies.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {technologies.map((tech, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
-              >
-                {tech}
-              </span>
+              <TechPill key={index} tech={tech} />
             ))}
           </div>
         )}

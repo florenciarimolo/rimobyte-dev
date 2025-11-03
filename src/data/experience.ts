@@ -14,10 +14,10 @@ export const getExperience = (translations: any): Experience[] => {
   
   const technologiesMap = {
     'seiro': ['Shopify', 'Liquid', 'WordPress', 'Elementor', 'Vue.js', 'Flutter', 'Tailwind CSS', 'JavaScript', 'TypeScript'],
-    'ithinkupc': ['GitLab', 'Spring Boot', 'Vue.js', 'Java', 'TypeScript', 'Markdown', 'Oracle SQL', 'MongoDB', 'Jira'],
+    'ithinkupc': ['GitLab', 'Spring Boot', 'Vue.js', 'Java', 'TypeScript', 'Markdown', 'Oracle SQL', 'MongoDB'],
     'freelance': ['WordPress', 'Elementor', 'Astra', 'Divi', 'WooCommerce', 'Yoast SEO', 'CSS', 'JavaScript'],
     'flanks': ['Django', 'Vue.js', 'Docker', 'Kubernetes', 'Python', 'Scraping'],
-    'inlabfib': ['Django REST Framework', 'Java Servlets', 'JSP', 'JDBC', 'Python', 'MySQL']
+    'inlabfib': ['Django REST Framework', 'Java', 'Python', 'Oracle SQL', 'MongoDB']
   };
   
   return experienceKeys.map(key => ({
