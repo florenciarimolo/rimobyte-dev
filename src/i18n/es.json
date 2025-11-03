@@ -59,6 +59,22 @@
     "copyright": "© 2025 Florencia Rímolo. Todos los derechos reservados."
   },
   "projects": {
+    "vibrantskin" : {
+      "title": "Vibrant Skin - Tienda Online para Productos de Cuidado Natural",
+      "image": "vibrant-skin.webp",
+      "description": "Diseño y desarrollo integral de una tienda Shopify limpia y orientada a la conversión para cuidado de la piel natural. Secciones Liquid personalizadas, taxonomía y filtros de productos, colecciones optimizadas y UX mobile-first. Configuración de pagos, reglas de envío y flujos de email. SEO base (schema, meta, alt), compresión de imágenes y lazy loading para mejorar la velocidad.",
+      "link": "https://vibrantskin.com",
+      "technologies": "Shopify, Liquid",
+      "category": "ecommerce"
+    },
+    "bandidamezcal": {
+      "title": "Banda - Tienda Online para Bebidas de Mezcal",
+      "image": "bandida.webp",
+      "description": "Diseño y desarrollo de una tienda Shopify con identidad potente para bebidas de mezcal. Fichas de producto personalizadas con notas de cata, opciones de bundles y age-gate. Localización, impuestos y envíos para MX/US, integración con Mercado Pago/Stripe y emails automatizados. SEO técnico y optimización de rendimiento en plantillas Liquid y assets.",
+      "link": "https://bandida.com",
+      "technologies": "Shopify, Liquid",
+      "category": "ecommerce"
+    },
     "reset7": {
       "title": "RESET7 - Landing para Entrenador Personal",
       "image": "reset7.webp",
@@ -109,15 +125,20 @@
     }
   },
   "experience": {
-    "ithinkupc": {
-      "title": "Ingeniera de Software | iThinkUPC",
-      "period": "OCT. 2021-PRESENTE",
-      "description": "Diseño y desarrollo de proyectos TIC para la Universidad Politécnica de Cataluña: gestión de proyectos, sistemas electorales universitarios y gestión de identidad digital. Tecnologías: GitLab, Spring Boot, Vue.js, Java, TypeScript, Markdown, Oracle SQL, MongoDB, Jira."
+    "seiro": {
+      "title": "Ingeniera de Software | Seiro",
+      "period": "AGO. 2025-PRESENTE",
+      "description": "Diseño y desarrollo de proyectos en Seiro, una agencia de desarrollo de software y consultoría en tecnología. Tecnologías: Shopify, Liquid, WordPress, Elementor, Vue.js, Flutter, Tailwind CSS, JavaScript, TypeScript."
     },
     "freelance": {
       "title": "Freelance WordPress",
       "period": "ABR.2021-PRESENTE",
       "description": "Diseño y desarrollo de sitios WordPress optimizados para SEO, velocidad y conversión. Gestión integral de hosting, dominios y legalidad (cookies, RGPD). Experiencia con Astra, Divi, Elementor, child themes, hooks, CSS y JS. Servicios en rimobyte.com"
+    },
+    "ithinkupc": {
+      "title": "Ingeniera de Software | iThinkUPC",
+      "period": "OCT. 2021-SEPT. 2025",
+      "description": "Diseño y desarrollo de proyectos TIC para la Universidad Politécnica de Cataluña: gestión de proyectos, sistemas electorales universitarios y gestión de identidad digital. Tecnologías: GitLab, Spring Boot, Vue.js, Java, TypeScript, Markdown, Oracle SQL, MongoDB, Jira."
     },
     "flanks": {
       "title": "Ingeniera de Software | Flanks",

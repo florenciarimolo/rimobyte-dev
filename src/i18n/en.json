@@ -59,6 +59,22 @@
     "copyright": "© 2025 Florencia Rímolo. All rights reserved."
   },
   "projects": {
+    "vibrantskin" : {
+      "title": "Vibrant Skin - Online Store for Natural Skincare Products",
+      "image": "vibrant-skin.webp",
+      "description": "End-to-end design and development of a clean, conversion-oriented Shopify store for natural skincare. Custom Liquid sections, product taxonomy and filters, optimized collections, and mobile-first UX. Configured payments, shipping rules, and email flows. SEO fundamentals (schema, meta, alt), image compression and lazy loading to improve speed.",
+      "link": "https://vibrantskin.com",
+      "technologies": "Shopify, Liquid",
+      "category": "ecommerce"
+    },
+    "bandidamezcal": {
+      "title": "Banda - Online Store for Mezcal Drinks",
+      "image": "bandida.webp",
+      "description": "Design and development of a bold Shopify store for mezcal beverages. Custom product pages with tasting notes, bundle options and age-gate. Localization, tax and shipping setup for MX/US, integration with Mercado Pago/Stripe, and automated emails. Technical SEO and performance optimization across Liquid templates and assets.",
+      "link": "https://bandida.com",
+      "technologies": "Shopify, Liquid",
+      "category": "ecommerce"
+    },
     "reset7": {
       "title": "RESET7 - Personal Trainer Landing",
       "image": "reset7.webp",
@@ -109,15 +125,20 @@
     }
   },
   "experience": {
-    "ithinkupc": {
-      "title": "Software Engineer | iThinkUPC",
-      "period": "OCT. 2021-PRESENT",
-      "description": "Design and development of ICT projects for the Polytechnic University of Catalonia: project management, university electoral systems and digital identity management. Technologies: GitLab, Spring Boot, Vue.js, Java, TypeScript, Markdown, Oracle SQL, MongoDB, Jira."
+    "seiro": {
+      "title": "Software Engineer | Seiro",
+      "period": "AUG. 2025-PRESENT",
+      "description": "Design and development of projects in Seiro, a software development and consulting agency. Technologies: Shopify, Liquid, WordPress, Elementor, Vue.js, Flutter, Tailwind CSS, JavaScript, TypeScript."
     },
     "freelance": {
       "title": "Freelance WordPress",
       "period": "APR.2021-PRESENT",
       "description": "Design and development of WordPress sites optimized for SEO, speed and conversion. Comprehensive management of hosting, domains and legal compliance (cookies, GDPR). Experience with Astra, Divi, Elementor, child themes, hooks, CSS and JS. Services at rimobyte.com"
+    },
+    "ithinkupc": {
+      "title": "Software Engineer | iThinkUPC",
+      "period": "OCT. 2021-SEP. 2025",
+      "description": "Design and development of ICT projects for the Polytechnic University of Catalonia: project management, university electoral systems and digital identity management. Technologies: GitLab, Spring Boot, Vue.js, Java, TypeScript, Markdown, Oracle SQL, MongoDB, Jira."
     },
     "flanks": {
       "title": "Software Engineer | Flanks",

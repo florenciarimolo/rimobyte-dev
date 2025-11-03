@@ -12,7 +12,7 @@ export interface Project {
 }
 
 export const getProjects = (translations: any): Project[] => {
-  const projectKeys = ['reset7', 'decos', 'rockzone', 'luciaNails', 'vilaLancisV2', 'vilaLancisV1'];
+  const projectKeys = ['vibrantskin', 'bandidamezcal', 'reset7', 'decos', 'rockzone', 'luciaNails', 'vilaLancisV2', 'vilaLancisV1'];
   
   return projectKeys.map(key => ({
     id: key,

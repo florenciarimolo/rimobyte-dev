@@ -10,9 +10,10 @@ export interface Experience {
 }
 
 export const getExperience = (translations: any): Experience[] => {
-  const experienceKeys = ['ithinkupc', 'freelance', 'flanks', 'inlabfib'];
+  const experienceKeys = ['seiro', 'freelance', 'ithinkupc','flanks', 'inlabfib'];
   
   const technologiesMap = {
+    'seiro': ['Shopify', 'Liquid', 'WordPress', 'Elementor', 'Vue.js', 'Flutter', 'Tailwind CSS', 'JavaScript', 'TypeScript'],
     'ithinkupc': ['GitLab', 'Spring Boot', 'Vue.js', 'Java', 'TypeScript', 'Markdown', 'Oracle SQL', 'MongoDB', 'Jira'],
     'freelance': ['WordPress', 'Elementor', 'Astra', 'Divi', 'WooCommerce', 'Yoast SEO', 'CSS', 'JavaScript'],
     'flanks': ['Django', 'Vue.js', 'Docker', 'Kubernetes', 'Python', 'Scraping'],
@@ -22,7 +23,7 @@ export const getExperience = (translations: any): Experience[] => {
   return experienceKeys.map(key => ({
     id: key,
     title: getTranslation(translations, `experience.${key}.title`),
-    company: key === 'ithinkupc' ? 'iThinkUPC' : key === 'freelance' ? 'Freelance' : key === 'flanks' ? 'Flanks' : 'inLabFIB',
+    company: key === 'seiro' ? 'Seiro' : key === 'ithinkupc' ? 'iThinkUPC' : key === 'freelance' ? 'Freelance' : key === 'flanks' ? 'Flanks' : 'inLabFIB',
     period: getTranslation(translations, `experience.${key}.period`),
     description: getTranslation(translations, `experience.${key}.description`),
     technologies: technologiesMap[key as keyof typeof technologiesMap]
