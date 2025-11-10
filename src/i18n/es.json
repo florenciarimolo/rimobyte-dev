@@ -58,6 +58,12 @@
   "footer": {
     "copyright": "© 2025 RimoByte. Todos los derechos reservados."
   },
+  "notFound": {
+    "title": "404",
+    "heading": "Página No Encontrada",
+    "description": "¡Ups! La página que buscas no existe o ha sido movida.",
+    "button": "Volver al Inicio"
+  },
   "projects": {
     "vibrantskin" : {
       "title": "Vibrant Skin - Tienda Online para Productos de Cuidado Natural",

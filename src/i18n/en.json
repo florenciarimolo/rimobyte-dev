@@ -58,6 +58,12 @@
   "footer": {
     "copyright": "© 2025 RimoByte. All rights reserved."
   },
+  "notFound": {
+    "title": "404",
+    "heading": "Page Not Found",
+    "description": "Oops! The page you're looking for doesn't exist or has been moved.",
+    "button": "Go Back Home"
+  },
   "projects": {
     "vibrantskin" : {
       "title": "Vibrant Skin - Online Store for Natural Skincare Products",
