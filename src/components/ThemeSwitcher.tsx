@@ -36,6 +36,9 @@ const ThemeSwitcher: React.FC = () => {
       document.documentElement.classList.remove('dark');
       document.body.classList.remove('dark');
     }
+    
+    // Dispatch custom event for other components to listen to
+    window.dispatchEvent(new CustomEvent('themechange', { detail: { theme: newTheme } }));
   };
 
   // Don't render until mounted to avoid SSR issues

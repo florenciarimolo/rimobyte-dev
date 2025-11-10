@@ -11,6 +11,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange }) => {
   const [activeSection, setActiveSection] = useState('about');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   const navItems = [
     { id: 'about', label: currentLang === 'en' ? 'About' : 'Sobre mí' },
@@ -18,6 +19,23 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange }) => {
     { id: 'projects', label: currentLang === 'en' ? 'Projects' : 'Proyectos' },
     { id: 'contact', label: currentLang === 'en' ? 'Contact' : 'Contacto' }
   ];
+
+  useEffect(() => {
+    // Initialize theme from localStorage or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setIsDark(savedTheme === 'dark');
+
+    // Listen for theme changes from ThemeSwitcher
+    const handleThemeChange = (event: CustomEvent) => {
+      setIsDark(event.detail.theme === 'dark');
+    };
+
+    window.addEventListener('themechange', handleThemeChange as EventListener);
+
+    return () => {
+      window.removeEventListener('themechange', handleThemeChange as EventListener);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,9 +82,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange }) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-              RimoByte
-            </span>
+            <a href="/">
+              <img 
+                src={isDark ? "/assets/images/logo-rimobyte-light-grey.png" : "/assets/images/logo-rimobyte-grey.png"} 
+                alt="RimoByte" 
+                className="w-[120px] transition-opacity duration-300 object-contain" 
+              />
+            </a>
           </div>
 
           {/* Navigation Items */}
