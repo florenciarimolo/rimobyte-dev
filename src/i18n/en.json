@@ -65,6 +65,14 @@
     "button": "Go Back Home"
   },
   "projects": {
+    "jlgki" : {
+      "title": "JLG K&I - Help organizations transform their knowledge assets into competitive advantages",
+      "image": "jlgki.webp",
+      "description": "Design and development of a WordPress site for JLG K&I, a company that helps organizations transform their knowledge assets into competitive advantages. The site is built with WordPress and is optimized for SEO and speed.",
+      "link": "https://jlgki.com",
+      "technologies": "WordPress",
+      "category": "services"
+    },
     "vibrantskin" : {
       "title": "Vibrant Skin - Online Store for Natural Skincare Products",
       "image": "vibrant-skin.webp",
