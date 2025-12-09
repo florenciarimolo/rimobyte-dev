@@ -9,7 +9,11 @@ import ContactSection from './ContactSection';
 import Footer from './Footer';
 import { getI18N } from '../i18n';
 
-const MainPage: React.FC = () => {
+interface MainPageProps {
+  recaptchaSiteKey?: string;
+}
+
+const MainPage: React.FC<MainPageProps> = ({ recaptchaSiteKey }) => {
   const [currentLang, setCurrentLang] = useState<'en' | 'es'>('es');
   const translations = getI18N({ currentLocale: currentLang });
 
@@ -52,7 +56,7 @@ const MainPage: React.FC = () => {
         <ExperienceSection translations={translations} />
         <EducationSection translations={translations} />
         <ProjectsSection translations={translations} />
-        <ContactSection translations={translations} currentLang={currentLang} />
+        <ContactSection translations={translations} currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} />
       </main>
 
       <Footer translations={translations} />

@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
 import type { APIRoute } from "astro";
 import { EMAIL, NO_REPLY_EMAIL } from "@/constants";
+import { verifyRecaptcha } from "@/utils/recaptcha";
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY)
 
@@ -8,7 +9,7 @@ export const POST: APIRoute = async ({ request }) => {
     const body = await request.json();
 
     // Get the form data from the body
-    const { email, name, subject, message } = body;
+    const { email, name, subject, message, recaptchaToken } = body;
     let errorCall = false;
 
     // Validate required fields
@@ -17,6 +18,18 @@ export const POST: APIRoute = async ({ request }) => {
             status: 400,
             headers: { 'Content-Type': 'application/json' }
         });
+    }
+
+    // Verify reCAPTCHA token
+    if (recaptchaToken) {
+        const verification = await verifyRecaptcha(recaptchaToken);
+        
+        if (!verification.success) {
+            return new Response(JSON.stringify({ error: verification.error || 'reCAPTCHA verification failed' }), { 
+                status: 400,
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
     }
 
     const emailBody = `Name: ${name}\nEmail: ${email}\nSubject: ${subject || 'No subject'}\n\nMessage:\n${message}`;

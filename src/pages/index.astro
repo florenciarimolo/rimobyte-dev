@@ -1,8 +1,12 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import MainPage from '../components/MainPage';
+
+// Get reCAPTCHA site key from environment variable
+// Site key is public and safe to expose to the client
+const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
 ---
 
 <MainLayout title="RimoByte - Full Stack Developer Portfolio">
-  <MainPage client:only="react" />
+  <MainPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} />
 </MainLayout>

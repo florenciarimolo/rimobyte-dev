@@ -5,9 +5,10 @@ import { getTranslation } from '../i18n';
 interface ContactSectionProps {
   translations: any;
   currentLang: 'en' | 'es';
+  recaptchaSiteKey?: string;
 }
 
-const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLang }) => {
+const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLang, recaptchaSiteKey }) => {
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,7 +81,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLa
             </address>
           </div>
           
-          <ContactForm currentLang={currentLang} />
+          <ContactForm currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} />
         </div>
       </div>
     </section>

@@ -3,9 +3,10 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 interface ContactFormProps {
   currentLang: 'en' | 'es';
+  recaptchaSiteKey?: string;
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
+const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,9 +19,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
   const [isDark, setIsDark] = useState(true);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   
-  // Get reCAPTCHA site key from environment variable
-  // For development, you can use a test key: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
-  const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+  // Use reCAPTCHA site key passed from server (SSR) or fallback to test key
+  const RECAPTCHA_SITE_KEY = recaptchaSiteKey || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
 
   // Detect theme changes
   useEffect(() => {
@@ -97,7 +97,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
     e.preventDefault();
     setRecaptchaError(false);
     
-    // Verify reCAPTCHA
+    // Get reCAPTCHA token
     const recaptchaValue = recaptchaRef.current?.getValue();
     if (!recaptchaValue) {
       setRecaptchaError(true);
@@ -108,6 +108,25 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
     setSubmitStatus('idle');
 
     try {
+      // Verify reCAPTCHA token first (following Astro docs pattern)
+      const recaptchaResponse = await fetch('/api/recaptcha', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ recaptcha: recaptchaValue }),
+      });
+
+      const recaptchaData = await recaptchaResponse.json();
+
+      if (!recaptchaData.success) {
+        setRecaptchaError(true);
+        recaptchaRef.current?.reset();
+        setIsSubmitting(false);
+        return;
+      }
+
+      // If reCAPTCHA verification successful, submit the form
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
