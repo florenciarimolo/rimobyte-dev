@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 interface ContactFormProps {
   currentLang: 'en' | 'es';
@@ -13,6 +14,38 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [recaptchaError, setRecaptchaError] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  
+  // Get reCAPTCHA site key from environment variable
+  // For development, you can use a test key: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
+  const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+
+  // Detect theme changes
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    };
+    
+    checkTheme();
+    
+    // Listen for theme changes
+    const handleThemeChange = () => checkTheme();
+    window.addEventListener('themechange', handleThemeChange);
+    
+    // Also check periodically in case theme changes via other means
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    
+    return () => {
+      window.removeEventListener('themechange', handleThemeChange);
+      observer.disconnect();
+    };
+  }, []);
 
   const translations = {
     en: {
@@ -24,6 +57,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
       sending: 'Sending...',
       success: 'Message sent successfully!',
       error: 'Error sending message. Please try again.',
+      recaptchaError: 'Please complete the reCAPTCHA verification.',
       placeholder: {
         name: 'Your name',
         email: 'your.email@example.com',
@@ -40,6 +74,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
       sending: 'Enviando...',
       success: '¡Mensaje enviado exitosamente!',
       error: 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.',
+      recaptchaError: 'Por favor, completa la verificación reCAPTCHA.',
       placeholder: {
         name: 'Tu nombre',
         email: 'tu.correo@ejemplo.com',
@@ -60,6 +95,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setRecaptchaError(false);
+    
+    // Verify reCAPTCHA
+    const recaptchaValue = recaptchaRef.current?.getValue();
+    if (!recaptchaValue) {
+      setRecaptchaError(true);
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
@@ -69,12 +113,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken: recaptchaValue
+        }),
       });
 
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
+        // Reset reCAPTCHA
+        recaptchaRef.current?.reset();
         
         // Reset success message after 5 seconds
         setTimeout(() => setSubmitStatus('idle'), 5000);
@@ -84,11 +133,19 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
     } catch (error) {
       console.error('Error sending message:', error);
       setSubmitStatus('error');
+      // Reset reCAPTCHA on error
+      recaptchaRef.current?.reset();
       
       // Reset error message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleRecaptchaChange = (value: string | null) => {
+    if (value) {
+      setRecaptchaError(false);
     }
   };
 
@@ -173,6 +230,21 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang }) => {
             {t.error}
           </div>
         )}
+
+        {/* reCAPTCHA */}
+        <div>
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={RECAPTCHA_SITE_KEY}
+            onChange={handleRecaptchaChange}
+            theme={isDark ? 'dark' : 'light'}
+          />
+          {recaptchaError && (
+            <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+              {t.recaptchaError}
+            </p>
+          )}
+        </div>
 
         <button
           type="submit"
