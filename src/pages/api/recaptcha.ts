@@ -11,7 +11,8 @@ export const POST: APIRoute = async ({ request }) => {
     });
   }
 
-  const result = await verifyRecaptcha(data.recaptcha);
+  const recaptchaAction = data.action || 'submit';
+  const result = await verifyRecaptcha(data.recaptcha, recaptchaAction);
 
   return new Response(JSON.stringify(result), { 
     status: result.success ? 200 : 400,

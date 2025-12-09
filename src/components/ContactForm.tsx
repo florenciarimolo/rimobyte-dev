@@ -1,5 +1,16 @@
-import React, { useState, useRef, useEffect } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import React, { useState, useEffect } from 'react';
+
+// Extend Window interface for grecaptcha
+declare global {
+  interface Window {
+    grecaptcha: {
+      enterprise: {
+        execute: (siteKey: string, options: { action: string }) => Promise<string>;
+        ready: (callback: () => void) => void;
+      };
+    };
+  }
+}
 
 interface ContactFormProps {
   currentLang: 'en' | 'es';
@@ -17,10 +28,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [recaptchaError, setRecaptchaError] = useState(false);
   const [isDark, setIsDark] = useState(true);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
   
   // Use reCAPTCHA site key passed from server (SSR) or fallback to test key
-  const RECAPTCHA_SITE_KEY = recaptchaSiteKey || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+  const RECAPTCHA_SITE_KEY = recaptchaSiteKey || '6LcR8iUsAAAAAJAFkXt5Wgnw_6X49csU9Y26aoPt';
 
   // Detect theme changes
   useEffect(() => {
@@ -96,32 +106,54 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setRecaptchaError(false);
-    
-    // Get reCAPTCHA token
-    const recaptchaValue = recaptchaRef.current?.getValue();
-    if (!recaptchaValue) {
-      setRecaptchaError(true);
-      return;
-    }
 
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
     try {
+      // Execute reCAPTCHA Enterprise (invisible, following Google docs)
+      let recaptchaToken: string;
+      
+      if (window.grecaptcha && window.grecaptcha.enterprise) {
+        recaptchaToken = await window.grecaptcha.enterprise.execute(RECAPTCHA_SITE_KEY, {
+          action: 'submit'
+        });
+      } else {
+        // Wait for grecaptcha to load
+        await new Promise<void>((resolve) => {
+          if (window.grecaptcha && window.grecaptcha.enterprise) {
+            resolve();
+          } else {
+            window.grecaptcha?.enterprise?.ready(() => resolve());
+          }
+        });
+        recaptchaToken = await window.grecaptcha.enterprise.execute(RECAPTCHA_SITE_KEY, {
+          action: 'submit'
+        });
+      }
+
+      if (!recaptchaToken) {
+        setRecaptchaError(true);
+        setIsSubmitting(false);
+        return;
+      }
+
       // Verify reCAPTCHA token first (following Astro docs pattern)
       const recaptchaResponse = await fetch('/api/recaptcha', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ recaptcha: recaptchaValue }),
+        body: JSON.stringify({ 
+          recaptcha: recaptchaToken,
+          action: 'submit' // Match the action used in grecaptcha.enterprise.execute()
+        }),
       });
 
       const recaptchaData = await recaptchaResponse.json();
 
       if (!recaptchaData.success) {
         setRecaptchaError(true);
-        recaptchaRef.current?.reset();
         setIsSubmitting(false);
         return;
       }
@@ -134,15 +166,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
         },
         body: JSON.stringify({
           ...formData,
-          recaptchaToken: recaptchaValue
+          recaptchaToken: recaptchaToken
         }),
       });
 
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
-        // Reset reCAPTCHA
-        recaptchaRef.current?.reset();
         
         // Reset success message after 5 seconds
         setTimeout(() => setSubmitStatus('idle'), 5000);
@@ -152,19 +182,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
     } catch (error) {
       console.error('Error sending message:', error);
       setSubmitStatus('error');
-      // Reset reCAPTCHA on error
-      recaptchaRef.current?.reset();
       
       // Reset error message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
       setIsSubmitting(false);
-    }
-  };
-
-  const handleRecaptchaChange = (value: string | null) => {
-    if (value) {
-      setRecaptchaError(false);
     }
   };
 
@@ -250,20 +272,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
           </div>
         )}
 
-        {/* reCAPTCHA */}
-        <div>
-          <ReCAPTCHA
-            ref={recaptchaRef}
-            sitekey={RECAPTCHA_SITE_KEY}
-            onChange={handleRecaptchaChange}
-            theme={isDark ? 'dark' : 'light'}
-          />
-          {recaptchaError && (
-            <p className="mt-2 text-sm text-red-600 dark:text-red-400">
-              {t.recaptchaError}
-            </p>
-          )}
-        </div>
+        {recaptchaError && (
+          <div className="p-4 bg-red-400 border border-red-500 rounded-lg text-red-900 dark:text-red-900">
+            {t.recaptchaError}
+          </div>
+        )}
 
         <button
           type="submit"
