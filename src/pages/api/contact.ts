@@ -1,7 +1,6 @@
 import { Resend } from 'resend';
 import type { APIRoute } from "astro";
 import { EMAIL, NO_REPLY_EMAIL } from "@/constants";
-import { verifyRecaptcha } from "@/utils/recaptcha";
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY)
 
@@ -9,7 +8,9 @@ export const POST: APIRoute = async ({ request }) => {
     const body = await request.json();
 
     // Get the form data from the body
-    const { email, name, subject, message, recaptchaToken } = body;
+    // Note: recaptchaToken is included but not verified here
+    // because it's already verified in /api/recaptcha before this endpoint is called
+    const { email, name, subject, message } = body;
     let errorCall = false;
 
     // Validate required fields
@@ -18,18 +19,6 @@ export const POST: APIRoute = async ({ request }) => {
             status: 400,
             headers: { 'Content-Type': 'application/json' }
         });
-    }
-
-    // Verify reCAPTCHA token
-    if (recaptchaToken) {
-        const verification = await verifyRecaptcha(recaptchaToken);
-        
-        if (!verification.success) {
-            return new Response(JSON.stringify({ error: verification.error || 'reCAPTCHA verification failed' }), { 
-                status: 400,
-                headers: { 'Content-Type': 'application/json' }
-            });
-        }
     }
 
     const emailBody = `Name: ${name}\nEmail: ${email}\nSubject: ${subject || 'No subject'}\n\nMessage:\n${message}`;
@@ -45,14 +34,16 @@ export const POST: APIRoute = async ({ request }) => {
 
         if (error) {
             errorCall = true;
-            console.error('Resend error:', error);
-        } else {
-            console.log('Email sent successfully:', data);
+            if (import.meta.env.MODE === 'development') {
+                console.error('Resend error:', error);
+            }
         }
 
     } catch (error) {
-        console.error('Error sending email:', error);
         errorCall = true;
+        if (import.meta.env.MODE === 'development') {
+            console.error('Error sending email:', error);
+        }
     }
 
     if (errorCall) {
