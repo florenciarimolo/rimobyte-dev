@@ -36,7 +36,9 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLang
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="language-switcher flex items-center space-x-2 px-3 py-2 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className={`language-switcher relative flex items-center space-x-2 px-3 py-2 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+          isOpen ? 'text-gray-900 dark:text-white' : ''
+        }`}
         aria-label="Select language"
       >
         <currentLocaleData.flag />
@@ -49,6 +51,10 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLang
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
+        {/* Active indicator */}
+        {isOpen && (
+          <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500" />
+        )}
       </button>
 
       {isOpen && (

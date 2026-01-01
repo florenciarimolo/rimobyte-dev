@@ -44,17 +44,24 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange }) => {
 
       // Update active section based on scroll position
       const sections = navItems.map(item => item.id);
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 150; // Increased offset for better detection
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            setActiveSection(sections[i]);
+            break;
+          }
         }
       }
     };
 
+    // Call once on mount to set initial active section
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [navItems]);
@@ -111,27 +118,27 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange }) => {
           </div>
 
           {/* Controls */}
-          <div className="flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
             <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
             <ThemeSwitcher />
-            
-            {/* Mobile menu button */}
-            <button 
-              onClick={toggleMobileMenu}
-              className="md:hidden p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-              aria-label="Toggle mobile menu"
-            >
-              {isMobileMenuOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
           </div>
+            
+          {/* Mobile menu button */}
+          <button 
+            onClick={toggleMobileMenu}
+            className="md:hidden p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? (
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
 
@@ -143,15 +150,23 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange }) => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                className={`relative block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                   activeSection === item.id
-                    ? 'text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-700'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
+                    ? 'text-gray-900 dark:text-white'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
                 }`}
               >
                 {item.label}
+                {/* Active indicator */}
+                {activeSection === item.id && (
+                  <div className="absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500" />
+                )}
               </button>
             ))}
+            <div className="flex items-center justify-start space-x-4 px-3 py-2 mt-2">
+              <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
+              <ThemeSwitcher />
+            </div>
           </div>
         </div>
       )}
