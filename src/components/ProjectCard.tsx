@@ -1,6 +1,5 @@
-import { getI18N, getTranslation } from '@/i18n';
-import React, { useMemo, useState } from 'react';
-import { getLangFromUrl } from '@/i18n/utils';
+import { getTranslation } from '@/i18n';
+import React from 'react';
 import TechPill from './TechPill';
 
 interface ProjectCardProps {
@@ -11,10 +10,8 @@ interface ProjectCardProps {
   link?: string;
   github?: string;
   'data-project'?: string;
+  translations?: any;
 }
-
-const lang = getLangFromUrl(new URL(window.location.href));
-const i18n = getI18N({ currentLocale: lang });
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
@@ -23,7 +20,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   image, // Prefix with underscore to indicate intentionally unused
   link,
   github,
-  'data-project': dataProject
+  'data-project': dataProject,
+  translations
 }) => {
   return (
     <div 
@@ -64,7 +62,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
-              {getTranslation(i18n, 'sections.projects.visit')}
+              {translations ? getTranslation(translations, 'sections.projects.visit') : 'Visitar'}
             </a>
           )}
           

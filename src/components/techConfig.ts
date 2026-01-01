@@ -2,9 +2,10 @@ export interface TechConfig {
   gradient: string;
   backgroundColor?: string;
   icon?: string;
+  hideText?: boolean; // Hide text when icon contains the name (e.g., Supabase)
 }
 
-import { VuejsIcon, ReactIcon, JavaScriptIcon, TypeScriptIcon, PythonIcon, JavaIcon, CSSIcon, TailwindCSSIcon, ShopifyIcon, WooCommerceIcon, WordPressIcon, ElementorIcon, AstraIcon, DiviIcon, LiquidIcon, YoastSEOIcon, PolylangIcon, DjangoIcon, DjangoRESTFrameworkIcon, SpringBootIcon, DockerIcon, KubernetesIcon, GitLabIcon, MongoDBIcon, MySQLIcon, OracleSQLIcon, JDBCIcon, JavaServletsIcon, FlutterIcon, AstroIcon, ResendIcon, MailerLiteIcon, MarkdownIcon, JiraIcon } from './icons';
+import { VuejsIcon, ReactIcon, JavaScriptIcon, TypeScriptIcon, PythonIcon, JavaIcon, CSSIcon, TailwindCSSIcon, ShopifyIcon, WooCommerceIcon, WordPressIcon, ElementorIcon, AstraIcon, DiviIcon, LiquidIcon, YoastSEOIcon, PolylangIcon, DjangoIcon, DjangoRESTFrameworkIcon, SpringBootIcon, DockerIcon, KubernetesIcon, GitLabIcon, MongoDBIcon, MySQLIcon, OracleSQLIcon, JDBCIcon, JavaServletsIcon, FlutterIcon, AstroIcon, ResendIcon, MailerLiteIcon, MarkdownIcon, JiraIcon, SupabaseIcon, NuxtIcon } from './icons';
 
 export const techConfig: Record<string, TechConfig> = {
   // Frontend Frameworks
@@ -145,6 +146,14 @@ export const techConfig: Record<string, TechConfig> = {
   Resend: {
     gradient: "bg-gradient-to-r from-blue-500 to-purple-600",
     icon: ResendIcon,
+  },
+  Supabase: {
+    gradient: "bg-gradient-to-r from-gray-800 to-gray-900",
+    icon: SupabaseIcon,
+  },
+  Nuxt: {
+    gradient: "bg-gradient-to-r from-emerald-400 to-green-600",
+    icon: NuxtIcon,
   },
   MailerLite: {
     gradient: "bg-gradient-to-r from-green-400 to-green-600",

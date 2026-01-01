@@ -65,6 +65,22 @@
     "button": "Volver al Inicio"
   },
   "projects": {
+    "rocolegal" : {
+      "title": "Roco Legal - Presencia digital moderna para despacho jurídico",
+      "image": "rocolegal.webp",
+      "description": "Un despacho jurídico necesitaba una presencia digital moderna que reflejara profesionalidad y atrajera clientes. Se lanzó un sitio elegante y bilingüe que genera confianza y consultas.",
+      "link": "https://rocolegal.loading.net",
+      "technologies": "WordPress, Elementor, Yoast SEO",
+      "category": "services"
+    },
+    "upnext" : {
+      "title": "UpNext - Descubre películas y series en streaming",
+      "image": "upnext.webp",
+      "description": "UpNext es una aplicación web para descubrir películas y series y saber en qué plataformas de streaming están disponibles en España. Permite guardar gustos, descartar contenido y recibir recomendaciones personalizadas para decidir qué ver sin perder tiempo.",
+      "link": "https://getupnext.io",
+      "technologies": "Supabase, Nuxt",
+      "category": "web-app"
+    },
     "jlgki" : {
       "title": "JLG K&I - Ayuda a organizaciones a transformar sus activos de conocimiento en ventajas competitivas",
       "image": "jlgki.webp",

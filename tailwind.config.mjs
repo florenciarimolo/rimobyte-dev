@@ -7,6 +7,9 @@ export default {
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
       },
+      fontSize: {
+        'base': '0.875rem', // 14px - reducido desde el default de 16px
+      },
       colors: {
         'gradient-start': '#3F67FE',
         'gradient-end': '#D42EFE',

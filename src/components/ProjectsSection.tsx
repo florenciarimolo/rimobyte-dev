@@ -84,6 +84,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ translations }) => {
                 link={project.link}
                 github={project.github}
                 data-project={project.category}
+                translations={translations}
               />
             </article>
           ))}
