@@ -10,7 +10,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate-favicons": "node scripts/generate-favicons.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.5",
@@ -30,6 +31,8 @@
   "devDependencies": {
     "@types/node": "^24.10.0",
     "@types/react-google-recaptcha": "^2.1.9",
+    "sharp": "^0.34.5",
+    "to-ico": "^1.1.5",
     "typescript": "^5.9.3"
   },
   "keywords": [
