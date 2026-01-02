@@ -1,18 +1,61 @@
 ---
+import StructuredData from '../components/StructuredData.astro';
+
 export interface Props {
   title: string;
   description?: string;
+  locale?: string;
+  keywords?: string;
+  image?: string;
+  type?: string;
 }
 
-const { title, description = "RimoByte - Full Stack Developer Portfolio" } = Astro.props;
+const siteUrl = 'https://rimobyte.dev';
+const { 
+  title, 
+  description = "RimoByte - Full Stack Developer Portfolio",
+  locale = 'es',
+  keywords,
+  image = `${siteUrl}/assets/images/programadora-web.webp`,
+  type = 'website'
+} = Astro.props;
+
+// Keywords por defecto basados en keyword research
+const defaultKeywords = locale === 'es' 
+  ? "desarrolladora full stack, desarrolladora web, programadora full stack, desarrolladora WordPress, desarrolladora Vue.js, desarrolladora Django, desarrolladora freelance, desarrolladora e-commerce, desarrolladora web España, desarrolladora web remoto, desarrollo web Barcelona, ingeniera de software, desarrolladora React, desarrolladora Spring Boot"
+  : "full stack developer, web developer, WordPress developer, Vue.js developer, Django developer, freelance developer, e-commerce developer, remote web developer, software engineer, React developer, Spring Boot developer, web development Barcelona";
+
+const finalKeywords = keywords || defaultKeywords;
+const currentUrl = `${siteUrl}${locale === 'en' ? '/en' : ''}`;
+const langCode = locale === 'es' ? 'es-ES' : 'en-US';
+const htmlLang = locale === 'es' ? 'es' : 'en';
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang={htmlLang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={finalKeywords} />
+    <meta name="author" content="Florencia Rímolo" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content={langCode} />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={currentUrl} />
+    
+    <!-- Alternate Languages (Hreflang) -->
+    <link rel="alternate" hreflang="es" href={siteUrl} />
+    <link rel="alternate" hreflang="en" href={`${siteUrl}/en`} />
+    <link rel="alternate" hreflang="x-default" href={siteUrl} />
     
     <!-- Favicon configuration for Google and all browsers -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -21,20 +64,36 @@ const { title, description = "RimoByte - Full Stack Developer Portfolio" } = Ast
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     
-    <title>{title}</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={locale === 'es' ? "Florencia Rímolo - Desarrolladora Full Stack" : "Florencia Rímolo - Full Stack Developer"} />
+    <meta property="og:locale" content={langCode} />
+    <meta property="og:site_name" content="RimoByte" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={currentUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={locale === 'es' ? "Florencia Rímolo - Desarrolladora Full Stack" : "Florencia Rímolo - Full Stack Developer"} />
+    <meta name="twitter:creator" content="@rimobyte" />
     
     <!-- Preload fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Meta tags for social sharing -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <!-- Structured Data -->
+    <StructuredData type="person" locale={locale} />
+    <StructuredData type="website" locale={locale} />
+    <StructuredData type="professionalService" locale={locale} />
     
     <!-- Google reCAPTCHA Enterprise -->
     <!-- Following official Google docs: https://www.google.com/recaptcha/enterprise -->
