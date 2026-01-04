@@ -1,0 +1,109 @@
+---
+export interface Props {
+  type: 'person' | 'website' | 'professionalService';
+  locale?: string;
+}
+
+const { type, locale = 'es' } = Astro.props;
+const siteUrl = 'https://rimobyte.dev';
+const currentUrl = `${siteUrl}${locale === 'en' ? '/en' : ''}`;
+
+let structuredData: any = {};
+
+if (type === 'person') {
+  structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Florencia Rímolo",
+    "alternateName": "RimoByte",
+    "url": siteUrl,
+    "image": `${siteUrl}/assets/images/programadora-web.webp`,
+    "jobTitle": locale === 'es' ? "Desarrolladora Full Stack" : "Full Stack Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "RimoByte"
+    },
+    "sameAs": [
+      "https://github.com/rimobyte",
+      "https://linkedin.com/in/florencia-rimolo",
+      "https://x.com/rimobyte"
+    ],
+    "email": "florencia@rimobyte.dev",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ES",
+      "addressLocality": "Barcelona"
+    },
+    "knowsAbout": [
+      "Full Stack Development",
+      "WordPress Development",
+      "Vue.js",
+      "React",
+      "Django",
+      "Spring Boot",
+      "E-commerce Development",
+      "Web Development",
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Java"
+    ]
+  };
+} else if (type === 'website') {
+  structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "RimoByte",
+    "url": siteUrl,
+    "description": locale === 'es' 
+      ? "Portfolio de Florencia Rímolo - Desarrolladora Full Stack especializada en WordPress, Vue.js, Django y desarrollo de e-commerce"
+      : "Florencia Rímolo's Portfolio - Full Stack Developer specialized in WordPress, Vue.js, Django and e-commerce development",
+    "author": {
+      "@type": "Person",
+      "name": "Florencia Rímolo"
+    },
+    "inLanguage": locale === 'es' ? "es-ES" : "en-US",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${siteUrl}/?q={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+} else if (type === 'professionalService') {
+  structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "RimoByte",
+    "description": locale === 'es'
+      ? "Servicios de desarrollo web full stack: WordPress, Vue.js, Django, e-commerce, aplicaciones web y móviles"
+      : "Full stack web development services: WordPress, Vue.js, Django, e-commerce, web and mobile applications",
+    "url": siteUrl,
+    "image": `${siteUrl}/assets/images/programadora-web.webp`,
+    "provider": {
+      "@type": "Person",
+      "name": "Florencia Rímolo",
+      "jobTitle": locale === 'es' ? "Desarrolladora Full Stack" : "Full Stack Developer",
+      "email": "florencia@rimobyte.dev"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Spain"
+    },
+    "serviceType": [
+      locale === 'es' ? "Desarrollo Web Full Stack" : "Full Stack Web Development",
+      locale === 'es' ? "Desarrollo WordPress" : "WordPress Development",
+      locale === 'es' ? "Desarrollo E-commerce" : "E-commerce Development",
+      locale === 'es' ? "Desarrollo de Aplicaciones Web" : "Web Application Development"
+    ],
+    "priceRange": "$$"
+  };
+}
+
+const jsonLd = JSON.stringify(structuredData);
+---
+
+<script type="application/ld+json" set:html={jsonLd} />
+

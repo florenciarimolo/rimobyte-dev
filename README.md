@@ -1,4 +1,4 @@
-# RymoByte Portfolio
+# RimoByte Portfolio
 
 A modern, responsive portfolio website for Florencia Rímolo - Full Stack Developer, built with Astro, TypeScript, and TailwindCSS.
 
@@ -154,6 +154,42 @@ The Astro configuration is in `astro.config.mjs` and includes:
 - TailwindCSS integration
 - React integration
 - TypeScript checking
+
+### Favicon Configuration
+
+Para que Google muestre correctamente el favicon, necesitas generar múltiples tamaños de tu favicon. La configuración actual requiere los siguientes archivos en la carpeta `public/`:
+
+- `favicon.ico` (16x16, 32x32, 48x48 - formato ICO tradicional)
+- `favicon-16x16.png` (16x16 pixels)
+- `favicon-32x32.png` (32x32 pixels)
+- `apple-touch-icon.png` (180x180 pixels para iOS)
+- `android-chrome-192x192.png` (192x192 pixels)
+- `android-chrome-512x512.png` (512x512 pixels)
+
+**Cómo generar los favicons:**
+
+1. **Usando herramientas online** (recomendado):
+   - Visita [RealFaviconGenerator](https://realfavicongenerator.net/) o [Favicon.io](https://favicon.io/)
+   - Sube tu imagen original (preferiblemente 512x512 o mayor)
+   - Descarga el paquete generado
+   - Coloca todos los archivos en la carpeta `public/`
+
+2. **Usando herramientas de línea de comandos**:
+   ```bash
+   # Si tienes ImageMagick instalado
+   convert favicon.png -resize 16x16 favicon-16x16.png
+   convert favicon.png -resize 32x32 favicon-32x32.png
+   convert favicon.png -resize 180x180 apple-touch-icon.png
+   convert favicon.png -resize 192x192 android-chrome-192x192.png
+   convert favicon.png -resize 512x512 android-chrome-512x512.png
+   ```
+
+3. **Verificar que Google indexe el favicon**:
+   - Después de desplegar, usa [Google Search Console](https://search.google.com/search-console)
+   - Solicita una nueva indexación de tu sitio
+   - Puede tomar varios días para que Google actualice el favicon en los resultados de búsqueda
+
+**Nota:** El archivo `site.webmanifest` ya está configurado y apunta a todos estos archivos.
 
 ## 📄 License
 

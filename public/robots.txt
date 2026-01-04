@@ -1,2 +1,14 @@
 User-agent: *
-Allow: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rimobyte.dev/sitemap-index.xml
+Sitemap: https://rimobyte.dev/sitemap-0.xml
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /404
+
+# Allow all other pages
+Allow: /
+Allow: /en/
