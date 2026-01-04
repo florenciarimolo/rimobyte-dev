@@ -168,9 +168,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Email**: florencia@rimobyte.dev
-- **GitHub**: [@rimobyte](https://github.com/rimobyte)
-- **LinkedIn**: [Florencia Rímolo](https://linkedin.com/in/florencia-rimolo)
+- **Email**: info@rimobyte.com
+- **GitHub**: [@rimobyte](https://github.com/florenciarimolo)
+- **LinkedIn**: [Florencia Rímolo](https://linkedin.com/in/florencia-rimolofigueira)
 
 ## 🙏 Acknowledgments
 
