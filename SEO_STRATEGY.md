@@ -61,7 +61,7 @@ Implementados 3 tipos de Schema.org:
 
 ### 1. Google Search Console
 1. Verificar propiedad del sitio
-2. Enviar sitemap: `https://rimobyte.dev/sitemap-index.xml`
+2. Enviar sitemap: `https://rimobyte.com/sitemap-index.xml`
 3. Solicitar indexación de páginas principales
 4. Monitorear rendimiento y keywords
 

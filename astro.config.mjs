@@ -23,7 +23,7 @@ export default defineConfig({
     })
   ],
   output: "server",
-  site: 'https://rimobyte.dev',
+  site: 'https://rimobyte.com',
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],

@@ -5,7 +5,7 @@ export interface Props {
 }
 
 const { type, locale = 'es' } = Astro.props;
-const siteUrl = 'https://rimobyte.dev';
+const siteUrl = 'https://rimobyte.com';
 const currentUrl = `${siteUrl}${locale === 'en' ? '/en' : ''}`;
 
 let structuredData: any = {};
@@ -25,10 +25,10 @@ if (type === 'person') {
     },
     "sameAs": [
       "https://github.com/rimobyte",
-      "https://linkedin.com/in/florencia-rimolo",
+      "https://linkedin.com/in/florencia-rimolofigueira",
       "https://x.com/rimobyte"
     ],
-    "email": "florencia@rimobyte.dev",
+    "email": "info@rimobyte.com",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "ES",
@@ -86,7 +86,7 @@ if (type === 'person') {
       "@type": "Person",
       "name": "Florencia Rímolo",
       "jobTitle": locale === 'es' ? "Desarrolladora Full Stack" : "Full Stack Developer",
-      "email": "florencia@rimobyte.dev"
+      "email": "info@rimobyte.com"
     },
     "areaServed": {
       "@type": "Country",
