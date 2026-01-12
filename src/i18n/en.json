@@ -256,7 +256,8 @@
       "title": "WordPress freelance developer for businesses",
       "subtitle": "I work directly with you to design and develop WordPress sites optimized for performance, SEO and long-term maintenance, designed to last, scale, and not depend on agencies.",
       "localSeo": "I work with businesses in {city} and remotely throughout Spain.",
-      "localSeoDefault": "I work with businesses in Barcelona and remotely throughout Spain.",
+      "localSeoInternational": "Working remotely with businesses in {city} and internationally.",
+      "localSeoDefault": "Working remotely with businesses in Spain and internationally.",
       "cta": {
         "contact": "Get In Touch",
         "viewProjects": "View Projects"
@@ -378,7 +379,8 @@
       "title": "WordPress website migration and rescue without depending on agencies",
       "subtitle": "I help you regain control of your WordPress website, migrate it safely and leave it ready so you can manage it without technical blocks.",
       "localSeo": "I work with businesses in {city} and remotely throughout Spain.",
-      "localSeoDefault": "I work with businesses in Barcelona and remotely throughout Spain.",
+      "localSeoInternational": "Working remotely with businesses in {city} and internationally.",
+      "localSeoDefault": "Working remotely with businesses in Spain and internationally.",
       "cta": {
         "contact": "Tell me your case",
         "viewProjects": "View projects"

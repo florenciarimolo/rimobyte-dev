@@ -1,51 +1,70 @@
 ---
+import type { CityInfo } from '@/constants/cities';
+
 export interface Props {
   url: string;
   city: string | null;
+  cityInfo?: CityInfo | null;
 }
 
-const { url, city } = Astro.props;
+const { url, city, cityInfo } = Astro.props;
 const siteUrl = 'https://rimobyte.com';
+
+// Determine if this is an international city (non-Spain)
+const isInternational = cityInfo && cityInfo.country !== 'Spain';
 
 let structuredData: any = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": city 
-    ? `Desarrolladora WordPress freelance en ${city}`
+    ? (isInternational 
+        ? `WordPress freelance developer in ${city}`
+        : `Desarrolladora WordPress freelance en ${city}`)
     : "Desarrolladora WordPress freelance",
   "description": city
-    ? `Servicios de desarrollo WordPress freelance en ${city} y en remoto en toda España. Desarrollo de sitios web profesionales, e-commerce y mantenimiento.`
+    ? (isInternational
+        ? `WordPress freelance development services in ${city} and internationally. Professional website development, e-commerce and maintenance.`
+        : `Servicios de desarrollo WordPress freelance en ${city} y en remoto en toda España. Desarrollo de sitios web profesionales, e-commerce y mantenimiento.`)
     : "Servicios de desarrollo WordPress freelance para negocios profesionales. Desarrollo de sitios web, e-commerce y mantenimiento. Trabajo directo sin intermediarios.",
   "url": url,
   "image": `${siteUrl}/assets/images/programadora-web.webp`,
   "provider": {
     "@type": "Person",
     "name": "Florencia Rímolo",
-    "jobTitle": "Desarrolladora WordPress freelance",
+    "jobTitle": isInternational ? "WordPress freelance developer" : "Desarrolladora WordPress freelance",
     "email": "info@rimobyte.com"
   },
-  "areaServed": city
+  "areaServed": city && cityInfo
     ? [
         {
           "@type": "City",
-          "name": city
+          "name": city,
+          "addressCountry": cityInfo.countryCode
         },
         {
           "@type": "Country",
-          "name": "Spain"
+          "name": cityInfo.country
         }
       ]
     : {
       "@type": "Country",
       "name": "Spain"
     },
-  "serviceType": [
-    "Desarrollo WordPress",
-    "Desarrollo de sitios web corporativos",
-    "Desarrollo de e-commerce",
-    "Mantenimiento WordPress",
-    "Migraciones WordPress"
-  ],
+  "serviceType": isInternational
+    ? [
+        "WordPress Development",
+        "Corporate Website Development",
+        "E-commerce Development",
+        "WordPress Maintenance",
+        "WordPress Migrations"
+      ]
+    : [
+        "Desarrollo WordPress",
+        "Desarrollo de sitios web corporativos",
+        "Desarrollo de e-commerce",
+        "Mantenimiento WordPress",
+        "Migraciones WordPress"
+      ],
   "jobLocationType": "TELECOMMUTE",
   "priceRange": "$$"
 };

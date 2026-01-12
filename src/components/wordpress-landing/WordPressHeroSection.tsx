@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { getTranslation } from '@/i18n';
+import type { CityInfo } from '@/constants/cities';
 
 // Declare UnicornStudio types
 declare global {
@@ -13,13 +14,25 @@ declare global {
 
 interface WordPressHeroSectionProps {
   cityName?: string;
+  cityInfo?: CityInfo | null;
   translations: any;
 }
 
-const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, translations }) => {
-  const localSeoText = cityName 
-    ? getTranslation(translations, 'wordpressLanding.hero.localSeo').replace('{city}', cityName)
-    : getTranslation(translations, 'wordpressLanding.hero.localSeoDefault');
+const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, cityInfo, translations }) => {
+  // For non-city pages, use general remote wording
+  // For international cities (non-Spain), use international wording
+  // For Spanish cities, use local wording
+  let localSeoText: string;
+  if (!cityName) {
+    localSeoText = getTranslation(translations, 'wordpressLanding.hero.localSeoDefault');
+  } else if (cityInfo && cityInfo.country !== 'Spain') {
+    // International city - use international wording
+    localSeoText = getTranslation(translations, 'wordpressLanding.hero.localSeoInternational')?.replace('{city}', cityName) 
+      || getTranslation(translations, 'wordpressLanding.hero.localSeo').replace('{city}', cityName);
+  } else {
+    // Spanish city - use local wording
+    localSeoText = getTranslation(translations, 'wordpressLanding.hero.localSeo').replace('{city}', cityName);
+  }
 
   useEffect(() => {
     // Ensure Unicorn Studio initializes (script loads from MainLayout.astro)

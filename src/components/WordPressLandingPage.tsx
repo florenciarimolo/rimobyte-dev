@@ -23,13 +23,16 @@ declare global {
   }
 }
 
+import type { CityInfo } from '@/constants/cities';
+
 interface WordPressLandingPageProps {
   cityName?: string;
+  cityInfo?: CityInfo | null;
   recaptchaSiteKey?: string;
   initialLocale?: typeof LANG.ENGLISH | typeof LANG.SPANISH;
 }
 
-const WordPressLandingPage: React.FC<WordPressLandingPageProps> = ({ cityName, recaptchaSiteKey, initialLocale = LANG.SPANISH }) => {
+const WordPressLandingPage: React.FC<WordPressLandingPageProps> = ({ cityName, cityInfo, recaptchaSiteKey, initialLocale = LANG.SPANISH }) => {
   const [currentLang, setCurrentLang] = React.useState<typeof LANG.ENGLISH | typeof LANG.SPANISH>(initialLocale);
   const translations = React.useMemo(() => getI18N({ currentLocale: currentLang }), [currentLang]);
 
@@ -70,7 +73,7 @@ const WordPressLandingPage: React.FC<WordPressLandingPageProps> = ({ cityName, r
         />
         
         <main className="relative bg-black" style={{ position: 'relative' }}>
-          <WordPressHeroSection cityName={cityName} translations={translations} />
+          <WordPressHeroSection cityName={cityName} cityInfo={cityInfo} translations={translations} />
           <WordPressProblemSection translations={translations} />
           <WordPressSolutionSection translations={translations} />
           <WordPressServicesSection translations={translations} />

@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { SITE_URL } from '@/constants';
-import { allowedCities } from '@/constants/cities';
+import { getAllowedCities } from '@/constants/cities';
 import { LANG, LANG_PREFIXES } from '@/i18n/index';
 
 // Generate sitemap.xml at build time
@@ -22,8 +22,12 @@ export const GET: APIRoute = ({ request }) => {
   const urls: SitemapUrl[] = [];
 
   // Helper function to add URL with language prefix
-  const addUrl = (path: string, priority: string, changefreq: string = 'monthly') => {
-    [LANG_PREFIXES.SPANISH, LANG_PREFIXES.ENGLISH].forEach(prefix => {
+  const addUrl = (path: string, priority: string, changefreq: string = 'monthly', lang?: 'es' | 'en') => {
+    const prefixes = lang 
+      ? [lang === 'es' ? LANG_PREFIXES.SPANISH : LANG_PREFIXES.ENGLISH]
+      : [LANG_PREFIXES.SPANISH, LANG_PREFIXES.ENGLISH];
+    
+    prefixes.forEach(prefix => {
       const fullPath = path === '/' ? `${prefix}/` : `${prefix}${path}`;
       urls.push({
         loc: `${baseUrl}${fullPath}`,
@@ -41,14 +45,25 @@ export const GET: APIRoute = ({ request }) => {
   addUrl('/desarrolladora-wordpress-freelance', '0.9');
   addUrl('/migrar-web-agencia-freelance', '0.9');
 
-  // City landing pages - WordPress
-  Object.keys(allowedCities).forEach(city => {
-    addUrl(`/desarrolladora-wordpress-freelance/${city}`, '0.8');
+  // City landing pages - WordPress (Spanish cities for ES, all cities for EN)
+  const spanishCities = getAllowedCities('es');
+  const englishCities = getAllowedCities('en');
+  
+  Object.keys(spanishCities).forEach(city => {
+    addUrl(`/desarrolladora-wordpress-freelance/${city}`, '0.8', 'monthly', 'es');
+  });
+  
+  Object.keys(englishCities).forEach(city => {
+    addUrl(`/desarrolladora-wordpress-freelance/${city}`, '0.8', 'monthly', 'en');
   });
 
-  // City landing pages - Migration
-  Object.keys(allowedCities).forEach(city => {
-    addUrl(`/migrar-web-agencia-freelance/${city}`, '0.8');
+  // City landing pages - Migration (Spanish cities for ES, all cities for EN)
+  Object.keys(spanishCities).forEach(city => {
+    addUrl(`/migrar-web-agencia-freelance/${city}`, '0.8', 'monthly', 'es');
+  });
+  
+  Object.keys(englishCities).forEach(city => {
+    addUrl(`/migrar-web-agencia-freelance/${city}`, '0.8', 'monthly', 'en');
   });
 
 

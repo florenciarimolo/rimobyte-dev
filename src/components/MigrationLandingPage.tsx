@@ -12,6 +12,7 @@ import ContactSection from './ContactSection';
 import Footer from './Footer';
 import { getI18N, LANG, LANG_PREFIXES } from '@/i18n';
 import { initScrollAnimations } from './wordpress-landing/scroll-animations';
+import type { CityInfo } from '@/constants/cities';
 
 // Declare UnicornStudio types
 declare global {
@@ -25,11 +26,12 @@ declare global {
 
 interface MigrationLandingPageProps {
   cityName?: string;
+  cityInfo?: CityInfo | null;
   recaptchaSiteKey?: string;
   initialLocale?: typeof LANG.ENGLISH | typeof LANG.SPANISH;
 }
 
-const MigrationLandingPage: React.FC<MigrationLandingPageProps> = ({ cityName, recaptchaSiteKey, initialLocale = LANG.SPANISH }) => {
+const MigrationLandingPage: React.FC<MigrationLandingPageProps> = ({ cityName, cityInfo, recaptchaSiteKey, initialLocale = LANG.SPANISH }) => {
   const [currentLang, setCurrentLang] = React.useState<typeof LANG.ENGLISH | typeof LANG.SPANISH>(initialLocale);
   const translations = React.useMemo(() => getI18N({ currentLocale: currentLang }), [currentLang]);
 
@@ -70,7 +72,7 @@ const MigrationLandingPage: React.FC<MigrationLandingPageProps> = ({ cityName, r
         />
         
         <main className="relative bg-black" style={{ position: 'relative' }}>
-          <MigrationHeroSection cityName={cityName} translations={translations} />
+          <MigrationHeroSection cityName={cityName} cityInfo={cityInfo} translations={translations} />
           <MigrationWhenSection translations={translations} />
           <MigrationWhatSection translations={translations} />
           <MigrationProcessSection translations={translations} />

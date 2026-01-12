@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { getTranslation } from '@/i18n';
+import type { CityInfo } from '@/constants/cities';
 
 // Declare UnicornStudio types
 declare global {
@@ -13,13 +14,25 @@ declare global {
 
 interface MigrationHeroSectionProps {
   cityName?: string;
+  cityInfo?: CityInfo | null;
   translations: any;
 }
 
-const MigrationHeroSection: React.FC<MigrationHeroSectionProps> = ({ cityName, translations }) => {
-  const localSeoText = cityName 
-    ? getTranslation(translations, 'migrationLanding.hero.localSeo').replace('{city}', cityName)
-    : getTranslation(translations, 'migrationLanding.hero.localSeoDefault');
+const MigrationHeroSection: React.FC<MigrationHeroSectionProps> = ({ cityName, cityInfo, translations }) => {
+  // For non-city pages, use general remote wording
+  // For international cities (non-Spain), use international wording
+  // For Spanish cities, use local wording
+  let localSeoText: string;
+  if (!cityName) {
+    localSeoText = getTranslation(translations, 'migrationLanding.hero.localSeoDefault');
+  } else if (cityInfo && cityInfo.country !== 'Spain') {
+    // International city - use international wording
+    localSeoText = getTranslation(translations, 'migrationLanding.hero.localSeoInternational')?.replace('{city}', cityName) 
+      || getTranslation(translations, 'migrationLanding.hero.localSeo').replace('{city}', cityName);
+  } else {
+    // Spanish city - use local wording
+    localSeoText = getTranslation(translations, 'migrationLanding.hero.localSeo').replace('{city}', cityName);
+  }
 
   useEffect(() => {
     // Ensure Unicorn Studio initializes (script loads from MainLayout.astro)
