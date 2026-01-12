@@ -7,7 +7,7 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ translations }) => {
   return (
-    <header className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+    <header className="relative min-h-screen flex items-center justify-center py-20">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-blue-100/20 to-purple-100/20 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
         <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%239C92AC%22 fill-opacity=%220.05%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')" }}></div>
@@ -22,15 +22,28 @@ const HeroSection: React.FC<HeroSectionProps> = ({ translations }) => {
       </div>
 
       <div className="flex flex-col items-center relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="w-[200px] h-[200px] rounded-full mb-4 p-1 bg-gradient-to-r from-blue-500 to-purple-500">
-          <img 
-            src="assets/images/programadora-web.webp" 
-            alt={getTranslation(translations, 'hero.tagline') + ' - Florencia Rímolo'} 
-            className="w-full h-full rounded-full object-cover"
-            width="200"
-            height="200"
-            loading="eager"
-          />
+        <div className="relative mb-4">
+          <div className="w-[200px] h-[200px] rounded-full p-1 bg-gradient-to-r from-blue-500 to-purple-500 relative z-0">
+            <img 
+              src="assets/images/programadora-web.webp" 
+              alt={getTranslation(translations, 'hero.tagline') + ' - Florencia Rímolo'} 
+              className="w-full h-full rounded-full object-cover relative z-0"
+              width="200"
+              height="200"
+              loading="eager"
+            />
+          </div>
+          {/* Available Pill */}
+          <div 
+            className="absolute top-2 right-0 translate-x-1/2 -translate-y-1/2 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-green-500/10 dark:bg-green-500/5 text-green-600 dark:text-green-300/90 border border-green-500/30 dark:border-green-500/20 shadow-[0_0_15px_-5px_rgba(34,197,94,0.3)] hover:bg-green-500/20 dark:hover:bg-green-500/10 cursor-default whitespace-nowrap z-50"
+            style={{ position: 'absolute' }}
+          >
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400"></span>
+            </span>
+            {getTranslation(translations, 'hero.available') || 'Disponible'}
+          </div>
         </div>
         <h1 className="text-5xl md:text-7xl font-bold mb-6">
           <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">

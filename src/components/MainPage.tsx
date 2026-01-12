@@ -49,7 +49,7 @@ const MainPage: React.FC<MainPageProps> = ({ recaptchaSiteKey }) => {
 
   return (
     <div id="app" className="min-h-screen">
-      <Navbar currentLang={currentLang} onLanguageChange={handleLanguageChange} />
+      <Navbar currentLang={currentLang} onLanguageChange={handleLanguageChange} translations={translations} />
       
       <main>
         <HeroSection translations={translations} />

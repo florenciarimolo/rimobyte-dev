@@ -4,10 +4,18 @@
   },
   "hero": {
     "tagline": "Desarrolladora Full Stack apasionada por crear experiencias digitales innovadoras",
+    "available": "Disponible",
     "cta": {
       "viewWork": "Ver Mi Trabajo",
       "getInTouch": "Contactar"
     }
+  },
+  "navbar": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "templates": "Templates",
+    "contact": "Contacto"
   },
   "sections": {
     "about": {

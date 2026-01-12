@@ -14,7 +14,7 @@ const NotFoundPage: React.FC = () => {
   return (
     <div id="app" className="min-h-screen">
       {/* Navbar */}
-      <Navbar currentLang={currentLang} onLanguageChange={handleLanguageChange} />
+      <Navbar currentLang={currentLang} onLanguageChange={handleLanguageChange} translations={translations} />
 
       {/* 404 Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

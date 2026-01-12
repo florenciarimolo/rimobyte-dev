@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
 import LanguageSwitcher from './LanguageSwitcher';
+import { getTranslation } from '../i18n';
 
 interface NavbarProps {
   currentLang: 'en' | 'es';
   onLanguageChange: (lang: 'en' | 'es') => void;
+  translations: any;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange }) => {
+const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translations }) => {
   const [activeSection, setActiveSection] = useState('about');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
 
   const navItems = [
-    { id: 'about', label: currentLang === 'en' ? 'About' : 'Sobre mí' },
-    { id: 'experience', label: currentLang === 'en' ? 'Experience' : 'Experiencia' },
-    { id: 'projects', label: currentLang === 'en' ? 'Projects' : 'Proyectos' },
-    { id: 'contact', label: currentLang === 'en' ? 'Contact' : 'Contacto' }
+    { id: 'about', label: getTranslation(translations, 'navbar.about') },
+    { id: 'experience', label: getTranslation(translations, 'navbar.experience') },
+    { id: 'projects', label: getTranslation(translations, 'navbar.projects') },
+    { id: 'templates', label: getTranslation(translations, 'navbar.templates') },
+    { id: 'contact', label: getTranslation(translations, 'navbar.contact') }
   ];
 
   useEffect(() => {
