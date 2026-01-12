@@ -55,13 +55,32 @@ const HeroSection: React.FC<HeroSectionProps> = ({ translations }) => {
         <nav className="flex flex-col sm:flex-row gap-4 justify-center" aria-label="Main navigation">
           <a
             href="#projects"
-            className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
+            className="group relative inline-flex overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.5)] focus:outline-none sm:w-auto text-base font-medium text-white w-full h-[54px] rounded-full px-8 items-center justify-center"
           >
-            {getTranslation(translations, 'hero.cta.viewWork')}
+            {/* Animated Border Beam - Using primary color (blue) */}
+            <div className="absolute inset-0 -z-20 rounded-full overflow-hidden p-[1px]">
+              <div className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0_300deg,#3b82f6_360deg)] animate-[beam-spin_3s_linear_infinite]"></div>
+              <div className="absolute inset-[1px] rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+            </div>
+
+            {/* Inner Background & Effects - Keep current gradient */}
+            <div className="overflow-hidden bg-gradient-to-r from-blue-500 to-purple-500 rounded-full absolute top-[2px] right-[2px] bottom-[2px] left-[2px]">
+              {/* Gradient Background Overlay */}
+              <div className="bg-gradient-to-b from-blue-900/20 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
+
+
+              {/* Blue Glow on Hover */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2 bg-blue-500/20 blur-2xl rounded-full pointer-events-none transition-colors duration-500 group-hover:bg-blue-500/40"></div>
+            </div>
+
+            {/* Content */}
+            <span className="transition-colors group-hover:text-white font-semibold text-white/90 tracking-tight z-10 relative">
+              {getTranslation(translations, 'hero.cta.viewWork')}
+            </span>
           </a>
           <a
             href="#contact"
-            className="px-8 py-3 border border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-all duration-300"
+            className="group flex items-center justify-center gap-2 px-8 py-3.5 text-base font-medium text-white bg-transparent border border-blue-500 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5),0_0_10px_rgba(168,85,247,0.3),inset_0_0_10px_rgba(59,130,246,0.2)] hover:bg-blue-500/10 hover:border-blue-400 hover:shadow-[0_0_35px_rgba(59,130,246,0.6),0_0_20px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(59,130,246,0.4)] hover:scale-[1.02] transition-all duration-300"
           >
             {getTranslation(translations, 'hero.cta.getInTouch')}
           </a>
