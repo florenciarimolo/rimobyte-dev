@@ -37,6 +37,12 @@ export const GET: APIRoute = ({ request }) => {
       lastmod: currentDate,
       changefreq: 'monthly',
       priority: '0.9'
+    },
+    {
+      loc: `${baseUrl}/migrar-web-agencia-freelance`,
+      lastmod: currentDate,
+      changefreq: 'monthly',
+      priority: '0.9'
     }
   ];
 
@@ -59,6 +65,17 @@ export const GET: APIRoute = ({ request }) => {
       priority: '0.8'
     });
   });
+
+  // Add migration city landing pages for Spanish
+  Object.keys(allowedCities).forEach(city => {
+    urls.push({
+      loc: `${baseUrl}/migrar-web-agencia-freelance/${city}`,
+      lastmod: currentDate,
+      changefreq: 'monthly',
+      priority: '0.8'
+    });
+  });
+
 
   // Generate XML sitemap
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

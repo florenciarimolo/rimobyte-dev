@@ -363,5 +363,122 @@
         }
       }
     }
+  },
+  "migrationLanding": {
+    "navbar": {
+      "whenService": "When it makes sense",
+      "whatI Do": "What I do",
+      "process": "Process",
+      "benefits": "Benefits",
+      "projects": "Projects",
+      "faq": "Frequently asked questions",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "WordPress website migration and rescue without depending on agencies",
+      "subtitle": "I help you regain control of your WordPress website, migrate it safely and leave it ready so you can manage it without technical blocks.",
+      "localSeo": "I work with businesses in {city} and remotely throughout Spain.",
+      "localSeoDefault": "I work with businesses in Barcelona and remotely throughout Spain.",
+      "cta": {
+        "contact": "Tell me your case",
+        "viewProjects": "View projects"
+      }
+    },
+    "when": {
+      "intro": "This service is for you if you find yourself in any of these situations:",
+      "items": {
+        "agencyDependency": {
+          "title": "Agency dependency",
+          "text": "You don't have full control of your website or depend on third parties for any changes."
+        },
+        "hardToMaintain": {
+          "title": "Hard to maintain website",
+          "text": "The website works, but no one wants to touch it for fear of breaking something."
+        },
+        "performanceIssues": {
+          "title": "Performance and technical issues",
+          "text": "The website is slow, gives errors or is not well updated."
+        },
+        "needChange": {
+          "title": "Need for a clear change",
+          "text": "You want a simpler, more stable and understandable solution."
+        }
+      }
+    },
+    "what": {
+      "intro": "A migration is not just moving files. It's understanding what's there, what's unnecessary and how to leave the website ready for the future.",
+      "checklist": {
+        "audit": "Initial technical audit of current state",
+        "review": "Review of access, hosting and structure",
+        "migration": "Safe migration without content loss",
+        "cleanup": "Cleaning of unnecessary dependencies",
+        "base": "Clear technical base for future maintenance"
+      }
+    },
+    "process": {
+      "steps": {
+        "analysis": {
+          "title": "Initial analysis",
+          "description": "I review the current state of the website, access and risks before touching anything."
+        },
+        "proposal": {
+          "title": "Migration proposal",
+          "description": "I define a clear strategy explaining what is maintained and what is improved."
+        },
+        "migration": {
+          "title": "Migration and validation",
+          "description": "I perform the migration in phases and validate that everything works correctly."
+        },
+        "delivery": {
+          "title": "Delivery and documentation",
+          "description": "I leave the website ready and documented so you don't have to depend on third parties again."
+        }
+      }
+    },
+    "benefits": {
+      "intro": "The goal is not just to migrate, but to leave a better website than before.",
+      "items": {
+        "control": {
+          "title": "Real control",
+          "text": "Clear access and understandable structure."
+        },
+        "stability": {
+          "title": "Stability",
+          "text": "Fewer errors, fewer unnecessary dependencies."
+        },
+        "maintenance": {
+          "title": "Easy maintenance",
+          "text": "A base designed so you can continue working without blocks."
+        }
+      }
+    },
+    "projects": {
+      "context": "Some projects I've worked on include migrations, refactoring and technical improvements on WordPress."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "contentLoss": {
+          "question": "Do I lose content during migration?",
+          "answer": "The migration is designed to maintain existing content and improve the technical base."
+        },
+        "changeHosting": {
+          "question": "Can I change hosting or provider?",
+          "answer": "Yes, the migration can include a hosting change if necessary."
+        },
+        "agencyWebs": {
+          "question": "Do you work with websites made by agencies?",
+          "answer": "Yes, this service is designed precisely for that type of situation."
+        },
+        "canMaintain": {
+          "question": "Will I be able to maintain the website myself afterwards?",
+          "answer": "Yes, the website is delivered with a clear and maintainable structure."
+        }
+      }
+    },
+    "cta": {
+      "title": "If your WordPress website causes you more problems than peace of mind, let's talk.",
+      "button": "Tell me your case"
+    }
   }
 }

@@ -1,0 +1,75 @@
+---
+export interface Props {
+  url: string;
+  city: string | null;
+  locale?: 'es' | 'en';
+}
+
+const { url, city, locale = 'es' } = Astro.props;
+const siteUrl = 'https://rimobyte.com';
+
+const isEnglish = locale === 'en';
+
+let structuredData: any = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": city 
+    ? (isEnglish 
+        ? `WordPress website migration and rescue in ${city}`
+        : `Migración y rescate de webs WordPress en ${city}`)
+    : (isEnglish 
+        ? "WordPress website migration and rescue"
+        : "Migración y rescate de webs WordPress"),
+  "description": city
+    ? (isEnglish
+        ? `WordPress website migration and rescue services in ${city} and remotely throughout Spain. Regain control of your WordPress website without depending on agencies.`
+        : `Servicios de migración y rescate de webs WordPress en ${city} y en remoto en toda España. Recupera el control de tu web WordPress sin depender de agencias.`)
+    : (isEnglish
+        ? "WordPress website migration and rescue services. I help you regain control of your WordPress website, migrate it safely and leave it ready so you can manage it without technical blocks."
+        : "Servicios de migración y rescate de webs WordPress. Ayudo a recuperar el control de tu web, migrarla con seguridad y dejarla preparada para que puedas gestionarla sin bloqueos técnicos."),
+  "url": url,
+  "image": `${siteUrl}/assets/images/programadora-web.webp`,
+  "provider": {
+    "@type": "Person",
+    "name": "Florencia Rímolo",
+    "jobTitle": isEnglish ? "WordPress freelance developer" : "Desarrolladora WordPress freelance",
+    "email": "info@rimobyte.com"
+  },
+  "areaServed": city
+    ? [
+        {
+          "@type": "City",
+          "name": city
+        },
+        {
+          "@type": "Country",
+          "name": "Spain"
+        }
+      ]
+    : {
+      "@type": "Country",
+      "name": "Spain"
+    },
+  "serviceType": isEnglish
+    ? [
+        "WordPress Migration",
+        "WordPress Website Rescue",
+        "Migration from Agencies",
+        "WordPress Refactoring",
+        "WordPress Technical Improvements"
+      ]
+    : [
+        "Migración WordPress",
+        "Rescate de webs WordPress",
+        "Migración desde agencias",
+        "Refactorización WordPress",
+        "Mejoras técnicas WordPress"
+      ],
+  "jobLocationType": "TELECOMMUTE",
+  "priceRange": "$$"
+};
+
+const jsonLd = JSON.stringify(structuredData);
+---
+
+<script type="application/ld+json" set:html={jsonLd} is:inline />

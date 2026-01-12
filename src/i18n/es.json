@@ -364,5 +364,122 @@
         }
       }
     }
+  },
+  "migrationLanding": {
+    "navbar": {
+      "whenService": "Cuándo tiene sentido",
+      "whatI Do": "Qué hago",
+      "process": "Proceso",
+      "benefits": "Beneficios",
+      "projects": "Proyectos",
+      "faq": "Preguntas frecuentes",
+      "contact": "Contacto"
+    },
+    "hero": {
+      "title": "Migración y rescate de webs WordPress sin depender de agencias",
+      "subtitle": "Ayudo a recuperar el control de tu web WordPress, migrarla con seguridad y dejarla preparada para que puedas gestionarla sin bloqueos técnicos.",
+      "localSeo": "Trabajo con negocios en {city} y en remoto en toda España.",
+      "localSeoDefault": "Trabajo con negocios en Barcelona y en remoto en toda España.",
+      "cta": {
+        "contact": "Cuéntame tu caso",
+        "viewProjects": "Ver proyectos"
+      }
+    },
+    "when": {
+      "intro": "Este servicio es para ti si te encuentras en alguna de estas situaciones:",
+      "items": {
+        "agencyDependency": {
+          "title": "Dependencia de una agencia",
+          "text": "No tienes control total de tu web o dependes de terceros para cualquier cambio."
+        },
+        "hardToMaintain": {
+          "title": "Web difícil de mantener",
+          "text": "La web funciona, pero nadie quiere tocarla por miedo a romper algo."
+        },
+        "performanceIssues": {
+          "title": "Rendimiento y problemas técnicos",
+          "text": "La web es lenta, da errores o no está bien actualizada."
+        },
+        "needChange": {
+          "title": "Necesidad de un cambio claro",
+          "text": "Quieres una solución más simple, estable y comprensible."
+        }
+      }
+    },
+    "what": {
+      "intro": "Una migración no es solo mover archivos. Es entender qué hay, qué sobra y cómo dejar la web preparada para el futuro.",
+      "checklist": {
+        "audit": "Auditoría técnica inicial del estado actual",
+        "review": "Revisión de accesos, hosting y estructura",
+        "migration": "Migración segura sin pérdida de contenido",
+        "cleanup": "Limpieza de dependencias innecesarias",
+        "base": "Base técnica clara para mantenimiento futuro"
+      }
+    },
+    "process": {
+      "steps": {
+        "analysis": {
+          "title": "Análisis inicial",
+          "description": "Reviso el estado actual de la web, accesos y riesgos antes de tocar nada."
+        },
+        "proposal": {
+          "title": "Propuesta de migración",
+          "description": "Defino una estrategia clara explicando qué se mantiene y qué se mejora."
+        },
+        "migration": {
+          "title": "Migración y validación",
+          "description": "Realizo la migración por fases y valido que todo funcione correctamente."
+        },
+        "delivery": {
+          "title": "Entrega y documentación",
+          "description": "Dejo la web lista y documentada para que no vuelvas a depender de terceros."
+        }
+      }
+    },
+    "benefits": {
+      "intro": "El objetivo no es solo migrar, sino dejar una web mejor que antes.",
+      "items": {
+        "control": {
+          "title": "Control real",
+          "text": "Accesos claros y estructura comprensible."
+        },
+        "stability": {
+          "title": "Estabilidad",
+          "text": "Menos errores, menos dependencias innecesarias."
+        },
+        "maintenance": {
+          "title": "Facilidad de mantenimiento",
+          "text": "Una base pensada para que puedas seguir trabajando sin bloqueos."
+        }
+      }
+    },
+    "projects": {
+      "context": "Algunos proyectos en los que he trabajado incluyen migraciones, refactorizaciones y mejoras técnicas sobre WordPress."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": {
+        "contentLoss": {
+          "question": "¿Pierdo contenido durante la migración?",
+          "answer": "La migración se plantea para mantener el contenido existente y mejorar la base técnica."
+        },
+        "changeHosting": {
+          "question": "¿Puedo cambiar de hosting o proveedor?",
+          "answer": "Sí, la migración puede incluir cambio de hosting si es necesario."
+        },
+        "agencyWebs": {
+          "question": "¿Trabajas con webs hechas por agencias?",
+          "answer": "Sí, este servicio está pensado precisamente para ese tipo de situaciones."
+        },
+        "canMaintain": {
+          "question": "¿Después podré mantener la web yo?",
+          "answer": "Sí, la web se entrega con una estructura clara y mantenible."
+        }
+      }
+    },
+    "cta": {
+      "title": "Si tu web WordPress te genera más problemas que tranquilidad, hablemos.",
+      "button": "Cuéntame tu caso"
+    }
   }
 }
