@@ -1,5 +1,15 @@
 import { ImageResponse } from '@vercel/og';
 import type { APIRoute } from 'astro';
+import { OGImageComponent } from '@/components/og-image-component';
+import React from 'react';
+
+// FontOptions type for @vercel/og
+type FontOptions = {
+  name: string;
+  data: ArrayBuffer;
+  style?: 'normal' | 'italic';
+  weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+};
 
 // Load Inter font from Google Fonts
 // Using Inter Regular (400), Medium (500), and SemiBold (600) from Google Fonts CDN
@@ -119,12 +129,13 @@ export const GET: APIRoute = async ({ request }) => {
       loadInterFont(600),
     ]);
     
-    const fonts = [];
+    const fonts: FontOptions[] = [];
+    
     if (interRegular) {
       fonts.push({
         name: 'Inter',
         data: interRegular,
-        style: 'normal' as const,
+        style: 'normal',
         weight: 400,
       });
     }
@@ -132,7 +143,7 @@ export const GET: APIRoute = async ({ request }) => {
       fonts.push({
         name: 'Inter',
         data: interMedium,
-        style: 'normal' as const,
+        style: 'normal',
         weight: 500,
       });
     }
@@ -140,85 +151,33 @@ export const GET: APIRoute = async ({ request }) => {
       fonts.push({
         name: 'Inter',
         data: interSemiBold,
-        style: 'normal' as const,
+        style: 'normal',
         weight: 600,
       });
     }
     
     return new ImageResponse(
-      (
-        <div
-          style={{
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            justifyContent: 'flex-start',
-            backgroundColor: bgColor,
-            padding: `${padding}px`,
-            fontFamily: fonts.length > 0 ? 'Inter, sans-serif' : 'system-ui, sans-serif',
-          }}
-        >
-          {/* Site Name */}
-          <div
-            style={{
-              fontSize: siteNameSize,
-              fontWeight: 500,
-              color: textMuted,
-              marginBottom: siteNameMarginBottom,
-            }}
-          >
-            RimoByte
-          </div>
-          
-          {/* Main Title */}
-          <div
-            style={{
-              fontSize: titleSize,
-              fontWeight: 600,
-              color: textWhite,
-              lineHeight: titleLineHeight,
-              marginBottom: titleMarginBottom,
-              maxWidth: maxTextWidth,
-              whiteSpace: 'pre-wrap',
-            }}
-          >
-            {truncatedTitle}
-          </div>
-          
-          {/* Optional Subtitle */}
-          {truncatedDescription && (
-            <div
-              style={{
-                fontSize: subtitleSize,
-                fontWeight: 400,
-                color: textGray,
-                lineHeight: subtitleLineHeight,
-                marginBottom: subtitleMarginBottom,
-                maxWidth: maxTextWidth,
-                whiteSpace: 'pre-wrap',
-              }}
-            >
-              {truncatedDescription}
-            </div>
-          )}
-          
-          {/* Optional Context Line */}
-          {contextLine && (
-            <div
-              style={{
-                fontSize: contextSize,
-                fontWeight: 400,
-                color: textMuted,
-                maxWidth: maxTextWidth,
-              }}
-            >
-              {contextLine}
-            </div>
-          )}
-        </div>
-      ),
+      React.createElement(OGImageComponent, {
+        truncatedTitle,
+        truncatedDescription,
+        contextLine,
+        bgColor,
+        padding,
+        fontFamily: fonts.length > 0 ? 'Inter, sans-serif' : 'system-ui, sans-serif',
+        siteNameSize,
+        textMuted,
+        siteNameMarginBottom,
+        titleSize,
+        textWhite,
+        titleLineHeight,
+        titleMarginBottom,
+        maxTextWidth,
+        subtitleSize,
+        textGray,
+        subtitleLineHeight,
+        subtitleMarginBottom,
+        contextSize,
+      }),
       {
         width,
         height,
