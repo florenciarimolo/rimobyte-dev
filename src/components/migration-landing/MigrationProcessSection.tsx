@@ -39,7 +39,8 @@ const MigrationProcessSection: React.FC<MigrationProcessSectionProps> = ({ trans
       description: getTranslation(translations, 'migrationLanding.process.steps.delivery.description'),
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655-5.653A2.548 2.548 0 0 0 4.5 9.25v10.5a2.552 2.552 0 0 0 2.265 2.565l11.434-2.717a2.548 2.548 0 0 0 2.265-2.565V9.25a2.548 2.548 0 0 0-2.265-2.565l-4.655 5.653" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 18H18a2.25 2.25 0 002.25-2.25V9.75A2.25 2.25 0 0018 7.5h-1.5m-9 3.75V18a2.25 2.25 0 002.25 2.25h6A2.25 2.25 0 0018 18V9.75a2.25 2.25 0 00-2.25-2.25h-6A2.25 2.25 0 007.5 9.75v.75m0 0H4.5m3 0h3m-3 0v-1.5m0 1.5v-1.5m3 1.5H7.5m0 0v-1.5m0 1.5H4.5" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75" />
         </svg>
       )
     }
@@ -65,7 +66,7 @@ const MigrationProcessSection: React.FC<MigrationProcessSectionProps> = ({ trans
               
               {/* Content - right */}
               <div className="flex-1 max-w-2xl">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
                   {step.title}
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">

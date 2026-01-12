@@ -8,7 +8,7 @@ import ProjectsSection from './ProjectsSection';
 import TemplatesSection from './TemplatesSection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
-import { getI18N, LANG } from '@/i18n';
+import { getI18N, LANG, LANG_PREFIXES } from '@/i18n';
 
 interface MainPageProps {
   recaptchaSiteKey?: string;
@@ -21,9 +21,11 @@ const MainPage: React.FC<MainPageProps> = ({ recaptchaSiteKey, initialLocale = L
 
   const handleLanguageChange = (lang: typeof LANG.ENGLISH | typeof LANG.SPANISH) => {
     setCurrentLang(lang);
-    // Navigate to the correct language version
-    const newPath = lang === LANG.ENGLISH ? '/en/' : '/';
-    if (window.location.pathname !== newPath) {
+    // Navigate to the correct language version with prefix
+    const currentPath = window.location.pathname;
+    const langPrefix = lang === LANG.ENGLISH ? LANG_PREFIXES.ENGLISH : LANG_PREFIXES.SPANISH;
+    const newPath = `${langPrefix}/`;
+    if (currentPath !== newPath) {
       window.location.href = newPath;
     }
   };

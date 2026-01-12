@@ -25,7 +25,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ translations }) => {
         <div className="relative mb-4">
           <div className="w-[200px] h-[200px] rounded-full p-1 bg-gradient-to-r from-blue-500 to-purple-500 relative z-0">
             <img 
-              src="assets/images/programadora-web.webp" 
+              src="/assets/images/programadora-web.webp" 
               alt={getTranslation(translations, 'hero.tagline') + ' - Florencia Rímolo'} 
               className="w-full h-full rounded-full object-cover relative z-0"
               width="200"

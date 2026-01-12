@@ -1,14 +1,16 @@
 ---
+import { LANG } from '@/i18n/index';
+
 export interface Props {
   url: string;
   city: string | null;
-  locale?: 'es' | 'en';
+  locale?: typeof LANG.ENGLISH | typeof LANG.SPANISH;
 }
 
-const { url, city, locale = 'es' } = Astro.props;
+const { url, city, locale = LANG.SPANISH } = Astro.props;
 const siteUrl = 'https://rimobyte.com';
 
-const isEnglish = locale === 'en';
+const isEnglish = locale === LANG.ENGLISH;
 
 let structuredData: any = {
   "@context": "https://schema.org",

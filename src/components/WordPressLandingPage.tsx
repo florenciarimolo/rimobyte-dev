@@ -10,7 +10,7 @@ import WordPressFAQSection from './wordpress-landing/WordPressFAQSection';
 import WordPressNavbar from './wordpress-landing/WordPressNavbar';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
-import { getI18N, LANG } from '@/i18n';
+import { getI18N, LANG, LANG_PREFIXES } from '@/i18n';
 import { initScrollAnimations } from './wordpress-landing/scroll-animations';
 
 // Declare UnicornStudio types
@@ -35,30 +35,21 @@ const WordPressLandingPage: React.FC<WordPressLandingPageProps> = ({ cityName, r
 
   const handleLanguageChange = (lang: typeof LANG.ENGLISH | typeof LANG.SPANISH) => {
     setCurrentLang(lang);
-    // Update URL - navigate to the correct language version
+    // Update URL - navigate to the correct language version with prefix
     const currentPath = window.location.pathname;
     let newPath = currentPath;
     
-    // Handle base landing page
-    if (currentPath === '/desarrolladora-wordpress-freelance' || currentPath.endsWith('/desarrolladora-wordpress-freelance')) {
-      newPath = lang === LANG.ENGLISH ? '/en/desarrolladora-wordpress-freelance' : '/desarrolladora-wordpress-freelance';
+    // Extract the path without language prefix
+    let pathWithoutLang = currentPath;
+    if (currentPath.startsWith(`${LANG_PREFIXES.ENGLISH}/`)) {
+      pathWithoutLang = currentPath.replace(LANG_PREFIXES.ENGLISH, '');
+    } else if (currentPath.startsWith(`${LANG_PREFIXES.SPANISH}/`)) {
+      pathWithoutLang = currentPath.replace(LANG_PREFIXES.SPANISH, '');
     }
-    // Handle city-specific pages
-    else if (currentPath.includes('/desarrolladora-wordpress-freelance/')) {
-      const cityPart = currentPath.split('/desarrolladora-wordpress-freelance/')[1];
-      if (lang === LANG.ENGLISH) {
-        newPath = `/en/desarrolladora-wordpress-freelance/${cityPart}`;
-      } else {
-        newPath = `/desarrolladora-wordpress-freelance/${cityPart}`;
-      }
-    }
-    // Handle English version
-    else if (currentPath.startsWith('/en/desarrolladora-wordpress-freelance')) {
-      if (lang === LANG.SPANISH) {
-        const cityPart = currentPath.replace('/en/desarrolladora-wordpress-freelance', '').replace(/^\//, '');
-        newPath = cityPart ? `/desarrolladora-wordpress-freelance/${cityPart}` : '/desarrolladora-wordpress-freelance';
-      }
-    }
+    
+    // Build new path with correct language prefix
+    const langPrefix = lang === LANG.ENGLISH ? LANG_PREFIXES.ENGLISH : LANG_PREFIXES.SPANISH;
+    newPath = pathWithoutLang === '/' ? `${langPrefix}/` : `${langPrefix}${pathWithoutLang}`;
     
     if (newPath !== currentPath) {
       window.location.href = newPath;

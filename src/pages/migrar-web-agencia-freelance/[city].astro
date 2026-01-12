@@ -1,50 +1,8 @@
 ---
-import MainLayout from '@/layouts/MainLayout.astro';
-import MigrationLandingPage from '@/components/MigrationLandingPage';
-import MigrationStructuredData from '@/components/migration-landing/MigrationStructuredData.astro';
-import { LANG } from '@/i18n/index';
-import { SITE_URL } from '@/constants';
-import { allowedCities, indexableCities } from '@/constants/cities';
+import { LANG_PREFIXES } from '@/i18n/index';
 
+// Redirect to Spanish version
 const { city } = Astro.params;
-
-// Validate city - must be lowercase and in whitelist
 const normalizedCity = city?.toLowerCase();
-const isValidCity = normalizedCity && normalizedCity in allowedCities;
-
-if (!isValidCity) {
-  return Astro.redirect('/404');
-}
-
-const cityName = allowedCities[normalizedCity!];
-const isIndexable = indexableCities.includes(normalizedCity!);
-
-// Default to Spanish, language can be changed in the component
-const locale = LANG.SPANISH;
-
-const currentUrl = `${SITE_URL}/migrar-web-agencia-freelance/${normalizedCity}`;
-const canonicalUrl = `${SITE_URL}/migrar-web-agencia-freelance`;
-const title = `Migración y rescate de webs WordPress en ${cityName} | RimoByte`;
-const description = `Servicios de migración y rescate de webs WordPress en ${cityName}. Recupera el control de tu web WordPress sin depender de agencias. Trabajo en remoto en toda España.`;
+return Astro.redirect(`${LANG_PREFIXES.SPANISH}/migrar-web-agencia-freelance/${normalizedCity}`, 301);
 ---
-
-<MainLayout 
-  title={title}
-  description={description}
-  locale={locale}
-  canonical={canonicalUrl}
->
-  <meta name="robots" content={isIndexable ? "index, follow" : "noindex, follow"} />
-  
-  <MigrationStructuredData 
-    url={currentUrl}
-    city={cityName}
-    locale="es"
-  />
-  <MigrationLandingPage 
-    client:only="react" 
-    cityName={cityName}
-    recaptchaSiteKey={import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
-    initialLocale={locale}
-  />
-</MainLayout>

@@ -5,12 +5,11 @@ import WordPressStructuredData from '@/components/wordpress-landing/WordPressStr
 import { LANG, LANG_PREFIXES } from '@/i18n/index';
 import { SITE_URL } from '@/constants';
 
-const locale = LANG.ENGLISH;
+const locale = LANG.SPANISH;
 
-const currentUrl = `${SITE_URL}${LANG_PREFIXES.ENGLISH}/desarrolladora-wordpress-freelance`;
-const canonicalUrl = `${SITE_URL}${LANG_PREFIXES.ENGLISH}/desarrolladora-wordpress-freelance`;
-const title = 'WordPress Freelance Developer for Professional Businesses | RimoByte';
-const description = 'WordPress freelance developer specialized in professional websites, e-commerce and maintenance. Direct work without intermediaries, optimized for performance and SEO.';
+const currentUrl = `${SITE_URL}${LANG_PREFIXES.SPANISH}/desarrolladora-wordpress-freelance`;
+const title = 'Desarrolladora WordPress freelance para negocios profesionales | RimoByte';
+const description = 'Desarrolladora WordPress freelance especializada en sitios web profesionales, e-commerce y mantenimiento. Trabajo directo sin intermediarios, optimizado para rendimiento y SEO.';
 
 // Get reCAPTCHA site key from environment variable
 const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
@@ -20,7 +19,7 @@ const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZ
   title={title}
   description={description}
   locale={locale}
-  canonical={canonicalUrl}
+  canonical={currentUrl}
 >
   <WordPressStructuredData 
     url={currentUrl}

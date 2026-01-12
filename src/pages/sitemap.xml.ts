@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { SITE_URL } from '@/constants';
 import { allowedCities } from '@/constants/cities';
+import { LANG, LANG_PREFIXES } from '@/i18n/index';
 
 // Generate sitemap.xml at build time
 export const GET: APIRoute = ({ request }) => {
@@ -11,69 +12,43 @@ export const GET: APIRoute = ({ request }) => {
   const requestUrl = new URL(request.url);
   const baseUrl = import.meta.env.APP_BASE_URL || SITE_URL || `${requestUrl.protocol}//${requestUrl.host}`;
   
-  // Base URLs to include
-  const urls: Array<{
+  type SitemapUrl = {
     loc: string;
     lastmod: string;
     changefreq: string;
     priority: string;
-  }> = [
-    // Homepage
-    {
-      loc: `${baseUrl}/`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '1.0'
-    },
-    // Main landing pages
-    {
-      loc: `${baseUrl}/desarrolladora-wordpress-freelance`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.9'
-    },
-    {
-      loc: `${baseUrl}/en/desarrolladora-wordpress-freelance`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.9'
-    },
-    {
-      loc: `${baseUrl}/migrar-web-agencia-freelance`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.9'
-    }
-  ];
+  };
 
-  // Add city landing pages for Spanish
-  Object.keys(allowedCities).forEach(city => {
-    urls.push({
-      loc: `${baseUrl}/desarrolladora-wordpress-freelance/${city}`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.8'
+  const urls: SitemapUrl[] = [];
+
+  // Helper function to add URL with language prefix
+  const addUrl = (path: string, priority: string, changefreq: string = 'monthly') => {
+    [LANG_PREFIXES.SPANISH, LANG_PREFIXES.ENGLISH].forEach(prefix => {
+      const fullPath = path === '/' ? `${prefix}/` : `${prefix}${path}`;
+      urls.push({
+        loc: `${baseUrl}${fullPath}`,
+        lastmod: currentDate,
+        changefreq,
+        priority
+      });
     });
+  };
+
+  // Homepage
+  addUrl('/', '1.0');
+
+  // Main landing pages
+  addUrl('/desarrolladora-wordpress-freelance', '0.9');
+  addUrl('/migrar-web-agencia-freelance', '0.9');
+
+  // City landing pages - WordPress
+  Object.keys(allowedCities).forEach(city => {
+    addUrl(`/desarrolladora-wordpress-freelance/${city}`, '0.8');
   });
 
-  // Add city landing pages for English
+  // City landing pages - Migration
   Object.keys(allowedCities).forEach(city => {
-    urls.push({
-      loc: `${baseUrl}/en/desarrolladora-wordpress-freelance/${city}`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.8'
-    });
-  });
-
-  // Add migration city landing pages for Spanish
-  Object.keys(allowedCities).forEach(city => {
-    urls.push({
-      loc: `${baseUrl}/migrar-web-agencia-freelance/${city}`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.8'
-    });
+    addUrl(`/migrar-web-agencia-freelance/${city}`, '0.8');
   });
 
 

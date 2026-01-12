@@ -1,0 +1,31 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import MigrationLandingPage from '@/components/MigrationLandingPage';
+import MigrationStructuredData from '@/components/migration-landing/MigrationStructuredData.astro';
+import { LANG, LANG_PREFIXES } from '@/i18n/index';
+import { SITE_URL } from '@/constants';
+
+const locale = LANG.ENGLISH;
+
+const currentUrl = `${SITE_URL}${LANG_PREFIXES.ENGLISH}/migrar-web-agencia-freelance`;
+const canonicalUrl = `${SITE_URL}${LANG_PREFIXES.ENGLISH}/migrar-web-agencia-freelance`;
+const title = 'WordPress Website Migration and Rescue Services | RimoByte';
+const description = 'WordPress website migration and rescue services. I help you regain control of your website, migrate it safely, and prepare it so you can manage it without technical blocks.';
+
+// Get reCAPTCHA site key from environment variable
+const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+---
+
+<MainLayout 
+  title={title}
+  description={description}
+  locale={locale}
+  canonical={canonicalUrl}
+>
+  <MigrationStructuredData 
+    url={currentUrl}
+    city={null}
+    locale={locale}
+  />
+  <MigrationLandingPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} initialLocale={locale} />
+</MainLayout>

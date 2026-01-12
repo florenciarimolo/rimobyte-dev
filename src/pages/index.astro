@@ -1,33 +1,6 @@
 ---
-import MainLayout from '@/layouts/MainLayout.astro';
-import MainPage from '@/components/MainPage';
+import { LANG_PREFIXES } from '@/i18n/index';
 
-// Get reCAPTCHA site key from environment variable
-// Site key is public and safe to expose to the client
-const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
-
-// Get current locale from URL or default to 'es'
-const locale = Astro.url.pathname.startsWith('/en') ? 'en' : 'es';
-
-// SEO optimized titles and descriptions based on keyword research
-const seoData = {
-  es: {
-    title: "Florencia Rímolo - Desarrolladora Full Stack | WordPress, Vue.js, Django | RimoByte",
-    description: "Desarrolladora Full Stack especializada en WordPress, Vue.js, Django y desarrollo de e-commerce. Portfolio de Florencia Rímolo con proyectos web, aplicaciones y servicios de desarrollo freelance en Barcelona, España."
-  },
-  en: {
-    title: "Florencia Rímolo - Full Stack Developer | WordPress, Vue.js, Django | RimoByte",
-    description: "Full Stack Developer specialized in WordPress, Vue.js, Django and e-commerce development. Florencia Rímolo's portfolio featuring web projects, applications and freelance development services in Barcelona, Spain."
-  }
-};
-
-const currentSeo = seoData[locale];
+// Redirect root to /es/ (Spanish default)
+return Astro.redirect(`${LANG_PREFIXES.SPANISH}/`, 301);
 ---
-
-<MainLayout 
-  title={currentSeo.title}
-  description={currentSeo.description}
-  locale={locale}
->
-  <MainPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} initialLocale={locale} />
-</MainLayout>

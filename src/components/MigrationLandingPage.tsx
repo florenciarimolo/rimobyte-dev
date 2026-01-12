@@ -10,7 +10,7 @@ import MigrationFAQSection from './migration-landing/MigrationFAQSection';
 import MigrationCTASection from './migration-landing/MigrationCTASection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
-import { getI18N, LANG } from '@/i18n';
+import { getI18N, LANG, LANG_PREFIXES } from '@/i18n';
 import { initScrollAnimations } from './wordpress-landing/scroll-animations';
 
 // Declare UnicornStudio types
@@ -35,7 +35,25 @@ const MigrationLandingPage: React.FC<MigrationLandingPageProps> = ({ cityName, r
 
   const handleLanguageChange = (lang: typeof LANG.ENGLISH | typeof LANG.SPANISH) => {
     setCurrentLang(lang);
-    // Language change doesn't change URL - just updates the component state
+    // Update URL - navigate to the correct language version with prefix
+    const currentPath = window.location.pathname;
+    let newPath = currentPath;
+    
+    // Extract the path without language prefix
+    let pathWithoutLang = currentPath;
+    if (currentPath.startsWith(`${LANG_PREFIXES.ENGLISH}/`)) {
+      pathWithoutLang = currentPath.replace(LANG_PREFIXES.ENGLISH, '');
+    } else if (currentPath.startsWith(`${LANG_PREFIXES.SPANISH}/`)) {
+      pathWithoutLang = currentPath.replace(LANG_PREFIXES.SPANISH, '');
+    }
+    
+    // Build new path with correct language prefix
+    const langPrefix = lang === LANG.ENGLISH ? LANG_PREFIXES.ENGLISH : LANG_PREFIXES.SPANISH;
+    newPath = pathWithoutLang === '/' ? `${langPrefix}/` : `${langPrefix}${pathWithoutLang}`;
+    
+    if (newPath !== currentPath) {
+      window.location.href = newPath;
+    }
   };
 
   useEffect(() => {

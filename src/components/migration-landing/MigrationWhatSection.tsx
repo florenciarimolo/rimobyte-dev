@@ -20,7 +20,7 @@ const MigrationWhatSection: React.FC<MigrationWhatSectionProps> = ({ translation
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Text */}
           <div>
-            <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-2xl text-gray-700 dark:text-gray-300 leading-relaxed">
               {getTranslation(translations, 'migrationLanding.what.intro')}
             </p>
           </div>

@@ -12,6 +12,12 @@ export const LANG_CODES = {
 	ENGLISH: 'en-US'
 } as const;
 
+// URL path prefixes for language routing
+export const LANG_PREFIXES = {
+	SPANISH: '/es',
+	ENGLISH: '/en'
+} as const;
+
 export const getI18N = ({
 	currentLocale = 'es',
 }: {

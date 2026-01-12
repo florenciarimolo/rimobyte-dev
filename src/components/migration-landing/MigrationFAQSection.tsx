@@ -54,7 +54,7 @@ const MigrationFAQSection: React.FC<MigrationFAQSectionProps> = ({ translations,
                 onClick={() => toggleFAQ(index)}
                 className="w-full p-6 text-left flex items-center justify-between"
               >
-                <h3 className="text-xl font-semibold text-white flex items-start gap-2" itemProp="name">
+                <h3 className="text-2xl font-semibold text-white flex items-start gap-2" itemProp="name">
                   <span className="text-purple-500 flex-shrink-0">{currentLang === LANG.SPANISH ? 'P:' : 'Q:'}</span>
                   <span>{faq.question}</span>
                 </h3>

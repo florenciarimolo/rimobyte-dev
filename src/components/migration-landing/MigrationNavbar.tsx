@@ -96,7 +96,7 @@ const MigrationNavbar: React.FC<MigrationNavbarProps> = ({ currentLang, onLangua
                 alt="RimoByte" 
                 className="w-8 h-8 transition-opacity duration-300" 
               />
-              <span className="text-white group-hover:text-gray-200 transition-colors duration-200 font-semibold text-xl">
+              <span className="text-white group-hover:text-gray-200 transition-colors duration-200 font-semibold text-2xl">
                 RimoByte
               </span>
             </a>

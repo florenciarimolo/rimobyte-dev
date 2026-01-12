@@ -42,7 +42,7 @@ const MigrationBenefitsSection: React.FC<MigrationBenefitsSectionProps> = ({ tra
     <section id="benefits" className="py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16">
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             {getTranslation(translations, 'migrationLanding.benefits.intro')}
           </p>
         </header>
@@ -57,7 +57,7 @@ const MigrationBenefitsSection: React.FC<MigrationBenefitsSectionProps> = ({ tra
               <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white mb-4">
                 {benefit.icon}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">
+              <h3 className="text-2xl font-semibold text-white mb-3">
                 {benefit.title}
               </h3>
               <p className="text-gray-300">

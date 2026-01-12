@@ -18,7 +18,7 @@ const MigrationProjectsSection: React.FC<MigrationProjectsSectionProps> = ({ tra
     <section id="projects" className="py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16">
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {getTranslation(translations, 'migrationLanding.projects.context')}
           </p>
         </header>
