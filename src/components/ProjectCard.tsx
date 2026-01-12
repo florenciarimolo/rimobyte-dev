@@ -1,8 +1,7 @@
-import { getTranslation } from '../i18n';
+import { getTranslation } from '@/i18n';
 import React from 'react';
 import { motion } from 'framer-motion';
-import TechPill from './TechPill';
-import type { Project } from '../data/projects';
+import type { Project } from '@/data/projects';
 
 interface ProjectCardProps {
   project: Project;

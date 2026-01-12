@@ -1,7 +1,7 @@
 import React from 'react';
 import TemplateCard from './TemplateCard';
-import { getTranslation } from '../i18n';
-import { getTemplates } from '../data/templates';
+import { getTranslation } from '@/i18n';
+import { getTemplates } from '@/data/templates';
 
 interface TemplatesSectionProps {
   translations: any;
@@ -14,7 +14,7 @@ const TemplatesSection: React.FC<TemplatesSectionProps> = ({ translations }) => 
     <section id="templates" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 text-center">
             {getTranslation(translations, 'sections.templates.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6" aria-hidden="true"></div>

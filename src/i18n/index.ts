@@ -6,6 +6,12 @@ export const LANG = {
 	ENGLISH: 'en'
 };
 
+// HTML lang codes (RFC 5646 format)
+export const LANG_CODES = {
+	SPANISH: 'es-ES',
+	ENGLISH: 'en-US'
+} as const;
+
 export const getI18N = ({
 	currentLocale = 'es',
 }: {

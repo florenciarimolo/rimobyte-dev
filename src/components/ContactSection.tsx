@@ -1,19 +1,20 @@
 import React from 'react';
 import ContactForm from './ContactForm';
-import { getTranslation } from '../i18n';
+import { getTranslation, LANG } from '@/i18n';
 
 interface ContactSectionProps {
   translations: any;
-  currentLang: 'en' | 'es';
+  currentLang: typeof LANG.ENGLISH | typeof LANG.SPANISH;
   recaptchaSiteKey?: string;
+  isLanding?: boolean;
 }
 
-const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLang, recaptchaSiteKey }) => {
+const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLang, recaptchaSiteKey, isLanding = false }) => {
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="contact" className={isLanding ? "py-20" : "py-20 bg-gray-50 dark:bg-gray-900"}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
             {getTranslation(translations, 'sections.contact.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto" aria-hidden="true"></div>
@@ -81,7 +82,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLa
             </address>
           </div>
           
-          <ContactForm currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} />
+          <ContactForm currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} isLanding={isLanding} />
         </div>
       </div>
     </section>

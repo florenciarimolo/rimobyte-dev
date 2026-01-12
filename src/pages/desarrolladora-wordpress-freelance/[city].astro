@@ -1,0 +1,61 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import WordPressLandingPage from '@/components/WordPressLandingPage';
+import WordPressStructuredData from '@/components/wordpress-landing/WordPressStructuredData.astro';
+import { LANG } from '@/i18n/index';
+import { SITE_URL } from '@/constants';
+
+// Whitelist of allowed cities
+const allowedCities: Record<string, string> = {
+  'barcelona': 'Barcelona',
+  'madrid': 'Madrid',
+  'valencia': 'Valencia',
+  'sevilla': 'Sevilla',
+  'bilbao': 'Bilbao',
+  'zaragoza': 'Zaragoza'
+};
+
+// Cities that should be indexable (index=true)
+const indexableCities = ['barcelona', 'madrid'];
+
+const { city } = Astro.params;
+
+// Validate city - must be lowercase and in whitelist
+const normalizedCity = city?.toLowerCase();
+const isValidCity = normalizedCity && normalizedCity in allowedCities;
+
+if (!isValidCity) {
+  return Astro.redirect('/404');
+}
+
+const cityName = allowedCities[normalizedCity!];
+const isIndexable = indexableCities.includes(normalizedCity!);
+
+// Get current locale from URL or default to 'es'
+const locale = Astro.url.pathname.startsWith('/en') ? LANG.ENGLISH : LANG.SPANISH;
+
+const currentUrl = `${SITE_URL}/desarrolladora-wordpress-freelance/${normalizedCity}`;
+const canonicalUrl = `${SITE_URL}/desarrolladora-wordpress-freelance`;
+const title = `Desarrolladora WordPress freelance en ${cityName} | RimoByte`;
+const description = `Desarrolladora WordPress freelance en ${cityName}. Servicios de desarrollo web profesional, e-commerce y mantenimiento WordPress. Trabajo directo y en remoto.`;
+---
+
+<MainLayout 
+  title={title}
+  description={description}
+  locale={locale}
+  canonical={canonicalUrl}
+>
+  <meta name="robots" content={isIndexable ? "index, follow" : "noindex, follow"} />
+  
+  <WordPressStructuredData 
+    url={currentUrl}
+    city={cityName}
+  />
+  <WordPressLandingPage 
+    client:only="react" 
+    cityName={cityName}
+    recaptchaSiteKey={import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
+    initialLocale={locale}
+  />
+</MainLayout>

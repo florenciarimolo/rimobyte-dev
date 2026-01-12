@@ -25,7 +25,7 @@ export const POST: APIRoute = async ({ request }) => {
     
     try {
         // Sending email
-        const { data, error } = await resend.emails.send({
+        const { error } = await resend.emails.send({
             from: NO_REPLY_EMAIL,
             to: [EMAIL],
             subject: `Contact form message from ${name}`,

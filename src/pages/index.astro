@@ -1,6 +1,6 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import MainPage from '../components/MainPage';
+import MainLayout from '@/layouts/MainLayout.astro';
+import MainPage from '@/components/MainPage';
 
 // Get reCAPTCHA site key from environment variable
 // Site key is public and safe to expose to the client
@@ -29,5 +29,5 @@ const currentSeo = seoData[locale];
   description={currentSeo.description}
   locale={locale}
 >
-  <MainPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} />
+  <MainPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} initialLocale={locale} />
 </MainLayout>

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getTranslation } from '../i18n';
+import { getTranslation } from '@/i18n';
 import TechPill from './TechPill';
-import type { Project } from '../data/projects';
+import type { Project } from '@/data/projects';
 
 interface ProjectModalProps {
   project: Project | null;

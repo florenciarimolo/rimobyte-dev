@@ -8,18 +8,24 @@ import ProjectsSection from './ProjectsSection';
 import TemplatesSection from './TemplatesSection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
-import { getI18N } from '../i18n';
+import { getI18N, LANG } from '@/i18n';
 
 interface MainPageProps {
   recaptchaSiteKey?: string;
+  initialLocale?: typeof LANG.ENGLISH | typeof LANG.SPANISH;
 }
 
-const MainPage: React.FC<MainPageProps> = ({ recaptchaSiteKey }) => {
-  const [currentLang, setCurrentLang] = useState<'en' | 'es'>('es');
+const MainPage: React.FC<MainPageProps> = ({ recaptchaSiteKey, initialLocale = LANG.SPANISH }) => {
+  const [currentLang, setCurrentLang] = useState<typeof LANG.ENGLISH | typeof LANG.SPANISH>(initialLocale);
   const translations = getI18N({ currentLocale: currentLang });
 
-  const handleLanguageChange = (lang: 'en' | 'es') => {
+  const handleLanguageChange = (lang: typeof LANG.ENGLISH | typeof LANG.SPANISH) => {
     setCurrentLang(lang);
+    // Navigate to the correct language version
+    const newPath = lang === LANG.ENGLISH ? '/en/' : '/';
+    if (window.location.pathname !== newPath) {
+      window.location.href = newPath;
+    }
   };
 
   // Smooth scrolling for anchor links
@@ -48,10 +54,10 @@ const MainPage: React.FC<MainPageProps> = ({ recaptchaSiteKey }) => {
   }, []);
 
   return (
-    <div id="app" className="min-h-screen">
+    <div id="app" className="min-h-screen relative" style={{ position: 'relative' }}>
       <Navbar currentLang={currentLang} onLanguageChange={handleLanguageChange} translations={translations} />
       
-      <main>
+      <main className="relative z-10" style={{ position: 'relative' }}>
         <HeroSection translations={translations} />
         <AboutSection translations={translations} />
         <ProjectsSection translations={translations} />

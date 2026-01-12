@@ -1,6 +1,6 @@
 import React from 'react';
-import { getTranslation } from '../i18n';
-import type { Template } from '../data/templates';
+import { getTranslation } from '@/i18n';
+import type { Template } from '@/data/templates';
 
 interface TemplateCardProps {
   template: Template;

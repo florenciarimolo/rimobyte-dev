@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
-import { getTranslation } from '../i18n';
-import { getProjects, categories } from '../data/projects';
-import type { Project } from '../data/projects';
+import { getTranslation } from '@/i18n';
+import { getProjects, categories } from '@/data/projects';
+import type { Project } from '@/data/projects';
 
 interface ProjectsSectionProps {
   translations: any;
@@ -35,7 +35,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ translations }) => {
       <section id="projects" className="py-20 bg-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
               {getTranslation(translations, 'sections.projects.title')}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8" aria-hidden="true"></div>

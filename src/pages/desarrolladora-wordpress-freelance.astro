@@ -1,0 +1,30 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import WordPressLandingPage from '@/components/WordPressLandingPage';
+import WordPressStructuredData from '@/components/wordpress-landing/WordPressStructuredData.astro';
+import { LANG } from '@/i18n/index';
+import { SITE_URL } from '@/constants';
+
+// Get current locale from URL or default to 'es'
+const locale = Astro.url.pathname.startsWith('/en') ? LANG.ENGLISH : LANG.SPANISH;
+
+const currentUrl = `${SITE_URL}/desarrolladora-wordpress-freelance`;
+const title = 'Desarrolladora WordPress freelance para negocios profesionales | RimoByte';
+const description = 'Desarrolladora WordPress freelance especializada en sitios web profesionales, e-commerce y mantenimiento. Trabajo directo sin intermediarios, optimizado para rendimiento y SEO.';
+
+// Get reCAPTCHA site key from environment variable
+const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+---
+
+<MainLayout 
+  title={title}
+  description={description}
+  locale={locale}
+  canonical={currentUrl}
+>
+  <WordPressStructuredData 
+    url={currentUrl}
+    city={null}
+  />
+  <WordPressLandingPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} initialLocale={locale} />
+</MainLayout>

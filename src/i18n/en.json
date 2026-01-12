@@ -65,7 +65,7 @@
     "contact": {
       "title": "Get In Touch",
       "subtitle": "Let's work together",
-      "description": "I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!",
+      "description": "If you have questions about your current website or a new project, write to me and we'll look at it calmly.",
       "contactInfo": {
         "email": "Email",
         "github": "GitHub",
@@ -227,6 +227,141 @@
       "institution": "Dominiques de l'Ensenyament | Barcelona",
       "period": "2012-2014",
       "description": "Focus on sciences and mathematics."
+    }
+  },
+  "wordpressLanding": {
+    "navbar": {
+      "whyWordPress": "Why WordPress",
+      "howIWork": "How I work",
+      "services": "Services",
+      "projects": "Projects",
+      "faq": "Frequently asked questions",
+      "contact": "Contact"
+    },
+    "sections": {
+      "problems": {
+        "title": "Common problems"
+      },
+      "solution": {
+        "title": "The solution"
+      },
+      "services": {
+        "title": "Services"
+      },
+      "process": {
+        "title": "Work process"
+      }
+    },
+    "hero": {
+      "title": "WordPress freelance developer for businesses",
+      "subtitle": "I work directly with you to design and develop WordPress sites optimized for performance, SEO and long-term maintenance, designed to last, scale, and not depend on agencies.",
+      "localSeo": "I work with businesses in {city} and remotely throughout Spain.",
+      "localSeoDefault": "I work with businesses in Barcelona and remotely throughout Spain.",
+      "cta": {
+        "contact": "Get In Touch",
+        "viewProjects": "View Projects"
+      }
+    },
+    "problems": {
+      "description": "Many businesses come after bad experiences with agencies or generic solutions.",
+      "items": {
+        "lackOfControl": {
+          "title": "Lack of control",
+          "text": "Limited access, technical dependencies and difficulty maintaining the website."
+        },
+        "inflexibleWebs": {
+          "title": "Inflexible websites",
+          "text": "Closed designs that don't scale or adapt to new needs."
+        },
+        "inflatedCosts": {
+          "title": "Inflated costs and timelines",
+          "text": "Long processes and high costs for simple changes."
+        }
+      }
+    },
+    "solution": {
+      "description": "As a WordPress freelance developer, I work without intermediaries and with a technical focus.",
+      "features": {
+        "directContact": "Direct contact throughout the project",
+        "explainedDecisions": "Technical decisions explained, not imposed",
+        "lastingCode": "Code and structure designed to last",
+        "easyToScale": "Easy to scale or modify the website in the future"
+      }
+    },
+    "services": {
+      "title": "Common WordPress services",
+      "items": {
+        "corporateWeb": {
+          "title": "Corporate website in WordPress",
+          "description": "Professional, fast and easy to maintain sites."
+        },
+        "onlineStores": {
+          "title": "Online stores",
+          "description": "E-commerce with WordPress adapted to each business."
+        },
+        "maintenance": {
+          "title": "Maintenance and support",
+          "description": "Updates, security and continuous improvements."
+        },
+        "migrations": {
+          "title": "Migrations and improvements",
+          "description": "Changes from agencies or old systems to a clear solution."
+        }
+      }
+    },
+    "process": {
+      "steps": {
+        "analysis": {
+          "title": "Project analysis",
+          "description": "I review the context, objectives and needs before proposing a solution."
+        },
+        "proposal": {
+          "title": "Clear technical proposal",
+          "description": "I define a realistic, explained proposal aligned with the project."
+        },
+        "development": {
+          "title": "Development and validation",
+          "description": "I work in phases, validating each part before moving forward."
+        },
+        "delivery": {
+          "title": "Delivery and support",
+          "description": "I deliver a maintainable website and provide support after delivery."
+        }
+      }
+    },
+    "projects": {
+      "title": "Some completed projects",
+      "context": "A selection of real projects developed in WordPress."
+    },
+    "cta": {
+      "title": "Tell me about your project and let's see if it fits.",
+      "button": "Get In Touch",
+      "subtitle": "No commitment or closed proposals."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "onlyWordPress": {
+          "question": "Do you only work with WordPress?",
+          "answer": "WordPress is one of my main specialties for professional web projects."
+        },
+        "freelanceOrAgency": {
+          "question": "Do you work as a freelance or agency?",
+          "answer": "I work as a freelance developer, without intermediaries."
+        },
+        "canMaintain": {
+          "question": "Can I maintain the website myself?",
+          "answer": "Yes, websites are designed so you can manage them easily."
+        },
+        "smallBusinesses": {
+          "question": "Do you work with small businesses?",
+          "answer": "Yes, I adapt each project to the real size and needs of the business."
+        },
+        "cityBusinesses": {
+          "question": "Do you work with businesses in {city}?",
+          "answer": "Yes, I work with projects in {city} and also remotely."
+        }
+      }
     }
   }
 }

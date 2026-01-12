@@ -1,11 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import { fileURLToPath } from 'url';
+import { resolve } from 'path';
 
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 import vercel from '@astrojs/vercel';
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
@@ -34,5 +38,12 @@ export default defineConfig({
       'en': 'es'
     }
   },
-  adapter: vercel()
+  adapter: vercel(),
+  vite: {
+    resolve: {
+      alias: {
+        '@': resolve(__dirname, './src')
+      }
+    }
+  }
 });

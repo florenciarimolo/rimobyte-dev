@@ -1,29 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import ThemeSwitcher from './ThemeSwitcher';
-import LanguageSwitcher from './LanguageSwitcher';
+import WordPressLanguageSwitcher from './WordPressLanguageSwitcher';
 import { getTranslation, LANG } from '@/i18n';
 
-interface NavbarProps {
+interface WordPressNavbarProps {
   currentLang: typeof LANG.ENGLISH | typeof LANG.SPANISH;
   onLanguageChange: (lang: typeof LANG.ENGLISH | typeof LANG.SPANISH) => void;
   translations: any;
-  hideThemeSwitcher?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translations, hideThemeSwitcher = false }) => {
-  const [activeSection, setActiveSection] = useState('about');
+const WordPressNavbar: React.FC<WordPressNavbarProps> = ({ currentLang, onLanguageChange, translations }) => {
+  const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'about', label: getTranslation(translations, 'navbar.about') },
-    { id: 'projects', label: getTranslation(translations, 'navbar.projects') },
-    { id: 'templates', label: getTranslation(translations, 'navbar.templates') },
-    { id: 'experience', label: getTranslation(translations, 'navbar.experience') },
-    { id: 'contact', label: getTranslation(translations, 'navbar.contact') }
+    { id: 'problems', label: getTranslation(translations, 'wordpressLanding.navbar.whyWordPress') },
+    { id: 'services', label: getTranslation(translations, 'wordpressLanding.navbar.services') },
+    { id: 'process', label: getTranslation(translations, 'wordpressLanding.navbar.howIWork') },
+    { id: 'projects', label: getTranslation(translations, 'wordpressLanding.navbar.projects') },
+    { id: 'faq', label: getTranslation(translations, 'wordpressLanding.navbar.faq') },
+    { id: 'contact', label: getTranslation(translations, 'wordpressLanding.navbar.contact') }
   ];
-
-  // Theme is handled by ThemeSwitcher component
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,17 +28,28 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
       setIsScrolled(window.scrollY > 50);
 
       // Update active section based on scroll position
-      const sections = navItems.map(item => item.id);
-      const scrollPosition = window.scrollY + 150; // Increased offset for better detection
+      const sections = ['hero', ...navItems.map(item => item.id)];
+      const scrollPosition = window.scrollY + 150;
 
       for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section) {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            setActiveSection(sections[i]);
+        const sectionId = sections[i];
+        let section: HTMLElement | null = null;
+        
+        if (sectionId === 'hero') {
+          // Hero is at the top
+          if (window.scrollY < 300) {
+            setActiveSection('hero');
             break;
+          }
+        } else {
+          section = document.getElementById(sectionId);
+          if (section) {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+              setActiveSection(sectionId);
+              break;
+            }
           }
         }
       }
@@ -55,9 +63,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
   }, [navItems]);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (sectionId === 'hero') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     // Close mobile menu when navigating
     setIsMobileMenuOpen(false);
@@ -70,7 +82,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800' 
+        ? 'bg-black/95 backdrop-blur-md border-b border-gray-800' 
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,7 +95,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
                 alt="RimoByte" 
                 className="w-8 h-8 transition-opacity duration-300" 
               />
-              <span className="text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-200 font-semibold text-lg">
+              <span className="text-white group-hover:text-gray-200 transition-colors duration-200 font-semibold text-lg">
                 RimoByte
               </span>
             </a>
@@ -95,7 +107,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="relative group text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+                className="relative group text-white/90 hover:text-white transition-colors duration-200"
               >
                 {item.label}
                 {/* Active indicator */}
@@ -110,14 +122,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
 
           {/* Controls */}
           <div className="hidden md:flex items-center space-x-4">
-            <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
-            {!hideThemeSwitcher && <ThemeSwitcher />}
+            <WordPressLanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
           </div>
             
           {/* Mobile menu button */}
           <button 
             onClick={toggleMobileMenu}
-            className="md:hidden p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+            className="md:hidden p-2 rounded-md text-white/80 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
@@ -136,15 +147,15 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
       {/* Mobile menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-800">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/95 backdrop-blur-md border-t border-gray-800">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`relative block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                   activeSection === item.id
-                    ? 'text-gray-900 dark:text-white'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+                    ? 'text-white'
+                    : 'text-white/80 hover:text-white'
                 }`}
               >
                 {item.label}
@@ -155,8 +166,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
               </button>
             ))}
             <div className="flex items-center justify-start space-x-4 px-3 py-2 mt-2">
-              <LanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
-              {!hideThemeSwitcher && <ThemeSwitcher />}
+              <WordPressLanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
             </div>
           </div>
         </div>
@@ -165,4 +175,4 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
   );
 };
 
-export default Navbar;
+export default WordPressNavbar;

@@ -1,6 +1,17 @@
 ---
-import StructuredData from '../components/StructuredData.astro';
-import '../styles/global.css';
+import StructuredData from '@/components/StructuredData.astro';
+import '@/styles/global.css';
+import { LANG, LANG_CODES } from '@/i18n/index';
+import { 
+  SITE_URL, 
+  SITE_NAME, 
+  TWITTER_HANDLE, 
+  AUTHOR_NAME, 
+  AUTHOR_TITLE_ES, 
+  AUTHOR_TITLE_EN,
+  DEFAULT_DESCRIPTION,
+  DEFAULT_IMAGE
+} from '@/constants';
 
 export interface Props {
   title: string;
@@ -9,27 +20,30 @@ export interface Props {
   keywords?: string;
   image?: string;
   type?: string;
+  canonical?: string;
 }
 
-const siteUrl = 'https://rimobyte.com';
 const { 
   title, 
-  description = "RimoByte - Full Stack Developer Portfolio",
-  locale = 'es',
+  description = DEFAULT_DESCRIPTION,
+  locale = LANG.SPANISH,
   keywords,
-  image = `${siteUrl}/assets/images/programadora-web.webp`,
-  type = 'website'
+  image = DEFAULT_IMAGE,
+  type = 'website',
+  canonical
 } = Astro.props;
 
 // Keywords por defecto basados en keyword research
-const defaultKeywords = locale === 'es' 
+const defaultKeywords = locale === LANG.SPANISH
   ? "desarrolladora full stack, desarrolladora web, programadora full stack, desarrolladora WordPress, desarrolladora Vue.js, desarrolladora Django, desarrolladora freelance, desarrolladora e-commerce, desarrolladora web España, desarrolladora web remoto, desarrollo web Barcelona, ingeniera de software, desarrolladora React, desarrolladora Spring Boot"
   : "full stack developer, web developer, WordPress developer, Vue.js developer, Django developer, freelance developer, e-commerce developer, remote web developer, software engineer, React developer, Spring Boot developer, web development Barcelona";
 
 const finalKeywords = keywords || defaultKeywords;
-const currentUrl = `${siteUrl}${locale === 'en' ? '/en' : ''}`;
-const langCode = locale === 'es' ? 'es-ES' : 'en-US';
-const htmlLang = locale === 'es' ? 'es' : 'en';
+const currentUrl = canonical || `${SITE_URL}${locale === LANG.ENGLISH ? '/en' : ''}`;
+const langCode = locale === LANG.SPANISH ? LANG_CODES.SPANISH : LANG_CODES.ENGLISH;
+const htmlLang = locale === LANG.SPANISH ? LANG.SPANISH : LANG.ENGLISH;
+const authorTitle = locale === LANG.SPANISH ? AUTHOR_TITLE_ES : AUTHOR_TITLE_EN;
+const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
 ---
 
 <!DOCTYPE html>
@@ -43,7 +57,7 @@ const htmlLang = locale === 'es' ? 'es' : 'en';
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="keywords" content={finalKeywords} />
-    <meta name="author" content="Florencia Rímolo" />
+    <meta name="author" content={AUTHOR_NAME} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="language" content={langCode} />
     <meta name="revisit-after" content="7 days" />
@@ -54,9 +68,9 @@ const htmlLang = locale === 'es' ? 'es' : 'en';
     <link rel="canonical" href={currentUrl} />
     
     <!-- Alternate Languages (Hreflang) -->
-    <link rel="alternate" hreflang="es" href={siteUrl} />
-    <link rel="alternate" hreflang="en" href={`${siteUrl}/en`} />
-    <link rel="alternate" hreflang="x-default" href={siteUrl} />
+    <link rel="alternate" hreflang={LANG.SPANISH} href={SITE_URL} />
+    <link rel="alternate" hreflang={LANG.ENGLISH} href={`${SITE_URL}/en`} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL} />
     
     <!-- Favicon configuration for Google and all browsers -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -73,9 +87,9 @@ const htmlLang = locale === 'es' ? 'es' : 'en';
     <meta property="og:image" content={image} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={locale === 'es' ? "Florencia Rímolo - Desarrolladora Full Stack" : "Florencia Rímolo - Full Stack Developer"} />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:locale" content={langCode} />
-    <meta property="og:site_name" content="RimoByte" />
+    <meta property="og:site_name" content={SITE_NAME} />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,8 +97,8 @@ const htmlLang = locale === 'es' ? 'es' : 'en';
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
-    <meta name="twitter:image:alt" content={locale === 'es' ? "Florencia Rímolo - Desarrolladora Full Stack" : "Florencia Rímolo - Full Stack Developer"} />
-    <meta name="twitter:creator" content="@rimobyte" />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+    <meta name="twitter:creator" content={TWITTER_HANDLE} />
     
     <!-- Preload fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,10 +112,52 @@ const htmlLang = locale === 'es' ? 'es' : 'en';
     
     <!-- Google reCAPTCHA Enterprise -->
     <!-- Following official Google docs: https://www.google.com/recaptcha/enterprise -->
-    <script src={`https://www.google.com/recaptcha/enterprise.js?render=${import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || import.meta.env.RECAPTCHA_SITE_KEY || '6LcR8iUsAAAAAJAFkXt5Wgnw_6X49csU9Y26aoPt'}`} async defer></script>
+    <script src={`https://www.google.com/recaptcha/enterprise.js?render=${import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || import.meta.env.RECAPTCHA_SITE_KEY || '6LcR8iUsAAAAAJAFkXt5Wgnw_6X49csU9Y26aoPt'}`} async defer is:inline></script>
+    
+    <!-- UnicornStudio - Only load if on WordPress landing page -->
+    {Astro.url.pathname.includes('desarrolladora-wordpress-freelance') && (
+      <script is:inline>
+        !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+      </script>
+    )}
   </head>
-  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-inter text-base antialiased transition-colors duration-300">
-    <div id="root">
+  <body class="text-gray-900 dark:text-white font-inter text-base antialiased transition-colors duration-300" style={Astro.url.pathname.includes('desarrolladora-wordpress-freelance') ? 'background: #000000 !important;' : ''}>
+    <!-- Background for WordPress landing pages -->
+    {Astro.url.pathname.includes('desarrolladora-wordpress-freelance') && (
+      <style is:inline>
+        {`
+          html, body {
+            background: #000000 !important;
+          }
+          #root {
+            background: #000000 !important;
+          }
+        `}
+      </style>
+    )}
+    <!-- Ensure main page has proper background -->
+    {!Astro.url.pathname.includes('desarrolladora-wordpress-freelance') && (
+      <style is:inline>
+        {`
+          html {
+            background: transparent !important;
+          }
+          body {
+            background: transparent !important;
+          }
+          body.dark {
+            background: #111827 !important;
+          }
+          body:not(.dark) {
+            background: #ffffff !important;
+          }
+          #root {
+            background: transparent !important;
+          }
+        `}
+      </style>
+    )}
+    <div id="root" style={Astro.url.pathname.includes('desarrolladora-wordpress-freelance') ? 'position: relative; z-index: 1; background: #000000;' : ''}>
       <slot />
     </div>
     

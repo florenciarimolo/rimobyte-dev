@@ -1,4 +1,4 @@
-import { getTranslation } from '../i18n';
+import { getTranslation } from '@/i18n';
 
 export interface Template {
   id: string;

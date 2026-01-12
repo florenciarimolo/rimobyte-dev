@@ -4,12 +4,12 @@ import UnitedKingdomFlag from '@/components/flags/UnitedKingdom';
 import { LANG } from '@/i18n';
 import { LANGUAGES } from '@/i18n/ui';
 
-interface LanguageSwitcherProps {
+interface WordPressLanguageSwitcherProps {
   currentLang: typeof LANG.ENGLISH | typeof LANG.SPANISH;
   onLanguageChange: (lang: typeof LANG.ENGLISH | typeof LANG.SPANISH) => void;
 }
 
-const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLanguageChange }) => {
+const WordPressLanguageSwitcher: React.FC<WordPressLanguageSwitcherProps> = ({ currentLang, onLanguageChange }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const languages = [
@@ -36,8 +36,8 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLang
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`language-switcher relative flex items-center space-x-2 px-3 py-2 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-          isOpen ? 'text-gray-900 dark:text-white' : ''
+        className={`language-switcher relative flex items-center space-x-2 px-3 py-2 bg-black/70 backdrop-blur-md text-white rounded-xl border border-gray-800 hover:bg-black/60 transition-all duration-200 focus:outline-none ${
+          isOpen ? 'text-white' : ''
         }`}
         aria-label="Select language"
       >
@@ -51,14 +51,10 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLang
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
-        {/* Active indicator */}
-        {isOpen && (
-          <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500" />
-        )}
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 overflow-hidden bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg border border-gray-400 dark:border-gray-700 z-50">
+        <div className="absolute right-0 mt-2 w-40 overflow-hidden bg-black/70 backdrop-blur-md rounded-xl shadow-lg border border-gray-800 z-50">
           {languages.map((language) => (
             <button
               key={language.code}
@@ -66,8 +62,8 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLang
                 onLanguageChange(language.code as typeof LANG.ENGLISH | typeof LANG.SPANISH);
                 setIsOpen(false);
               }}
-              className={`w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 ${
-                currentLang === language.code ? 'bg-gray-200 dark:bg-gray-700' : ''
+              className={`w-full flex items-center space-x-3 px-4 py-3 text-left text-white hover:bg-black/60 transition-colors duration-200 ${
+                currentLang === language.code ? 'bg-black/60' : ''
               }`}
             >
               <language.flag />
@@ -80,4 +76,4 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang, onLang
   );
 };
 
-export default LanguageSwitcher;
+export default WordPressLanguageSwitcher;

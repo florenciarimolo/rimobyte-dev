@@ -65,7 +65,7 @@
     "contact": {
       "title": "Contactar",
       "subtitle": "Trabajemos juntos",
-      "description": "Siempre estoy interesada en nuevas oportunidades y proyectos emocionantes. Ya sea que tengas una pregunta o solo quieras saludar, ¡no dudes en contactarme!",
+      "description": "Si tienes dudas sobre tu web actual o un nuevo proyecto, escríbeme y lo vemos con calma.",
       "contactInfo": {
         "email": "Email",
         "github": "GitHub",
@@ -227,6 +227,142 @@
       "institution": "Dominiques de l'Ensenyament | Barcelona",
       "period": "2012-2014",
       "description": "Enfoque en ciencias y matemáticas."
+    }
+  },
+  "wordpressLanding": {
+    "navbar": {
+      "whyWordPress": "Por qué WordPress",
+      "howIWork": "Cómo trabajo",
+      "services": "Servicios",
+      "projects": "Proyectos",
+      "faq": "Preguntas frecuentes",
+      "contact": "Contacto"
+    },
+    "sections": {
+      "problems": {
+        "title": "Problemas comunes"
+      },
+      "solution": {
+        "title": "La solución"
+      },
+      "services": {
+        "title": "Servicios"
+      },
+      "process": {
+        "title": "Proceso de trabajo"
+      }
+    },
+    "hero": {
+      "title": "Desarrolladora WordPress freelance para negocios",
+      "subtitle": "Trabajo directamente contigo para diseñar y desarrollar sitios WordPress optimizados para rendimiento, SEO y mantenimiento a largo plazo, pensados para durar, escalar y no depender de agencias.",
+      "localSeo": "Trabajo con negocios en {city} y en remoto en toda España.",
+      "localSeoDefault": "Trabajo con negocios en Barcelona y en remoto en toda España.",
+      "cta": {
+        "contact": "Contactar",
+        "viewProjects": "Ver proyectos"
+      }
+    },
+    "problems": {
+      "description": "Muchos negocios llegan después de malas experiencias con agencias o soluciones genéricas.",
+      "items": {
+        "lackOfControl": {
+          "title": "Falta de control",
+          "text": "Accesos limitados, dependencias técnicas y dificultad para mantener la web."
+        },
+        "inflexibleWebs": {
+          "title": "Webs poco flexibles",
+          "text": "Diseños cerrados que no escalan ni se adaptan a nuevas necesidades."
+        },
+        "inflatedCosts": {
+          "title": "Costes y tiempos inflados",
+          "text": "Procesos largos y costes elevados para cambios simples."
+        }
+      }
+    },
+    "solution": {
+      "description": "Como desarrolladora WordPress freelance, trabajo sin intermediarios y con foco técnico.",
+      "features": {
+        "directContact": "Contacto directo durante todo el proyecto",
+        "explainedDecisions": "Decisiones técnicas explicadas, no impuestas",
+        "lastingCode": "Código y estructura pensados para durar",
+        "easyToScale": "Facilidad para escalar o modificar la web en el futuro"
+      }
+    },
+    "services": {
+      "title": "Servicios WordPress habituales",
+      "intro": "Servicios WordPress orientados a proyectos reales, no a soluciones genéricas.",
+      "items": {
+        "corporateWeb": {
+          "title": "Web corporativa en WordPress",
+          "description": "Sitios profesionales, rápidos y fáciles de mantener."
+        },
+        "onlineStores": {
+          "title": "Tiendas online",
+          "description": "E-commerce con WordPress adaptado a cada negocio."
+        },
+        "maintenance": {
+          "title": "Mantenimiento y soporte",
+          "description": "Actualizaciones, seguridad y mejoras continuas."
+        },
+        "migrations": {
+          "title": "Migraciones y mejoras",
+          "description": "Cambios desde agencias o sistemas antiguos a una solución clara."
+        }
+      }
+    },
+    "process": {
+      "steps": {
+        "analysis": {
+          "title": "Análisis del proyecto",
+          "description": "Reviso el contexto, objetivos y necesidades antes de proponer una solución."
+        },
+        "proposal": {
+          "title": "Propuesta técnica clara",
+          "description": "Defino una propuesta realista, explicada y alineada con el proyecto."
+        },
+        "development": {
+          "title": "Desarrollo y validación",
+          "description": "Trabajo por fases, validando cada parte antes de avanzar."
+        },
+        "delivery": {
+          "title": "Entrega y soporte",
+          "description": "Entrego una web mantenible y doy soporte tras la entrega."
+        }
+      }
+    },
+    "projects": {
+      "title": "Algunos proyectos realizados",
+      "context": "Una selección de proyectos reales desarrollados en WordPress."
+    },
+    "cta": {
+      "title": "Cuéntame tu proyecto y vemos si encaja.",
+      "button": "Contactar",
+      "subtitle": "Sin compromiso ni propuestas cerradas."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": {
+        "onlyWordPress": {
+          "question": "¿Trabajas solo con WordPress?",
+          "answer": "WordPress es una de mis principales especialidades para proyectos web profesionales."
+        },
+        "freelanceOrAgency": {
+          "question": "¿Trabajas como freelance o agencia?",
+          "answer": "Trabajo como desarrolladora freelance, sin intermediarios."
+        },
+        "canMaintain": {
+          "question": "¿Puedo mantener la web yo?",
+          "answer": "Sí, las webs están pensadas para que puedas gestionarlas fácilmente."
+        },
+        "smallBusinesses": {
+          "question": "¿Trabajas con negocios pequeños?",
+          "answer": "Sí, adapto cada proyecto al tamaño y necesidades reales del negocio."
+        },
+        "cityBusinesses": {
+          "question": "¿Trabajas con negocios en {city}?",
+          "answer": "Sí, trabajo con proyectos en {city} y también en remoto."
+        }
+      }
     }
   }
 }

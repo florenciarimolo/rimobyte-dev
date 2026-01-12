@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTranslation } from '../i18n';
+import { getTranslation } from '@/i18n';
 
 interface AboutSectionProps {
   translations: any;
@@ -9,8 +9,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({ translations }) => {
   return (
     <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <header className="text-center mb-16 flex flex-col items-center justify-center">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
             {getTranslation(translations, 'sections.about.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto" aria-hidden="true"></div>

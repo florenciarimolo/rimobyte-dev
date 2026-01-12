@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { getI18N, getTranslation } from '../i18n';
+import { getI18N, getTranslation, LANG } from '@/i18n';
 
 const NotFoundPage: React.FC = () => {
-  const [currentLang, setCurrentLang] = useState<'en' | 'es'>('es');
+  const [currentLang, setCurrentLang] = useState<typeof LANG.ENGLISH | typeof LANG.SPANISH>(LANG.SPANISH);
   const translations = getI18N({ currentLocale: currentLang });
 
-  const handleLanguageChange = (lang: 'en' | 'es') => {
+  const handleLanguageChange = (lang: typeof LANG.ENGLISH | typeof LANG.SPANISH) => {
     setCurrentLang(lang);
   };
 

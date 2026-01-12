@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { LANG } from '@/i18n';
 
 // Extend Window interface for grecaptcha
 declare global {
@@ -13,11 +14,12 @@ declare global {
 }
 
 interface ContactFormProps {
-  currentLang: 'en' | 'es';
+  currentLang: typeof LANG.ENGLISH | typeof LANG.SPANISH;
   recaptchaSiteKey?: string;
+  isLanding?: boolean;
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey }) => {
+const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey, isLanding = false }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,35 +29,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [recaptchaError, setRecaptchaError] = useState(false);
-  const [isDark, setIsDark] = useState(true);
   
   // Use reCAPTCHA site key passed from server (SSR) or fallback to test key
   const RECAPTCHA_SITE_KEY = recaptchaSiteKey || '6LcR8iUsAAAAAJAFkXt5Wgnw_6X49csU9Y26aoPt';
-
-  // Detect theme changes
-  useEffect(() => {
-    const checkTheme = () => {
-      setIsDark(document.documentElement.classList.contains('dark'));
-    };
-    
-    checkTheme();
-    
-    // Listen for theme changes
-    const handleThemeChange = () => checkTheme();
-    window.addEventListener('themechange', handleThemeChange);
-    
-    // Also check periodically in case theme changes via other means
-    const observer = new MutationObserver(checkTheme);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class']
-    });
-    
-    return () => {
-      window.removeEventListener('themechange', handleThemeChange);
-      observer.disconnect();
-    };
-  }, []);
 
   const translations = {
     en: {
@@ -94,7 +70,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
     }
   };
 
-  const t = translations[currentLang];
+  const t = translations[currentLang as keyof typeof translations];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -191,11 +167,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl p-8 border dark:border-gray-700 border-gray-200">
+    <div className={isLanding 
+      ? "bg-black/60 backdrop-blur-md rounded-xl p-8 border border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
+      : "bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-lg transition-all duration-300"
+    }>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-900 dark:text-gray-300 mb-2">
+            <label htmlFor="name" className={isLanding 
+              ? "block text-sm font-medium text-gray-300 mb-2"
+              : "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            }>
               {t.name}
             </label>
             <input
@@ -206,12 +188,18 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
               onChange={handleChange}
               placeholder={t.placeholder.name}
               required
-              className="w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border dark:border-gray-600 border-gray-200 rounded-lg dark:text-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+              className={isLanding
+                ? "w-full px-4 py-3 bg-black/50 backdrop-blur-sm border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                : "w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+              }
             />
           </div>
           
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-900 dark:text-gray-300 mb-2">
+            <label htmlFor="email" className={isLanding 
+              ? "block text-sm font-medium text-gray-300 mb-2"
+              : "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            }>
               {t.email}
             </label>
             <input
@@ -222,13 +210,19 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
               onChange={handleChange}
               placeholder={t.placeholder.email}
               required
-              className="w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border dark:border-gray-600 border-gray-200 rounded-lg dark:text-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+              className={isLanding
+                ? "w-full px-4 py-3 bg-black/50 backdrop-blur-sm border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                : "w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+              }
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-900 dark:text-gray-300 mb-2">
+          <label htmlFor="subject" className={isLanding 
+            ? "block text-sm font-medium text-gray-300 mb-2"
+            : "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          }>
             {t.subject}
           </label>
           <input
@@ -239,12 +233,18 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
             onChange={handleChange}
             placeholder={t.placeholder.subject}
             required
-            className="w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border dark:border-gray-600 border-gray-200 rounded-lg dark:text-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+            className={isLanding
+              ? "w-full px-4 py-3 bg-black/50 backdrop-blur-sm border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+              : "w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+            }
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-900 dark:text-gray-300 mb-2">
+          <label htmlFor="message" className={isLanding 
+            ? "block text-sm font-medium text-gray-300 mb-2"
+            : "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          }>
             {t.message}
           </label>
           <textarea
@@ -255,7 +255,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
             placeholder={t.placeholder.message}
             required
             rows={6}
-            className="w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border dark:border-gray-600 border-gray-200 rounded-lg dark:text-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
+            className={isLanding
+              ? "w-full px-4 py-3 bg-black/50 backdrop-blur-sm border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
+              : "w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
+            }
           />
         </div>
 

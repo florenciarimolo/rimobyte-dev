@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTranslation } from '../i18n';
+import { getTranslation } from '@/i18n';
 
 interface HeroSectionProps {
   translations: any;
@@ -7,19 +7,20 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ translations }) => {
   return (
-    <header className="relative min-h-screen flex items-center justify-center py-20">
-      {/* Animated Background */}
-      <div className="absolute inset-0 hero-animated-gradient"></div>
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%239C92AC%22 fill-opacity=%220.05%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')" }}></div>
-
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-1 h-1 bg-purple-500 rounded-full animate-ping"></div>
-        <div className="absolute bottom-40 left-20 w-3 h-3 bg-blue-400 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-20 right-10 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+    <section className="relative min-h-screen flex items-center justify-center py-20 bg-gray-50 dark:bg-gray-900" style={{ position: 'relative' }}>
+      {/* Floating Dots */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-20 left-10 w-2 h-2 bg-blue-500 rounded-full animate-pulse opacity-60 dark:opacity-40"></div>
+        <div className="absolute top-40 right-20 w-1 h-1 bg-purple-500 rounded-full animate-ping opacity-60 dark:opacity-40"></div>
+        <div className="absolute top-60 left-1/4 w-3 h-3 bg-blue-400 rounded-full animate-bounce opacity-50 dark:opacity-30" style={{ animationDuration: '3s' }}></div>
+        <div className="absolute top-32 right-1/3 w-2 h-2 bg-purple-400 rounded-full animate-pulse opacity-60 dark:opacity-40" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-80 left-1/2 w-1.5 h-1.5 bg-blue-500 rounded-full animate-ping opacity-50 dark:opacity-30" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-1/2 left-16 w-2.5 h-2.5 bg-purple-500 rounded-full animate-pulse opacity-60 dark:opacity-40" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-1/2 right-24 w-1 h-1 bg-blue-400 rounded-full animate-ping opacity-60 dark:opacity-40" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-40 left-20 w-3 h-3 bg-blue-400 rounded-full animate-bounce opacity-50 dark:opacity-30" style={{ animationDuration: '3.5s' }}></div>
+        <div className="absolute bottom-20 right-10 w-2 h-2 bg-purple-400 rounded-full animate-pulse opacity-60 dark:opacity-40" style={{ animationDelay: '1.8s' }}></div>
       </div>
-
+      
       <div className="flex flex-col items-center relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="relative mb-4">
           <div className="w-[200px] h-[200px] rounded-full p-1 bg-gradient-to-r from-blue-500 to-purple-500 relative z-0">
@@ -44,7 +45,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ translations }) => {
             {getTranslation(translations, 'hero.available') || 'Disponible'}
           </div>
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-center">
           <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
             Florencia Rímolo
           </span>
@@ -80,7 +81,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ translations }) => {
           </a>
           <a
             href="#contact"
-            className="group flex items-center justify-center gap-2 px-8 py-3.5 text-base font-medium text-white bg-transparent border border-blue-500 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5),0_0_10px_rgba(168,85,247,0.3),inset_0_0_10px_rgba(59,130,246,0.2)] hover:bg-blue-500/10 hover:border-blue-400 hover:shadow-[0_0_35px_rgba(59,130,246,0.6),0_0_20px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(59,130,246,0.4)] hover:scale-[1.02] transition-all duration-300"
+            className="group flex items-center justify-center gap-2 px-8 py-3.5 text-base font-medium text-gray-700 dark:text-white bg-transparent border border-blue-500 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5),0_0_10px_rgba(168,85,247,0.3),inset_0_0_10px_rgba(59,130,246,0.2)] hover:bg-blue-500/10 hover:border-blue-400 hover:shadow-[0_0_35px_rgba(59,130,246,0.6),0_0_20px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(59,130,246,0.4)] hover:scale-[1.02] transition-all duration-300"
           >
             {getTranslation(translations, 'hero.cta.getInTouch')}
           </a>
@@ -88,12 +89,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ translations }) => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" aria-hidden="true">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce flex items-center justify-center w-6" aria-hidden="true">
         <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
       </div>
-    </header>
+    </section>
   );
 };
 

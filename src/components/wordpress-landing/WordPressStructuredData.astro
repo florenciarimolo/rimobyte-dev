@@ -1,0 +1,56 @@
+---
+export interface Props {
+  url: string;
+  city: string | null;
+}
+
+const { url, city } = Astro.props;
+const siteUrl = 'https://rimobyte.com';
+
+let structuredData: any = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": city 
+    ? `Desarrolladora WordPress freelance en ${city}`
+    : "Desarrolladora WordPress freelance",
+  "description": city
+    ? `Servicios de desarrollo WordPress freelance en ${city} y en remoto en toda España. Desarrollo de sitios web profesionales, e-commerce y mantenimiento.`
+    : "Servicios de desarrollo WordPress freelance para negocios profesionales. Desarrollo de sitios web, e-commerce y mantenimiento. Trabajo directo sin intermediarios.",
+  "url": url,
+  "image": `${siteUrl}/assets/images/programadora-web.webp`,
+  "provider": {
+    "@type": "Person",
+    "name": "Florencia Rímolo",
+    "jobTitle": "Desarrolladora WordPress freelance",
+    "email": "info@rimobyte.com"
+  },
+  "areaServed": city
+    ? [
+        {
+          "@type": "City",
+          "name": city
+        },
+        {
+          "@type": "Country",
+          "name": "Spain"
+        }
+      ]
+    : {
+      "@type": "Country",
+      "name": "Spain"
+    },
+  "serviceType": [
+    "Desarrollo WordPress",
+    "Desarrollo de sitios web corporativos",
+    "Desarrollo de e-commerce",
+    "Mantenimiento WordPress",
+    "Migraciones WordPress"
+  ],
+  "jobLocationType": "TELECOMMUTE",
+  "priceRange": "$$"
+};
+
+const jsonLd = JSON.stringify(structuredData);
+---
+
+<script type="application/ld+json" set:html={jsonLd} is:inline />

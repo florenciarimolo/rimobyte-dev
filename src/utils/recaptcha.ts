@@ -40,8 +40,6 @@ export async function verifyRecaptcha(
   // Check for explicit credentials - if none are provided, we'll still try ADC
   // but we'll catch any errors properly
   const serviceAccountJson = import.meta.env.GOOGLE_SERVICE_ACCOUNT_JSON;
-  const googleAppCreds = import.meta.env.GOOGLE_APPLICATION_CREDENTIALS || 
-                         (typeof process !== 'undefined' ? process.env.GOOGLE_APPLICATION_CREDENTIALS : undefined);
 
   // Set up a temporary unhandled rejection handler to catch Google Cloud library internal promises
   let caughtRejection: Error | null = null;
