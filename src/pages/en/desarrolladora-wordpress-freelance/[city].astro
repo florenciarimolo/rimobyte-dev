@@ -4,19 +4,7 @@ import WordPressLandingPage from '@/components/WordPressLandingPage';
 import WordPressStructuredData from '@/components/wordpress-landing/WordPressStructuredData.astro';
 import { LANG } from '@/i18n/index';
 import { SITE_URL } from '@/constants';
-
-// Whitelist of allowed cities
-const allowedCities: Record<string, string> = {
-  'barcelona': 'Barcelona',
-  'madrid': 'Madrid',
-  'valencia': 'Valencia',
-  'sevilla': 'Sevilla',
-  'bilbao': 'Bilbao',
-  'zaragoza': 'Zaragoza'
-};
-
-// Cities that should be indexable (index=true)
-const indexableCities = ['barcelona', 'madrid'];
+import { allowedCities, indexableCities } from '@/constants/cities';
 
 const { city } = Astro.params;
 
