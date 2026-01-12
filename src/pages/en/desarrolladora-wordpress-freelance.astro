@@ -2,13 +2,12 @@
 import MainLayout from '@/layouts/MainLayout.astro';
 import WordPressLandingPage from '@/components/WordPressLandingPage';
 import WordPressStructuredData from '@/components/wordpress-landing/WordPressStructuredData.astro';
-import { LANG, LANG_PREFIXES } from '@/i18n/index';
+import { LANG } from '@/i18n/index';
 import { SITE_URL } from '@/constants';
 
 const locale = LANG.ENGLISH;
 
-const currentUrl = `${SITE_URL}${LANG_PREFIXES.ENGLISH}/desarrolladora-wordpress-freelance`;
-const canonicalUrl = `${SITE_URL}${LANG_PREFIXES.ENGLISH}/desarrolladora-wordpress-freelance`;
+const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
 const title = 'WordPress Freelance Developer for Professional Businesses | RimoByte';
 const description = 'WordPress freelance developer specialized in professional websites, e-commerce and maintenance. Direct work without intermediaries, optimized for performance and SEO.';
 
@@ -20,7 +19,6 @@ const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZ
   title={title}
   description={description}
   locale={locale}
-  canonical={canonicalUrl}
 >
   <WordPressStructuredData 
     url={currentUrl}

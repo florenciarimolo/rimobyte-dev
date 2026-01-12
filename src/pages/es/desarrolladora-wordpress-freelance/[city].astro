@@ -2,7 +2,7 @@
 import MainLayout from '@/layouts/MainLayout.astro';
 import WordPressLandingPage from '@/components/WordPressLandingPage';
 import WordPressStructuredData from '@/components/wordpress-landing/WordPressStructuredData.astro';
-import { LANG, LANG_PREFIXES } from '@/i18n/index';
+import { LANG } from '@/i18n/index';
 import { SITE_URL } from '@/constants';
 import { allowedCities, indexableCities } from '@/constants/cities';
 
@@ -21,8 +21,7 @@ const isIndexable = indexableCities.includes(normalizedCity!);
 
 const locale = LANG.SPANISH;
 
-const currentUrl = `${SITE_URL}${LANG_PREFIXES.SPANISH}/desarrolladora-wordpress-freelance/${normalizedCity}`;
-const canonicalUrl = `${SITE_URL}${LANG_PREFIXES.SPANISH}/desarrolladora-wordpress-freelance/${normalizedCity}`;
+const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
 const title = `Desarrolladora WordPress freelance en ${cityName} | RimoByte`;
 const description = `Desarrolladora WordPress freelance en ${cityName}. Servicios de desarrollo web profesional, e-commerce y mantenimiento WordPress. Trabajo directo y en remoto.`;
 ---
@@ -31,7 +30,6 @@ const description = `Desarrolladora WordPress freelance en ${cityName}. Servicio
   title={title}
   description={description}
   locale={locale}
-  canonical={canonicalUrl}
 >
   <meta name="robots" content={isIndexable ? "index, follow" : "noindex, follow"} />
   

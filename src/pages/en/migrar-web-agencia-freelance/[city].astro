@@ -2,7 +2,7 @@
 import MainLayout from '@/layouts/MainLayout.astro';
 import MigrationLandingPage from '@/components/MigrationLandingPage';
 import MigrationStructuredData from '@/components/migration-landing/MigrationStructuredData.astro';
-import { LANG, LANG_PREFIXES } from '@/i18n/index';
+import { LANG } from '@/i18n/index';
 import { SITE_URL } from '@/constants';
 import { allowedCities, indexableCities } from '@/constants/cities';
 
@@ -21,8 +21,7 @@ const isIndexable = indexableCities.includes(normalizedCity!);
 
 const locale = LANG.ENGLISH;
 
-const currentUrl = `${SITE_URL}${LANG_PREFIXES.ENGLISH}/migrar-web-agencia-freelance/${normalizedCity}`;
-const canonicalUrl = `${SITE_URL}${LANG_PREFIXES.ENGLISH}/migrar-web-agencia-freelance/${normalizedCity}`;
+const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
 const title = `WordPress Website Migration and Rescue Services in ${cityName} | RimoByte`;
 const description = `WordPress website migration and rescue services in ${cityName}. Regain control of your WordPress website without depending on agencies. Remote work throughout Spain.`;
 ---
@@ -31,7 +30,6 @@ const description = `WordPress website migration and rescue services in ${cityNa
   title={title}
   description={description}
   locale={locale}
-  canonical={canonicalUrl}
 >
   <meta name="robots" content={isIndexable ? "index, follow" : "noindex, follow"} />
   

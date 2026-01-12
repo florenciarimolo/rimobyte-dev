@@ -2,12 +2,12 @@
 import MainLayout from '@/layouts/MainLayout.astro';
 import MigrationLandingPage from '@/components/MigrationLandingPage';
 import MigrationStructuredData from '@/components/migration-landing/MigrationStructuredData.astro';
-import { LANG, LANG_PREFIXES } from '@/i18n/index';
+import { LANG } from '@/i18n/index';
 import { SITE_URL } from '@/constants';
 
 const locale = LANG.SPANISH;
 
-const currentUrl = `${SITE_URL}${LANG_PREFIXES.SPANISH}/migrar-web-agencia-freelance`;
+const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
 const title = 'Migración y rescate de webs WordPress sin depender de agencias | RimoByte';
 const description = 'Servicios de migración y rescate de webs WordPress. Ayudo a recuperar el control de tu web, migrarla con seguridad y dejarla preparada para que puedas gestionarla sin bloqueos técnicos.';
 
@@ -19,7 +19,6 @@ const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZ
   title={title}
   description={description}
   locale={locale}
-  canonical={currentUrl}
 >
   <MigrationStructuredData 
     url={currentUrl}
