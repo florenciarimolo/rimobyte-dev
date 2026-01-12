@@ -39,7 +39,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           </span>
         </div>
         
-        <h4 className="text-lg font-medium text-blue-400 mb-3">
+        <h4 className="font-medium text-blue-400 mb-3">
           {subtitle}
         </h4>
         

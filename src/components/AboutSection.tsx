@@ -18,10 +18,10 @@ const AboutSection: React.FC<AboutSectionProps> = ({ translations }) => {
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <article className="space-y-6">
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               {getTranslation(translations, 'sections.about.description1')}
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               {getTranslation(translations, 'sections.about.description2')}
             </p>
             <div className="flex flex-wrap gap-4">
@@ -42,7 +42,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ translations }) => {
             </h3>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-3">
-                <h4 className="text-lg font-medium text-blue-400">
+                <h4 className="font-medium text-blue-400">
                   {getTranslation(translations, 'sections.about.skills.frontend')}
                 </h4>
                 <dl className="space-y-2">
@@ -80,7 +80,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ translations }) => {
               </div>
               
               <div className="space-y-3">
-                <h4 className="text-lg font-medium text-purple-400">
+                <h4 className="font-medium text-purple-400">
                   {getTranslation(translations, 'sections.about.skills.backend')}
                 </h4>
                 <dl className="space-y-2">

@@ -3,6 +3,7 @@ import { getTranslation } from '../i18n';
 export interface Project {
   id: string;
   title: string;
+  shortDescription: string;
   description: string;
   category: string;
   technologies: string[];
@@ -17,6 +18,7 @@ export const getProjects = (translations: any): Project[] => {
   return projectKeys.map(key => ({
     id: key,
     title: getTranslation(translations, `projects.${key}.title`),
+    shortDescription: getTranslation(translations, `projects.${key}.shortDescription`),
     description: getTranslation(translations, `projects.${key}.description`),
     technologies: getTranslation(translations, `projects.${key}.technologies`).split(', '),
     link: getTranslation(translations, `projects.${key}.link`),

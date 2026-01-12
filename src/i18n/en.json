@@ -42,7 +42,10 @@
         "services": "Services",
         "events": "Events"
       },
-      "visit": "Visit"
+      "visit": "Visit",
+      "viewProject": "View Project",
+      "close": "Close",
+      "technologies": "Technologies"
     },
     "contact": {
       "title": "Get In Touch",
@@ -68,6 +71,7 @@
     "rocolegal" : {
       "title": "Roco Legal - Modern digital presence for law firm",
       "image": "rocolegal.webp",
+      "shortDescription": "Elegant bilingual law firm website that builds trust and generates inquiries.",
       "description": "A law firm needed a modern digital presence to reflect professionalism and attract clients. Launched an elegant, bilingual site that builds trust and generates inquiries.",
       "link": "https://rocolegal.loading.net",
       "technologies": "WordPress, Elementor, Yoast SEO",
@@ -76,6 +80,7 @@
     "upnext" : {
       "title": "UpNext - Discover movies and series on streaming",
       "image": "upnext.webp",
+      "shortDescription": "Discover movies and series available on streaming platforms in Spain with personalized recommendations.",
       "description": "UpNext is a web application to discover movies and series and find out which streaming platforms they are available on in Spain. It allows you to save preferences, discard content and receive personalized recommendations to decide what to watch without wasting time.",
       "link": "https://getupnext.io",
       "technologies": "Supabase, Nuxt",
@@ -84,6 +89,7 @@
     "jlgki" : {
       "title": "JLG K&I - Help organizations transform their knowledge assets into competitive advantages",
       "image": "jlgki.webp",
+      "shortDescription": "WordPress site optimized for SEO and speed helping organizations transform knowledge assets.",
       "description": "Design and development of a WordPress site for JLG K&I, a company that helps organizations transform their knowledge assets into competitive advantages. The site is built with WordPress and is optimized for SEO and speed.",
       "link": "https://jlgki.com",
       "technologies": "WordPress",
@@ -92,6 +98,7 @@
     "vibrantskin" : {
       "title": "Vibrant Skin - Online Store for Natural Skincare Products",
       "image": "vibrant-skin.webp",
+      "shortDescription": "Clean conversion-oriented Shopify store for natural skincare with custom Liquid sections and mobile-first UX.",
       "description": "End-to-end design and development of a clean, conversion-oriented Shopify store for natural skincare. Custom Liquid sections, product taxonomy and filters, optimized collections, and mobile-first UX. Configured payments, shipping rules, and email flows. SEO fundamentals (schema, meta, alt), image compression and lazy loading to improve speed.",
       "link": "https://vibrantskin.com",
       "technologies": "Shopify, Liquid",
@@ -100,6 +107,7 @@
     "bandidamezcal": {
       "title": "Banda - Online Store for Mezcal Drinks",
       "image": "bandida.webp",
+      "shortDescription": "Bold Shopify store for mezcal with custom product pages, localization for MX/US, and payment integrations.",
       "description": "Design and development of a bold Shopify store for mezcal beverages. Custom product pages with tasting notes, bundle options and age-gate. Localization, tax and shipping setup for MX/US, integration with Mercado Pago/Stripe, and automated emails. Technical SEO and performance optimization across Liquid templates and assets.",
       "link": "https://bandida.com",
       "technologies": "Shopify, Liquid",
@@ -108,6 +116,7 @@
     "reset7": {
       "title": "RESET7 - Personal Trainer Landing",
       "image": "reset7.webp",
+      "shortDescription": "Landing page with smooth animations, advanced SEO strategy, and automated marketing campaigns.",
       "description": "Complete design and development of the landing page for personal trainer Juancar Garma. Designed from scratch with Elementor, smooth animations and micro-interactions. Implementation of advanced SEO strategy with Yoast, speed optimization and automated marketing campaign with MailerLite.",
       "link": "https://juancargarma.com/reset7",
       "technologies": "Elementor, Yoast SEO, MailerLite",
@@ -116,6 +125,7 @@
     "decos": {
       "title": "de cos - Online Store for Handcrafted Jute Sandals",
       "image": "decos.webp",
+      "shortDescription": "Migration from Prestashop to WordPress with WooCommerce, improving performance, customization and security.",
       "description": "Migration of online store for handcrafted jute sandals from Prestashop to WordPress with WooCommerce, achieving improvements in performance, customization and security. Implementation of newsletter for customers with news and seasonal discounts.",
       "link": "https://decos.es",
       "technologies": "Elementor, Astra, WooCommerce, Yoast SEO",
@@ -124,6 +134,7 @@
     "rockzone": {
       "title": "Rockzone Camp - Rock Camp Website",
       "image": "rockzone.webp",
+      "shortDescription": "Rock camp website with intelligent forms and impactful design for children and teenagers.",
       "description": "Website for rock camp in Cádiz designed and developed from Hostinger Builder to WordPress, adding functionalities like forms with intelligent logic. Impactful and attractive design thought for children and teenagers.",
       "link": "https://rockzonecamp.com",
       "technologies": "Elementor, Astra, Yoast SEO",
@@ -132,6 +143,7 @@
     "luciaNails": {
       "title": "Lucía Nails - Nail and Aesthetics Center",
       "image": "lucia-nails.webp",
+      "shortDescription": "Customized WordPress website reflecting unique brand identity with performance and SEO optimization.",
       "description": "Website for nail and aesthetics center designed and developed from WordPress template, completely customized to reflect the unique brand identity. Performance and SEO optimization to ensure speed and good positioning.",
       "link": "https://lucianailsart.com",
       "technologies": "Elementor, Astra, Yoast SEO",
@@ -140,6 +152,7 @@
     "vilaLancisV2": {
       "title": "Vila & Lancis (v2) - Tax, Labor and Accounting Advisory",
       "image": "vila-lancis-v2.webp",
+      "shortDescription": "Complete WordPress redesign with multilingual support, PageSpeed optimization, and advanced SEO work.",
       "description": "Complete redesign of Vila & Lancis website from scratch with WordPress, improving speed and user experience. Added multilingual support, PageSpeed optimization, SEO work with keyword review and image compression for optimal performance.",
       "link": "https://vilalancis.com",
       "technologies": "Elementor, Astra, Yoast SEO, Polylang",
@@ -148,6 +161,7 @@
     "vilaLancisV1": {
       "title": "Vila i Lancis (v1) - Provisional Version",
       "image": "vila-lancis-v1.webp",
+      "shortDescription": "Provisional Astro version with Resend email integration developed while building WordPress version.",
       "description": "Initial version of Vila i Lancis developed with Astro and Resend for emails. Provisional solution while developing the WordPress version, copying existing design and texts due to problems with translations and admin panel access of the previous WordPress.",
       "link": "https://vila-i-lancis.vercel.app",
       "technologies": "Astro, Resend",
@@ -155,11 +169,6 @@
     }
   },
   "experience": {
-    "seiro": {
-      "title": "Software Engineer | Seiro",
-      "period": "AUG. 2025-PRESENT",
-      "description": "Design and development of projects in Seiro, a software development and consulting agency. Technologies: Shopify, Liquid, WordPress, Elementor, Vue.js, Flutter, Tailwind CSS, JavaScript, TypeScript."
-    },
     "freelance": {
       "title": "Freelance WordPress",
       "period": "APR.2021-PRESENT",

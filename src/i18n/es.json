@@ -42,7 +42,10 @@
         "services": "Servicios",
         "events": "Eventos"
       },
-      "visit": "Visitar"
+      "visit": "Visitar",
+      "viewProject": "Ver Proyecto",
+      "close": "Cerrar",
+      "technologies": "Tecnologías"
     },
     "contact": {
       "title": "Contactar",
@@ -68,6 +71,7 @@
     "rocolegal" : {
       "title": "Roco Legal - Presencia digital moderna para despacho jurídico",
       "image": "rocolegal.webp",
+      "shortDescription": "Sitio web elegante y bilingüe para despacho jurídico que genera confianza y consultas.",
       "description": "Un despacho jurídico necesitaba una presencia digital moderna que reflejara profesionalidad y atrajera clientes. Se lanzó un sitio elegante y bilingüe que genera confianza y consultas.",
       "link": "https://rocolegal.loading.net",
       "technologies": "WordPress, Elementor, Yoast SEO",
@@ -76,6 +80,7 @@
     "upnext" : {
       "title": "UpNext - Descubre películas y series en streaming",
       "image": "upnext.webp",
+      "shortDescription": "Descubre películas y series disponibles en plataformas de streaming en España con recomendaciones personalizadas.",
       "description": "UpNext es una aplicación web para descubrir películas y series y saber en qué plataformas de streaming están disponibles en España. Permite guardar gustos, descartar contenido y recibir recomendaciones personalizadas para decidir qué ver sin perder tiempo.",
       "link": "https://getupnext.io",
       "technologies": "Supabase, Nuxt",
@@ -84,6 +89,7 @@
     "jlgki" : {
       "title": "JLG K&I - Ayuda a organizaciones a transformar sus activos de conocimiento en ventajas competitivas",
       "image": "jlgki.webp",
+      "shortDescription": "Sitio WordPress optimizado para SEO y velocidad que ayuda a organizaciones a transformar activos de conocimiento.",
       "description": "Diseño y desarrollo de un sitio web para JLG K&I, una empresa que ayuda a organizaciones a transformar sus activos de conocimiento en ventajas competitivas. El sitio se construye con WordPress y está optimizado para SEO y velocidad.",
       "link": "https://jlgki.com",
       "technologies": "WordPress",
@@ -92,6 +98,7 @@
     "vibrantskin" : {
       "title": "Vibrant Skin - Tienda Online para Productos de Cuidado Natural",
       "image": "vibrant-skin.webp",
+      "shortDescription": "Tienda Shopify limpia y orientada a la conversión con secciones Liquid personalizadas y UX mobile-first.",
       "description": "Diseño y desarrollo integral de una tienda Shopify limpia y orientada a la conversión para cuidado de la piel natural. Secciones Liquid personalizadas, taxonomía y filtros de productos, colecciones optimizadas y UX mobile-first. Configuración de pagos, reglas de envío y flujos de email. SEO base (schema, meta, alt), compresión de imágenes y lazy loading para mejorar la velocidad.",
       "link": "https://vibrantskin.com",
       "technologies": "Shopify, Liquid",
@@ -100,6 +107,7 @@
     "bandidamezcal": {
       "title": "Banda - Tienda Online para Bebidas de Mezcal",
       "image": "bandida.webp",
+      "shortDescription": "Tienda Shopify con identidad potente, fichas personalizadas, localización MX/US e integraciones de pago.",
       "description": "Diseño y desarrollo de una tienda Shopify con identidad potente para bebidas de mezcal. Fichas de producto personalizadas con notas de cata, opciones de bundles y age-gate. Localización, impuestos y envíos para MX/US, integración con Mercado Pago/Stripe y emails automatizados. SEO técnico y optimización de rendimiento en plantillas Liquid y assets.",
       "link": "https://bandida.com",
       "technologies": "Shopify, Liquid",
@@ -108,6 +116,7 @@
     "reset7": {
       "title": "RESET7 - Landing para Entrenador Personal",
       "image": "reset7.webp",
+      "shortDescription": "Landing page con animaciones suaves, estrategia SEO avanzada y campañas de marketing automatizadas.",
       "description": "Diseño y desarrollo completo de la landing page para el entrenador personal Juancar Garma. Diseñada desde cero con Elementor, animaciones suaves y microinteracciones. Implementación de estrategia SEO avanzada con Yoast, optimización de velocidad y campaña de marketing automatizada con MailerLite.",
       "link": "https://juancargarma.com/reset7",
       "technologies": "Elementor, Yoast SEO, MailerLite",
@@ -116,6 +125,7 @@
     "decos": {
       "title": "de cos - Tienda Online de Sandalias Artesanas",
       "image": "decos.webp",
+      "shortDescription": "Migración de Prestashop a WordPress con WooCommerce mejorando rendimiento, personalización y seguridad.",
       "description": "Migración de tienda online de sandalias artesanas de yute desde Prestashop a WordPress con WooCommerce, obteniendo mejoras en rendimiento, personalización y seguridad. Implementación de newsletter para clientes con novedades y descuentos de temporada.",
       "link": "https://decos.es",
       "technologies": "Elementor, Astra, WooCommerce, Yoast SEO",
@@ -124,6 +134,7 @@
     "rockzone": {
       "title": "Rockzone Camp - Web para Campamento de Rock",
       "image": "rockzone.webp",
+      "shortDescription": "Sitio web para campamento de rock con formularios inteligentes y diseño impactante para niños y adolescentes.",
       "description": "Sitio web para campamento de rock en Cádiz diseñado y desarrollado desde Hostinger Builder a WordPress, añadiendo funcionalidades como formularios con lógica inteligente. Diseño impactante y atractivo pensado para niños y adolescentes.",
       "link": "https://rockzonecamp.com",
       "technologies": "Elementor, Astra, Yoast SEO",
@@ -132,6 +143,7 @@
     "luciaNails": {
       "title": "Lucía Nails - Centro de Manicura y Estética",
       "image": "lucia-nails.webp",
+      "shortDescription": "Sitio WordPress personalizado que refleja la identidad única de la marca con optimización de rendimiento y SEO.",
       "description": "Sitio web para centro de manicura y estética diseñado y desarrollado desde plantilla de WordPress, personalizada completamente para reflejar la identidad única de la marca. Optimización de rendimiento y SEO para asegurar velocidad y buen posicionamiento.",
       "link": "https://lucianailsart.com",
       "technologies": "Elementor, Astra, Yoast SEO",
@@ -140,6 +152,7 @@
     "vilaLancisV2": {
       "title": "Vila & Lancis (v2) - Asesoría Fiscal, Laboral y Contable",
       "image": "vila-lancis-v2.webp",
+      "shortDescription": "Rediseño completo con WordPress, multiidioma, optimización de PageSpeed y trabajo avanzado de SEO.",
       "description": "Rediseño completo de la web de Vila & Lancis desde cero con WordPress, mejorando velocidad y experiencia de usuario. Añadido multiidioma, optimización de PageSpeed, trabajo de SEO con revisión de palabras clave y compresión de imágenes para rendimiento óptimo.",
       "link": "https://vilalancis.com",
       "technologies": "Elementor, Astra, Yoast SEO, Polylang",
@@ -148,6 +161,7 @@
     "vilaLancisV1": {
       "title": "Vila i Lancis (v1) - Versión Provisional",
       "image": "vila-lancis-v1.webp",
+      "shortDescription": "Versión provisional desarrollada con Astro y Resend mientras se construía la versión de WordPress.",
       "description": "Versión inicial de Vila i Lancis desarrollada con Astro y Resend para emails. Solución provisional mientras se desarrollaba la versión de WordPress, copiando el diseño y textos existentes debido a problemas con traducciones y acceso al panel de admin del WordPress anterior.",
       "link": "https://vila-i-lancis.vercel.app",
       "technologies": "Astro, Resend",
@@ -155,15 +169,10 @@
     }
   },
   "experience": {
-    "seiro": {
-      "title": "Ingeniera de Software | Seiro",
-      "period": "AGO. 2025-PRESENTE",
-      "description": "Diseño y desarrollo de proyectos en Seiro, una agencia de desarrollo de software y consultoría en tecnología. Tecnologías: Shopify, Liquid, WordPress, Elementor, Vue.js, Flutter, Tailwind CSS, JavaScript, TypeScript."
-    },
     "freelance": {
-      "title": "Freelance WordPress",
-      "period": "ABR.2021-PRESENTE",
-      "description": "Diseño y desarrollo de sitios WordPress optimizados para SEO, velocidad y conversión. Gestión integral de hosting, dominios y legalidad (cookies, RGPD). Experiencia con Astra, Divi, Elementor, child themes, hooks, CSS y JS. Servicios en rimobyte.com"
+      "title": "Freelance Web Developer",
+      "period": "Abr. 2021 – Presente",
+      "description": "Desarrollo de productos y sitios web utilizando la tecnología más adecuada para cada proyecto. Trabajo con WordPress y Shopify para soluciones de contenido y e-commerce, y con frontend moderno (Vue, React, Astro) para interfaces a medida y productos web. Experiencia en proyectos end-to-end: arquitectura, desarrollo, optimización y despliegue."
     },
     "ithinkupc": {
       "title": "Ingeniera de Software | iThinkUPC",
