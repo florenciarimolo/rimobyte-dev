@@ -6,7 +6,6 @@ import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
-import '@fontsource/dm-serif-display/400.css';
 import { LANG, LANG_CODES } from '@/i18n/index';
 import { 
   SITE_URL, 
@@ -106,6 +105,9 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
     <meta name="twitter:image:alt" content={ogImageAlt} />
     <meta name="twitter:creator" content={TWITTER_HANDLE} />
     
+    <!-- Satoshi Font from Fontshare -->
+    <link rel="stylesheet" href="https://api.fontshare.com/css?f[]=satoshi@300,400,500,600,700&display=swap">
+    
     <!-- Structured Data -->
     <StructuredData type="person" locale={locale} />
     <StructuredData type="website" locale={locale} />
@@ -188,8 +190,8 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
     font-family: 'Inter', sans-serif;
   }
   
-  .font-serif-display {
-    font-family: 'DM Serif Display', serif;
+  .font-satoshi {
+    font-family: 'Satoshi', sans-serif;
   }
   
   /* Custom scrollbar */

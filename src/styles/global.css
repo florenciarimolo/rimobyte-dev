@@ -6,9 +6,9 @@
 @layer base {
   /* scroll-behavior and font-family are handled via Tailwind classes in components */
   
-  /* Apply DM Serif Display to h1 and h2 */
+  /* Apply Satoshi to h1 and h2 */
   h1, h2 {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Satoshi', sans-serif;
   }
 }
 
