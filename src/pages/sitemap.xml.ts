@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { SITE_URL } from '@/constants';
 import { getAllowedCities } from '@/constants/cities';
-import { LANG, LANG_PREFIXES } from '@/i18n/index';
+import { LANG_PREFIXES } from '@/i18n/index';
 
 // Generate sitemap.xml at build time
 export const GET: APIRoute = ({ request }) => {

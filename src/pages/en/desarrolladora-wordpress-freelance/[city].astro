@@ -27,7 +27,7 @@ const translations = getI18N({ currentLocale: locale });
 const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
 const title = `${translations.wordpressLanding.hero.title} in ${cityName} | RimoByte`;
 const description = isInternational 
-  ? translations.wordpressLanding.hero.localSeoInternational.replace('{city}', cityName)
+  ? (translations.wordpressLanding.hero as any).localSeoInternational?.replace('{city}', cityName) || translations.wordpressLanding.hero.localSeo.replace('{city}', cityName)
   : translations.wordpressLanding.hero.localSeo.replace('{city}', cityName);
 ---
 

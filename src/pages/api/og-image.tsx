@@ -32,7 +32,6 @@ export const GET: APIRoute = async ({ request }) => {
     const title = searchParams.get('title') || 'RimoByte';
     const description = searchParams.get('description') || null;
     const city = searchParams.get('city') || null;
-    const lang = searchParams.get('lang') || 'es';
     
     // Canvas dimensions
     const width = 1200;

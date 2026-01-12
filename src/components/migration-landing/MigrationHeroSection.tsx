@@ -47,7 +47,7 @@ const MigrationHeroSection: React.FC<MigrationHeroSectionProps> = ({ cityName, c
       
       if (div && heroSection) {
         // Ensure div has proper dimensions and positioning
-        const sectionRect = heroSection.getBoundingClientRect();
+        heroSection.getBoundingClientRect();
         div.style.position = 'absolute';
         div.style.top = '0';
         div.style.left = '0';
