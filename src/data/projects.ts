@@ -22,7 +22,7 @@ export const getProjects = (translations: any): Project[] => {
     description: getTranslation(translations, `projects.${key}.description`),
     technologies: getTranslation(translations, `projects.${key}.technologies`).split(', '),
     link: getTranslation(translations, `projects.${key}.link`),
-    image: '/assets/images/' + getTranslation(translations, `projects.${key}.image`),
+    image: '/assets/images/projects/' + getTranslation(translations, `projects.${key}.image`),
     category: getTranslation(translations, `projects.${key}.category`)
   }));
 };

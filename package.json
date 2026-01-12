@@ -11,6 +11,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "lint": "astro check",
+    "clean": "rm -rf node_modules/.vite .astro dist",
     "generate-favicons": "node scripts/generate-favicons.js"
   },
   "dependencies": {

@@ -47,6 +47,13 @@
       "close": "Cerrar",
       "technologies": "Tecnologías"
     },
+    "templates": {
+      "title": "Templates & Recursos",
+      "intro": "Plantillas profesionales utilizadas en proyectos reales. Herramientas de desarrollo listas para usar, construidas con las mejores prácticas y tecnologías modernas.",
+      "digitalProduct": "Producto digital",
+      "viewTemplate": "Ver template",
+      "viewResource": "Ver recurso"
+    },
     "contact": {
       "title": "Contactar",
       "subtitle": "Trabajemos juntos",
@@ -59,7 +66,7 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 RimoByte. Todos los derechos reservados."
+    "copyright": "© {year} RimoByte. Todos los derechos reservados."
   },
   "notFound": {
     "title": "404",
@@ -73,7 +80,7 @@
       "image": "rocolegal.webp",
       "shortDescription": "Sitio web elegante y bilingüe para despacho jurídico que genera confianza y consultas.",
       "description": "Un despacho jurídico necesitaba una presencia digital moderna que reflejara profesionalidad y atrajera clientes. Se lanzó un sitio elegante y bilingüe que genera confianza y consultas.",
-      "link": "https://rocolegal.loading.net",
+      "link": "https://rocolegal.com",
       "technologies": "WordPress, Elementor, Yoast SEO",
       "category": "services"
     },
@@ -188,6 +195,16 @@
       "title": "Desarrolladora Web en prácticas | inLabFIB",
       "period": "NOV.2016-OCT.2019",
       "description": "Desarrollo y mantenimiento de API REST con Django REST Framework. Participación en el mantenimiento de la intranet de la FIB (Java Servlets, JSP, JDBC). Desarrollo del TFG: aplicación web para gestionar estancias académicas de estudiantes extranjeros, actualmente en uso (mobility.fib.upc.edu)."
+    }
+  },
+  "templates": {
+    "ai-saas-landing-astro": {
+      "name": "Premium SaaS Landing Page – Astro Template",
+      "shortDescription": "Plantilla de landing page SaaS lista para producción construida con Astro y Tailwind CSS.",
+      "techStack": "Astro, Tailwind CSS, React",
+      "gumroadLink": "https://rimobyte.gumroad.com/l/ai-saas-landing-astro",
+      "liveLink": "https://dark-saas-template.vercel.app/",
+      "image": "saas-landing-astro-template.webp"
     }
   },
   "education": {

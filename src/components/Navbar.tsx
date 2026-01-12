@@ -89,12 +89,15 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange }) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/">
+            <a href="/" className="flex items-center space-x-2 group">
               <img 
-                src={isDark ? "/assets/images/logo-rimobyte-light-grey.png" : "/assets/images/logo-rimobyte-grey.png"} 
+                src="/favicon.png" 
                 alt="RimoByte" 
-                className="w-[120px] transition-opacity duration-300 object-contain" 
+                className="w-8 h-8 transition-opacity duration-300" 
               />
+              <span className="text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-200 font-semibold text-lg">
+                RimoByte
+              </span>
             </a>
           </div>
 

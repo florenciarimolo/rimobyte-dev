@@ -47,6 +47,13 @@
       "close": "Close",
       "technologies": "Technologies"
     },
+    "templates": {
+      "title": "Templates & Resources",
+      "intro": "Professional templates used in real projects. Ready-to-use development tools built with best practices and modern technologies.",
+      "digitalProduct": "Digital product",
+      "viewTemplate": "View template",
+      "viewResource": "View resource"
+    },
     "contact": {
       "title": "Get In Touch",
       "subtitle": "Let's work together",
@@ -59,7 +66,7 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 RimoByte. All rights reserved."
+    "copyright": "© {year} RimoByte. All rights reserved."
   },
   "notFound": {
     "title": "404",
@@ -73,7 +80,7 @@
       "image": "rocolegal.webp",
       "shortDescription": "Elegant bilingual law firm website that builds trust and generates inquiries.",
       "description": "A law firm needed a modern digital presence to reflect professionalism and attract clients. Launched an elegant, bilingual site that builds trust and generates inquiries.",
-      "link": "https://rocolegal.loading.net",
+      "link": "https://rocolegal.com",
       "technologies": "WordPress, Elementor, Yoast SEO",
       "category": "services"
     },
@@ -188,6 +195,16 @@
       "title": "Web Developer Intern | inLabFIB",
       "period": "NOV.2016-OCT.2019",
       "description": "Development and maintenance of REST APIs with Django REST Framework. Participation in the maintenance of the FIB intranet (Java Servlets, JSP, JDBC). Development of the final degree project: web application to manage academic stays of foreign students, currently in use (mobility.fib.upc.edu)."
+    }
+  },
+  "templates": {
+    "ai-saas-landing-astro": {
+      "name": "Premium SaaS Landing Page – Astro Template",
+      "shortDescription": "Production-ready SaaS landing page template built with Astro and Tailwind CSS.",
+      "techStack": "Astro, Tailwind CSS, React",
+      "gumroadLink": "https://rimobyte.gumroad.com/l/ai-saas-landing-astro",
+      "liveLink": "https://dark-saas-template.vercel.app/",
+      "image": "saas-landing-astro-template.webp"
     }
   },
   "education": {

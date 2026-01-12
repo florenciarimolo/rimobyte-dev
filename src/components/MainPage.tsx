@@ -5,6 +5,7 @@ import AboutSection from './AboutSection';
 import ExperienceSection from './ExperienceSection';
 import EducationSection from './EducationSection';
 import ProjectsSection from './ProjectsSection';
+import TemplatesSection from './TemplatesSection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
 import { getI18N } from '../i18n';
@@ -56,6 +57,7 @@ const MainPage: React.FC<MainPageProps> = ({ recaptchaSiteKey }) => {
         <ExperienceSection translations={translations} />
         <EducationSection translations={translations} />
         <ProjectsSection translations={translations} />
+        <TemplatesSection translations={translations} />
         <ContactSection translations={translations} currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} />
       </main>
 
