@@ -54,10 +54,10 @@ const MainPage: React.FC<MainPageProps> = ({ recaptchaSiteKey }) => {
       <main>
         <HeroSection translations={translations} />
         <AboutSection translations={translations} />
-        <ExperienceSection translations={translations} />
-        <EducationSection translations={translations} />
         <ProjectsSection translations={translations} />
         <TemplatesSection translations={translations} />
+        <ExperienceSection translations={translations} />
+        <EducationSection translations={translations} />
         <ContactSection translations={translations} currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} />
       </main>
 

@@ -192,17 +192,17 @@
     "ithinkupc": {
       "title": "Software Engineer | iThinkUPC",
       "period": "OCT. 2021-SEP. 2025",
-      "description": "Design and development of ICT projects for the Polytechnic University of Catalonia: project management, university electoral systems and digital identity management. Technologies: GitLab, Spring Boot, Vue.js, Java, TypeScript, Markdown, Oracle SQL, MongoDB, Jira."
+      "description": "Development of systems for the Polytechnic University of Catalonia. Responsibilities included project management, development of university electoral systems and digital identity platforms. Team work with agile methodologies."
     },
     "flanks": {
       "title": "Software Engineer | Flanks",
       "period": "NOV.2019-MAY.2021",
-      "description": "Backend development with Django and scraping in the fintech sector. Client meetings, bank aggregator integration and frontend with Vue.js. Docker and Kubernetes for deployment."
+      "description": "Backend development and scraping in the fintech sector. Bank aggregator integration, API development and frontend work. Client meetings and cloud deployment."
     },
     "inlabfib": {
       "title": "Web Developer Intern | inLabFIB",
       "period": "NOV.2016-OCT.2019",
-      "description": "Development and maintenance of REST APIs with Django REST Framework. Participation in the maintenance of the FIB intranet (Java Servlets, JSP, JDBC). Development of the final degree project: web application to manage academic stays of foreign students, currently in use (mobility.fib.upc.edu)."
+      "description": "Development and maintenance of REST APIs. Maintenance of internal university systems. Final degree project: web application for managing academic stays, currently in production."
     }
   },
   "templates": {
@@ -220,13 +220,13 @@
       "title": "Computer Engineering Degree",
       "institution": "Facultat d'Informàtica de Barcelona | UPC",
       "period": "2014-2019",
-      "description": "Complete training in computer engineering with specialization in software development and systems."
+      "description": "Specialization in software development and systems."
     },
     "highSchool": {
       "title": "Scientific Baccalaureate",
       "institution": "Dominiques de l'Ensenyament | Barcelona",
       "period": "2012-2014",
-      "description": "Scientific baccalaureate with focus on sciences and mathematics."
+      "description": "Focus on sciences and mathematics."
     }
   }
 }

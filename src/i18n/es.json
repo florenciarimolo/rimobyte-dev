@@ -192,17 +192,17 @@
     "ithinkupc": {
       "title": "Ingeniera de Software | iThinkUPC",
       "period": "OCT. 2021-SEPT. 2025",
-      "description": "Diseño y desarrollo de proyectos TIC para la Universidad Politécnica de Cataluña: gestión de proyectos, sistemas electorales universitarios y gestión de identidad digital. Tecnologías: GitLab, Spring Boot, Vue.js, Java, TypeScript, Markdown, Oracle SQL, MongoDB, Jira."
+      "description": "Desarrollo de sistemas para la Universidad Politécnica de Cataluña. Responsabilidades incluyeron gestión de proyectos, desarrollo de sistemas electorales universitarios y plataformas de identidad digital. Trabajo en equipo con metodologías ágiles."
     },
     "flanks": {
       "title": "Ingeniera de Software | Flanks",
       "period": "NOV.2019-MAY.2021",
-      "description": "Desarrollo backend con Django y scraping en el sector fintech. Reuniones con clientes, integración de agregadores bancarios y frontend con Vue.js. Docker y Kubernetes para despliegue."
+      "description": "Desarrollo backend y scraping en el sector fintech. Integración de agregadores bancarios, desarrollo de APIs y frontend. Participación en reuniones con clientes y despliegue en entornos cloud."
     },
     "inlabfib": {
       "title": "Desarrolladora Web en prácticas | inLabFIB",
       "period": "NOV.2016-OCT.2019",
-      "description": "Desarrollo y mantenimiento de API REST con Django REST Framework. Participación en el mantenimiento de la intranet de la FIB (Java Servlets, JSP, JDBC). Desarrollo del TFG: aplicación web para gestionar estancias académicas de estudiantes extranjeros, actualmente en uso (mobility.fib.upc.edu)."
+      "description": "Desarrollo y mantenimiento de APIs REST. Mantenimiento de sistemas internos universitarios. Desarrollo del proyecto final de grado: aplicación web para gestión de estancias académicas, actualmente en producción."
     }
   },
   "templates": {
@@ -220,13 +220,13 @@
       "title": "Grado de Ingeniería Informática",
       "institution": "Facultat d'Informàtica de Barcelona | UPC",
       "period": "2014-2019",
-      "description": "Formación completa en ingeniería informática con especialización en desarrollo de software y sistemas."
+      "description": "Especialización en desarrollo de software y sistemas."
     },
     "highSchool": {
       "title": "Bachillerato Científico",
       "institution": "Dominiques de l'Ensenyament | Barcelona",
       "period": "2012-2014",
-      "description": "Bachillerato científico con enfoque en ciencias y matemáticas."
+      "description": "Enfoque en ciencias y matemáticas."
     }
   }
 }

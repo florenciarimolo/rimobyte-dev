@@ -28,8 +28,10 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ translations }) =
                 subtitle={exp.company}
                 period={exp.period}
                 description={exp.description}
-                technologies={exp.technologies}
+                technologies={exp.id === 'freelance' ? exp.technologies : []}
                 isLast={index === experienceData.length - 1}
+                isProminent={exp.id === 'freelance'}
+                isCompact={exp.id !== 'freelance'}
               />
             </article>
           ))}

@@ -17,9 +17,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
 
   const navItems = [
     { id: 'about', label: getTranslation(translations, 'navbar.about') },
-    { id: 'experience', label: getTranslation(translations, 'navbar.experience') },
     { id: 'projects', label: getTranslation(translations, 'navbar.projects') },
     { id: 'templates', label: getTranslation(translations, 'navbar.templates') },
+    { id: 'experience', label: getTranslation(translations, 'navbar.experience') },
     { id: 'contact', label: getTranslation(translations, 'navbar.contact') }
   ];
 
