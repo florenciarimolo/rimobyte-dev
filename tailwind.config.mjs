@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
+        'serif-display': ['DM Serif Display', 'serif'],
       },
       fontSize: {
         'base': '0.875rem', // 14px - reducido desde el default de 16px

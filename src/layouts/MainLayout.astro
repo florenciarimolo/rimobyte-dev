@@ -1,6 +1,12 @@
 ---
 import StructuredData from '@/components/StructuredData.astro';
 import '@/styles/global.css';
+import '@fontsource/inter/300.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/dm-serif-display/400.css';
 import { LANG, LANG_CODES } from '@/i18n/index';
 import { 
   SITE_URL, 
@@ -100,11 +106,6 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
     <meta name="twitter:image:alt" content={ogImageAlt} />
     <meta name="twitter:creator" content={TWITTER_HANDLE} />
     
-    <!-- Preload fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <!-- Structured Data -->
     <StructuredData type="person" locale={locale} />
     <StructuredData type="website" locale={locale} />
@@ -185,6 +186,10 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
   
   .font-inter {
     font-family: 'Inter', sans-serif;
+  }
+  
+  .font-serif-display {
+    font-family: 'DM Serif Display', serif;
   }
   
   /* Custom scrollbar */

@@ -44,6 +44,13 @@ export default defineConfig({
       alias: {
         '@': resolve(__dirname, './src')
       }
+    },
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'framer-motion'],
+      exclude: []
+    },
+    ssr: {
+      noExternal: ['@fontsource/inter', '@fontsource/dm-serif-display']
     }
   }
 });
