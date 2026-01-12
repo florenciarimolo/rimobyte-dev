@@ -2,14 +2,15 @@
 import MainLayout from '@/layouts/MainLayout.astro';
 import WordPressLandingPage from '@/components/WordPressLandingPage';
 import WordPressStructuredData from '@/components/wordpress-landing/WordPressStructuredData.astro';
-import { LANG } from '@/i18n/index';
+import { LANG, getI18N } from '@/i18n/index';
 import { SITE_URL } from '@/constants';
 
 const locale = LANG.ENGLISH;
+const translations = getI18N({ currentLocale: locale });
 
 const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
-const title = 'WordPress Freelance Developer for Professional Businesses | RimoByte';
-const description = 'WordPress freelance developer specialized in professional websites, e-commerce and maintenance. Direct work without intermediaries, optimized for performance and SEO.';
+const title = `${translations.wordpressLanding.hero.title} | RimoByte`;
+const description = translations.wordpressLanding.hero.subtitle;
 
 // Get reCAPTCHA site key from environment variable
 const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';

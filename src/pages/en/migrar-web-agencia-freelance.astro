@@ -2,14 +2,15 @@
 import MainLayout from '@/layouts/MainLayout.astro';
 import MigrationLandingPage from '@/components/MigrationLandingPage';
 import MigrationStructuredData from '@/components/migration-landing/MigrationStructuredData.astro';
-import { LANG } from '@/i18n/index';
+import { LANG, getI18N } from '@/i18n/index';
 import { SITE_URL } from '@/constants';
 
 const locale = LANG.ENGLISH;
+const translations = getI18N({ currentLocale: locale });
 
 const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
-const title = 'WordPress Website Migration and Rescue Services | RimoByte';
-const description = 'WordPress website migration and rescue services. I help you regain control of your website, migrate it safely, and prepare it so you can manage it without technical blocks.';
+const title = `${translations.migrationLanding.hero.title} | RimoByte`;
+const description = translations.migrationLanding.hero.subtitle;
 
 // Get reCAPTCHA site key from environment variable
 const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
