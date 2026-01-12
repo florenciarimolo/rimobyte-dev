@@ -6,6 +6,7 @@ Sitemap: https://rimobyte.com/sitemap.xml
 
 # Disallow admin and API routes
 Disallow: /api/
+Allow: /api/og-image
 Disallow: /404
 
 # Allow all other pages
