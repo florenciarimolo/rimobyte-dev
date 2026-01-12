@@ -14,19 +14,19 @@ import {
   AUTHOR_NAME, 
   AUTHOR_TITLE_ES, 
   AUTHOR_TITLE_EN,
-  DEFAULT_DESCRIPTION,
-  DEFAULT_IMAGE
+  DEFAULT_DESCRIPTION
 } from '@/constants';
 import { getAlternateUrls, getCanonicalUrl, getLangFromPathname } from '@/utils/i18n-urls';
+import { getOgImageUrl } from '@/utils/og-image';
 
 export interface Props {
   title: string;
   description?: string;
   locale?: string;
   keywords?: string;
-  image?: string;
   type?: string;
   canonical?: string;
+  city?: string | null;
 }
 
 const { 
@@ -34,13 +34,13 @@ const {
   description = DEFAULT_DESCRIPTION,
   locale,
   keywords,
-  image = DEFAULT_IMAGE,
   type = 'website',
-  canonical
+  canonical,
+  city
 } = Astro.props;
 
 // Get locale from URL if not provided
-const currentLocale = locale || getLangFromPathname(Astro.url.pathname);
+const currentLocale: typeof LANG.ENGLISH | typeof LANG.SPANISH = (locale as typeof LANG.ENGLISH | typeof LANG.SPANISH) || getLangFromPathname(Astro.url.pathname);
 
 // Keywords por defecto basados en keyword research
 const defaultKeywords = currentLocale === LANG.SPANISH
@@ -52,6 +52,16 @@ const finalKeywords = keywords || defaultKeywords;
 // Generate canonical and alternate URLs
 const canonicalUrl = canonical || getCanonicalUrl(Astro.url.pathname);
 const alternateUrls = getAlternateUrls(Astro.url.pathname);
+
+// Generate dynamic OG image URL for all pages
+// Always use dynamic OG images (same for Open Graph and Twitter Cards)
+const ogImageLang: 'es' | 'en' = currentLocale === LANG.ENGLISH ? 'en' : 'es';
+const ogImage = getOgImageUrl(
+  title.replace(' | RimoByte', ''), // Remove site name suffix for cleaner title
+  description,
+  city,
+  ogImageLang
+);
 
 const langCode = currentLocale === LANG.SPANISH ? LANG_CODES.SPANISH : LANG_CODES.ENGLISH;
 const htmlLang = currentLocale === LANG.SPANISH ? LANG.SPANISH : LANG.ENGLISH;
@@ -100,7 +110,7 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={ogImageAlt} />
@@ -113,7 +123,7 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
     <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
     <meta name="twitter:creator" content={TWITTER_HANDLE} />
     
