@@ -209,10 +209,18 @@
     "ai-saas-landing-astro": {
       "name": "Premium SaaS Landing Page – Astro Template",
       "shortDescription": "Plantilla de landing page SaaS lista para producción construida con Astro y Tailwind CSS.",
-      "techStack": "Astro, Tailwind CSS, React",
+      "techStack": "Astro, Tailwind CSS",
       "gumroadLink": "https://rimobyte.gumroad.com/l/ai-saas-landing-astro",
       "liveLink": "https://dark-saas-template.vercel.app/",
       "image": "saas-landing-astro-template.webp"
+    },
+    "psychologist-landing-astro": {
+      "name": "Psychologist Landing Page – Astro Template",
+      "shortDescription": "Plantilla de landing page para psicólogos y terapeutas lista para producción construida con Astro.",
+      "techStack": "Astro, Motion One, Tailwind CSS",
+      "gumroadLink": "https://rimobyte.gumroad.com/l/psychologist-landing-template",
+      "liveLink": "https://psychology-landing-template.vercel.app/",
+      "image": "psychologist-landing-template.webp"
     }
   },
   "education": {
