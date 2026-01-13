@@ -10,17 +10,23 @@ A modern, responsive portfolio website for Florencia Rímolo - Full Stack Develo
 - **Responsive**: Fully responsive design for all devices
 - **Smooth Animations**: Beautiful hover effects and transitions
 - **Interactive Components**: Dynamic project filtering and timeline
-- **Contact Form**: Integrated contact form (ready for Resend integration)
-- **SEO Optimized**: Meta tags and structured data
-- **Performance**: Fast loading with Astro's static site generation
+- **Contact Form**: Integrated contact form with Resend email delivery
+- **reCAPTCHA Protection**: Google reCAPTCHA Enterprise integration
+- **SEO Optimized**: Meta tags, structured data, and dynamic sitemap
+- **Landing Pages**: Dynamic city-based landing pages for services
+- **Performance**: Server-side rendering with Astro for optimal performance
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Astro](https://astro.build/) - Static site generator
+- **Framework**: [Astro v5](https://astro.build/) - Server-side rendering (SSR)
 - **Language**: [TypeScript](https://www.typescriptlang.org/) - Type safety
-- **Styling**: [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS
-- **Components**: [React](https://reactjs.org/) - Interactive components
-- **Icons**: SVG icons and emojis
+- **Styling**: [TailwindCSS v3](https://tailwindcss.com/) - Utility-first CSS
+- **Components**: [React 19](https://reactjs.org/) - Interactive components
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) - Smooth animations
+- **Deployment**: [Vercel](https://vercel.com/) - Serverless functions
+- **Email**: [Resend](https://resend.com/) - Email delivery
+- **Security**: Google reCAPTCHA Enterprise - Form protection
+- **Icons**: SVG icons
 - **Fonts**: Inter font family
 
 ## 📁 Project Structure
@@ -28,35 +34,54 @@ A modern, responsive portfolio website for Florencia Rímolo - Full Stack Develo
 ```
 src/
 ├── components/          # React components
+│   ├── MainPage.tsx    # Main portfolio page component
 │   ├── Navbar.tsx      # Navigation bar with theme/language switchers
 │   ├── ThemeSwitcher.tsx # Dark/light theme toggle
 │   ├── LanguageSwitcher.tsx # Language selection
 │   ├── TimelineItem.tsx # Experience/education timeline items
 │   ├── ProjectCard.tsx  # Project display cards
-│   └── ContactForm.tsx  # Contact form component
+│   ├── ProjectModal.tsx # Project detail modal
+│   ├── ContactForm.tsx  # Contact form component
+│   ├── wordpress-landing/ # WordPress service landing pages
+│   ├── migration-landing/ # Migration service landing pages
+│   └── icons/          # Technology icons
 ├── layouts/            # Astro layouts
-│   └── MainLayout.astro # Main layout with meta tags
-├── pages/              # Astro pages
-│   └── index.astro     # Main portfolio page
-├── styles/             # Global styles
-│   └── global.css      # TailwindCSS and custom styles
-└── data/               # Static data
-    ├── projects.ts     # Project information
-    ├── experience.ts   # Work experience data
-    └── education.ts    # Education timeline data
+│   └── MainLayout.astro # Main layout with meta tags and SEO
+├── pages/              # Astro pages (file-based routing)
+│   ├── api/           # API routes (contact, recaptcha, og-image)
+│   ├── es/            # Spanish pages
+│   ├── en/            # English pages
+│   ├── index.astro    # Root redirect
+│   ├── 404.astro      # Not found page
+│   └── sitemap.xml.ts # Dynamic sitemap generation
+├── i18n/              # Internationalization
+│   ├── en.json        # English translations
+│   ├── es.json        # Spanish translations
+│   └── index.ts       # i18n utilities
+├── data/               # Static data
+│   ├── projects.ts    # Project information
+│   ├── experience.ts  # Work experience data
+│   ├── education.ts   # Education timeline data
+│   └── templates.ts   # Template showcase data
+├── constants/          # Constants and configuration
+│   └── cities.ts      # City data for landing pages
+├── utils/             # Utility functions
+│   ├── recaptcha.ts   # reCAPTCHA verification
+│   └── i18n-urls.ts   # i18n URL utilities
+└── styles/            # Global styles
+    └── global.css     # TailwindCSS and custom styles
 public/
-├── assets/             # Static assets
-│   ├── svgs/          # SVG icons
-│   └── images/        # Project images
-└── favicon.svg        # Site favicon
+├── assets/            # Static assets
+│   └── images/       # Project and template images
+└── favicon.*         # Favicon files (multiple sizes)
 ```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (version 18 or higher)
-- npm or yarn
+- **Node.js**: Version 18 or higher (required for Astro v5 and Vite 6)
+- **npm** or **yarn** package manager
 
 ### Installation
 
@@ -81,9 +106,11 @@ npm run dev
 ### Available Scripts
 
 - `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run astro` - Run Astro CLI commands
+- `npm run build` - Run type check and build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run Astro type checking
+- `npm run clean` - Clean build artifacts and cache
+- `npm run generate-favicons` - Generate favicon files
 
 ## 🎨 Customization
 
@@ -102,17 +129,31 @@ Update the following files with your information:
 - Fonts: Change the font family in the layout
 - Animations: Modify animation keyframes in the CSS
 
-### Contact Form Integration
+### Contact Form
 
-To integrate with Resend:
+The contact form is already integrated with Resend. It includes:
+- Client-side form validation
+- reCAPTCHA Enterprise verification
+- Server-side email delivery via Resend API
 
-1. Install Resend SDK:
-```bash
-npm install resend
-```
+The form is protected by Google reCAPTCHA Enterprise to prevent spam submissions.
 
-2. Create an API route in `src/pages/api/contact.ts`
-3. Update the ContactForm component to use the API
+## 🌍 Internationalization (i18n)
+
+The site supports multiple languages with automatic routing:
+
+- **Default Language**: Spanish (`/es/`)
+- **Secondary Language**: English (`/en/`)
+- **Routing**: Language prefix is required for all routes
+- **Fallback**: English pages fall back to Spanish if translation is missing
+
+### Landing Pages
+
+The project includes dynamic landing pages for services:
+- **WordPress Development**: `/es/desarrolladora-wordpress-freelance/[city]`
+- **Website Migration**: `/es/migrar-web-agencia-freelance/[city]`
+
+These pages are automatically generated for multiple cities and languages.
 
 ## 📱 Responsive Design
 
@@ -127,33 +168,58 @@ The portfolio is fully responsive with breakpoints:
 
 1. Push your code to GitHub
 2. Connect your repository to Vercel
-3. Deploy automatically
+3. Configure environment variables in Vercel dashboard
+4. Deploy automatically (Vercel will detect the Astro configuration)
 
-### Netlify
-
-1. Build the project: `npm run build`
-2. Upload the `dist` folder to Netlify
+The project is configured with the `@astrojs/vercel` adapter for optimal serverless deployment.
 
 ### Other Platforms
 
-The static site can be deployed to any hosting platform that supports static sites.
+This project uses server-side rendering (SSR) and requires a Node.js-compatible hosting platform. The Vercel adapter is configured, but you can adapt it for other platforms that support Astro SSR:
+
+- **Netlify**: Use `@astrojs/netlify` adapter
+- **Cloudflare Pages**: Use `@astrojs/cloudflare` adapter
+- **Node.js**: Use `@astrojs/node` adapter
+
+Note: This is not a static site - it requires server-side rendering capabilities.
 
 ## 🔧 Configuration
 
 ### Environment Variables
 
-Create a `.env` file for any API keys:
+Create a `.env` file with the following variables:
 
 ```env
+# Email Service (Resend)
 RESEND_API_KEY=your_resend_api_key
+
+# reCAPTCHA Enterprise
+RECAPTCHA_SITE_KEY=your_recaptcha_site_key
+GOOGLE_CLOUD_PROJECT_ID=your_google_cloud_project_id
+# OR
+RECAPTCHA_PROJECT_ID=your_recaptcha_project_id
+
+# Google Service Account (for reCAPTCHA verification)
+# Optional: If not provided, uses Application Default Credentials (ADC)
+GOOGLE_SERVICE_ACCOUNT_JSON=your_service_account_json_string
+
+# Development only
+SKIP_RECAPTCHA=true  # Skip reCAPTCHA verification in development
 ```
+
+**Note**: For production on Vercel, add these as environment variables in your Vercel project settings.
 
 ### Astro Configuration
 
 The Astro configuration is in `astro.config.mjs` and includes:
-- TailwindCSS integration
-- React integration
-- TypeScript checking
+- **Output**: Server-side rendering (SSR) mode
+- **Adapter**: Vercel adapter for serverless deployment
+- **Integrations**: 
+  - TailwindCSS v3 integration
+  - React integration for interactive components
+  - Sitemap generation with i18n support
+- **i18n**: Built-in internationalization with Spanish (default) and English
+- **TypeScript**: Strict type checking enabled
 
 ### Favicon Configuration
 

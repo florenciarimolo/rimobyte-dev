@@ -46,8 +46,7 @@ export default defineConfig({
       }
     },
     optimizeDeps: {
-      include: ['react', 'react-dom', 'framer-motion'],
-      exclude: []
+      include: ['react', 'react-dom', 'framer-motion']
     },
     ssr: {
       noExternal: ['@fontsource/inter', '@fontsource/dm-serif-display']
