@@ -54,5 +54,8 @@ export function isValidCityForLang(slug: string, lang: 'es' | 'en'): boolean {
 
 // Cities that should be indexable (index=true)
 // Note: All cities in allowedCities are included in sitemap,
-// but only these have index meta tag
-export const indexableCities = ['barcelona', 'madrid'];
+// All cities are now indexable
+export const indexableCities = [
+  ...Object.keys(spanishCities),
+  ...Object.keys(internationalCities)
+];
