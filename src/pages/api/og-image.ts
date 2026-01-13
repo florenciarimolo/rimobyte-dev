@@ -59,7 +59,7 @@ export const GET: APIRoute = async ({ request }) => {
     
     // Font sizes
     const siteNameSize = 28;
-    const titleSize = 64;
+    const titleSize = 54;
     const subtitleSize = 36;
     const contextSize = 24;
     
