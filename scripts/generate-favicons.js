@@ -16,6 +16,8 @@ const sizes = [
   { name: 'favicon-32x32.png', size: 32 },
   { name: 'favicon-48x48.png', size: 48 },
   { name: 'favicon-96x96.png', size: 96 },
+  { name: 'favicon-144x144.png', size: 144 },
+  { name: 'favicon-192x192.png', size: 192 },
   { name: 'apple-touch-icon.png', size: 180 },
   { name: 'android-chrome-192x192.png', size: 192 },
   { name: 'android-chrome-512x512.png', size: 512 },
@@ -43,10 +45,11 @@ async function generateFavicons() {
     }
 
     // Generar favicon.ico (formato ICO real con múltiples tamaños)
+    // Debe contener capas de 16x16 y 32x32 para compatibilidad legacy
     const icoPath = join(publicDir, 'favicon.ico');
     
-    // Generar PNGs temporales para los tamaños ICO
-    const icoSizes = [16, 32, 48];
+    // Generar PNGs temporales para los tamaños ICO (solo 16x16 y 32x32)
+    const icoSizes = [16, 32];
     const icoBuffers = [];
     
     for (const icoSize of icoSizes) {
@@ -78,7 +81,7 @@ async function generateFavicons() {
       }
     }
     
-    console.log(`✅ Generado: favicon.ico (16x16, 32x32, 48x48)\n`);
+    console.log(`✅ Generado: favicon.ico (16x16, 32x32)\n`);
 
     console.log('✨ ¡Todos los favicons han sido generados exitosamente!');
     console.log('\n📝 Todos los archivos están listos para usar.\n');

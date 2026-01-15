@@ -9,6 +9,7 @@ import '@fontsource/inter/700.css';
 import { LANG, LANG_CODES } from '@/i18n/index';
 import { 
   SITE_NAME, 
+  SITE_URL,
   TWITTER_HANDLE, 
   AUTHOR_NAME, 
   AUTHOR_TITLE_ES, 
@@ -96,13 +97,16 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
     
     <!-- Favicon configuration for Google and all browsers -->
     <!-- Google Search requires at least one PNG favicon with minimum 48x48 size -->
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <!-- URLs absolutas para que Google pueda acceder a los favicons sin descargarlos todos -->
+    <link rel="icon" type="image/png" sizes="192x192" href={`${SITE_URL}/favicon-192x192.png`} />
+    <link rel="icon" type="image/png" sizes="144x144" href={`${SITE_URL}/favicon-144x144.png`} />
+    <link rel="icon" type="image/png" sizes="96x96" href={`${SITE_URL}/favicon-96x96.png`} />
+    <link rel="icon" type="image/png" sizes="48x48" href={`${SITE_URL}/favicon-48x48.png`} />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${SITE_URL}/favicon-32x32.png`} />
+    <link rel="icon" type="image/png" sizes="16x16" href={`${SITE_URL}/favicon-16x16.png`} />
+    <link rel="shortcut icon" href={`${SITE_URL}/favicon.ico`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${SITE_URL}/apple-touch-icon.png`} />
+    <link rel="manifest" href={`${SITE_URL}/site.webmanifest`} />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={type} />
