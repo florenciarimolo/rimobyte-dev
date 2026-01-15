@@ -56,13 +56,6 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
         div.style.zIndex = '0';
         div.style.pointerEvents = 'none';
         
-        console.log('🔍 Hero section found:', {
-          divExists: !!div,
-          sectionHeight: sectionRect.height,
-          sectionWidth: sectionRect.width,
-          UnicornStudioExists: !!UnicornStudioGlobal
-        });
-        
         if (UnicornStudioGlobal) {
           // Wait for UnicornStudio to be ready
           if (typeof UnicornStudioGlobal.init === 'function') {
@@ -75,17 +68,6 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
               if (window.UnicornStudio) {
                 window.UnicornStudio.isInitialized = true;
               }
-              console.log('✅ UnicornStudio initialized for Hero section');
-              
-              // Check if canvas was created
-              setTimeout(() => {
-                const canvas = div.querySelector('canvas');
-                console.log('🎨 Canvas in Hero:', !!canvas, canvas ? { 
-                  width: canvas.width, 
-                  height: canvas.height,
-                  display: window.getComputedStyle(canvas).display
-                } : null);
-              }, 500);
             } catch (error) {
               console.error('❌ Error initializing UnicornStudio:', error);
             }

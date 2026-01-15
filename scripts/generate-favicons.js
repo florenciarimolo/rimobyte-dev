@@ -25,8 +25,6 @@ const sizes = [
 
 async function generateFavicons() {
   try {
-    console.log('🔄 Generando favicons desde favicon.png...\n');
-
     // Leer la imagen original
     const image = sharp(faviconPath);
 
@@ -41,7 +39,6 @@ async function generateFavicons() {
         })
         .png()
         .toFile(outputPath);
-      console.log(`✅ Generado: ${name} (${size}x${size})`);
     }
 
     // Generar favicon.ico (formato ICO real con múltiples tamaños)
@@ -80,11 +77,6 @@ async function generateFavicons() {
         // Ignorar errores al eliminar
       }
     }
-    
-    console.log(`✅ Generado: favicon.ico (16x16, 32x32)\n`);
-
-    console.log('✨ ¡Todos los favicons han sido generados exitosamente!');
-    console.log('\n📝 Todos los archivos están listos para usar.\n');
 
   } catch (error) {
     console.error('❌ Error al generar favicons:', error.message);
