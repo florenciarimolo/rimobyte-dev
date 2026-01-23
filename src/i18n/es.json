@@ -120,7 +120,7 @@
       "category": "ecommerce"
     },
     "bandidamezcal": {
-      "title": "Banda - Tienda Online para Bebidas de Mezcal",
+      "title": "Bandida - Tienda Online para Bebidas de Mezcal",
       "image": "bandida.webp",
       "shortDescription": "Tienda Shopify con identidad potente, fichas personalizadas, localización MX/US e integraciones de pago.",
       "description": "Diseño y desarrollo de una tienda Shopify con identidad potente para bebidas de mezcal. Fichas de producto personalizadas con notas de cata, opciones de bundles y age-gate. Localización, impuestos y envíos para MX/US, integración con Mercado Pago/Stripe y emails automatizados. SEO técnico y optimización de rendimiento en plantillas Liquid y assets.",
@@ -138,7 +138,7 @@
       "category": "landing-page"
     },
     "decos": {
-      "title": "de cos - Tienda Online de Sandalias Artesanas",
+      "title": "de Cos - Tienda Online de Sandalias Artesanas",
       "image": "decos.webp",
       "shortDescription": "Migración de Prestashop a WordPress con WooCommerce mejorando rendimiento, personalización y seguridad.",
       "description": "Migración de tienda online de sandalias artesanas de yute desde Prestashop a WordPress con WooCommerce, obteniendo mejoras en rendimiento, personalización y seguridad. Implementación de newsletter para clientes con novedades y descuentos de temporada.",
@@ -263,10 +263,11 @@
     "hero": {
       "title": "Desarrolladora WordPress freelance para negocios",
       "subtitle": "Trabajo directamente contigo para diseñar y desarrollar sitios WordPress optimizados para rendimiento, SEO y mantenimiento a largo plazo, pensados para durar, escalar y no depender de agencias.",
+      "extraText": "Web WordPress profesional para negocios — sin agencias, sin intermediarios y con resultados claros.",
       "localSeo": "Trabajo con negocios en {city} y en remoto en toda España.",
       "localSeoDefault": "Trabajo con negocios en remoto, tanto en España como a nivel internacional.",
       "cta": {
-        "contact": "Contactar",
+        "contact": "Quiero crear mi web WordPress",
         "viewProjects": "Ver proyectos"
       }
     },
@@ -285,7 +286,8 @@
           "title": "Costes y tiempos inflados",
           "text": "Procesos largos y costes elevados para cambios simples."
         }
-      }
+      },
+      "extraText": "¿Tu web va lenta, da errores o no sabes por dónde meterle mano?\nPuedo ayudarte aunque no la haya hecho yo."
     },
     "solution": {
       "description": "Como desarrolladora WordPress freelance, trabajo sin intermediarios y con foco técnico.",
@@ -315,6 +317,11 @@
         "migrations": {
           "title": "Migraciones y mejoras",
           "description": "Cambios desde agencias o sistemas antiguos a una solución clara."
+        },
+        "expressFix": {
+          "title": "Arreglo WordPress express (48h)",
+          "description": "Errores, web caída, lentitud, conflictos de plugins o problemas tras tocar algo.\nDiagnóstico rápido y solución clara.",
+          "price": "Desde 120 €"
         }
       }
     },
@@ -336,7 +343,8 @@
           "title": "Entrega y soporte",
           "description": "Entrego una web mantenible y doy soporte tras la entrega."
         }
-      }
+      },
+      "pricing": "Proyectos web desde 700 € · Arreglos y soporte desde 120 €"
     },
     "projects": {
       "title": "Algunos proyectos realizados",
@@ -344,7 +352,7 @@
     },
     "cta": {
       "title": "Cuéntame tu proyecto y vemos si encaja.",
-      "button": "Contactar",
+      "button": "Quiero crear mi web WordPress",
       "subtitle": "Sin compromiso ni propuestas cerradas."
     },
     "faq": {
@@ -386,10 +394,11 @@
     "hero": {
       "title": "Migración y rescate de webs WordPress sin depender de agencias",
       "subtitle": "Ayudo a recuperar el control de tu web WordPress, migrarla con seguridad y dejarla preparada para que puedas gestionarla sin bloqueos técnicos.",
+      "extraText": "Migración completa sin perder SEO, contenidos ni accesos. Te devuelvo el control de tu web.",
       "localSeo": "Trabajo con negocios en {city} y en remoto en toda España.",
       "localSeoDefault": "Trabajo con negocios en remoto, tanto en España como a nivel internacional.",
       "cta": {
-        "contact": "Cuéntame tu caso",
+        "contact": "Quiero migrar mi web sin perder nada",
         "viewProjects": "Ver proyectos"
       }
     },
@@ -412,7 +421,8 @@
           "title": "Necesidad de un cambio claro",
           "text": "Quieres una solución más simple, estable y comprensible."
         }
-      }
+      },
+      "extraText": "Si ahora mismo no tienes accesos claros, dependes de tickets o cada cambio cuesta dinero,\nla migración suele ser más rápida de lo que imaginas."
     },
     "what": {
       "intro": "Una migración no es solo mover archivos. Es entender qué hay, qué sobra y cómo dejar la web preparada para el futuro.",
@@ -442,7 +452,8 @@
           "title": "Entrega y documentación",
           "description": "Dejo la web lista y documentada para que no vuelvas a depender de terceros."
         }
-      }
+      },
+      "pricing": "Migraciones desde 400 € según complejidad."
     },
     "benefits": {
       "intro": "El objetivo no es solo migrar, sino dejar una web mejor que antes.",
@@ -483,11 +494,15 @@
           "question": "¿Después podré mantener la web yo?",
           "answer": "Sí, la web se entrega con una estructura clara y mantenible."
         }
-      }
+      },
+      "extraText": "También puedo ayudarte si tu web está rota o bloqueada tras una mala gestión anterior."
     },
     "cta": {
       "title": "Si tu web WordPress te genera más problemas que tranquilidad, hablemos.",
-      "button": "Cuéntame tu caso"
+      "button": "Quiero migrar mi web sin perder nada"
+    },
+    "contactForm": {
+      "button": "Quiero recuperar el control de mi web"
     }
   }
 }

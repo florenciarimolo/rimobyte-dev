@@ -10,6 +10,18 @@ interface ContactSectionProps {
 }
 
 const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLang, recaptchaSiteKey, isLanding = false }) => {
+  // Determine button text based on landing type
+  let buttonText: string | undefined;
+  if (isLanding) {
+    // Check if it's migration landing by checking if migrationLanding.contactForm exists
+    if (translations?.migrationLanding?.contactForm?.button) {
+      buttonText = translations.migrationLanding.contactForm.button;
+    } else if (translations?.wordpressLanding?.cta?.button) {
+      // Default to WordPress landing button text
+      buttonText = translations.wordpressLanding.cta.button;
+    }
+  }
+
   return (
     <section id="contact" className={isLanding ? "py-20" : "py-20 bg-gray-50 dark:bg-gray-900"}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,7 +94,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLa
             </address>
           </div>
           
-          <ContactForm currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} isLanding={isLanding} />
+          <ContactForm currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} isLanding={isLanding} buttonText={buttonText} />
         </div>
       </div>
     </section>

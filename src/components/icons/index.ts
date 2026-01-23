@@ -69,3 +69,20 @@ export const JiraIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24
 export const SupabaseIcon = '<svg width="14" height="14" viewBox="0 0 109 113" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Supabase"><path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z" fill="url(#paint0_linear_supabase)"/><path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z" fill="url(#paint1_linear_supabase)" fill-opacity="0.2"/><path d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z" fill="#3ECF8E"/><defs><linearGradient id="paint0_linear_supabase" x1="53.9738" y1="54.974" x2="94.1635" y2="71.8295" gradientUnits="userSpaceOnUse"><stop stop-color="#249361"/><stop offset="1" stop-color="#3ECF8E"/></linearGradient><linearGradient id="paint1_linear_supabase" x1="36.1558" y1="30.578" x2="54.4844" y2="65.0806" gradientUnits="userSpaceOnUse"><stop/><stop offset="1" stop-opacity="0"/></linearGradient></defs></svg>';
 
 export const NuxtIcon = '<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="14" height="14" role="img" aria-label="Nuxt"><path d="M285.4 419.333h181.3c5.784 0 11.321-2.032 16.332-4.9 5.011-2.868 10.176-6.467 13.067-11.434s4.903-10.6 4.9-16.335c-.003-5.734-2.004-11.366-4.9-16.33l-122.5-210.7c-2.89-4.966-6.424-8.568-11.433-11.434-5.01-2.867-12.181-4.9-17.967-4.9-5.785 0-11.324 2.033-16.333 4.9-5.01 2.866-8.542 6.468-11.433 11.433l-31.034 53.9-62.066-104.536c-2.894-4.966-6.422-10.197-11.433-13.064-5.011-2.866-10.548-3.266-16.334-3.266-5.785 0-11.322.4-16.333 3.266-5.011 2.867-10.172 8.098-13.067 13.064l-151.9 261.337c-2.895 4.964-3.263 10.596-3.266 16.33-.003 5.735.376 11.368 3.267 16.335 2.89 4.966 8.055 8.566 13.066 11.434 5.011 2.868 10.548 4.9 16.334 4.9H158c45.303 0 78.277-20.322 101.266-58.8l55.533-96.367 29.4-50.633 89.833 153.533H314.8l-29.4 52.267zm-129.034-52.267H76.333l119.233-205.8L256 264.167l-40.03 69.784c-15.268 24.966-32.672 33.116-59.603 33.116z" fill="#00dc82" fill-rule="nonzero"/></svg>';
+// Landing page icons
+export { default as LockIcon } from './LockIcon';
+export { default as LayoutIcon } from './LayoutIcon';
+export { default as CurrencyIcon } from './CurrencyIcon';
+export { default as GlobeIcon } from './GlobeIcon';
+export { default as ShoppingBagIcon } from './ShoppingBagIcon';
+export { default as SettingsIcon } from './SettingsIcon';
+export { default as CloudUploadIcon } from './CloudUploadIcon';
+export { default as LightningIcon } from './LightningIcon';
+export { default as SearchIcon } from './SearchIcon';
+export { default as DocumentIcon } from './DocumentIcon';
+export { default as CodeIcon } from './CodeIcon';
+export { default as CheckCircleIcon } from './CheckCircleIcon';
+export { default as AlertTriangleIcon } from './AlertTriangleIcon';
+export { default as ArrowForwardIcon } from './ArrowForwardIcon';
+export { default as EyeIcon } from './EyeIcon';
+export { default as CheckIcon } from './CheckIcon';

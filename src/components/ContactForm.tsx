@@ -17,9 +17,10 @@ interface ContactFormProps {
   currentLang: typeof LANG.ENGLISH | typeof LANG.SPANISH;
   recaptchaSiteKey?: string;
   isLanding?: boolean;
+  buttonText?: string;
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey, isLanding = false }) => {
+const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey, isLanding = false, buttonText }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -295,7 +296,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
               {t.sending}
             </div>
           ) : (
-            t.send
+            buttonText || t.send
           )}
         </button>
       </form>

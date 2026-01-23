@@ -1,5 +1,6 @@
 import React from 'react';
 import { getTranslation } from '@/i18n';
+import { LockIcon, AlertTriangleIcon, LightningIcon, ArrowForwardIcon } from '@/components/icons';
 
 interface MigrationWhenSectionProps {
   translations: any;
@@ -10,38 +11,22 @@ const MigrationWhenSection: React.FC<MigrationWhenSectionProps> = ({ translation
     {
       title: getTranslation(translations, 'migrationLanding.when.items.agencyDependency.title'),
       text: getTranslation(translations, 'migrationLanding.when.items.agencyDependency.text'),
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-        </svg>
-      )
+      icon: <LockIcon />
     },
     {
       title: getTranslation(translations, 'migrationLanding.when.items.hardToMaintain.title'),
       text: getTranslation(translations, 'migrationLanding.when.items.hardToMaintain.text'),
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-        </svg>
-      )
+      icon: <AlertTriangleIcon />
     },
     {
       title: getTranslation(translations, 'migrationLanding.when.items.performanceIssues.title'),
       text: getTranslation(translations, 'migrationLanding.when.items.performanceIssues.text'),
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      )
+      icon: <LightningIcon />
     },
     {
       title: getTranslation(translations, 'migrationLanding.when.items.needChange.title'),
       text: getTranslation(translations, 'migrationLanding.when.items.needChange.text'),
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A1.414 1.414 0 0 1 21.582 7H19v2a1.414 1.414 0 0 1-1.414 1.414H15m-5 5v-5h.582m15.356 2A1.414 1.414 0 0 1 21.582 17H19v-2a1.414 1.414 0 0 0-1.414-1.414H15" />
-        </svg>
-      )
+      icon: <ArrowForwardIcon />
     }
   ];
 
@@ -72,6 +57,12 @@ const MigrationWhenSection: React.FC<MigrationWhenSectionProps> = ({ translation
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-lg text-gray-300 dark:text-gray-200 leading-relaxed whitespace-pre-line">
+            {getTranslation(translations, 'migrationLanding.when.extraText')}
+          </p>
         </div>
       </div>
     </section>

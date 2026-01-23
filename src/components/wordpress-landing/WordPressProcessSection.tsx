@@ -1,5 +1,6 @@
 import React from 'react';
 import { getTranslation } from '@/i18n';
+import { SearchIcon, DocumentIcon, CodeIcon, CheckCircleIcon } from '@/components/icons';
 
 interface WordPressProcessSectionProps {
   translations: any;
@@ -10,38 +11,22 @@ const WordPressProcessSection: React.FC<WordPressProcessSectionProps> = ({ trans
     {
       title: getTranslation(translations, 'wordpressLanding.process.steps.analysis.title'),
       description: getTranslation(translations, 'wordpressLanding.process.steps.analysis.description'),
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-        </svg>
-      )
+      icon: <SearchIcon strokeWidth={1.5} />
     },
     {
       title: getTranslation(translations, 'wordpressLanding.process.steps.proposal.title'),
       description: getTranslation(translations, 'wordpressLanding.process.steps.proposal.description'),
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-        </svg>
-      )
+      icon: <DocumentIcon strokeWidth={1.5} />
     },
     {
       title: getTranslation(translations, 'wordpressLanding.process.steps.development.title'),
       description: getTranslation(translations, 'wordpressLanding.process.steps.development.description'),
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-        </svg>
-      )
+      icon: <CodeIcon strokeWidth={1.5} />
     },
     {
       title: getTranslation(translations, 'wordpressLanding.process.steps.delivery.title'),
       description: getTranslation(translations, 'wordpressLanding.process.steps.delivery.description'),
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655-5.653A2.548 2.548 0 0 0 4.5 9.25v10.5a2.552 2.552 0 0 0 2.265 2.565l11.434-2.717a2.548 2.548 0 0 0 2.265-2.565V9.25a2.548 2.548 0 0 0-2.265-2.565l-4.655 5.653" />
-        </svg>
-      )
+      icon: <CheckCircleIcon className="w-8 h-8" strokeWidth={1.5} />
     }
   ];
 
@@ -81,6 +66,12 @@ const WordPressProcessSection: React.FC<WordPressProcessSectionProps> = ({ trans
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-lg text-gray-300 dark:text-gray-200 font-medium">
+            {getTranslation(translations, 'wordpressLanding.process.pricing')}
+          </p>
         </div>
       </div>
     </section>

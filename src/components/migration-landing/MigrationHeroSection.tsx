@@ -123,6 +123,10 @@ const MigrationHeroSection: React.FC<MigrationHeroSectionProps> = ({ cityName, c
             {getTranslation(translations, 'migrationLanding.hero.subtitle')}
           </p>
 
+          <p className="text-lg text-gray-300 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.12s' }}>
+            {getTranslation(translations, 'migrationLanding.hero.extraText')}
+          </p>
+
           <p className="text-sm text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
             {localSeoText}
           </p>

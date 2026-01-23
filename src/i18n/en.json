@@ -120,7 +120,7 @@
       "category": "ecommerce"
     },
     "bandidamezcal": {
-      "title": "Banda - Online Store for Mezcal Drinks",
+      "title": "Bandida - Online Store for Mezcal Drinks",
       "image": "bandida.webp",
       "shortDescription": "Bold Shopify store for mezcal with custom product pages, localization for MX/US, and payment integrations.",
       "description": "Design and development of a bold Shopify store for mezcal beverages. Custom product pages with tasting notes, bundle options and age-gate. Localization, tax and shipping setup for MX/US, integration with Mercado Pago/Stripe, and automated emails. Technical SEO and performance optimization across Liquid templates and assets.",
@@ -138,7 +138,7 @@
       "category": "landing-page"
     },
     "decos": {
-      "title": "de cos - Online Store for Handcrafted Jute Sandals",
+      "title": "de Cos - Online Store for Handcrafted Jute Sandals",
       "image": "decos.webp",
       "shortDescription": "Migration from Prestashop to WordPress with WooCommerce, improving performance, customization and security.",
       "description": "Migration of online store for handcrafted jute sandals from Prestashop to WordPress with WooCommerce, achieving improvements in performance, customization and security. Implementation of newsletter for customers with news and seasonal discounts.",
@@ -263,11 +263,12 @@
     "hero": {
       "title": "WordPress freelance developer for businesses",
       "subtitle": "I work directly with you to design and develop WordPress sites optimized for performance, SEO and long-term maintenance, designed to last, scale, and not depend on agencies.",
+      "extraText": "Professional WordPress websites for businesses — no agencies, no intermediaries, with clear results.",
       "localSeo": "I work with businesses in {city} and remotely throughout Spain.",
       "localSeoInternational": "Working remotely with businesses in {city} and internationally.",
       "localSeoDefault": "Working remotely with businesses in Spain and internationally.",
       "cta": {
-        "contact": "Get In Touch",
+        "contact": "I want to create my WordPress website",
         "viewProjects": "View Projects"
       }
     },
@@ -286,7 +287,8 @@
           "title": "Inflated costs and timelines",
           "text": "Long processes and high costs for simple changes."
         }
-      }
+      },
+      "extraText": "Is your website slow, giving errors, or you don't know where to start?\nI can help you even if I didn't build it."
     },
     "solution": {
       "description": "As a WordPress freelance developer, I work without intermediaries and with a technical focus.",
@@ -315,6 +317,11 @@
         "migrations": {
           "title": "Migrations and improvements",
           "description": "Changes from agencies or old systems to a clear solution."
+        },
+        "expressFix": {
+          "title": "WordPress express fix (48h)",
+          "description": "Errors, website down, slowness, plugin conflicts or issues after making changes.\nQuick diagnosis and clear solution.",
+          "price": "From 120 €"
         }
       }
     },
@@ -336,7 +343,8 @@
           "title": "Delivery and support",
           "description": "I deliver a maintainable website and provide support after delivery."
         }
-      }
+      },
+      "pricing": "Web projects from 700 € · Fixes and support from 120 €"
     },
     "projects": {
       "title": "Some completed projects",
@@ -344,7 +352,7 @@
     },
     "cta": {
       "title": "Tell me about your project and let's see if it fits.",
-      "button": "Get In Touch",
+      "button": "I want to create my WordPress website",
       "subtitle": "No commitment or closed proposals."
     },
     "faq": {
@@ -386,11 +394,12 @@
     "hero": {
       "title": "WordPress website migration and rescue without depending on agencies",
       "subtitle": "I help you regain control of your WordPress website, migrate it safely and leave it ready so you can manage it without technical blocks.",
+      "extraText": "Complete migration without losing SEO, content or access. I give you back control of your website.",
       "localSeo": "I work with businesses in {city} and remotely throughout Spain.",
       "localSeoInternational": "Working remotely with businesses in {city} and internationally.",
       "localSeoDefault": "Working remotely with businesses in Spain and internationally.",
       "cta": {
-        "contact": "Tell me your case",
+        "contact": "I want to migrate my website without losing anything",
         "viewProjects": "View projects"
       }
     },
@@ -413,7 +422,8 @@
           "title": "Need for a clear change",
           "text": "You want a simpler, more stable and understandable solution."
         }
-      }
+      },
+      "extraText": "If right now you don't have clear access, depend on tickets or every change costs money,\nmigration is usually faster than you imagine."
     },
     "what": {
       "intro": "A migration is not just moving files. It's understanding what's there, what's unnecessary and how to leave the website ready for the future.",
@@ -443,7 +453,8 @@
           "title": "Delivery and documentation",
           "description": "I leave the website ready and documented so you don't have to depend on third parties again."
         }
-      }
+      },
+      "pricing": "Migrations from 400 € depending on complexity."
     },
     "benefits": {
       "intro": "The goal is not just to migrate, but to leave a better website than before.",
@@ -484,11 +495,15 @@
           "question": "Will I be able to maintain the website myself afterwards?",
           "answer": "Yes, the website is delivered with a clear and maintainable structure."
         }
-      }
+      },
+      "extraText": "I can also help you if your website is broken or blocked after poor previous management."
     },
     "cta": {
       "title": "If your WordPress website causes you more problems than peace of mind, let's talk.",
-      "button": "Tell me your case"
+      "button": "I want to migrate my website without losing anything"
+    },
+    "contactForm": {
+      "button": "I want to regain control of my website"
     }
   }
 }

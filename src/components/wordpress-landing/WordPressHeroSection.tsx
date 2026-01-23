@@ -123,6 +123,10 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
             {getTranslation(translations, 'wordpressLanding.hero.subtitle')}
           </p>
 
+          <p className="text-base text-gray-300 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.12s' }}>
+            {getTranslation(translations, 'wordpressLanding.hero.extraText')}
+          </p>
+
           <p className="text-sm text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
             {localSeoText}
           </p>

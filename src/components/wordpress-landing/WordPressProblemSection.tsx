@@ -1,5 +1,6 @@
 import { getTranslation } from '@/i18n';
 import React from 'react';
+import { LockIcon, LayoutIcon, CurrencyIcon } from '@/components/icons';
 
 interface WordPressProblemSectionProps {
   translations: any;
@@ -10,29 +11,17 @@ const WordPressProblemSection: React.FC<WordPressProblemSectionProps> = ({ trans
     {
       title: getTranslation(translations, 'wordpressLanding.problems.items.lackOfControl.title'),
       text: getTranslation(translations, 'wordpressLanding.problems.items.lackOfControl.text'),
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-        </svg>
-      )
+      icon: <LockIcon />
     },
     {
       title: getTranslation(translations, 'wordpressLanding.problems.items.inflexibleWebs.title'),
       text: getTranslation(translations, 'wordpressLanding.problems.items.inflexibleWebs.text'),
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-        </svg>
-      )
+      icon: <LayoutIcon />
     },
     {
       title: getTranslation(translations, 'wordpressLanding.problems.items.inflatedCosts.title'),
       text: getTranslation(translations, 'wordpressLanding.problems.items.inflatedCosts.text'),
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
+      icon: <CurrencyIcon />
     }
   ];
 
@@ -67,6 +56,12 @@ const WordPressProblemSection: React.FC<WordPressProblemSectionProps> = ({ trans
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-lg text-gray-300 dark:text-gray-200 leading-relaxed whitespace-pre-line">
+            {getTranslation(translations, 'wordpressLanding.problems.extraText')}
+          </p>
         </div>
       </div>
     </section>
