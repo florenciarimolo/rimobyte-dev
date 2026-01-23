@@ -15,21 +15,25 @@ const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ tra
     {
       title: getTranslation(translations, 'wordpressLanding.services.items.corporateWeb.title'),
       description: getTranslation(translations, 'wordpressLanding.services.items.corporateWeb.description'),
+      price: getTranslation(translations, 'wordpressLanding.services.items.corporateWeb.price'),
       icon: <GlobeIcon />
     },
     {
       title: getTranslation(translations, 'wordpressLanding.services.items.onlineStores.title'),
       description: getTranslation(translations, 'wordpressLanding.services.items.onlineStores.description'),
+      price: getTranslation(translations, 'wordpressLanding.services.items.onlineStores.price'),
       icon: <ShoppingBagIcon />
     },
     {
       title: getTranslation(translations, 'wordpressLanding.services.items.maintenance.title'),
       description: getTranslation(translations, 'wordpressLanding.services.items.maintenance.description'),
+      price: getTranslation(translations, 'wordpressLanding.services.items.maintenance.price'),
       icon: <SettingsIcon />
     },
     {
       title: getTranslation(translations, 'wordpressLanding.services.items.migrations.title'),
       description: getTranslation(translations, 'wordpressLanding.services.items.migrations.description'),
+      price: getTranslation(translations, 'wordpressLanding.services.items.migrations.price'),
       icon: <CloudUploadIcon />
     },
     {

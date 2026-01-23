@@ -304,19 +304,23 @@
       "items": {
         "corporateWeb": {
           "title": "Web corporativa en WordPress",
-          "description": "Sitios profesionales, rápidos y fáciles de mantener."
+          "description": "Sitios profesionales, rápidos y fáciles de mantener.",
+          "price": "Desde 700 €"
         },
         "onlineStores": {
           "title": "Tiendas online",
-          "description": "E-commerce con WordPress adaptado a cada negocio."
+          "description": "E-commerce con WordPress adaptado a cada negocio.",
+          "price": "Desde 1200 €"
         },
         "maintenance": {
           "title": "Mantenimiento y soporte",
-          "description": "Actualizaciones, seguridad y mejoras continuas."
+          "description": "Actualizaciones, seguridad y mejoras continuas.",
+          "price": "Desde 60 €/mes"
         },
         "migrations": {
           "title": "Migraciones y mejoras",
-          "description": "Cambios desde agencias o sistemas antiguos a una solución clara."
+          "description": "Cambios desde agencias o sistemas antiguos a una solución clara.",
+          "price": "Desde 400 €"
         },
         "expressFix": {
           "title": "Arreglo WordPress express (48h)",
@@ -344,7 +348,7 @@
           "description": "Entrego una web mantenible y doy soporte tras la entrega."
         }
       },
-      "pricing": "Proyectos web desde 700 € · Arreglos y soporte desde 120 €"
+      "pricing": "Proyectos web desde 700 € · E-commerce desde 1200 € · Mantenimiento desde 60 €/mes · Arreglos desde 120 €"
     },
     "projects": {
       "title": "Algunos proyectos realizados",

@@ -304,19 +304,23 @@
       "items": {
         "corporateWeb": {
           "title": "Corporate website in WordPress",
-          "description": "Professional, fast and easy to maintain sites."
+          "description": "Professional, fast and easy to maintain sites.",
+          "price": "From 700 €"
         },
         "onlineStores": {
           "title": "Online stores",
-          "description": "E-commerce with WordPress adapted to each business."
+          "description": "E-commerce with WordPress adapted to each business.",
+          "price": "From 1200 €"
         },
         "maintenance": {
           "title": "Maintenance and support",
-          "description": "Updates, security and continuous improvements."
+          "description": "Updates, security and continuous improvements.",
+          "price": "From 60 €/month"
         },
         "migrations": {
           "title": "Migrations and improvements",
-          "description": "Changes from agencies or old systems to a clear solution."
+          "description": "Changes from agencies or old systems to a clear solution.",
+          "price": "From 400 €"
         },
         "expressFix": {
           "title": "WordPress express fix (48h)",
@@ -344,7 +348,7 @@
           "description": "I deliver a maintainable website and provide support after delivery."
         }
       },
-      "pricing": "Web projects from 700 € · Fixes and support from 120 €"
+      "pricing": "Web projects from 700 € · E-commerce from 1200 € · Maintenance from 60 €/month · Fixes from 120 €"
     },
     "projects": {
       "title": "Some completed projects",
