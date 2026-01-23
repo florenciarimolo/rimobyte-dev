@@ -1,6 +1,8 @@
 import { getTranslation } from '@/i18n';
 import React from 'react';
-import { LockIcon, LayoutIcon, CurrencyIcon } from '@/components/icons';
+import LockIcon from '@/components/icons/LockIcon';
+import LayoutIcon from '@/components/icons/LayoutIcon';
+import CurrencyIcon from '@/components/icons/CurrencyIcon';
 
 interface WordPressProblemSectionProps {
   translations: any;

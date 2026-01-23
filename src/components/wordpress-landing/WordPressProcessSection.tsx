@@ -1,6 +1,9 @@
 import React from 'react';
 import { getTranslation } from '@/i18n';
-import { SearchIcon, DocumentIcon, CodeIcon, CheckCircleIcon } from '@/components/icons';
+import SearchIcon from '@/components/icons/SearchIcon';
+import DocumentIcon from '@/components/icons/DocumentIcon';
+import CodeIcon from '@/components/icons/CodeIcon';
+import CheckCircleIcon from '@/components/icons/CheckCircleIcon';
 
 interface WordPressProcessSectionProps {
   translations: any;

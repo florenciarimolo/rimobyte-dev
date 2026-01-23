@@ -1,6 +1,9 @@
 import React from 'react';
 import { getTranslation } from '@/i18n';
-import { LockIcon, AlertTriangleIcon, LightningIcon, ArrowForwardIcon } from '@/components/icons';
+import LockIcon from '@/components/icons/LockIcon';
+import AlertTriangleIcon from '@/components/icons/AlertTriangleIcon';
+import LightningIcon from '@/components/icons/LightningIcon';
+import ArrowForwardIcon from '@/components/icons/ArrowForwardIcon';
 
 interface MigrationWhenSectionProps {
   translations: any;

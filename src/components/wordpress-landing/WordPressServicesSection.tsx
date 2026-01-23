@@ -1,6 +1,10 @@
 import React from 'react';
 import { getTranslation } from '@/i18n';
-import { GlobeIcon, ShoppingBagIcon, SettingsIcon, CloudUploadIcon, LightningIcon } from '@/components/icons';
+import GlobeIcon from '@/components/icons/GlobeIcon';
+import ShoppingBagIcon from '@/components/icons/ShoppingBagIcon';
+import SettingsIcon from '@/components/icons/SettingsIcon';
+import CloudUploadIcon from '@/components/icons/CloudUploadIcon';
+import LightningIcon from '@/components/icons/LightningIcon';
 
 interface WordPressServicesSectionProps {
   translations: any;

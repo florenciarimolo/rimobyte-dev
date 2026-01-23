@@ -1,6 +1,8 @@
 import React from 'react';
 import { getTranslation } from '@/i18n';
-import { EyeIcon, CheckIcon, SettingsIcon } from '@/components/icons';
+import EyeIcon from '@/components/icons/EyeIcon';
+import CheckIcon from '@/components/icons/CheckIcon';
+import SettingsIcon from '@/components/icons/SettingsIcon';
 
 interface MigrationBenefitsSectionProps {
   translations: any;
