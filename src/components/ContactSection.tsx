@@ -7,18 +7,24 @@ interface ContactSectionProps {
   currentLang: typeof LANG.ENGLISH | typeof LANG.SPANISH;
   recaptchaSiteKey?: string;
   isLanding?: boolean;
+  landingType?: 'wordpress' | 'migration';
 }
 
-const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLang, recaptchaSiteKey, isLanding = false }) => {
+const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLang, recaptchaSiteKey, isLanding = false, landingType }) => {
   // Determine button text based on landing type
   let buttonText: string | undefined;
   if (isLanding) {
-    // Check if it's migration landing by checking if migrationLanding.contactForm exists
-    if (translations?.migrationLanding?.contactForm?.button) {
+    if (landingType === 'migration' && translations?.migrationLanding?.contactForm?.button) {
       buttonText = translations.migrationLanding.contactForm.button;
-    } else if (translations?.wordpressLanding?.cta?.button) {
-      // Default to WordPress landing button text
+    } else if (landingType === 'wordpress' && translations?.wordpressLanding?.cta?.button) {
       buttonText = translations.wordpressLanding.cta.button;
+    } else if (!landingType) {
+      // Fallback: check if it's migration landing by checking if migrationLanding.contactForm exists
+      if (translations?.migrationLanding?.contactForm?.button) {
+        buttonText = translations.migrationLanding.contactForm.button;
+      } else if (translations?.wordpressLanding?.cta?.button) {
+        buttonText = translations.wordpressLanding.cta.button;
+      }
     }
   }
 
