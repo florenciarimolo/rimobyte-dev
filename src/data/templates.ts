@@ -11,7 +11,7 @@ export interface Template {
 }
 
 export const getTemplates = (translations: any): Template[] => {
-  const templateKeys = ['ai-saas-landing-astro', 'psychologist-landing-astro'];
+  const templateKeys = ['ai-saas-landing-astro', 'psychologist-landing-astro', 'power-gym-landing-astro'];
   
   return templateKeys.map(key => ({
     id: key,

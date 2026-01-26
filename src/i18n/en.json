@@ -221,6 +221,14 @@
       "gumroadLink": "https://rimobyte.gumroad.com/l/psychologist-landing-template",
       "liveLink": "https://psychology-landing-template.vercel.app/",
       "image": "psychologist-landing-template.webp"
+    },
+    "power-gym-landing-astro": {
+      "name": "Power Gym Landing Page – Astro Template",
+      "shortDescription": "Production-ready fitness center and gym landing page template built with Astro and Tailwind CSS.",
+      "techStack": "Astro, Tailwind CSS",
+      "gumroadLink": "https://rimobyte.gumroad.com/l/power-gym-landing-page?_gl=1*1030xgf*_ga*NzQyNzAyNDQyLjE3Njc5MDYzNzc.*_ga_6LJN6D94N6*czE3Njk0NDUxMDgkbzE1JGcxJHQxNzY5NDQ1MTA5JGo1OSRsMCRoMA..",
+      "liveLink": "https://power-gym-landing-template.vercel.app/",
+      "image": "power-gym-template.webp"
     }
   },
   "education": {
