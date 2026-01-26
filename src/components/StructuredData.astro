@@ -1,4 +1,6 @@
 ---
+import { getI18N } from '@/i18n/index';
+
 export interface Props {
   type: 'person' | 'website' | 'professionalService';
   locale?: string;
@@ -6,6 +8,7 @@ export interface Props {
 
 const { type, locale = 'es' } = Astro.props;
 const siteUrl = 'https://rimobyte.com';
+const translations = getI18N({ currentLocale: locale });
 
 let structuredData: any = {};
 
@@ -72,6 +75,50 @@ if (type === 'person') {
     }
   };
 } else if (type === 'professionalService') {
+  // General services for the main portfolio page
+  const generalServices = [
+    {
+      name: locale === 'es' ? "Desarrollo WordPress" : "WordPress Development",
+      description: locale === 'es' 
+        ? "Desarrollo de sitios web corporativos, e-commerce y mantenimiento WordPress"
+        : "Corporate website development, e-commerce and WordPress maintenance"
+    },
+    {
+      name: locale === 'es' ? "Desarrollo Full Stack" : "Full Stack Development",
+      description: locale === 'es'
+        ? "Desarrollo de aplicaciones web completas con Vue.js, React, Django y Spring Boot"
+        : "Complete web application development with Vue.js, React, Django and Spring Boot"
+    },
+    {
+      name: locale === 'es' ? "Desarrollo E-commerce" : "E-commerce Development",
+      description: locale === 'es'
+        ? "Tiendas online personalizadas y optimizadas para cada negocio"
+        : "Customized and optimized online stores for each business"
+    },
+    {
+      name: locale === 'es' ? "Aplicaciones Web" : "Web Applications",
+      description: locale === 'es'
+        ? "Desarrollo de aplicaciones web modernas y escalables"
+        : "Development of modern and scalable web applications"
+    },
+    {
+      name: locale === 'es' ? "Consultoría y Soporte" : "Consulting and Support",
+      description: locale === 'es'
+        ? "Asesoramiento técnico, migraciones y mejoras de proyectos existentes"
+        : "Technical consulting, migrations and improvements of existing projects"
+    }
+  ];
+
+  const serviceItems = generalServices.map((service) => ({
+    "@type": "Service",
+    "name": service.name,
+    "description": service.description,
+    "provider": {
+      "@type": "Person",
+      "name": "Florencia Rímolo"
+    }
+  }));
+
   structuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -97,7 +144,18 @@ if (type === 'person') {
       locale === 'es' ? "Desarrollo E-commerce" : "E-commerce Development",
       locale === 'es' ? "Desarrollo de Aplicaciones Web" : "Web Application Development"
     ],
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": locale === 'es' 
+        ? "Servicios de Desarrollo Web"
+        : "Web Development Services",
+      "itemListElement": serviceItems.map((service, index) => ({
+        "@type": "OfferCatalogItem",
+        "position": index + 1,
+        "itemOffered": service
+      }))
+    }
   };
 }
 

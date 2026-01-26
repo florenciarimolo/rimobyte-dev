@@ -24,6 +24,7 @@ const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZ
   <WordPressStructuredData 
     url={currentUrl}
     city={null}
+    locale={locale}
   />
   <WordPressLandingPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} initialLocale={locale} />
 </MainLayout>

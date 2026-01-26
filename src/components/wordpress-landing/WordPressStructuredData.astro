@@ -1,17 +1,69 @@
 ---
 import type { CityInfo } from '@/constants/cities';
+import { getI18N, LANG } from '@/i18n/index';
 
 export interface Props {
   url: string;
   city: string | null;
   cityInfo?: CityInfo | null;
+  locale?: typeof LANG.ENGLISH | typeof LANG.SPANISH;
 }
 
-const { url, city, cityInfo } = Astro.props;
+const { url, city, cityInfo, locale = LANG.SPANISH } = Astro.props;
 const siteUrl = 'https://rimobyte.com';
+const translations = getI18N({ currentLocale: locale });
 
 // Determine if this is an international city (non-Spain)
 const isInternational = cityInfo && cityInfo.country !== 'Spain';
+const isEnglish = locale === LANG.ENGLISH;
+
+// Get services from translations
+const services = [
+  {
+    title: translations.wordpressLanding.services.items.corporateWeb.title,
+    description: translations.wordpressLanding.services.items.corporateWeb.description,
+    price: translations.wordpressLanding.services.items.corporateWeb.price
+  },
+  {
+    title: translations.wordpressLanding.services.items.onlineStores.title,
+    description: translations.wordpressLanding.services.items.onlineStores.description,
+    price: translations.wordpressLanding.services.items.onlineStores.price
+  },
+  {
+    title: translations.wordpressLanding.services.items.maintenance.title,
+    description: translations.wordpressLanding.services.items.maintenance.description,
+    price: translations.wordpressLanding.services.items.maintenance.price
+  },
+  {
+    title: translations.wordpressLanding.services.items.migrations.title,
+    description: translations.wordpressLanding.services.items.migrations.description,
+    price: translations.wordpressLanding.services.items.migrations.price
+  },
+  {
+    title: translations.wordpressLanding.services.items.expressFix.title,
+    description: translations.wordpressLanding.services.items.expressFix.description,
+    price: translations.wordpressLanding.services.items.expressFix.price
+  }
+];
+
+// Build services for schema
+const serviceItems = services.map((service) => ({
+  "@type": "Service",
+  "name": service.title,
+  "description": service.description,
+  "provider": {
+    "@type": "Person",
+    "name": "Florencia Rímolo"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": service.price,
+      "priceCurrency": "EUR"
+    }
+  }
+}));
 
 let structuredData: any = {
   "@context": "https://schema.org",
@@ -66,7 +118,18 @@ let structuredData: any = {
         "Migraciones WordPress"
       ],
   "jobLocationType": "TELECOMMUTE",
-  "priceRange": "$$"
+  "priceRange": "$$",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": isEnglish 
+      ? "WordPress Development Services"
+      : "Servicios de Desarrollo WordPress",
+    "itemListElement": serviceItems.map((service, index) => ({
+      "@type": "OfferCatalogItem",
+      "position": index + 1,
+      "itemOffered": service
+    }))
+  }
 };
 
 const jsonLd = JSON.stringify(structuredData);
