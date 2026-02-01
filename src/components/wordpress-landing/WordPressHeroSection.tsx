@@ -152,35 +152,35 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
             </a>
           </div>
 
-          {/* Project Screenshots Visual Element */}
+          {/* Project Screenshots Visual Element - 3 images on all viewports */}
           <div className="mt-16 flex justify-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <div className="flex items-center justify-center gap-3 md:gap-4 lg:gap-6 w-full max-w-4xl mx-auto px-4">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 w-full max-w-4xl mx-auto px-4">
                 {/* Screenshot 1 - Slightly rotated left */}
-                <div className="relative z-10 transform -rotate-2 hidden sm:block">
+                <div className="relative z-10 transform -rotate-2 flex-shrink-0">
                   <img
                     src="/assets/images/projects/rocolegal.webp"
                     alt="Roco Legal - WordPress Project"
-                    className="w-full max-w-[200px] md:max-w-[240px] lg:max-w-[280px] rounded-lg shadow-xl border border-gray-800/50"
+                    className="w-full max-w-[100px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] rounded-lg shadow-xl border border-gray-800/50"
                     loading="lazy"
                   />
                 </div>
                 
                 {/* Screenshot 2 - Center, no rotation */}
-                <div className="relative z-20 transform translate-y-2">
+                <div className="relative z-20 transform translate-y-2 flex-shrink-0">
                   <img
                     src="/assets/images/projects/upnext.webp"
                     alt="UpNext - WordPress Project"
-                    className="w-full max-w-[240px] md:max-w-[280px] lg:max-w-[320px] rounded-lg shadow-xl border border-gray-800/50"
+                    className="w-full max-w-[120px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px] rounded-lg shadow-xl border border-gray-800/50"
                     loading="lazy"
                   />
                 </div>
                 
                 {/* Screenshot 3 - Slightly rotated right */}
-                <div className="relative z-10 transform rotate-2 hidden sm:block">
+                <div className="relative z-10 transform rotate-2 flex-shrink-0">
                   <img
                     src="/assets/images/projects/reset7.webp"
                     alt="RESET7 - WordPress Project"
-                    className="w-full max-w-[200px] md:max-w-[240px] lg:max-w-[280px] rounded-lg shadow-xl border border-gray-800/50"
+                    className="w-full max-w-[100px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] rounded-lg shadow-xl border border-gray-800/50"
                     loading="lazy"
                   />
                 </div>
