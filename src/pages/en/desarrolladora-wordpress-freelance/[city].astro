@@ -4,7 +4,12 @@ import WordPressLandingPage from '@/components/WordPressLandingPage';
 import WordPressStructuredData from '@/components/wordpress-landing/WordPressStructuredData.astro';
 import { LANG, getI18N } from '@/i18n/index';
 import { SITE_URL } from '@/constants';
-import { isValidCityForLang, getCityInfo, indexableCities, internationalCities } from '@/constants/cities';
+import { isValidCityForLang, getCityInfo, indexableCities, internationalCities, getAllowedCities } from '@/constants/cities';
+
+export function getStaticPaths() {
+  const cities = getAllowedCities('en');
+  return Object.keys(cities).map((city) => ({ params: { city } }));
+}
 
 const { city } = Astro.params;
 

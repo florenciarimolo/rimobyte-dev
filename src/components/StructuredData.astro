@@ -1,5 +1,4 @@
 ---
-import { getI18N } from '@/i18n/index';
 
 export interface Props {
   type: 'person' | 'website' | 'professionalService';
@@ -8,7 +7,6 @@ export interface Props {
 
 const { type, locale = 'es' } = Astro.props;
 const siteUrl = 'https://rimobyte.com';
-const translations = getI18N({ currentLocale: locale });
 
 let structuredData: any = {};
 

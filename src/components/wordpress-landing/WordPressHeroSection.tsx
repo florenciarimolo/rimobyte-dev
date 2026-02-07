@@ -47,7 +47,6 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
       
       if (div && heroSection) {
         // Ensure div has proper dimensions and positioning
-        const sectionRect = heroSection.getBoundingClientRect();
         div.style.position = 'absolute';
         div.style.top = '0';
         div.style.left = '0';

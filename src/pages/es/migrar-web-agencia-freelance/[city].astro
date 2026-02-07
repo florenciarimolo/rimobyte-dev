@@ -4,7 +4,12 @@ import MigrationLandingPage from '@/components/MigrationLandingPage';
 import MigrationStructuredData from '@/components/migration-landing/MigrationStructuredData.astro';
 import { LANG, getI18N } from '@/i18n/index';
 import { SITE_URL } from '@/constants';
-import { isValidCityForLang, getCityInfo, indexableCities } from '@/constants/cities';
+import { isValidCityForLang, getCityInfo, indexableCities, getAllowedCities } from '@/constants/cities';
+
+export function getStaticPaths() {
+  const cities = getAllowedCities('es');
+  return Object.keys(cities).map((city) => ({ params: { city } }));
+}
 
 const { city } = Astro.params;
 

@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import StructuredData from '@/components/StructuredData.astro';
 import '@/styles/global.css';
 import '@fontsource/inter/300.css';
@@ -17,7 +19,7 @@ import {
   DEFAULT_DESCRIPTION
 } from '@/constants';
 import { getAlternateUrls, getCanonicalUrl, getLangFromPathname } from '@/utils/i18n-urls';
-import { getOgImageUrl } from '@/utils/og-image';
+import { getImagePath } from 'astro-opengraph-images';
 
 export interface Props {
   title: string;
@@ -36,7 +38,6 @@ const {
   keywords,
   type = 'website',
   canonical,
-  city
 } = Astro.props;
 
 // Get locale from URL if not provided
@@ -53,15 +54,8 @@ const finalKeywords = keywords || defaultKeywords;
 const canonicalUrl = canonical || getCanonicalUrl(Astro.url.pathname);
 const alternateUrls = getAlternateUrls(Astro.url.pathname);
 
-// Generate dynamic OG image URL for all pages
-// Always use dynamic OG images (same for Open Graph and Twitter Cards)
-const ogImageLang: 'es' | 'en' = currentLocale === LANG.ENGLISH ? 'en' : 'es';
-const ogImage = getOgImageUrl(
-  title.replace(' | RimoByte', ''), // Remove site name suffix for cleaner title
-  description,
-  city,
-  ogImageLang
-);
+// OG image path generated at build by astro-opengraph-images (per-page, per locale)
+const ogImage = getImagePath({ url: Astro.url, site: Astro.site });
 
 const langCode = currentLocale === LANG.SPANISH ? LANG_CODES.SPANISH : LANG_CODES.ENGLISH;
 const htmlLang = currentLocale === LANG.SPANISH ? LANG.SPANISH : LANG.ENGLISH;
@@ -115,7 +109,7 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:height" content="600" />
     <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:locale" content={langCode} />
     <meta property="og:site_name" content={SITE_NAME} />
