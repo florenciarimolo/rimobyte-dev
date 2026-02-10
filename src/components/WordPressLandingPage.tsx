@@ -10,6 +10,7 @@ import WordPressFAQSection from './wordpress-landing/WordPressFAQSection';
 import WordPressNavbar from './wordpress-landing/WordPressNavbar';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
+import GoogleReviewsSection from './GoogleReviewsSection';
 import { getI18N, LANG, LANG_PREFIXES } from '@/i18n';
 import { initScrollAnimations } from './wordpress-landing/scroll-animations';
 
@@ -79,6 +80,10 @@ const WordPressLandingPage: React.FC<WordPressLandingPageProps> = ({ cityName, c
           <WordPressServicesSection translations={translations} />
           <WordPressProcessSection translations={translations} />
           <WordPressProjectsSection translations={translations} />
+          <GoogleReviewsSection
+            variant="dark"
+            locale={currentLang === LANG.ENGLISH ? 'en' : 'es'}
+          />
           <WordPressCTASection translations={translations} />
           <WordPressFAQSection cityName={cityName} translations={translations} currentLang={currentLang} />
           <ContactSection translations={translations} currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} isLanding={true} landingType="wordpress" />

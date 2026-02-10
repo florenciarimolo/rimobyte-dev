@@ -8,6 +8,7 @@ import ProjectsSection from './ProjectsSection';
 import TemplatesSection from './TemplatesSection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
+import GoogleReviewsSection from './GoogleReviewsSection';
 import { getI18N, LANG, LANG_PREFIXES } from '@/i18n';
 
 interface MainPageProps {
@@ -63,6 +64,7 @@ const MainPage: React.FC<MainPageProps> = ({ recaptchaSiteKey, initialLocale = L
         <HeroSection translations={translations} />
         <AboutSection translations={translations} />
         <ProjectsSection translations={translations} />
+        <GoogleReviewsSection locale={currentLang === LANG.ENGLISH ? 'en' : 'es'} />
         <TemplatesSection translations={translations} />
         <ExperienceSection translations={translations} />
         <EducationSection translations={translations} />

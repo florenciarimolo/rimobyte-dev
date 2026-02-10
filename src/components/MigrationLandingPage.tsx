@@ -10,6 +10,7 @@ import MigrationFAQSection from './migration-landing/MigrationFAQSection';
 import MigrationCTASection from './migration-landing/MigrationCTASection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
+import GoogleReviewsSection from './GoogleReviewsSection';
 import { getI18N, LANG, LANG_PREFIXES } from '@/i18n';
 import { initScrollAnimations } from './wordpress-landing/scroll-animations';
 import type { CityInfo } from '@/constants/cities';
@@ -78,6 +79,10 @@ const MigrationLandingPage: React.FC<MigrationLandingPageProps> = ({ cityName, c
           <MigrationProcessSection translations={translations} />
           <MigrationBenefitsSection translations={translations} />
           <MigrationProjectsSection translations={translations} />
+          <GoogleReviewsSection
+            variant="dark"
+            locale={currentLang === LANG.ENGLISH ? 'en' : 'es'}
+          />
           <MigrationCTASection translations={translations} />
           <MigrationFAQSection translations={translations} currentLang={currentLang} />
           <ContactSection translations={translations} currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} isLanding={true} landingType="migration" />
