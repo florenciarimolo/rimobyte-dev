@@ -95,19 +95,26 @@ export const GET: APIRoute = async ({ request }) => {
 
     const data = (await response.json()) as GooglePlacesResponse;
 
-    // Normalize and limit the number of reviews we send to the client
+    // Normalize, sort by newest, and limit the number of reviews we send to the client
     const normalizedReviews =
       data.reviews
-        ?.filter((review) => Boolean(review.text?.text && review.rating))
-        .slice(0, 5)
-        .map((review) => ({
-          authorName:
-            review.authorAttribution?.displayName ?? "Usuario de Google",
-          rating: review.rating ?? 0,
-          text: review.text?.text ?? "",
-          publishedRelative: review.relativePublishTimeDescription,
-          publishTime: review.publishTime,
-        })) ?? [];
+        ? [...data.reviews]
+            .filter((review) => Boolean(review.text?.text && review.rating))
+            .sort((a, b) => {
+              const timeA = a.publishTime ? Date.parse(a.publishTime) : 0;
+              const timeB = b.publishTime ? Date.parse(b.publishTime) : 0;
+              return timeB - timeA; // newest first
+            })
+            .slice(0, 6)
+            .map((review) => ({
+              authorName:
+                review.authorAttribution?.displayName ?? "Usuario de Google",
+              rating: review.rating ?? 0,
+              text: review.text?.text ?? "",
+              publishedRelative: review.relativePublishTimeDescription,
+              publishTime: review.publishTime,
+            }))
+        : [];
 
     const payload = {
       rating: data.rating ?? null,
