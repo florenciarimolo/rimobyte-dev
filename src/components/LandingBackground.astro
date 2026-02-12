@@ -1,0 +1,83 @@
+---
+/**
+ * LandingBackground.astro
+ * 
+ * Reusable background component that replicates the visual style of 
+ * /desarrolladora-wordpress-freelance landing page.
+ * 
+ * This component works by:
+ * 1. Forcing body/html to black background
+ * 2. Making #root black with position:relative AND z-index:1 to create
+ *    the same stacking context as the WordPress landing
+ * 3. Injecting fixed purple/blue glows that backdrop-blur on cards can
+ *    pick up because they share the same stacking context
+ */
+---
+
+<style is:inline>
+  html, body {
+    background: #111827 !important;
+  }
+  body.dark {
+    background: #111827 !important;
+  }
+  #root {
+    background: #111827 !important;
+    position: relative;
+    z-index: 1;
+  }
+  .grecaptcha-badge {
+    z-index: 9999 !important;
+  }
+  /* Fixed purple glow - replicates the WordPress CTA section technique.
+     Must be inside the #root stacking context (z-index:1) so that
+     backdrop-blur on cards can "see" these glows through the semi-transparent bg. */
+  .landing-bg-glow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 900px;
+    background: rgba(88, 28, 135, 0.20);
+    filter: blur(130px);
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .landing-bg-glow-2 {
+    position: fixed;
+    top: 10%;
+    left: -5%;
+    width: 600px;
+    height: 600px;
+    background: rgba(147, 51, 234, 0.10);
+    filter: blur(110px);
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 0;
+    animation: landing-pulse 5s ease-in-out infinite;
+  }
+  .landing-bg-glow-3 {
+    position: fixed;
+    bottom: 10%;
+    right: -5%;
+    width: 600px;
+    height: 600px;
+    background: rgba(37, 99, 235, 0.08);
+    filter: blur(110px);
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 0;
+    animation: landing-pulse 5s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+  @keyframes landing-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+</style>
+
+<div class="landing-bg-glow" aria-hidden="true"></div>
+<div class="landing-bg-glow-2" aria-hidden="true"></div>
+<div class="landing-bg-glow-3" aria-hidden="true"></div>

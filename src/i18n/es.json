@@ -188,7 +188,7 @@
     "freelance": {
       "title": "Freelance Web Developer",
       "period": "Abr. 2021 – Presente",
-      "description": "Desarrollo de productos y sitios web utilizando la tecnología más adecuada para cada proyecto. Trabajo con WordPress y Shopify para soluciones de contenido y e-commerce, y con frontend moderno (Vue, React, Astro) para interfaces a medida y productos web. Experiencia en proyectos end-to-end: arquitectura, desarrollo, optimización y despliegue."
+      "description": "Desarrollo de productos y sitios web utilizando la tecnología más adecuada para cada proyecto. Trabajo con WordPress y Shopify para soluciones de contenido y e-commerce, y con frontend moderno (Vue, Nuxt, Astro) para interfaces a medida y productos web. Experiencia en proyectos end-to-end: arquitectura, desarrollo, optimización y despliegue."
     },
     "ithinkupc": {
       "title": "Ingeniera de Software | iThinkUPC",
@@ -517,5 +517,178 @@
     "contactForm": {
       "button": "Quiero recuperar el control de mi web"
     }
+  },
+  "rescueWordPressLanding": {
+    "navbar": {
+      "symptoms": "Síntomas",
+      "process": "Cómo ayudo",
+      "services": "Servicios",
+      "faq": "Preguntas frecuentes",
+      "contact": "Contacto urgente"
+    },
+    "hero": {
+      "title": "Rescate WordPress Urgente en 24h",
+      "subtitle": "¿Tu WordPress está caído, hackeado o con errores críticos? Te ayudo a recuperarlo en menos de 24 horas con garantía de resultado.",
+      "extraText": "Respuesta inmediata. Sin intermediarios. Solución profesional.",
+      "cta": {
+        "contact": "Contactar por WhatsApp Ahora",
+        "viewProcess": "Ver cómo funciona"
+      }
+    },
+    "sections": {
+      "symptoms": {
+        "title": "¿Tu WordPress tiene alguno de estos problemas?"
+      },
+      "process": {
+        "title": "Cómo recupero tu WordPress"
+      },
+      "services": {
+        "title": "Servicios de Rescate WordPress"
+      },
+      "faq": {
+        "title": "Preguntas Frecuentes"
+      }
+    },
+    "symptoms": {
+      "intro": "Si tu WordPress presenta alguno de estos síntomas, necesitas ayuda urgente:",
+      "items": {
+        "siteDown": {
+          "title": "Web caída o inaccesible",
+          "description": "Pantalla blanca, error 500, o simplemente no carga."
+        },
+        "hacked": {
+          "title": "Hackeado o infectado",
+          "description": "Contenido extraño, redirecciones no deseadas, advertencia de seguridad en Google."
+        },
+        "criticalError": {
+          "title": "Error crítico de WordPress",
+          "description": "Mensajes de error PHP, base de datos no accesible, plugins causando problemas."
+        },
+        "cannotAccess": {
+          "title": "No puedes acceder al admin",
+          "description": "Bloqueado del panel de administración, credenciales no funcionan."
+        },
+        "slowOrBroken": {
+          "title": "Extremadamente lento o roto",
+          "description": "Carga infinita, páginas que no responden, funcionalidades rotas."
+        }
+      }
+    },
+    "process": {
+      "intro": "Mi proceso de rescate WordPress en 4 pasos:",
+      "steps": {
+        "analysis": {
+          "title": "1. Análisis Urgente (30 min)",
+          "description": "Diagnóstico completo del problema: reviso logs, base de datos, archivos comprometidos y causas raíz."
+        },
+        "backup": {
+          "title": "2. Backup y Seguridad (1h)",
+          "description": "Creo backup completo antes de tocar nada. Si está hackeado, aíslo la web para evitar más daño."
+        },
+        "repair": {
+          "title": "3. Reparación (2-6h)",
+          "description": "Elimino malware, reparo base de datos, restauro archivos, actualizo plugins y soluciono el error específico."
+        },
+        "prevention": {
+          "title": "4. Prevención (1h)",
+          "description": "Implemento medidas de seguridad, actualizo todo, y te doy recomendaciones para que no vuelva a pasar."
+        }
+      }
+    },
+    "services": {
+      "intro": "Servicios de rescate WordPress según tu situación:",
+      "items": {
+        "emergency": {
+          "title": "Rescate Urgente",
+          "description": "Web caída, hackeada o error crítico.\n\nRespuesta en 2h. Solución en 24h.",
+          "price": "Desde 200€"
+        },
+        "malware": {
+          "title": "Limpieza de Malware",
+          "description": "Eliminación completa de virus, malware y archivos maliciosos.\n\nIncluye hardening de seguridad.",
+          "price": "Desde 150€"
+        },
+        "recovery": {
+          "title": "Recuperación de Backup",
+          "description": "Restauración desde backup con mínima pérdida de datos.\n\nMigración si es necesario.",
+          "price": "Desde 100€"
+        },
+        "maintenance": {
+          "title": "Mantenimiento Preventivo",
+          "description": "Actualizaciones, backups automáticos y monitoreo.\n\nEvita problemas futuros.",
+          "price": "Desde 40€/mes"
+        }
+      }
+    },
+    "guarantees": {
+      "title": "Garantías",
+      "items": {
+        "response": "Respuesta en menos de 2 horas (horario laboral)",
+        "solution": "Solución en máximo 24 horas o te devuelvo el dinero",
+        "backup": "Backup completo antes de cualquier cambio",
+        "support": "7 días de soporte post-rescate incluidos"
+      }
+    },
+    "faq": {
+      "items": {
+        "howLong": {
+          "question": "¿Cuánto tarda el rescate?",
+          "answer": "La mayoría de rescates se resuelven en 4-8 horas. En casos extremos puede tomar hasta 24h. Te mantendré informado en cada paso."
+        },
+        "guaranteed": {
+          "question": "¿Está garantizado?",
+          "answer": "Sí. Si no puedo resolver el problema, te devuelvo el 100% del pago. En 5 años como freelance, nunca he tenido que hacerlo."
+        },
+        "dataLoss": {
+          "question": "¿Perderé datos?",
+          "answer": "No. Hago backup completo antes de tocar nada. En el peor caso, puedo restaurar al estado anterior."
+        },
+        "afterHours": {
+          "question": "¿Trabajas fines de semana?",
+          "answer": "Sí. Para rescates urgentes trabajo cualquier día. Hay un pequeño recargo de 30€ para fines de semana."
+        },
+        "cannotAccess": {
+          "question": "¿Y si no tengo acceso al hosting?",
+          "answer": "No hay problema. Puedo trabajar con acceso FTP, cPanel, o incluso ayudarte a recuperar los accesos si los has perdido."
+        },
+        "prevention": {
+          "question": "¿Cómo evito que vuelva a pasar?",
+          "answer": "Después del rescate, implemento medidas de seguridad y te doy recomendaciones claras. Opcionalmente, ofrezco mantenimiento mensual preventivo."
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Tu WordPress necesita rescate urgente?",
+      "subtitle": "Contacta ahora. Respuesta en menos de 2 horas.",
+      "button": "Contactar por WhatsApp"
+    },
+    "contactForm": {
+      "button": "Solicitar rescate urgente"
+    }
+  },
+  "pricingLanding": {
+    "title": "Precios Desarrollo Web 2026 | Tarifas Transparentes",
+    "description": "Precios claros y sin sorpresas para desarrollo web. Desde 500€ para webs básicas WordPress hasta proyectos custom con Vue/Nuxt. Sin costes ocultos.",
+    "keywords": "cuánto cuesta una página web, precio desarrollo web, precio página web wordpress, tarifa programador web freelance, presupuesto web, coste página web"
+  },
+  "redesignLanding": {
+    "title": "Rediseño Web WordPress | Moderniza tu Sitio sin Perder SEO",
+    "description": "Rediseño profesional de WordPress manteniendo tu posicionamiento. Diseño moderno, velocidad optimizada y mejor conversión. Sin perder rankings ni tráfico.",
+    "keywords": "rediseño wordpress, rediseñar mi web, modernizar web wordpress, actualizar diseño web, renovar página web, rediseño web sin perder seo"
+  },
+  "ecommerceLanding": {
+    "title": "Desarrollo Tienda Online | WooCommerce y Shopify",
+    "description": "Desarrollo de tiendas online con WooCommerce o Shopify. Pasarelas de pago, gestión de stock, envíos automáticos. Desde 1.200€.",
+    "keywords": "crear tienda online, desarrollo ecommerce, tienda online wordpress, woocommerce freelance, desarrollo shopify, crear ecommerce"
+  },
+  "speedLanding": {
+    "title": "Optimización Velocidad WordPress | PageSpeed 90+",
+    "description": "Optimización profesional de WordPress. Mejora mínima de 30 puntos en PageSpeed. Web rápida = mejor SEO y más conversiones.",
+    "keywords": "wordpress lento, optimizar wordpress, mejorar velocidad web, web muy lenta, acelerar wordpress, optimización pagespeed"
+  },
+  "vueNuxtLanding": {
+    "title": "Desarrollo Vue.js y Nuxt | Aplicaciones Web Modernas",
+    "description": "Desarrollo de aplicaciones web con Vue 3, Nuxt y Astro. SaaS, dashboards, SPAs de alto rendimiento. Stack moderno con TypeScript.",
+    "keywords": "programador vue freelance, desarrollo nuxt, desarrollador vue.js españa, desarrollo astro, programador vue, spa vue.js"
   }
 }

@@ -1,0 +1,37 @@
+---
+/**
+ * AggregateRating Schema
+ * Add this component to pages that display Google Reviews
+ * to enhance SEO with structured rating data
+ */
+
+export interface Props {
+  rating: number;
+  reviewCount: number;
+  name?: string;
+  url?: string;
+}
+
+const { 
+  rating = 4.9, 
+  reviewCount = 12, 
+  name = "RimoByte - Desarrollo Web Freelance",
+  url = "https://rimobyte.com" 
+} = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": name,
+  "url": url,
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": rating.toFixed(1),
+    "reviewCount": reviewCount,
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

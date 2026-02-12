@@ -44,6 +44,17 @@ export const GET: APIRoute = ({ request }) => {
   // Main landing pages
   addUrl('/desarrolladora-wordpress-freelance', '0.9');
   addUrl('/migrar-web-agencia-freelance', '0.9');
+  
+  // Service pages (Spanish only for now)
+  addUrl('/rescate-wordpress-urgente', '0.9', 'weekly', 'es');
+  addUrl('/precios-desarrollo-web', '0.9', 'monthly', 'es');
+  addUrl('/rediseno-web-wordpress', '0.8', 'monthly', 'es');
+  addUrl('/desarrollo-tienda-online', '0.8', 'monthly', 'es');
+  addUrl('/optimizacion-velocidad-wordpress', '0.8', 'monthly', 'es');
+  addUrl('/desarrollo-vue-nuxt-astro', '0.8', 'monthly', 'es');
+  
+  // Blog
+  addUrl('/blog', '0.7', 'weekly', 'es');
 
   // City landing pages - WordPress (Spanish cities for ES, all cities for EN)
   const spanishCities = getAllowedCities('es');

@@ -1,0 +1,100 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import LandingBackground from '@/components/LandingBackground.astro';
+import RescueWordPressLandingPage from '@/components/RescueWordPressLandingPage';
+import ServiceLandingNavbar from '@/components/ServiceLandingNavbar.astro';
+import ServiceLandingFooter from '@/components/ServiceLandingFooter.astro';
+import { LANG } from '@/i18n/index';
+import { SITE_URL } from '@/constants';
+
+const locale = LANG.ENGLISH;
+const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
+
+const title = "WordPress Emergency Rescue in 24h | Immediate Help | RimoByte";
+const description = "Is your WordPress down, hacked, or showing critical errors? Response in 2h. Guaranteed solution in 24h. Freelancer with 5 years of experience. No intermediaries.";
+
+const keywords = "wordpress rescue, wordpress down, wordpress hacked, wordpress critical error, broken wordpress, emergency wordpress repair, wordpress help, wordpress not working, recover wordpress, wordpress infected, fix wordpress";
+
+// Schema markup for Service
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "WordPress Emergency Rescue",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "RimoByte",
+    "url": "https://rimobyte.com",
+    "telephone": "+34684713743",
+    "email": "info@rimobyte.com"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Spain"
+  },
+  "description": "WordPress emergency rescue service. Recovery of crashed, hacked, or critically broken websites in less than 24 hours.",
+  "offers": {
+    "@type": "Offer",
+    "priceRange": "€€",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
+// FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does rescue take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most rescues are resolved in 4-8 hours. In extreme cases it may take up to 24h. I'll keep you informed at every step."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it guaranteed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. If I can't solve the problem, I'll refund 100% of the payment. In 5 years as a freelancer, I've never had to do it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I lose data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. I create a complete backup before touching anything. In the worst case, I can restore to the previous state."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work on weekends?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. For urgent rescues I work any day. There's a small €30 surcharge for weekends."
+      }
+    }
+  ]
+};
+---
+
+<MainLayout 
+  title={title}
+  description={description}
+  keywords={keywords}
+  locale={locale}
+  canonical={currentUrl}
+>
+  <!-- Service Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <LandingBackground />
+  <ServiceLandingNavbar locale={locale} />
+  <RescueWordPressLandingPage client:only="react" initialLocale={locale} />
+  <ServiceLandingFooter locale={locale} />
+</MainLayout>

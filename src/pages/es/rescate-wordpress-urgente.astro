@@ -1,0 +1,100 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import LandingBackground from '@/components/LandingBackground.astro';
+import RescueWordPressLandingPage from '@/components/RescueWordPressLandingPage';
+import ServiceLandingNavbar from '@/components/ServiceLandingNavbar.astro';
+import ServiceLandingFooter from '@/components/ServiceLandingFooter.astro';
+import { LANG } from '@/i18n/index';
+import { SITE_URL } from '@/constants';
+
+const locale = LANG.SPANISH;
+const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
+
+const title = "Rescate WordPress Urgente en 24h | Ayuda Inmediata | RimoByte";
+const description = "¿Tu WordPress está caído, hackeado o con errores críticos? Respuesta en 2h. Solución garantizada en 24h. Freelance con 5 años de experiencia. Sin intermediarios.";
+
+const keywords = "rescate wordpress, wordpress caído, wordpress hackeado, error crítico wordpress, wordpress roto, reparación wordpress urgente, ayuda wordpress, wordpress no funciona, recuperar wordpress, wordpress infectado, arreglar wordpress";
+
+// Schema markup for Service
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Rescate WordPress Urgente",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "RimoByte",
+    "url": "https://rimobyte.com",
+    "telephone": "+34684713743",
+    "email": "info@rimobyte.com"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "España"
+  },
+  "description": "Servicio de rescate WordPress urgente. Recuperación de sitios web caídos, hackeados o con errores críticos en menos de 24 horas.",
+  "offers": {
+    "@type": "Offer",
+    "priceRange": "€€",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
+// FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda el rescate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La mayoría de rescates se resuelven en 4-8 horas. En casos extremos puede tomar hasta 24h. Te mantendré informado en cada paso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Está garantizado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Si no puedo resolver el problema, te devuelvo el 100% del pago. En 5 años como freelance, nunca he tenido que hacerlo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Perderé datos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Hago backup completo antes de tocar nada. En el peor caso, puedo restaurar al estado anterior."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajas fines de semana?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Para rescates urgentes trabajo cualquier día. Hay un pequeño recargo de 30€ para fines de semana."
+      }
+    }
+  ]
+};
+---
+
+<MainLayout 
+  title={title}
+  description={description}
+  keywords={keywords}
+  locale={locale}
+  canonical={currentUrl}
+>
+  <!-- Service Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <LandingBackground />
+  <ServiceLandingNavbar locale={locale} />
+  <RescueWordPressLandingPage client:only="react" initialLocale={locale} />
+  <ServiceLandingFooter locale={locale} />
+</MainLayout>

@@ -1,0 +1,196 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import LandingBackground from '@/components/LandingBackground.astro';
+import ServiceLandingNavbar from '@/components/ServiceLandingNavbar.astro';
+import ServiceLandingFooter from '@/components/ServiceLandingFooter.astro';
+import { LANG, getI18N } from '@/i18n/index';
+import { SITE_URL } from '@/constants';
+
+const locale = LANG.SPANISH;
+const translations = getI18N({ currentLocale: locale });
+const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
+
+const title = translations.vueNuxtLanding.title;
+const description = translations.vueNuxtLanding.description;
+const keywords = translations.vueNuxtLanding.keywords;
+---
+
+<MainLayout 
+  title={title}
+  description={description}
+  keywords={keywords}
+  locale={locale}
+  canonical={currentUrl}
+>
+  <LandingBackground />
+  <ServiceLandingNavbar locale={locale} />
+  <main class="relative py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <header class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Desarrollo Vue.js, Nuxt y Astro
+        </h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Aplicaciones web modernas con Vue 3, Nuxt y Astro. Stack profesional con TypeScript para proyectos escalables.
+        </p>
+      </header>
+
+      <section class="mb-20">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">¿Cuándo usar Vue/Nuxt en vez de WordPress?</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-black/40 backdrop-blur-md rounded-xl p-8 border border-gray-800">
+            <h3 class="text-2xl font-bold text-white mb-6">WordPress es mejor para:</h3>
+            <ul class="space-y-3">
+              {['Blogs y webs de contenido', 'Webs corporativas estáticas', 'E-commerce tradicional', 'Clientes que gestionan contenido', 'Presupuesto limitado'].map((item) => (
+                <li class="flex items-start gap-3 text-gray-300">
+                  <span class="text-purple-400">→</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-black/40 backdrop-blur-md rounded-xl p-8 border border-blue-500">
+            <h3 class="text-2xl font-bold text-white mb-6">Vue/Nuxt es mejor para:</h3>
+            <ul class="space-y-3">
+              {['SaaS y aplicaciones web', 'Dashboards y paneles admin', 'SPAs con mucha interacción', 'Performance crítico', 'Proyectos complejos escalables'].map((item) => (
+                <li class="flex items-start gap-3 text-gray-300">
+                  <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-20">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">Mi Stack Tecnológico</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            { 
+              name: 'Vue 3', 
+              desc: 'Framework progresivo y ligero', 
+              use: 'SPAs, componentes interactivos',
+              icon: '🟢'
+            },
+            { 
+              name: 'Nuxt 3', 
+              desc: 'Vue con SSR y SSG', 
+              use: 'Apps full-stack con SEO',
+              icon: '🔷'
+            },
+            { 
+              name: 'Astro', 
+              desc: 'Framework ultra-rápido', 
+              use: 'Webs estáticas de alto rendimiento',
+              icon: '🚀'
+            }
+          ].map((tech) => (
+            <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-800 hover:border-blue-500 transition-all duration-300">
+              <div class="text-5xl mb-4">{tech.icon}</div>
+              <h3 class="text-xl font-bold text-white mb-2">{tech.name}</h3>
+              <p class="text-gray-300 mb-3">{tech.desc}</p>
+              <p class="text-sm text-blue-400">Ideal para: {tech.use}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-800">
+          <h3 class="text-xl font-bold text-white mb-4">Tecnologías complementarias:</h3>
+          <div class="flex flex-wrap gap-3">
+            {['TypeScript', 'Tailwind CSS', 'Pinia/Vuex', 'Vite', 'Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Docker', 'Git'].map((tech) => (
+              <span class="px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-lg text-blue-400 text-sm">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-20">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">Tipos de Proyectos</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          {[
+            { 
+              title: 'SaaS / Aplicación Web', 
+              desc: 'Plataforma completa con autenticación, base de datos, pagos', 
+              examples: ['CRM', 'Gestión interna', 'Plataforma reservas'],
+              price: 'Desde 3.500€'
+            },
+            { 
+              title: 'Dashboard / Panel Admin', 
+              desc: 'Panel de control con gráficos, tablas, gestión de datos', 
+              examples: ['Analytics', 'Backoffice', 'Admin panel'],
+              price: 'Desde 2.000€'
+            },
+            { 
+              title: 'Landing Page / Portfolio', 
+              desc: 'Web estática ultra-rápida con Astro y animaciones', 
+              examples: ['Portfolio', 'Product page', 'Marketing site'],
+              price: 'Desde 800€'
+            },
+            { 
+              title: 'Single Page Application', 
+              desc: 'App interactiva sin recargas de página', 
+              examples: ['Calculadora', 'Configurador', 'Tool online'],
+              price: 'Desde 1.500€'
+            }
+          ].map((project) => (
+            <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-800 hover:border-blue-500 transition-all duration-300">
+              <h3 class="text-xl font-bold text-white mb-2">{project.title}</h3>
+              <p class="text-gray-300 mb-4">{project.desc}</p>
+              <div class="mb-4">
+                <span class="text-sm text-gray-500">Ejemplos: </span>
+                <span class="text-sm text-blue-400">{project.examples.join(', ')}</span>
+              </div>
+              <div class="text-lg font-bold text-blue-400">{project.price}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">Por qué elegir desarrollo moderno</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { icon: '⚡', title: 'Ultra rápido', desc: 'Performance optimizado desde el principio' },
+            { icon: '🔒', title: 'Seguro', desc: 'TypeScript y buenas prácticas' },
+            { icon: '📱', title: 'Responsive', desc: 'Perfecto en cualquier dispositivo' },
+            { icon: '🔧', title: 'Mantenible', desc: 'Código limpio y documentado' },
+            { icon: '📈', title: 'Escalable', desc: 'Crece con tu negocio' },
+            { icon: '🎨', title: 'Flexible', desc: 'Personalización total' },
+            { icon: '🚀', title: 'Moderno', desc: 'Stack actualizado' },
+            { icon: '💪', title: 'Robusto', desc: 'Testing incluido' }
+          ].map((benefit) => (
+            <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-800 text-center">
+              <div class="text-4xl mb-3">{benefit.icon}</div>
+              <h3 class="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
+              <p class="text-sm text-gray-400">{benefit.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="text-center">
+          <h2 class="text-3xl font-bold text-white mb-4 pt-12">¿Tienes un proyecto en mente?</h2>
+          <p class="text-xl text-gray-300 mb-8">Hablamos de tu idea y te asesoro sobre la mejor solución técnica</p>
+          <a 
+            href="https://wa.me/34684713743?text=Hola,%20tengo%20un%20proyecto%20con%20Vue/Nuxt"
+            class="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-bold text-xl hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-2xl"
+          >
+            Consulta Técnica Gratuita
+          </a>
+          <div class="mt-6 text-gray-400 text-sm">
+            <p>Primera consulta gratuita • Asesoramiento técnico sin compromiso</p>
+          </div>
+      </section>
+
+    </div>
+  </main>
+  <ServiceLandingFooter locale={locale} />
+</MainLayout>

@@ -1,0 +1,210 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import LandingBackground from '@/components/LandingBackground.astro';
+import ServiceLandingNavbar from '@/components/ServiceLandingNavbar.astro';
+import ServiceLandingFooter from '@/components/ServiceLandingFooter.astro';
+import { LANG, getI18N } from '@/i18n/index';
+import { SITE_URL } from '@/constants';
+
+const locale = LANG.SPANISH;
+const translations = getI18N({ currentLocale: locale });
+const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
+
+const title = translations.pricingLanding.title;
+const description = translations.pricingLanding.description;
+const keywords = translations.pricingLanding.keywords;
+
+const packages = [
+  {
+    name: "Landing Page",
+    price: "Desde 500€",
+    description: "Web de una página perfecta para servicios o productos específicos",
+    features: [
+      "Diseño responsive",
+      "Optimización SEO básica",
+      "Formulario de contacto",
+      "Integración Google Analytics",
+      "Velocidad optimizada"
+    ]
+  },
+  {
+    name: "Web Corporativa",
+    price: "Desde 800€",
+    description: "Sitio web completo para empresas y profesionales",
+    features: [
+      "Hasta 10 páginas",
+      "WordPress personalizado",
+      "SEO avanzado",
+      "Blog opcional",
+      "Panel de administración",
+      "Formación incluida"
+    ],
+    popular: true
+  },
+  {
+    name: "Tienda Online",
+    price: "Desde 1.200€",
+    description: "E-commerce completo con WooCommerce o Shopify",
+    features: [
+      "Catálogo de productos",
+      "Pasarelas de pago",
+      "Gestión de stock",
+      "Envíos configurados",
+      "Diseño optimizado para conversión",
+      "Soporte 1 mes incluido"
+    ]
+  },
+  {
+    name: "Aplicación Web",
+    price: "Desde 2.500€",
+    description: "SaaS, dashboards o aplicaciones custom con Vue/Nuxt",
+    features: [
+      "Vue 3 + TypeScript",
+      "Backend API REST",
+      "Autenticación de usuarios",
+      "Base de datos",
+      "Arquitectura escalable",
+      "Documentación técnica"
+    ]
+  }
+];
+
+const services = [
+  {
+    name: "Rediseño Web",
+    price: "Desde 600€",
+    description: "Moderniza tu web existente sin perder SEO ni posicionamiento"
+  },
+  {
+    name: "Optimización Velocidad",
+    price: "Desde 300€",
+    description: "Mejora mínima de 30 puntos en PageSpeed. Web rápida = más ventas"
+  },
+  {
+    name: "Migración Web",
+    price: "Desde 400€",
+    description: "Cambia de hosting, plataforma o dominio sin perder nada"
+  },
+  {
+    name: "Mantenimiento Mensual",
+    price: "Desde 40€/mes",
+    description: "Actualizaciones, backups, seguridad y soporte continuo"
+  }
+];
+
+const whyMe = [
+  "Sin costes ocultos: el precio que ves es el que pagas",
+  "Comunicación directa: sin intermediarios ni agencias",
+  "Código limpio y documentado para futuras ampliaciones",
+  "Garantía 30 días: si algo no funciona, lo arreglo gratis",
+  "Precio hasta 50% menor que agencias grandes"
+];
+---
+
+<MainLayout 
+  title={title}
+  description={description}
+  keywords={keywords}
+  locale={locale}
+  canonical={currentUrl}
+>
+  <LandingBackground />
+  <ServiceLandingNavbar locale={locale} />
+  <main class="relative py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Hero Section -->
+      <header class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Precios Desarrollo Web 2026
+        </h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Tarifas transparentes y sin sorpresas. Precio fijo que incluye todo lo necesario para tu proyecto.
+        </p>
+      </header>
+
+      <!-- Pricing Packages -->
+      <section class="mb-20">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">Paquetes de Desarrollo</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          {packages.map((pkg) => (
+            <div class={`bg-black/40 backdrop-blur-md rounded-xl p-8 border ${pkg.popular ? 'border-blue-500 shadow-lg shadow-blue-500/20' : 'border-gray-800'} hover:border-blue-500 hover:-translate-y-1 transition-all duration-300`}>
+              {pkg.popular && (
+                <div class="inline-block px-3 py-1 bg-blue-500 text-white text-sm font-semibold rounded-full mb-4">
+                  Más Popular
+                </div>
+              )}
+              <h3 class="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
+              <div class="text-3xl font-bold text-blue-400 mb-4">{pkg.price}</div>
+              <p class="text-gray-300 mb-6">{pkg.description}</p>
+              <ul class="space-y-3">
+                {pkg.features.map((feature) => (
+                  <li class="flex items-start gap-3 text-gray-300">
+                    <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Additional Services -->
+      <section class="mb-20">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">Otros Servicios</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          {services.map((service) => (
+            <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-800 hover:border-blue-500 transition-all duration-300">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="text-xl font-bold text-white">{service.name}</h3>
+                <span class="text-lg font-semibold text-blue-400 whitespace-nowrap ml-4">{service.price}</span>
+              </div>
+              <p class="text-gray-300">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Why Choose Me -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">Por qué elegir un freelance</h2>
+        <div class="bg-black/40 backdrop-blur-md rounded-xl p-8 border border-gray-800">
+          <ul class="space-y-4">
+            {whyMe.map((reason) => (
+              <li class="flex items-start gap-3 text-gray-300 text-lg">
+                <svg class="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>{reason}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="text-center">
+          <h2 class="text-3xl font-bold text-white mb-4 pt-12">¿Listo para empezar tu proyecto?</h2>
+          <p class="text-xl text-gray-300 mb-8">Cuéntame tu idea y te envío un presupuesto detallado en 24h</p>
+          <a 
+            href="https://wa.me/34684713743?text=Hola,%20quiero%20un%20presupuesto%20para%20desarrollo%20web"
+            class="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-bold text-xl hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-2xl"
+          >
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Solicitar Presupuesto
+          </a>
+          <div class="mt-6 text-gray-400">
+            <p>También puedes escribirme a <a href="mailto:info@rimobyte.com" class="text-blue-400 hover:underline">info@rimobyte.com</a></p>
+          </div>
+      </section>
+
+    </div>
+  </main>
+  <ServiceLandingFooter locale={locale} />
+</MainLayout>

@@ -30,10 +30,8 @@ const locale = LANG.ENGLISH;
 const translations = getI18N({ currentLocale: locale });
 
 const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
-const title = `${translations.wordpressLanding.hero.title} in ${cityName} | RimoByte`;
-const description = isInternational 
-  ? (translations.wordpressLanding.hero as any).localSeoInternational?.replace('{city}', cityName) || translations.wordpressLanding.hero.localSeo.replace('{city}', cityName)
-  : translations.wordpressLanding.hero.localSeo.replace('{city}', cityName);
+const title = `WordPress Development in ${cityName} | Fixed Price from €500 | No Intermediaries`;
+const description = `WordPress web development in ${cityName}. Freelancer with 5 years of experience. Transparent pricing, direct communication, and quality code. From €500.`;
 ---
 
 <MainLayout 

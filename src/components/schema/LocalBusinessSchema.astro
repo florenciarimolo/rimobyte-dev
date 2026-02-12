@@ -1,0 +1,55 @@
+---
+/**
+ * LocalBusiness Schema
+ * For city-specific service pages
+ */
+
+export interface Props {
+  city: string;
+  country?: string;
+  countryCode?: string;
+  serviceType: string[];
+  priceRange?: string;
+  locale?: string;
+}
+
+const { 
+  city,
+  country = "Spain",
+  countryCode = "ES",
+  serviceType,
+  priceRange = "€€",
+  locale = "es"
+} = Astro.props;
+
+const isEnglish = locale === "en";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": isEnglish 
+    ? `RimoByte - Web Development in ${city}`
+    : `RimoByte - Desarrollo Web en ${city}`,
+  "description": isEnglish
+    ? `Professional freelance web development services in ${city}. WordPress, Vue.js, Nuxt, e-commerce and web maintenance.`
+    : `Servicios profesionales de desarrollo web freelance en ${city}. WordPress, Vue.js, Nuxt, e-commerce y mantenimiento web.`,
+  "url": "https://rimobyte.com",
+  "telephone": "+34684713743",
+  "email": "info@rimobyte.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": city,
+    "addressCountry": countryCode
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": city,
+    "addressCountry": countryCode
+  },
+  "serviceType": serviceType,
+  "priceRange": priceRange,
+  "jobLocationType": "TELECOMMUTE"
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

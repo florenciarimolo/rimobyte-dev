@@ -188,7 +188,7 @@
     "freelance": {
       "title": "Freelance Web Developer",
       "period": "Apr. 2021 – Present",
-      "description": "Development of products and websites using the most appropriate technology for each project. Work with WordPress and Shopify for content and e-commerce solutions, and with modern frontend (Vue, React, Astro) for custom interfaces and web products. Experience in end-to-end projects: architecture, development, optimization and deployment."
+      "description": "Development of products and websites using the most appropriate technology for each project. Work with WordPress and Shopify for content and e-commerce solutions, and with modern frontend (Vue, Nuxt, Astro) for custom interfaces and web products. Experience in end-to-end projects: architecture, development, optimization and deployment."
     },
     "ithinkupc": {
       "title": "Software Engineer | iThinkUPC",
@@ -518,5 +518,178 @@
     "contactForm": {
       "button": "I want to regain control of my website"
     }
+  },
+  "rescueWordPressLanding": {
+    "navbar": {
+      "symptoms": "Symptoms",
+      "process": "How I Help",
+      "services": "Services",
+      "faq": "FAQ",
+      "contact": "Urgent Contact"
+    },
+    "hero": {
+      "title": "WordPress Emergency Rescue in 24h",
+      "subtitle": "Is your WordPress down, hacked, or showing critical errors? I'll help you recover it in less than 24 hours with guaranteed results.",
+      "extraText": "Immediate response. No intermediaries. Professional solution.",
+      "cta": {
+        "contact": "Contact via WhatsApp Now",
+        "viewProcess": "See how it works"
+      }
+    },
+    "sections": {
+      "symptoms": {
+        "title": "Does your WordPress have any of these problems?"
+      },
+      "process": {
+        "title": "How I recover your WordPress"
+      },
+      "services": {
+        "title": "WordPress Rescue Services"
+      },
+      "faq": {
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "symptoms": {
+      "intro": "If your WordPress shows any of these symptoms, you need urgent help:",
+      "items": {
+        "siteDown": {
+          "title": "Website down or inaccessible",
+          "description": "White screen, error 500, or simply won't load."
+        },
+        "hacked": {
+          "title": "Hacked or infected",
+          "description": "Strange content, unwanted redirects, Google security warning."
+        },
+        "criticalError": {
+          "title": "WordPress critical error",
+          "description": "PHP error messages, database not accessible, plugins causing issues."
+        },
+        "cannotAccess": {
+          "title": "Cannot access admin",
+          "description": "Locked out of admin panel, credentials don't work."
+        },
+        "slowOrBroken": {
+          "title": "Extremely slow or broken",
+          "description": "Infinite loading, unresponsive pages, broken functionality."
+        }
+      }
+    },
+    "process": {
+      "intro": "My WordPress rescue process in 4 steps:",
+      "steps": {
+        "analysis": {
+          "title": "1. Urgent Analysis (30 min)",
+          "description": "Complete problem diagnosis: review logs, database, compromised files, and root causes."
+        },
+        "backup": {
+          "title": "2. Backup & Security (1h)",
+          "description": "Create complete backup before touching anything. If hacked, isolate the site to prevent further damage."
+        },
+        "repair": {
+          "title": "3. Repair (2-6h)",
+          "description": "Remove malware, repair database, restore files, update plugins, and fix the specific error."
+        },
+        "prevention": {
+          "title": "4. Prevention (1h)",
+          "description": "Implement security measures, update everything, and give you clear recommendations to prevent recurrence."
+        }
+      }
+    },
+    "services": {
+      "intro": "WordPress rescue services based on your situation:",
+      "items": {
+        "emergency": {
+          "title": "Emergency Rescue",
+          "description": "Website down, hacked, or critical error.\n\nResponse in 2h. Solution in 24h.",
+          "price": "From €200"
+        },
+        "malware": {
+          "title": "Malware Cleanup",
+          "description": "Complete removal of viruses, malware, and malicious files.\n\nIncludes security hardening.",
+          "price": "From €150"
+        },
+        "recovery": {
+          "title": "Backup Recovery",
+          "description": "Restoration from backup with minimal data loss.\n\nMigration if needed.",
+          "price": "From €100"
+        },
+        "maintenance": {
+          "title": "Preventive Maintenance",
+          "description": "Updates, automatic backups, and monitoring.\n\nPrevent future issues.",
+          "price": "From €40/month"
+        }
+      }
+    },
+    "guarantees": {
+      "title": "Guarantees",
+      "items": {
+        "response": "Response in less than 2 hours (business hours)",
+        "solution": "Solution within 24 hours or full refund",
+        "backup": "Complete backup before any changes",
+        "support": "7 days of post-rescue support included"
+      }
+    },
+    "faq": {
+      "items": {
+        "howLong": {
+          "question": "How long does rescue take?",
+          "answer": "Most rescues are resolved in 4-8 hours. In extreme cases it may take up to 24h. I'll keep you informed at every step."
+        },
+        "guaranteed": {
+          "question": "Is it guaranteed?",
+          "answer": "Yes. If I can't solve the problem, I'll refund 100% of the payment. In 5 years as a freelancer, I've never had to do it."
+        },
+        "dataLoss": {
+          "question": "Will I lose data?",
+          "answer": "No. I create a complete backup before touching anything. In the worst case, I can restore to the previous state."
+        },
+        "afterHours": {
+          "question": "Do you work on weekends?",
+          "answer": "Yes. For urgent rescues I work any day. There's a small €30 surcharge for weekends."
+        },
+        "cannotAccess": {
+          "question": "What if I don't have hosting access?",
+          "answer": "No problem. I can work with FTP, cPanel access, or even help you recover access if you've lost it."
+        },
+        "prevention": {
+          "question": "How do I prevent it from happening again?",
+          "answer": "After the rescue, I implement security measures and give you clear recommendations. Optionally, I offer monthly preventive maintenance."
+        }
+      }
+    },
+    "cta": {
+      "title": "Does your WordPress need urgent rescue?",
+      "subtitle": "Contact now. Response in less than 2 hours.",
+      "button": "Contact via WhatsApp"
+    },
+    "contactForm": {
+      "button": "Request urgent rescue"
+    }
+  },
+  "pricingLanding": {
+    "title": "Web Development Pricing 2026 | Transparent Rates",
+    "description": "Clear pricing with no surprises for web development. From €500 for basic WordPress sites to custom Vue/Nuxt projects. No hidden costs.",
+    "keywords": "how much does a website cost, web development price, wordpress website price, freelance web developer rates, website budget, website cost"
+  },
+  "redesignLanding": {
+    "title": "WordPress Website Redesign | Modernize Without Losing SEO",
+    "description": "Professional WordPress redesign maintaining your rankings. Modern design, optimized speed, and better conversion. No loss of rankings or traffic.",
+    "keywords": "wordpress redesign, redesign my website, modernize wordpress site, update web design, renew website, redesign without losing seo"
+  },
+  "ecommerceLanding": {
+    "title": "Online Store Development | WooCommerce and Shopify",
+    "description": "Online store development with WooCommerce or Shopify. Payment gateways, stock management, automatic shipping. From €1,200.",
+    "keywords": "create online store, ecommerce development, wordpress online store, woocommerce freelance, shopify development, create ecommerce"
+  },
+  "speedLanding": {
+    "title": "WordPress Speed Optimization | PageSpeed 90+",
+    "description": "Professional WordPress optimization. Minimum 30-point improvement in PageSpeed. Fast website = better SEO and more conversions.",
+    "keywords": "slow wordpress, optimize wordpress, improve website speed, very slow website, speed up wordpress, pagespeed optimization"
+  },
+  "vueNuxtLanding": {
+    "title": "Vue.js and Nuxt Development | Modern Web Applications",
+    "description": "Web application development with Vue 3, Nuxt, and Astro. SaaS, dashboards, high-performance SPAs. Modern stack with TypeScript.",
+    "keywords": "vue freelance developer, nuxt development, vue.js developer spain, astro development, vue programmer, vue.js spa"
   }
 }

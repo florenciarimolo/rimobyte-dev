@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '@/layouts/MainLayout.astro';
+import BlogNavbar from '@/components/BlogNavbar';
+import Footer from '@/components/Footer';
+import { LANG, getI18N } from '@/i18n/index';
+import { SITE_URL } from '@/constants';
+
+const locale = LANG.ENGLISH;
+const translations = getI18N({ currentLocale: locale });
+const posts = await getCollection('blog', ({ data }) => {
+  return data.draft !== true;
+});
+
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const currentUrl = `${SITE_URL}/en/blog`;
+const title = "Web Development Blog | WordPress, Vue.js & More | RimoByte";
+const description = "Articles about web development, WordPress, Vue.js, Nuxt and best practices. Practical guides for developers and online businesses.";
+const keywords = "web development blog, wordpress tutorials, vue.js, nuxt, web development, wordpress guides";
+---
+
+<MainLayout 
+  title={title}
+  description={description}
+  keywords={keywords}
+  locale={locale}
+  canonical={currentUrl}
+>
+  <BlogNavbar client:load currentLang={locale} />
+
+  <main class="min-h-screen bg-gray-50 dark:bg-gray-900 py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <header class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          Blog
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Tutorials, guides and best practices on WordPress, Vue.js, Nuxt and professional web development.
+        </p>
+      </header>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {sortedPosts.map((post) => (
+          <article class="group bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+            <a href={`/en/blog/${post.slug}`} class="block p-6">
+              <div class="flex flex-wrap gap-2 mb-4">
+                {post.data.tags.slice(0, 3).map((tag) => (
+                  <span class="px-2.5 py-0.5 text-xs font-medium uppercase tracking-wider bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 rounded-full text-blue-600 dark:text-blue-400">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              
+              <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
+                {post.data.title}
+              </h2>
+              
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                {post.data.description}
+              </p>
+              
+              <div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500 pt-4 border-t border-gray-100 dark:border-gray-700">
+                <span class="font-medium">{post.data.author}</span>
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {new Date(post.data.pubDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </time>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      {sortedPosts.length === 0 && (
+        <div class="text-center py-20">
+          <p class="text-gray-500 dark:text-gray-400 text-lg">No articles published yet.</p>
+        </div>
+      )}
+
+    </div>
+  </main>
+
+  <Footer client:load translations={translations} />
+</MainLayout>

@@ -1,0 +1,168 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import LandingBackground from '@/components/LandingBackground.astro';
+import ServiceLandingNavbar from '@/components/ServiceLandingNavbar.astro';
+import ServiceLandingFooter from '@/components/ServiceLandingFooter.astro';
+import { LANG, getI18N } from '@/i18n/index';
+import { SITE_URL } from '@/constants';
+
+const locale = LANG.SPANISH;
+const translations = getI18N({ currentLocale: locale });
+const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
+
+const title = translations.speedLanding.title;
+const description = translations.speedLanding.description;
+const keywords = translations.speedLanding.keywords;
+---
+
+<MainLayout 
+  title={title}
+  description={description}
+  keywords={keywords}
+  locale={locale}
+  canonical={currentUrl}
+>
+  <LandingBackground />
+  <ServiceLandingNavbar locale={locale} />
+  <main class="relative py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <header class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Optimización Velocidad WordPress
+        </h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Acelera tu WordPress. Mejora mínima de 30 puntos en PageSpeed garantizada. Web rápida = mejor SEO y más conversiones.
+        </p>
+      </header>
+
+      <section class="mb-20">
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          {[
+            { metric: 'PageSpeed', before: '45', after: '90+', color: 'blue' },
+            { metric: 'Tiempo Carga', before: '5.8s', after: '1.2s', color: 'purple' },
+            { metric: 'SEO Ranking', before: '↓', after: '↑', color: 'green' }
+          ].map((stat) => (
+            <div class="bg-black/40 backdrop-blur-md rounded-xl p-8 border border-gray-800 text-center">
+              <h3 class="text-lg text-gray-400 mb-4">{stat.metric}</h3>
+              <div class="flex items-center justify-center gap-4 mb-2">
+                <span class="text-2xl font-bold text-red-400">{stat.before}</span>
+                <svg class="w-6 h-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+                <span class={`text-3xl font-bold text-${stat.color}-400`}>{stat.after}</span>
+              </div>
+              <p class="text-sm text-gray-500">Resultados reales</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-20">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">Por qué la velocidad importa</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          {[
+            { title: 'Mejor posicionamiento SEO', desc: 'Google prioriza webs rápidas en los resultados de búsqueda', icon: '🔍' },
+            { title: 'Más conversiones', desc: 'Cada segundo de demora = 7% menos conversiones', icon: '💰' },
+            { title: 'Mejor experiencia usuario', desc: 'Visitantes felices = más tiempo en tu web', icon: '😊' },
+            { title: 'Menor tasa de rebote', desc: '53% de usuarios abandonan si tarda +3 segundos', icon: '⚡' }
+          ].map((reason) => (
+            <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-800 hover:border-blue-500 transition-all duration-300">
+              <div class="flex items-start gap-4">
+                <div class="text-4xl">{reason.icon}</div>
+                <div>
+                  <h3 class="text-xl font-semibold text-white mb-2">{reason.title}</h3>
+                  <p class="text-gray-300">{reason.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-20">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">Qué optimizo</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            'Compresión de imágenes (WebP)',
+            'Minificación CSS/JS',
+            'Caché avanzado',
+            'Lazy loading automático',
+            'CDN configurado',
+            'Limpieza base de datos',
+            'Plugins optimizados',
+            'Servidor response time',
+            'Core Web Vitals'
+          ].map((item) => (
+            <div class="bg-black/40 backdrop-blur-md rounded-xl p-4 border border-gray-800 flex items-center gap-3">
+              <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-300">{item}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">Proceso de Optimización</h2>
+          <div class="space-y-6">
+            {[
+              { step: '1', title: 'Auditoría inicial', desc: 'Test PageSpeed completo y análisis de problemas', time: '1h' },
+              { step: '2', title: 'Backup completo', desc: 'Seguridad antes de cualquier cambio', time: '30min' },
+              { step: '3', title: 'Optimizaciones', desc: 'Implementación de todas las mejoras técnicas', time: '3-4h' },
+              { step: '4', title: 'Testing', desc: 'Verificación en diferentes dispositivos y velocidades', time: '1h' },
+              { step: '5', title: 'Informe final', desc: 'Before/after con métricas detalladas', time: '30min' }
+            ].map((step) => (
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                  {step.step}
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between mb-1">
+                    <h3 class="text-lg font-semibold text-white">{step.title}</h3>
+                    <span class="text-sm text-gray-500">{step.time}</span>
+                  </div>
+                  <p class="text-gray-300">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+      </section>
+
+      <section class="mb-16">
+          <h2 class="text-3xl font-bold text-white text-center mb-6">Precio</h2>
+          <div class="text-center mb-6">
+            <div class="text-4xl font-bold text-blue-400 mb-2">Desde 300€</div>
+            <p class="text-gray-300">Precio fijo. Sin sorpresas.</p>
+          </div>
+          <div class="bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-lg p-6 border border-green-500/30 mb-6">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-green-400 mb-2">💯 Garantía</div>
+              <p class="text-gray-300">Si no mejoro mínimo 30 puntos en PageSpeed, te devuelvo el dinero</p>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-400">
+            <div>✓ Auditoría PageSpeed antes/después</div>
+            <div>✓ Backup completo incluido</div>
+            <div>✓ Informe detallado de mejoras</div>
+            <div>✓ 15 días soporte post-optimización</div>
+          </div>
+      </section>
+
+      <section class="text-center">
+          <h2 class="text-3xl font-bold text-white mb-4 pt-12">¿Tu WordPress va lento?</h2>
+          <p class="text-xl text-gray-300 mb-8">Te hago una auditoría gratuita PageSpeed ahora mismo</p>
+          <a 
+            href="https://wa.me/34684713743?text=Hola,%20mi%20WordPress%20va%20lento,%20necesito%20optimización"
+            class="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-bold text-xl hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-2xl"
+          >
+            Solicitar Auditoría Gratuita
+          </a>
+      </section>
+
+    </div>
+  </main>
+  <ServiceLandingFooter locale={locale} />
+</MainLayout>
