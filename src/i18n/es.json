@@ -69,7 +69,8 @@
       "contactInfo": {
         "email": "Email",
         "github": "GitHub",
-        "linkedin": "LinkedIn"
+        "linkedin": "LinkedIn",
+        "whatsapp": "WhatsApp"
       }
     }
   },

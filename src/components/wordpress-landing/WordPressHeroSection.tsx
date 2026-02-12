@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { getTranslation } from '@/i18n';
 import type { CityInfo } from '@/constants/cities';
+import ArrowForwardIcon from '@/components/icons/ArrowForwardIcon';
 
 // Declare UnicornStudio types
 declare global {
@@ -138,10 +139,7 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
               <span className="font-sans">
                 {getTranslation(translations, 'wordpressLanding.hero.cta.contact')}
               </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-4 h-4 transition-transform group-hover:translate-x-1">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
+              <ArrowForwardIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
             </a>
             <a
               href="/#projects"

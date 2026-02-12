@@ -86,3 +86,8 @@ export { default as AlertTriangleIcon } from './AlertTriangleIcon';
 export { default as ArrowForwardIcon } from './ArrowForwardIcon';
 export { default as EyeIcon } from './EyeIcon';
 export { default as CheckIcon } from './CheckIcon';
+export { default as MailIcon } from './MailIcon';
+export { default as WhatsAppIcon } from './WhatsAppIcon';
+export { default as GithubIcon } from './GithubIcon';
+export { default as LinkedInIcon } from './LinkedInIcon';
+export { default as TwitterXIcon } from './TwitterXIcon';
