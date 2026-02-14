@@ -1,13 +1,11 @@
 User-agent: *
 
-# Allow OG image generation
-Allow: /api/og-image
-
-# Block other API routes
+# Block API routes
 Disallow: /api/
 
 # Block non-indexable pages
 Disallow: /404
 
-# Sitemap
+# Sitemaps
 Sitemap: https://rimobyte.com/sitemap.xml
+Sitemap: https://rimobyte.com/sitemap-index.xml

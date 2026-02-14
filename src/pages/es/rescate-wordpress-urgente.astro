@@ -27,10 +27,15 @@ const serviceSchema = {
     "telephone": "+34684713743",
     "email": "info@rimobyte.com"
   },
-  "areaServed": {
-    "@type": "Country",
-    "name": "España"
-  },
+  "areaServed": [
+    { "@type": "City", "name": "Barcelona", "addressCountry": "ES" },
+    { "@type": "City", "name": "Madrid", "addressCountry": "ES" },
+    { "@type": "City", "name": "Valencia", "addressCountry": "ES" },
+    { "@type": "City", "name": "Sevilla", "addressCountry": "ES" },
+    { "@type": "City", "name": "Bilbao", "addressCountry": "ES" },
+    { "@type": "City", "name": "Zaragoza", "addressCountry": "ES" },
+    { "@type": "Country", "name": "España" }
+  ],
   "description": "Servicio de rescate WordPress urgente. Recuperación de sitios web caídos, hackeados o con errores críticos en menos de 24 horas.",
   "offers": {
     "@type": "Offer",

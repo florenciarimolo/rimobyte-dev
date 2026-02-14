@@ -13,6 +13,63 @@ const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
 const title = translations.vueNuxtLanding.title;
 const description = translations.vueNuxtLanding.description;
 const keywords = translations.vueNuxtLanding.keywords;
+
+// ProfessionalService Schema with Offers
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "RimoByte - Desarrollo Vue.js, Nuxt y Astro",
+  "url": currentUrl,
+  "description": "Aplicaciones web modernas con Vue 3, Nuxt y Astro. Stack profesional con TypeScript para proyectos escalables.",
+  "provider": {
+    "@type": "Person",
+    "name": "Florencia Rímolo",
+    "jobTitle": "Desarrolladora Full Stack"
+  },
+  "areaServed": { "@type": "Country", "name": "Spain" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Desarrollo Vue.js, Nuxt y Astro",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SaaS / Aplicación Web", "description": "Plataforma completa con autenticación, base de datos, pagos" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "3500", "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dashboard / Panel Admin", "description": "Panel de control con gráficos, tablas, gestión de datos" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "2000", "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing Page / Portfolio con Astro", "description": "Web estática ultra-rápida con animaciones" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "800", "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Single Page Application", "description": "App interactiva sin recargas de página" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "1500", "priceCurrency": "EUR" } }
+    ]
+  }
+};
+
+// FAQ Schema for AI discoverability
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuándo usar Vue/Nuxt en vez de WordPress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vue/Nuxt es mejor para SaaS, aplicaciones web, dashboards, SPAs con mucha interacción y proyectos complejos escalables. WordPress es mejor para blogs, webs corporativas estáticas, e-commerce tradicional y cuando el cliente necesita gestionar contenido con presupuesto limitado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta desarrollar una aplicación web con Vue o Nuxt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En RimoByte, un SaaS o aplicación web con Vue/Nuxt cuesta desde 3.500 €, un dashboard o panel admin desde 2.000 €, una landing page o portfolio con Astro desde 800 €, y una SPA desde 1.500 €. Incluye TypeScript, arquitectura escalable y documentación técnica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué tecnologías usa RimoByte para desarrollo web moderno?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RimoByte trabaja con Vue 3, Nuxt 3, Astro, React, TypeScript, Tailwind CSS, Pinia/Vuex, Vite, Node.js, Express, PostgreSQL, MongoDB, Docker y Git. Stack profesional actualizado para proyectos escalables."
+      }
+    }
+  ]
+};
 ---
 
 <MainLayout 
@@ -22,6 +79,8 @@ const keywords = translations.vueNuxtLanding.keywords;
   locale={locale}
   canonical={currentUrl}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <LandingBackground />
   <ServiceLandingNavbar locale={locale} />
   <main class="relative py-20">

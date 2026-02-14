@@ -15,6 +15,61 @@ const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
 const title = translations.ecommerceLanding.title;
 const description = translations.ecommerceLanding.description;
 const keywords = translations.ecommerceLanding.keywords;
+
+// ProfessionalService Schema with Offers
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "RimoByte - Desarrollo Tienda Online",
+  "url": currentUrl,
+  "description": "Desarrollo de tiendas online profesionales con WooCommerce o Shopify. Todo listo para vender desde el día 1.",
+  "provider": {
+    "@type": "Person",
+    "name": "Florencia Rímolo",
+    "jobTitle": "Desarrolladora Full Stack"
+  },
+  "areaServed": { "@type": "Country", "name": "Spain" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Desarrollo Tienda Online",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tienda Online WooCommerce", "description": "WordPress + WooCommerce. Máxima flexibilidad y personalización. Sin comisiones por venta." }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "1200", "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tienda Online Shopify", "description": "Plataforma todo-en-uno. Fácil de usar y mantener. Hosting incluido." }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "900", "priceCurrency": "EUR" } }
+    ]
+  }
+};
+
+// FAQ Schema for AI discoverability
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta crear una tienda online en 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En RimoByte, una tienda online con WooCommerce cuesta desde 1.200 € y con Shopify desde 900 € más la cuota mensual de Shopify. Incluye catálogo de productos, pasarelas de pago (Stripe, PayPal, Redsys, Bizum), gestión de envíos y SEO optimizado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿WooCommerce o Shopify, cuál es mejor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WooCommerce es mejor si necesitas control total del código, personalización ilimitada y no quieres pagar comisiones por venta. Shopify es mejor si priorizas la facilidad de gestión, actualizaciones automáticas y soporte 24/7. RimoByte te asesora para elegir la mejor opción para tu negocio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda en estar lista una tienda online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El proceso de desarrollo de una tienda online tarda entre 3-5 semanas, incluyendo planificación, diseño, desarrollo y lanzamiento. Se incluye formación para que puedas gestionar la tienda de forma autónoma."
+      }
+    }
+  ]
+};
 ---
 
 <MainLayout 
@@ -24,6 +79,8 @@ const keywords = translations.ecommerceLanding.keywords;
   locale={locale}
   canonical={currentUrl}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <LandingBackground />
   <ServiceLandingNavbar locale={locale} />
   <main class="relative py-20">

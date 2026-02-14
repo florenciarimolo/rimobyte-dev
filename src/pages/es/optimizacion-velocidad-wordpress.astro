@@ -13,6 +13,60 @@ const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
 const title = translations.speedLanding.title;
 const description = translations.speedLanding.description;
 const keywords = translations.speedLanding.keywords;
+
+// ProfessionalService Schema with Offers
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "RimoByte - Optimización Velocidad WordPress",
+  "url": currentUrl,
+  "description": "Optimización de velocidad WordPress con mejora mínima de 30 puntos en PageSpeed garantizada. Web rápida = mejor SEO y más conversiones.",
+  "provider": {
+    "@type": "Person",
+    "name": "Florencia Rímolo",
+    "jobTitle": "Desarrolladora Full Stack"
+  },
+  "areaServed": { "@type": "Country", "name": "Spain" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Optimización Velocidad WordPress",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Optimización Velocidad WordPress", "description": "Mejora mínima de 30 puntos en PageSpeed garantizada. Incluye compresión imágenes, minificación CSS/JS, caché, CDN y Core Web Vitals." }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "300", "priceCurrency": "EUR" } }
+    ]
+  }
+};
+
+// FAQ Schema for AI discoverability
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta optimizar la velocidad de WordPress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La optimización de velocidad WordPress en RimoByte cuesta desde 300 € con precio fijo. Incluye auditoría PageSpeed completa, compresión de imágenes, minificación CSS/JS, caché avanzado, CDN y Core Web Vitals. Garantía: si no mejoro mínimo 30 puntos en PageSpeed, devuelvo el dinero."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto mejora la velocidad de mi WordPress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RimoByte garantiza una mejora mínima de 30 puntos en PageSpeed. Los resultados típicos son pasar de un score de 45 a 90+ y reducir el tiempo de carga de 5.8 segundos a 1.2 segundos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué es importante que mi WordPress sea rápido?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google prioriza webs rápidas en los resultados de búsqueda. Cada segundo de demora supone un 7% menos de conversiones, y el 53% de usuarios abandonan si tarda más de 3 segundos. Una web rápida mejora SEO, conversiones y experiencia de usuario."
+      }
+    }
+  ]
+};
 ---
 
 <MainLayout 
@@ -22,6 +76,8 @@ const keywords = translations.speedLanding.keywords;
   locale={locale}
   canonical={currentUrl}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <LandingBackground />
   <ServiceLandingNavbar locale={locale} />
   <main class="relative py-20">

@@ -1,10 +1,11 @@
 import type { APIRoute } from 'astro';
+import { getCollection } from 'astro:content';
 import { SITE_URL } from '@/constants';
 import { getAllowedCities } from '@/constants/cities';
 import { LANG_PREFIXES } from '@/i18n/index';
 
 // Generate sitemap.xml at build time
-export const GET: APIRoute = ({ request }) => {
+export const GET: APIRoute = async ({ request }) => {
   const currentDate = new Date().toISOString().split('T')[0];
   
   // Use APP_BASE_URL for local development, SITE_URL for production
@@ -53,8 +54,28 @@ export const GET: APIRoute = ({ request }) => {
   addUrl('/optimizacion-velocidad-wordpress', '0.8', 'monthly', 'es');
   addUrl('/desarrollo-vue-nuxt-astro', '0.8', 'monthly', 'es');
   
-  // Blog
+  // Blog index
   addUrl('/blog', '0.7', 'weekly', 'es');
+
+  // Blog posts - individual articles in both languages
+  const blogPosts = await getCollection('blog', ({ data }) => !data.draft);
+  blogPosts.forEach(post => {
+    const postDate = post.data.pubDate.toISOString().split('T')[0];
+    // Add ES version
+    urls.push({
+      loc: `${baseUrl}${LANG_PREFIXES.SPANISH}/blog/${post.slug}`,
+      lastmod: postDate,
+      changefreq: 'monthly',
+      priority: '0.7'
+    });
+    // Add EN version
+    urls.push({
+      loc: `${baseUrl}${LANG_PREFIXES.ENGLISH}/blog/${post.slug}`,
+      lastmod: postDate,
+      changefreq: 'monthly',
+      priority: '0.7'
+    });
+  });
 
   // City landing pages - WordPress (Spanish cities for ES, all cities for EN)
   const spanishCities = getAllowedCities('es');
@@ -76,7 +97,6 @@ export const GET: APIRoute = ({ request }) => {
   Object.keys(englishCities).forEach(city => {
     addUrl(`/migrar-web-agencia-freelance/${city}`, '0.8', 'monthly', 'en');
   });
-
 
   // Generate XML sitemap
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

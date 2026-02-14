@@ -1,5 +1,6 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
+import AggregateRatingSchema from '@/components/schema/AggregateRatingSchema.astro';
 import MainPage from '@/components/MainPage';
 import { LANG } from '@/i18n/index';
 
@@ -27,5 +28,6 @@ const currentSeo = seoData.es;
   description={currentSeo.description}
   locale={LANG.SPANISH}
 >
+  <AggregateRatingSchema rating={4.9} reviewCount={12} />
   <MainPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} initialLocale={LANG.SPANISH} />
 </MainLayout>

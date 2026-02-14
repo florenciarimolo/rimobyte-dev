@@ -27,10 +27,15 @@ const serviceSchema = {
     "telephone": "+34684713743",
     "email": "info@rimobyte.com"
   },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Spain"
-  },
+  "areaServed": [
+    { "@type": "City", "name": "Barcelona", "addressCountry": "ES" },
+    { "@type": "City", "name": "Madrid", "addressCountry": "ES" },
+    { "@type": "City", "name": "London", "addressCountry": "GB" },
+    { "@type": "City", "name": "New York", "addressCountry": "US" },
+    { "@type": "City", "name": "Berlin", "addressCountry": "DE" },
+    { "@type": "City", "name": "Amsterdam", "addressCountry": "NL" },
+    { "@type": "Country", "name": "Spain" }
+  ],
   "description": "WordPress emergency rescue service. Recovery of crashed, hacked, or critically broken websites in less than 24 hours.",
   "offers": {
     "@type": "Offer",

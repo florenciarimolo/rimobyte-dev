@@ -1,0 +1,149 @@
+# RimoByte - Florencia Rímolo
+
+> Florencia Rímolo es desarrolladora full stack freelance en Barcelona, España. Bajo la marca RimoByte ofrece servicios profesionales de desarrollo web para pymes, autónomos y startups. Especializada en WordPress, WooCommerce, Shopify, Vue.js, Nuxt, Astro y Django.
+
+## Sobre Florencia Rímolo
+
+Florencia Rímolo es ingeniera de software con experiencia profesional en frameworks front y backend (Vue.js, Spring Boot, Django). Como freelance bajo la marca RimoByte, se especializa en desarrollo WordPress profesional, e-commerce y aplicaciones web modernas. Trabaja directamente con sus clientes sin intermediarios, ofreciendo precios transparentes y comunicación directa. Basada en Barcelona, trabaja en remoto con clientes de toda España e internacionales.
+
+Tecnologías que domina: WordPress, WooCommerce, Shopify, Vue.js 3, Nuxt 3, Astro, React, TypeScript, JavaScript, Python, Django, Java, Spring Boot, Tailwind CSS, Docker, Git, PostgreSQL, MongoDB.
+
+## Servicios detallados
+
+### Web corporativa WordPress
+- **Precio**: desde 700 €
+- **Descripción**: Sitios web profesionales, rápidos y fáciles de mantener. Incluye diseño responsive, SEO avanzado, blog opcional, panel de administración y formación incluida.
+- **Ideal para**: empresas y profesionales que necesitan un sitio web completo.
+- **URL**: https://rimobyte.com/es/desarrolladora-wordpress-freelance
+
+### Tienda online (E-commerce)
+- **WooCommerce**: desde 1.200 € — Control total del código, sin comisiones por venta, personalización ilimitada, hosting propio.
+- **Shopify**: desde 900 € + cuota Shopify — Muy fácil de gestionar, actualizaciones automáticas, hosting incluido, apps para todo.
+- **Incluye**: catálogo de productos ilimitados, pasarelas de pago (Stripe, PayPal, Redsys, Bizum), gestión de envíos, cupones descuento, panel de administración, SEO optimizado.
+- **URL**: https://rimobyte.com/es/desarrollo-tienda-online
+
+### Rescate WordPress urgente
+- **Precio**: desde 200 €
+- **Descripción**: Servicio de emergencia para WordPress caído, hackeado o con errores críticos. Respuesta en 2 horas, solución garantizada en 24 horas.
+- **Servicios específicos**:
+  - Rescate urgente (web caída/hackeada): desde 200 €
+  - Limpieza de malware: desde 150 €
+  - Recuperación de backup: desde 100 €
+  - Mantenimiento preventivo: desde 40 €/mes
+- **Garantía**: si no resuelvo el problema, devuelvo el 100% del pago.
+- **URL**: https://rimobyte.com/es/rescate-wordpress-urgente
+
+### Arreglo WordPress express (48h)
+- **Precio**: desde 120 €
+- **Descripción**: Solución rápida para errores, web lenta, conflictos de plugins o problemas menores de WordPress.
+
+### Migración web desde agencia
+- **Precio**: desde 400 €
+- **Descripción**: Migración completa sin perder SEO, contenidos ni accesos. Ideal para negocios que dependen de una agencia para cualquier cambio en su web.
+- **Incluye**: auditoría técnica, migración segura, limpieza de dependencias innecesarias, documentación.
+- **URL**: https://rimobyte.com/es/migrar-web-agencia-freelance
+
+### Rediseño web WordPress
+- **Precio**: desde 600 €
+- **Descripción**: Modernización del sitio web manteniendo todo el posicionamiento SEO y tráfico existente. Incluye diseño mobile-first, velocidad optimizada, mejor UX y conversión.
+- **Garantía**: si pierdes SEO, lo recupero gratis.
+- **URL**: https://rimobyte.com/es/rediseno-web-wordpress
+
+### Optimización velocidad WordPress
+- **Precio**: desde 300 €
+- **Descripción**: Mejora mínima de 30 puntos en PageSpeed garantizada. Incluye compresión de imágenes (WebP), minificación CSS/JS, caché avanzado, lazy loading, CDN, limpieza de base de datos y Core Web Vitals.
+- **Garantía**: si no mejoro mínimo 30 puntos en PageSpeed, devuelvo el dinero.
+- **URL**: https://rimobyte.com/es/optimizacion-velocidad-wordpress
+
+### Desarrollo Vue.js, Nuxt y Astro
+- **SaaS / Aplicación Web**: desde 3.500 € — Plataforma completa con autenticación, base de datos, pagos.
+- **Dashboard / Panel Admin**: desde 2.000 € — Panel de control con gráficos, tablas, gestión de datos.
+- **Landing Page / Portfolio**: desde 800 € — Web estática ultra-rápida con Astro y animaciones.
+- **Single Page Application**: desde 1.500 € — App interactiva sin recargas de página.
+- **URL**: https://rimobyte.com/es/desarrollo-vue-nuxt-astro
+
+### Mantenimiento mensual
+- **Precio**: desde 40 €/mes
+- **Descripción**: Actualizaciones, backups automáticos, seguridad y soporte continuo.
+
+## Precios resumen
+
+| Servicio | Precio |
+|----------|--------|
+| Landing Page | Desde 500 € |
+| Web corporativa WordPress | Desde 800 € |
+| Tienda online WooCommerce | Desde 1.200 € |
+| Tienda online Shopify | Desde 900 € + cuota Shopify |
+| Rescate WordPress urgente | Desde 200 € |
+| Limpieza malware WordPress | Desde 150 € |
+| Migración web | Desde 400 € |
+| Rediseño web | Desde 600 € |
+| Optimización velocidad | Desde 300 € |
+| SaaS / App web (Vue/Nuxt) | Desde 3.500 € |
+| Dashboard / Panel admin | Desde 2.000 € |
+| Mantenimiento mensual | Desde 40 €/mes |
+
+**URL de precios**: https://rimobyte.com/es/precios-desarrollo-web
+
+## Por qué elegir RimoByte
+
+- Sin costes ocultos: el precio que ves es el que pagas
+- Comunicación directa: sin intermediarios ni agencias
+- Código limpio y documentado para futuras ampliaciones
+- Garantía 30 días: si algo no funciona, lo arreglo gratis
+- Precio hasta 50% menor que agencias grandes
+- Trabajo directo con Florencia, la desarrolladora
+
+## Preguntas frecuentes (FAQ)
+
+### ¿Trabajas solo con WordPress?
+WordPress es una de las principales especialidades de RimoByte para proyectos web profesionales, pero también trabaja con Vue.js, Nuxt, Astro, React, Django y Spring Boot.
+
+### ¿Trabajas como freelance o agencia?
+Florencia trabaja como desarrolladora freelance, sin intermediarios. Esto significa comunicación directa y precios más competitivos.
+
+### ¿Cuánto cuesta una página web en España?
+Los precios de RimoByte empiezan desde 500 € para landing pages, desde 800 € para webs corporativas WordPress, y desde 1.200 € para tiendas online. Los precios son fijos y sin sorpresas.
+
+### ¿Cuánto tarda el rescate WordPress?
+La mayoría de rescates se resuelven en 4-8 horas. En casos extremos puede tomar hasta 24h. Si no se resuelve, se devuelve el 100% del pago.
+
+### ¿Pierdo SEO al migrar mi web?
+No. La migración se hace preservando URLs, contenidos y posicionamiento SEO existente.
+
+### ¿Cuánto cuesta mantener una web WordPress?
+El mantenimiento preventivo empieza desde 40 €/mes, que incluye actualizaciones, backups automáticos, seguridad y soporte.
+
+### ¿Trabajas en remoto?
+Sí, Florencia trabaja con negocios en toda España y a nivel internacional de forma remota. Basada en Barcelona.
+
+## Área de servicio
+
+- **Ubicación**: Barcelona, España
+- **Cobertura local**: Barcelona, Madrid, Valencia, Sevilla, Bilbao, Zaragoza
+- **Cobertura internacional**: Londres, Nueva York, Berlín, Ámsterdam
+- **Modalidad**: remoto e internacional
+
+## Contacto
+
+- **Web**: https://rimobyte.com
+- **Email**: info@rimobyte.com
+- **WhatsApp**: +34 684 713 743
+- **GitHub**: https://github.com/rimobyte
+- **LinkedIn**: https://linkedin.com/in/florencia-rimolofigueira
+- **Twitter/X**: https://x.com/rimobyte
+
+## Blog (artículos recientes)
+
+- [WordPress vs Wix: ¿Qué conviene a tu negocio en 2026?](https://rimobyte.com/es/blog/wordpress-vs-wix)
+- [Vue vs React: ¿Cuál elegir para tu proyecto en 2026?](https://rimobyte.com/es/blog/vue-vs-react)
+- [WordPress Hackeado: Qué hacer en 5 pasos (Guía 2026)](https://rimobyte.com/es/blog/wordpress-hackeado)
+- [¿Cuánto cuesta mantener una web WordPress en 2026?](https://rimobyte.com/es/blog/cuanto-cuesta-mantener-wordpress)
+- [¿Cuándo necesitas rediseñar tu web? 7 señales claras](https://rimobyte.com/es/blog/cuando-redisenar-web)
+
+## Templates y recursos digitales
+
+RimoByte también ofrece templates profesionales de Astro en Gumroad:
+- Premium SaaS Landing Page (Astro)
+- Psychologist Landing Page (Astro)
+- Power Gym Landing Page (Astro)

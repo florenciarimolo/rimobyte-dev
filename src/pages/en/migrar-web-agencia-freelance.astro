@@ -14,6 +14,14 @@ const description = translations.migrationLanding.hero.subtitle;
 
 // Get reCAPTCHA site key from environment variable
 const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+
+// FAQ Schema for AI discoverability
+const faqItems = [
+  { question: translations.migrationLanding.faq.items.contentLoss.question, answer: translations.migrationLanding.faq.items.contentLoss.answer },
+  { question: translations.migrationLanding.faq.items.changeHosting.question, answer: translations.migrationLanding.faq.items.changeHosting.answer },
+  { question: translations.migrationLanding.faq.items.agencyWebs.question, answer: translations.migrationLanding.faq.items.agencyWebs.answer },
+  { question: translations.migrationLanding.faq.items.canMaintain.question, answer: translations.migrationLanding.faq.items.canMaintain.answer },
+];
 ---
 
 <MainLayout 
@@ -26,5 +34,14 @@ const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZ
     city={null}
     locale={locale}
   />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+    }))
+  })} />
   <MigrationLandingPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} initialLocale={locale} />
 </MainLayout>

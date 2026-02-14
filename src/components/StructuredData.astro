@@ -132,10 +132,15 @@ if (type === 'person') {
       "jobTitle": locale === 'es' ? "Desarrolladora Full Stack" : "Full Stack Developer",
       "email": "info@rimobyte.com"
     },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Spain"
-    },
+    "areaServed": [
+      { "@type": "City", "name": "Barcelona", "addressCountry": "ES" },
+      { "@type": "City", "name": "Madrid", "addressCountry": "ES" },
+      { "@type": "City", "name": "Valencia", "addressCountry": "ES" },
+      { "@type": "City", "name": "Sevilla", "addressCountry": "ES" },
+      { "@type": "City", "name": "Bilbao", "addressCountry": "ES" },
+      { "@type": "City", "name": "Zaragoza", "addressCountry": "ES" },
+      { "@type": "Country", "name": "Spain" }
+    ],
     "serviceType": [
       locale === 'es' ? "Desarrollo Web Full Stack" : "Full Stack Web Development",
       locale === 'es' ? "Desarrollo WordPress" : "WordPress Development",

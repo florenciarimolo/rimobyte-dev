@@ -92,6 +92,82 @@ const services = [
   }
 ];
 
+// ProfessionalService Schema with Offers for AI discoverability
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "RimoByte - Precios Desarrollo Web",
+  "url": currentUrl,
+  "provider": {
+    "@type": "Person",
+    "name": "Florencia Rímolo",
+    "jobTitle": "Desarrolladora Full Stack"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Barcelona" },
+    { "@type": "City", "name": "Madrid" },
+    { "@type": "City", "name": "Valencia" },
+    { "@type": "City", "name": "Sevilla" },
+    { "@type": "City", "name": "Bilbao" },
+    { "@type": "City", "name": "Zaragoza" },
+    { "@type": "Country", "name": "Spain" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Desarrollo Web",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing Page" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "500", "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Corporativa WordPress" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "800", "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tienda Online WooCommerce/Shopify" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "1200", "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aplicación Web Vue/Nuxt" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "2500", "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rediseño Web" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "600", "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Optimización Velocidad WordPress" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "300", "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Migración Web" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "400", "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mantenimiento Mensual" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "40", "priceCurrency": "EUR", "unitText": "MES" } }
+    ]
+  }
+};
+
+// FAQ Schema for AI discoverability
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta una página web en España en 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los precios de desarrollo web en RimoByte empiezan desde 500 € para landing pages, desde 800 € para webs corporativas WordPress, desde 1.200 € para tiendas online con WooCommerce y desde 2.500 € para aplicaciones web con Vue/Nuxt. Precio fijo sin sorpresas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es más barato contratar un freelance o una agencia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contratar un freelance como RimoByte puede ser hasta un 50% más barato que una agencia grande, con la ventaja de comunicación directa sin intermediarios, precios transparentes y el mismo nivel de calidad profesional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Los precios incluyen mantenimiento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Todos los proyectos incluyen 30 días de soporte post-lanzamiento gratis. El mantenimiento mensual continuo (actualizaciones, backups, seguridad) está disponible desde 40 €/mes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda en hacerse una web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una landing page tarda entre 1-2 semanas, una web corporativa WordPress entre 2-4 semanas, una tienda online entre 3-5 semanas, y una aplicación web personalizada entre 4-8 semanas, dependiendo de la complejidad."
+      }
+    }
+  ]
+};
+
 const whyMe = [
   "Sin costes ocultos: el precio que ves es el que pagas",
   "Comunicación directa: sin intermediarios ni agencias",
@@ -108,6 +184,8 @@ const whyMe = [
   locale={locale}
   canonical={currentUrl}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <LandingBackground />
   <ServiceLandingNavbar locale={locale} />
   <main class="relative py-20">

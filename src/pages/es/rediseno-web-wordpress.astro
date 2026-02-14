@@ -13,6 +13,60 @@ const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
 const title = translations.redesignLanding.title;
 const description = translations.redesignLanding.description;
 const keywords = translations.redesignLanding.keywords;
+
+// ProfessionalService Schema with Offers
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "RimoByte - Rediseño Web WordPress",
+  "url": currentUrl,
+  "description": "Moderniza tu sitio web WordPress sin perder posicionamiento SEO. Diseño actualizado manteniendo todo tu tráfico.",
+  "provider": {
+    "@type": "Person",
+    "name": "Florencia Rímolo",
+    "jobTitle": "Desarrolladora Full Stack"
+  },
+  "areaServed": { "@type": "Country", "name": "Spain" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Rediseño Web WordPress",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rediseño Web WordPress", "description": "Rediseño completo manteniendo SEO. Incluye diseño mobile-first, velocidad optimizada, mejor UX y 30 días soporte." }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": "600", "priceCurrency": "EUR" } }
+    ]
+  }
+};
+
+// FAQ Schema for AI discoverability
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta rediseñar una web WordPress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El rediseño web WordPress en RimoByte empieza desde 600 €, dependiendo del número de páginas y funcionalidades. Incluye backup completo, formación para gestionar el nuevo diseño, 30 días de soporte y garantía: si pierdes SEO, lo recupero gratis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Pierdo posicionamiento SEO al rediseñar mi web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El proceso de rediseño de RimoByte está diseñado para mantener todas las URLs y posicionamiento existente. Se realiza una migración SEO-safe que preserva rankings y tráfico. Incluye garantía: si pierdes SEO, lo recupero gratis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo necesito rediseñar mi web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Necesitas un rediseño si tu web tiene más de 3-4 años, no se ve bien en móvil, la velocidad es muy lenta, la tasa de conversión es baja, has cambiado de marca, o no puedes hacer cambios fácilmente."
+      }
+    }
+  ]
+};
 ---
 
 <MainLayout 
@@ -22,6 +76,8 @@ const keywords = translations.redesignLanding.keywords;
   locale={locale}
   canonical={currentUrl}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <LandingBackground />
   <ServiceLandingNavbar locale={locale} />
   <main class="relative py-20">

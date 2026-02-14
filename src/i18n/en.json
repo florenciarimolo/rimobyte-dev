@@ -3,7 +3,7 @@
     "title": "RimoByte - Full Stack Developer Portfolio"
   },
   "hero": {
-    "tagline": "Full Stack Developer passionate about creating innovative digital experiences",
+    "tagline": "Freelance Full Stack Developer in Barcelona. WordPress, e-commerce, and web applications for SMBs and freelancers in Spain and internationally",
     "available": "Available",
     "cta": {
       "viewWork": "View My Work",
@@ -20,8 +20,8 @@
   "sections": {
     "about": {
       "title": "About Me",
-      "description1": "Software engineer passionate about web design and development, with versatile experience in WordPress as a freelancer and in front and backend frameworks (Vue.js, Spring Boot, Django) in professional environments.",
-      "description2": "Mastery of tools like Git, Docker and SQL, and knowledge in AI-based solutions like ChatGPT, Perplexity and Microsoft Copilot. Focus on developing efficient, accessible and scalable web solutions.",
+      "description1": "Florencia Rímolo is a freelance full stack developer based in Barcelona, specializing in WordPress, Vue.js, and e-commerce. Under the brand RimoByte, she offers professional web development for SMBs and freelancers across Spain and internationally, with prices starting from €500 and a 30-day guarantee.",
+      "description2": "Professional experience in front and backend frameworks (Vue.js, Spring Boot, Django) and WordPress. Proficient in Git, Docker, TypeScript, and SQL. Direct work with no intermediaries, transparent pricing, and clear communication.",
       "status": {
         "available": "Available for new opportunities",
         "remote": "Remote work preferred"

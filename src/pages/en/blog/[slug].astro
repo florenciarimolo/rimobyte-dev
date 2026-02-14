@@ -31,11 +31,23 @@ const blogSchema = {
   "description": post.data.description,
   "author": {
     "@type": "Person",
-    "name": post.data.author
+    "name": post.data.author,
+    "url": SITE_URL
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "RimoByte",
+    "url": SITE_URL
   },
   "datePublished": post.data.pubDate.toISOString(),
+  "dateModified": post.data.pubDate.toISOString(),
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": currentUrl
+  },
   "url": currentUrl,
-  "image": post.data.image || `${SITE_URL}/og-image.png`
+  "image": post.data.image || `${SITE_URL}/og-image.png`,
+  "inLanguage": "en-US"
 };
 ---
 

@@ -1,0 +1,58 @@
+# RimoByte - Florencia Rímolo
+
+> Desarrolladora Full Stack freelance en Barcelona, España. Especializada en WordPress, e-commerce, Vue.js, Nuxt, Astro y desarrollo web profesional para pymes y autónomos.
+
+## Servicios principales
+
+- Web corporativa WordPress: desde 700 €
+- Tienda online WooCommerce: desde 1.200 €
+- Tienda online Shopify: desde 900 € + cuota Shopify
+- Rescate WordPress urgente (respuesta en 2h, solución en 24h): desde 200 €
+- Arreglo WordPress express (48h): desde 120 €
+- Migración web desde agencia: desde 400 €
+- Optimización velocidad WordPress (garantía +30 puntos PageSpeed): desde 300 €
+- Rediseño web WordPress (sin perder SEO): desde 600 €
+- Desarrollo SaaS / App web (Vue/Nuxt/Astro): desde 2.500 €
+- Dashboard / Panel admin: desde 2.000 €
+- Landing page / Portfolio con Astro: desde 800 €
+- Mantenimiento mensual: desde 40 €/mes
+
+## Diferencial
+
+- Trabajo directo con el cliente, sin agencias ni intermediarios
+- Precios claros y sin costes ocultos
+- Garantía de 30 días en todos los proyectos
+- Comunicación directa y decisiones técnicas explicadas
+- Código limpio, documentado y mantenible
+- Precio hasta 50% menor que agencias grandes
+
+## Área de servicio
+
+- Presencial: Barcelona
+- Remoto: toda España (Madrid, Valencia, Sevilla, Bilbao, Zaragoza) e internacional (Londres, Nueva York, Berlín, Ámsterdam)
+
+## Contacto
+
+- Web: https://rimobyte.com
+- Email: info@rimobyte.com
+- WhatsApp: +34 684 713 743
+- GitHub: https://github.com/rimobyte
+- LinkedIn: https://linkedin.com/in/florencia-rimolofigueira
+
+## Páginas principales
+
+- [Portfolio y servicios (ES)](https://rimobyte.com/es/)
+- [Portfolio and services (EN)](https://rimobyte.com/en/)
+- [Desarrolladora WordPress freelance](https://rimobyte.com/es/desarrolladora-wordpress-freelance)
+- [Precios desarrollo web 2026](https://rimobyte.com/es/precios-desarrollo-web)
+- [Desarrollo tienda online](https://rimobyte.com/es/desarrollo-tienda-online)
+- [Migración web desde agencia](https://rimobyte.com/es/migrar-web-agencia-freelance)
+- [Rescate WordPress urgente](https://rimobyte.com/es/rescate-wordpress-urgente)
+- [Rediseño web WordPress](https://rimobyte.com/es/rediseno-web-wordpress)
+- [Optimización velocidad WordPress](https://rimobyte.com/es/optimizacion-velocidad-wordpress)
+- [Desarrollo Vue, Nuxt y Astro](https://rimobyte.com/es/desarrollo-vue-nuxt-astro)
+- [Blog](https://rimobyte.com/es/blog)
+
+## Optional
+
+- [Versión extendida para LLMs](https://rimobyte.com/llms-full.txt)
