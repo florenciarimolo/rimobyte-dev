@@ -18,6 +18,11 @@ const interFontDir = join(__dirname, 'node_modules', '@fontsource', 'inter', 'fi
 
 // https://astro.build/config
 export default defineConfig({
+  build: {
+    // Inline styles into HTML to avoid render-blocking CSS requests (_slug_.*.css).
+    // Removes extra network round-trips and improves LCP/FCP.
+    inlineStylesheets: 'always',
+  },
   integrations: [
     tailwind(),
     react(),
