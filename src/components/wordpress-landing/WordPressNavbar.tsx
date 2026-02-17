@@ -23,43 +23,51 @@ const WordPressNavbar: React.FC<WordPressNavbarProps> = ({ currentLang, onLangua
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Check if scrolled
-      setIsScrolled(window.scrollY > 50);
+    let rafId: number | null = null;
+    let tickScheduled = false;
+    const sections = ['hero', ...navItems.map((item) => item.id)];
 
-      // Update active section based on scroll position
-      const sections = ['hero', ...navItems.map(item => item.id)];
-      const scrollPosition = window.scrollY + 150;
+    const updateFromScroll = () => {
+      tickScheduled = false;
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 50);
+      const scrollPosition = scrollY + 150;
+      let newActive = sections[0];
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const sectionId = sections[i];
-        let section: HTMLElement | null = null;
-        
         if (sectionId === 'hero') {
-          // Hero is at the top
-          if (window.scrollY < 300) {
-            setActiveSection('hero');
+          if (scrollY < 300) {
+            newActive = 'hero';
             break;
           }
         } else {
-          section = document.getElementById(sectionId);
+          const section = document.getElementById(sectionId);
           if (section) {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-              setActiveSection(sectionId);
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            if (scrollPosition >= top && scrollPosition < top + height) {
+              newActive = sectionId;
               break;
             }
           }
         }
       }
+      setActiveSection(newActive);
     };
 
-    // Call once on mount to set initial active section
-    handleScroll();
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => {
+      if (tickScheduled) return;
+      tickScheduled = true;
+      rafId = requestAnimationFrame(updateFromScroll);
+    };
+
+    rafId = requestAnimationFrame(updateFromScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, [navItems]);
 
   const scrollToSection = (sectionId: string) => {

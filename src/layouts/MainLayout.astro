@@ -138,9 +138,44 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
     <StructuredData type="website" locale={currentLocale} />
     <StructuredData type="professionalService" locale={currentLocale} />
     
-    <!-- Google reCAPTCHA Enterprise -->
-    <!-- Following official Google docs: https://www.google.com/recaptcha/enterprise -->
-    <script src={`https://www.google.com/recaptcha/enterprise.js?render=${import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || import.meta.env.RECAPTCHA_SITE_KEY || '6LcR8iUsAAAAAJAFkXt5Wgnw_6X49csU9Y26aoPt'}`} async defer is:inline></script>
+    <!-- Google reCAPTCHA Enterprise: load when contact section is near viewport to reduce initial JS -->
+    <script is:inline define:vars={{ recaptchaSiteKey: import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || import.meta.env.RECAPTCHA_SITE_KEY || '6LcR8iUsAAAAAJAFkXt5Wgnw_6X49csU9Y26aoPt' }}>
+      (function() {
+        var loaded = false;
+        function loadRecaptcha() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.src = 'https://www.google.com/recaptcha/enterprise.js?render=' + recaptchaSiteKey;
+          s.async = true;
+          s.defer = true;
+          (document.head || document.documentElement).appendChild(s);
+        }
+        function observeContact() {
+          var contact = document.getElementById('contact');
+          if (contact && typeof IntersectionObserver !== 'undefined') {
+            var io = new IntersectionObserver(function(entries) {
+              if (entries[0].isIntersecting) { loadRecaptcha(); io.disconnect(); }
+            }, { rootMargin: '200px' });
+            io.observe(contact);
+            return true;
+          }
+          return false;
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function() {
+            if (!observeContact()) {
+              var attempts = 0;
+              var t = setInterval(function() {
+                if (observeContact() || ++attempts > 10) clearInterval(t);
+              }, 500);
+            }
+          });
+        } else {
+          if (!observeContact()) setTimeout(loadRecaptcha, 3000);
+        }
+      })();
+    </script>
     
     <!-- UnicornStudio - Only load if on WordPress landing page -->
     {Astro.url.pathname.includes('desarrolladora-wordpress-freelance') && (
@@ -189,18 +224,14 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
       <slot />
     </div>
     
-    <!-- Theme script -->
+    <!-- Theme script: run after first paint to avoid long main-thread task -->
     <script>
-      // Check for saved theme preference or default to dark
-      const theme = localStorage.getItem('theme') || 'dark';
-      document.documentElement.classList.toggle('dark', theme === 'dark');
-      
-      // Update body class based on theme
-      if (theme === 'dark') {
-        document.body.classList.add('dark');
-      } else {
-        document.body.classList.remove('dark');
-      }
+      requestAnimationFrame(function() {
+        var theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        if (theme === 'dark') document.body.classList.add('dark');
+        else document.body.classList.remove('dark');
+      });
     </script>
   </body>
 </html>

@@ -46,15 +46,8 @@ const MigrationHeroSection: React.FC<MigrationHeroSectionProps> = ({ cityName, c
       const UnicornStudioGlobal = (window as any).UnicornStudio;
       
       if (div && heroSection) {
-        // Ensure div has proper dimensions and positioning
-        heroSection.getBoundingClientRect();
-        div.style.position = 'absolute';
-        div.style.top = '0';
-        div.style.left = '0';
-        div.style.width = '100%';
-        div.style.height = '100%';
-        div.style.zIndex = '0';
-        div.style.pointerEvents = 'none';
+        // Use class-based layout to avoid forced reflow (no read-then-write in same frame)
+        div.classList.add('absolute', 'inset-0', 'w-full', 'h-full', 'z-0', 'pointer-events-none');
         
         if (UnicornStudioGlobal) {
           // Wait for UnicornStudio to be ready
