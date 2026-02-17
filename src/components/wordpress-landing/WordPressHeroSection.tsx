@@ -155,7 +155,9 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
                 {/* Screenshot 1 - Slightly rotated left */}
                 <div className="relative z-10 transform -rotate-2 flex-shrink-0">
                   <img
-                    src="/assets/images/projects/rocolegal.webp"
+                    src="/assets/images/projects/rocolegal-400w.webp"
+                    srcSet="/assets/images/projects/rocolegal-400w.webp 400w, /assets/images/projects/rocolegal-664w.webp 664w"
+                    sizes="(max-width: 640px) 100px, (max-width: 768px) 200px, (max-width: 1024px) 240px, 280px"
                     alt="Roco Legal - WordPress Project"
                     className="w-full max-w-[100px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] rounded-lg shadow-xl border border-gray-800/50"
                     loading="lazy"
@@ -165,7 +167,9 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
                 {/* Screenshot 2 - Center, no rotation */}
                 <div className="relative z-20 transform translate-y-2 flex-shrink-0">
                   <img
-                    src="/assets/images/projects/upnext.webp"
+                    src="/assets/images/projects/upnext-400w.webp"
+                    srcSet="/assets/images/projects/upnext-400w.webp 400w, /assets/images/projects/upnext-664w.webp 664w"
+                    sizes="(max-width: 640px) 120px, (max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
                     alt="UpNext - WordPress Project"
                     className="w-full max-w-[120px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px] rounded-lg shadow-xl border border-gray-800/50"
                     loading="lazy"
@@ -175,7 +179,9 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
                 {/* Screenshot 3 - Slightly rotated right */}
                 <div className="relative z-10 transform rotate-2 flex-shrink-0">
                   <img
-                    src="/assets/images/projects/reset7.webp"
+                    src="/assets/images/projects/reset7-400w.webp"
+                    srcSet="/assets/images/projects/reset7-400w.webp 400w, /assets/images/projects/reset7-664w.webp 664w"
+                    sizes="(max-width: 640px) 100px, (max-width: 768px) 200px, (max-width: 1024px) 240px, 280px"
                     alt="RESET7 - WordPress Project"
                     className="w-full max-w-[100px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] rounded-lg shadow-xl border border-gray-800/50"
                     loading="lazy"

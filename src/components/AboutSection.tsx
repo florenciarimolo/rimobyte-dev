@@ -49,32 +49,27 @@ const AboutSection: React.FC<AboutSectionProps> = ({ translations }) => {
                   <div className="flex items-center gap-2 justify-between">
                     <dt className="text-gray-700 dark:text-gray-300">Vue.js</dt>
                     <dd className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }} aria-label="Vue.js skill level: 90%"></div>
-                    </dd>
+                      <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }} role="progressbar" aria-valuenow={90} aria-valuemin={0} aria-valuemax={100} aria-label="Vue.js 90%" /></dd>
                   </div>
                   <div className="flex items-center gap-2 justify-between">
                     <dt className="text-gray-700 dark:text-gray-300">Astro</dt>
                     <dd className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div className="bg-blue-500 h-2 rounded-full" style={{ width: '85%' }} aria-label="Astro skill level: 85%"></div>
-                    </dd>
+                      <div className="bg-blue-500 h-2 rounded-full" style={{ width: '85%' }} role="progressbar" aria-valuenow={85} aria-valuemin={0} aria-valuemax={100} aria-label="Astro 85%" /></dd>
                   </div>
                   <div className="flex items-center gap-2 justify-between">
                     <dt className="text-gray-700 dark:text-gray-300">TypeScript</dt>
                     <dd className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div className="bg-blue-500 h-2 rounded-full" style={{ width: '85%' }} aria-label="TypeScript skill level: 85%"></div>
-                    </dd>
+                      <div className="bg-blue-500 h-2 rounded-full" style={{ width: '85%' }} role="progressbar" aria-valuenow={85} aria-valuemin={0} aria-valuemax={100} aria-label="TypeScript 85%" /></dd>
                   </div>
                   <div className="flex items-center gap-2 justify-between">
                     <dt className="text-gray-700 dark:text-gray-300">TailwindCSS</dt>
                     <dd className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div className="bg-blue-500 h-2 rounded-full" style={{ width: '95%' }} aria-label="TailwindCSS skill level: 95%"></div>
-                    </dd>
+                      <div className="bg-blue-500 h-2 rounded-full" style={{ width: '95%' }} role="progressbar" aria-valuenow={95} aria-valuemin={0} aria-valuemax={100} aria-label="TailwindCSS 95%" /></dd>
                   </div>
                   <div className="flex items-center gap-2 justify-between">
                     <dt className="text-gray-700 dark:text-gray-300">React</dt>
                     <dd className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div className="bg-blue-500 h-2 rounded-full" style={{ width: '65%' }} aria-label="React skill level: 65%"></div>
-                    </dd>
+                      <div className="bg-blue-500 h-2 rounded-full" style={{ width: '65%' }} role="progressbar" aria-valuenow={65} aria-valuemin={0} aria-valuemax={100} aria-label="React 65%" /></dd>
                   </div>
                 </dl>
               </div>
@@ -87,32 +82,27 @@ const AboutSection: React.FC<AboutSectionProps> = ({ translations }) => {
                   <div className="flex items-center gap-2 justify-between">
                     <dt className="text-gray-700 dark:text-gray-300">Java</dt>
                     <dd className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div className="bg-purple-500 h-2 rounded-full" style={{ width: '88%' }} aria-label="Java skill level: 88%"></div>
-                    </dd>
+                      <div className="bg-purple-500 h-2 rounded-full" style={{ width: '88%' }} role="progressbar" aria-valuenow={88} aria-valuemin={0} aria-valuemax={100} aria-label="Java 88%" /></dd>
                   </div>
                   <div className="flex items-center gap-2 justify-between">
                     <dt className="text-gray-700 dark:text-gray-300">Python</dt>
                     <dd className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div className="bg-purple-500 h-2 rounded-full" style={{ width: '75%' }} aria-label="Python skill level: 75%"></div>
-                    </dd>
+                      <div className="bg-purple-500 h-2 rounded-full" style={{ width: '75%' }} role="progressbar" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} aria-label="Python 75%" /></dd>
                   </div>
                   <div className="flex items-center gap-2 justify-between">
                     <dt className="text-gray-700 dark:text-gray-300">PostgreSQL</dt>
                     <dd className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div className="bg-purple-500 h-2 rounded-full" style={{ width: '80%' }} aria-label="PostgreSQL skill level: 80%"></div>
-                    </dd>
+                      <div className="bg-purple-500 h-2 rounded-full" style={{ width: '80%' }} role="progressbar" aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} aria-label="PostgreSQL 80%" /></dd>
                   </div>
                   <div className="flex items-center gap-2 justify-between">
                     <dt className="text-gray-700 dark:text-gray-300">Firebase</dt>
                     <dd className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div className="bg-purple-500 h-2 rounded-full" style={{ width: '65%' }} aria-label="Firebase skill level: 65%"></div>
-                    </dd>
+                      <div className="bg-purple-500 h-2 rounded-full" style={{ width: '65%' }} role="progressbar" aria-valuenow={65} aria-valuemin={0} aria-valuemax={100} aria-label="Firebase 65%" /></dd>
                   </div>
                   <div className="flex items-center gap-2 justify-between">
                     <dt className="text-gray-700 dark:text-gray-300">MongoDB</dt>
                     <dd className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <div className="bg-purple-500 h-2 rounded-full" style={{ width: '75%' }} aria-label="MongoDB skill level: 75%"></div>
-                    </dd>
+                      <div className="bg-purple-500 h-2 rounded-full" style={{ width: '75%' }} role="progressbar" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} aria-label="MongoDB 75%" /></dd>
                   </div>
                 </dl>
               </div>

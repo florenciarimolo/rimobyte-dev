@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import StructuredData from '@/components/StructuredData.astro';
+import '@/styles/fonts.css';
 import '@/styles/global.css';
 import '@fontsource/inter/300.css';
 import '@fontsource/inter/400.css';
@@ -89,6 +90,14 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
     <link rel="alternate" hreflang={LANG.ENGLISH} href={alternateUrls.en} />
     <link rel="alternate" hreflang="x-default" href={alternateUrls.es} />
     
+    <!-- Preconnect only to third-party origins we still use (e.g. reCAPTCHA) -->
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+    
+    <!-- Preload LCP image (200w) on main page so it's discoverable from HTML (improves LCP) -->
+    {(['/es', '/es/', '/en', '/en/'].includes(Astro.url.pathname)) && (
+      <link rel="preload" as="image" href={`${SITE_URL}/assets/images/programadora-web-200w.webp`} fetchpriority="high" />
+    )}
+    
     <!-- Favicon configuration for Google and all browsers -->
     <!-- Google Search requires at least one PNG favicon with minimum 48x48 size -->
     <!-- URLs absolutas para que Google pueda acceder a los favicons sin descargarlos todos -->
@@ -124,8 +133,7 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
     <meta name="twitter:image:alt" content={ogImageAlt} />
     <meta name="twitter:creator" content={TWITTER_HANDLE} />
     
-    <!-- Satoshi Font from Fontshare -->
-    <link rel="stylesheet" href="https://api.fontshare.com/css?f[]=satoshi@300,400,500,600,700&display=swap">
+    <!-- Satoshi & Inter are served locally (see styles/fonts.css and @fontsource/inter) -->
     
     <!-- Structured Data -->
     <StructuredData type="person" locale={currentLocale} />

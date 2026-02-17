@@ -5,7 +5,7 @@ export interface TechConfig {
   hideText?: boolean; // Hide text when icon contains the name (e.g., Supabase)
 }
 
-import { VuejsIcon, ReactIcon, JavaScriptIcon, TypeScriptIcon, PythonIcon, JavaIcon, CSSIcon, TailwindCSSIcon, ShopifyIcon, WooCommerceIcon, WordPressIcon, ElementorIcon, AstraIcon, DiviIcon, LiquidIcon, YoastSEOIcon, PolylangIcon, DjangoIcon, DjangoRESTFrameworkIcon, SpringBootIcon, DockerIcon, KubernetesIcon, GitLabIcon, MongoDBIcon, MySQLIcon, OracleSQLIcon, JDBCIcon, JavaServletsIcon, FlutterIcon, AstroIcon, ResendIcon, MailerLiteIcon, MarkdownIcon, JiraIcon, SupabaseIcon, NuxtIcon } from './icons';
+import { VuejsIcon, ReactIcon, JavaScriptIcon, TypeScriptIcon, PythonIcon, JavaIcon, CSSIcon, TailwindCSSIcon, ShopifyIcon, WooCommerceIcon, WordPressIcon, ElementorIcon, AstraIcon, DiviIcon, LiquidIcon, YoastSEOIcon, PolylangIcon, DjangoIcon, DjangoRESTFrameworkIcon, SpringBootIcon, DockerIcon, KubernetesIcon, GitLabIcon, MongoDBIcon, MySQLIcon, OracleSQLIcon, JDBCIcon, JavaServletsIcon, FlutterIcon, AstroIcon, ResendIcon, MailerLiteIcon, MarkdownIcon, JiraIcon, SupabaseIcon, NuxtIcon, LearnDashIcon } from './icons';
 
 export const techConfig: Record<string, TechConfig> = {
   // Frontend Frameworks
@@ -82,6 +82,10 @@ export const techConfig: Record<string, TechConfig> = {
   Polylang: {
     gradient: "bg-gradient-to-r from-orange-800 to-orange-600",
     icon: PolylangIcon,
+  },
+  LearnDash: {
+    gradient: "bg-gradient-to-r from-gray-700 to-gray-900",
+    icon: LearnDashIcon,
   },
 
   // Backend & Frameworks

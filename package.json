@@ -8,12 +8,14 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "node scripts/generate-responsive-images.js && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "astro check",
     "clean": "rm -rf node_modules/.vite .astro dist",
-    "generate-favicons": "node scripts/generate-favicons.js"
+    "generate-favicons": "node scripts/generate-favicons.js",
+    "download-satoshi-fonts": "node scripts/download-satoshi-fonts.js",
+    "generate-responsive-images": "node scripts/generate-responsive-images.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",

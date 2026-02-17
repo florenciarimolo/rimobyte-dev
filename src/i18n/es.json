@@ -84,6 +84,15 @@
     "button": "Volver al Inicio"
   },
   "projects": {
+    "supercapaces": {
+      "title": "SuperCapaces - Curso para padres con hijos con discapacidad",
+      "image": "supercapaces.webp",
+      "shortDescription": "Web y curso online para ayudar a padres con hijos con discapacidad.",
+      "description": "SuperCapaces es un curso y web para apoyar a padres con hijos con discapacidad. La plataforma ofrece recursos, formación y acompañamiento para familias.",
+      "link": "https://supercapaces.com",
+      "technologies": "WordPress, Divi, LearnDash",
+      "category": "web-app"
+    },
     "rocolegal" : {
       "title": "Roco Legal - Presencia digital moderna para despacho jurídico",
       "image": "rocolegal.webp",

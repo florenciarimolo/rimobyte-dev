@@ -15,6 +15,8 @@ const TemplateCard: React.FC<TemplateCardProps> = ({ template, translations }) =
         <div className="relative aspect-video overflow-hidden">
           <img
             src={template.image}
+            srcSet={`${template.image.replace(/\.webp$/, '-400w.webp')} 400w, ${template.image.replace(/\.webp$/, '-664w.webp')} 664w, ${template.image.replace(/\.webp$/, '-1328w.webp')} 1328w`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
             alt={template.name}
             className="w-full h-full object-cover"
           />

@@ -49,7 +49,7 @@ const BlogNavbar: React.FC<BlogNavbarProps> = ({ currentLang }) => {
             <div className="flex items-center gap-6">
               <a href={homeUrl} className="flex items-center space-x-2 group">
                 <img
-                  src="/favicon.png"
+                  src="/favicon-96x96.png"
                   alt="RimoByte"
                   className="w-8 h-8 transition-opacity duration-300"
                 />

@@ -91,7 +91,7 @@ const WordPressNavbar: React.FC<WordPressNavbarProps> = ({ currentLang, onLangua
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-2 group">
               <img 
-                src="/favicon.png" 
+                src="/favicon-96x96.png" 
                 alt="RimoByte" 
                 className="w-8 h-8 transition-opacity duration-300" 
               />

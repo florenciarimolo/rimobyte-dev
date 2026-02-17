@@ -36,10 +36,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       }}
       aria-label={`View ${project.title} project`}
     >
-      {/* Image Container - Preserves aspect ratio */}
+      {/* Image Container - Preserves aspect ratio; srcset for responsive LCP/size */}
       <div className="relative aspect-video overflow-hidden">
         <img
           src={project.image}
+          srcSet={`${project.image.replace(/\.webp$/, '-400w.webp')} 400w, ${project.image.replace(/\.webp$/, '-664w.webp')} 664w, ${project.image.replace(/\.webp$/, '-1328w.webp')} 1328w`}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
           alt={project.title}
           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
         />

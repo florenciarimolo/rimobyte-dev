@@ -26,33 +26,48 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
   // Theme is handled by ThemeSwitcher component
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Check if scrolled
-      setIsScrolled(window.scrollY > 50);
+    let rafId: number | null = null;
+    let tickScheduled = false;
 
-      // Update active section based on scroll position
-      const sections = navItems.map(item => item.id);
-      const scrollPosition = window.scrollY + 150; // Increased offset for better detection
+    const sectionIds = navItems.map((item) => item.id);
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section) {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            setActiveSection(sections[i]);
+    const updateFromScroll = () => {
+      tickScheduled = false;
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 50);
+
+      // Batch all layout reads in one frame to avoid forced reflow (offsetTop/offsetHeight)
+      const scrollPosition = scrollY + 150;
+      let newActive = sectionIds[0];
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            newActive = sectionIds[i];
             break;
           }
         }
       }
+      setActiveSection(newActive);
     };
 
-    // Call once on mount to set initial active section
-    handleScroll();
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [navItems]);
+    const onScroll = () => {
+      if (tickScheduled) return;
+      tickScheduled = true;
+      rafId = requestAnimationFrame(updateFromScroll);
+    };
+
+    // Initial run after paint
+    rafId = requestAnimationFrame(updateFromScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -79,8 +94,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-2 group">
               <img 
-                src="/favicon.png" 
+                src="/favicon-96x96.png" 
                 alt="RimoByte" 
+                width={32}
+                height={32}
                 className="w-8 h-8 transition-opacity duration-300" 
               />
               <span className="text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-200 font-semibold text-lg">

@@ -25,12 +25,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ translations }) => {
         <div className="relative mb-4">
           <div className="w-[200px] h-[200px] rounded-full p-1 bg-gradient-to-r from-blue-500 to-purple-500 relative z-0">
             <img 
-              src="/assets/images/programadora-web.webp" 
+              src="/assets/images/programadora-web-200w.webp" 
+              srcSet="/assets/images/programadora-web-200w.webp 200w, /assets/images/programadora-web-400w.webp 400w"
+              sizes="200px"
               alt={getTranslation(translations, 'hero.tagline') + ' - Florencia Rímolo'} 
               className="w-full h-full rounded-full object-cover relative z-0"
               width="200"
               height="200"
               loading="eager"
+              fetchPriority="high"
             />
           </div>
           {/* Available Pill */}
