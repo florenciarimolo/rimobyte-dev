@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactForm from './ContactForm';
 import { getTranslation, LANG } from '@/i18n';
-import { MailIcon, WhatsAppIcon, GithubIcon, LinkedInIcon } from '@/components/icons';
+import { MailIcon, WhatsAppIcon } from '@/components/icons';
 
 interface ContactSectionProps {
   translations: any;
@@ -80,34 +80,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLa
                     className="text-gray-700 dark:text-gray-300 hover:text-green-400 transition-colors duration-200"
                   >
                     +34 684 713 743
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center" aria-hidden="true">
-                  <GithubIcon className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-medium text-gray-900 dark:text-white">
-                    {getTranslation(translations, 'sections.contact.contactInfo.github')}
-                  </h4>
-                  <a href="https://github.com/florenciarimolo" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-gray-300 hover:text-blue-400 transition-colors duration-200">
-                    github.com/florenciarimolo
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center" aria-hidden="true">
-                  <LinkedInIcon className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-medium text-gray-900 dark:text-white">
-                    {getTranslation(translations, 'sections.contact.contactInfo.linkedin')}
-                  </h4>
-                  <a href="https://www.linkedin.com/in/florencia-rimolofigueira/" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-gray-300 hover:text-blue-400 transition-colors duration-200">
-                    linkedin.com/in/florencia-rimolofigueira
                   </a>
                 </div>
               </div>

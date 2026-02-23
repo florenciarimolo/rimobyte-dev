@@ -1,6 +1,6 @@
 import React from 'react';
 import { getTranslation } from '@/i18n';
-import { WhatsAppIcon, GithubIcon, LinkedInIcon, TwitterXIcon } from '@/components/icons';
+import { WhatsAppIcon, GithubIcon, LinkedInIcon, TwitterXIcon, InstagramIcon } from '@/components/icons';
 
 interface FooterProps {
   translations: any;
@@ -28,8 +28,8 @@ const Footer: React.FC<FooterProps> = ({ translations, isLanding = false }) => {
               target="_blank"
               rel="noopener noreferrer"
               className={isLanding 
-                ? "text-gray-300 hover:text-green-400 transition-colors duration-200"
-                : "text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors duration-200"
+                ? "text-gray-300 hover:text-white transition-colors duration-200"
+                : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-colors duration-200"
               }
             >
               <span className="sr-only">WhatsApp</span>
@@ -55,6 +55,13 @@ const Footer: React.FC<FooterProps> = ({ translations, isLanding = false }) => {
             }>
               <span className="sr-only">X (Twitter)</span>
               <TwitterXIcon className="h-6 w-6" />
+            </a>
+            <a href="https://instagram.com/rimobyte" target="_blank" rel="noopener noreferrer" className={isLanding 
+              ? "text-gray-300 hover:text-white transition-colors duration-200"
+              : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-colors duration-200"
+            }>
+              <span className="sr-only">Instagram</span>
+              <InstagramIcon className="h-6 w-6" />
             </a>
           </div>
         </div>
