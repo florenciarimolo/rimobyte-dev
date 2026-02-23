@@ -15,6 +15,46 @@ type ReviewsResponse = {
   reviews: NormalizedReview[];
 };
 
+const REVIEWS_COPY: Record<
+  'es' | 'en',
+  {
+    title: string;
+    subtitle: string;
+    basedOn: string;
+    reviewOne: string;
+    reviewMany: string;
+    onGoogle: string;
+    viewAllReviews: string;
+    viewReviewsOnGoogle: string;
+    errorLoading: string;
+  }
+> = {
+  es: {
+    title: 'Opiniones de clientes en',
+    subtitle:
+      'Estas son algunas de las reseñas reales que han dejado mis clientes después de trabajar juntos.',
+    basedOn: 'Basado en',
+    reviewOne: 'reseña',
+    reviewMany: 'reseñas',
+    onGoogle: 'en Google',
+    viewAllReviews: 'Ver todas las reseñas en Google',
+    viewReviewsOnGoogle: 'Ver reseñas directamente en Google',
+    errorLoading: 'No se han podido cargar las reseñas en este momento.',
+  },
+  en: {
+    title: 'Customer reviews on',
+    subtitle:
+      'Here are some of the real reviews my clients have left after working together.',
+    basedOn: 'Based on',
+    reviewOne: 'review',
+    reviewMany: 'reviews',
+    onGoogle: 'on Google',
+    viewAllReviews: 'View all reviews on Google',
+    viewReviewsOnGoogle: 'View reviews directly on Google',
+    errorLoading: 'Reviews could not be loaded at this time.',
+  },
+};
+
 interface GoogleReviewsSectionProps {
   /**
    * Visual variant for different backgrounds.
@@ -35,6 +75,8 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
   const [data, setData] = React.useState<ReviewsResponse | null>(null);
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<string | null>(null);
+
+  const t = REVIEWS_COPY[locale];
 
   React.useEffect(() => {
     let cancelled = false;
@@ -68,7 +110,7 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
           if (import.meta.env.MODE === 'development') {
             console.error('Error fetching Google reviews:', err);
           }
-          setError('No se han podido cargar las reseñas en este momento.');
+          setError(REVIEWS_COPY[locale].errorLoading);
         }
       } finally {
         if (!cancelled) {
@@ -83,7 +125,7 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
       cancelled = true;
       controller.abort();
     };
-  }, []);
+  }, [locale]);
 
   const hasReviews = Boolean(
     data && Array.isArray(data.reviews) && data.reviews.length > 0,
@@ -124,7 +166,7 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 id="google-reviews" className={titleClasses}>
-            Opiniones de clientes en{' '}
+            {t.title}{' '}
             <span className="inline-flex items-baseline gap-[1px]">
               <span className="font-semibold" style={{ color: '#4285F4' }}>
                 G
@@ -147,8 +189,7 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
             </span>
           </h2>
           <p className={subtitleClasses}>
-            Estas son algunas de las reseñas reales que han dejado mis clientes
-            después de trabajar juntos.
+            {t.subtitle}
           </p>
 
           {data && (data.rating || data.userRatingCount) && (
@@ -161,8 +202,9 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
               </div>
               {typeof data.userRatingCount === 'number' && (
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Basado en {data.userRatingCount}{' '}
-                  {data.userRatingCount === 1 ? 'reseña' : 'reseñas'} en Google
+                  {t.basedOn} {data.userRatingCount}{' '}
+                  {data.userRatingCount === 1 ? t.reviewOne : t.reviewMany}{' '}
+                  {t.onGoogle}
                 </p>
               )}
               {data.googleMapsUrl && (
@@ -172,7 +214,7 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
                   rel="noopener noreferrer"
                   className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
                 >
-                  Ver todas las reseñas en Google
+                  {t.viewAllReviews}
                   <span aria-hidden="true">↗</span>
                 </a>
               )}
@@ -210,7 +252,7 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
                 rel="noopener noreferrer"
                 className="mt-3 inline-flex items-center justify-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
               >
-                Ver reseñas directamente en Google
+                {t.viewReviewsOnGoogle}
                 <span aria-hidden="true">↗</span>
               </a>
             )}
@@ -241,7 +283,9 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
                 {(review.publishedRelative || review.publishTime) && (
                   <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
                     {review.publishedRelative ||
-                      new Date(review.publishTime as string).toLocaleDateString()}
+                      new Date(review.publishTime as string).toLocaleDateString(
+                        locale === 'en' ? 'en-GB' : 'es',
+                      )}
                   </p>
                 )}
               </article>
