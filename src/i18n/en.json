@@ -544,7 +544,30 @@
       }
     },
     "projects": {
-      "context": "Some projects I've worked on include migrations, refactoring and technical improvements on WordPress."
+      "context": "Some projects I’ve worked on include migrations, refactors and technical improvements on WordPress.",
+      "labels": {
+        "problem": "Problem",
+        "proposal": "Solution",
+        "result": "Results",
+        "viewProject": "View project"
+      },
+      "items": {
+        "decos": {
+          "problem": "The handcrafted sandals store was tied to an agency and an outdated platform. Every change required tickets, response times were slow and the business had no clear view of what had been done technically or how it affected SEO and sales.",
+          "proposal": "Plan a controlled migration to WordPress with WooCommerce, recovering all key content and leaving behind unnecessary dependencies. I simplified the architecture, normalised access to hosting and admin, and left a store setup the business can understand and maintain.",
+          "result": "A more stable, faster online store with clear access and no agency dependency for every change. The business regained control over its catalogue and can keep working on SEO, campaigns and seasonal launches on top of a clean technical base."
+        },
+        "jlgki": {
+          "problem": "The previous site depended on third parties for updates and changes, with a poorly documented stack that made everyone afraid to touch anything. Improvements were blocked by high costs and a lack of transparency about what the agency was actually doing.",
+          "proposal": "Rebuild the website in WordPress with a clear, documented structure, migrating content safely and reducing technical complexity. I defined access, hosting and processes so that future improvements don’t depend on a single agency again.",
+          "result": "A WordPress site optimised for speed and SEO, with a transparent, maintainable technical base. The team can now plan changes and new pages knowing what’s behind them and how much they’ll cost, without surprises or vendor lock-in."
+        },
+        "vilaLancisV2": {
+          "problem": "The advisory firm came from an agency-managed website with long response times, hard-to-get access and poor performance. Small content or language adjustments kept turning into expensive, slow mini-projects.",
+          "proposal": "Migrate and redesign the site with WordPress, taking the project out of the agency circuit and putting access and documentation in the client’s hands. Content was restructured, multilingual support improved and performance optimised without losing rankings.",
+          "result": "A faster, clearer website with full control on the client side. They can now coordinate content, language and service changes without depending on third parties, while maintaining and improving SEO on a well-structured technical base."
+        }
+      }
     },
     "faq": {
       "title": "Frequently asked questions",

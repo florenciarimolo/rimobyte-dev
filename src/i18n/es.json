@@ -542,7 +542,30 @@
       }
     },
     "projects": {
-      "context": "Algunos proyectos en los que he trabajado incluyen migraciones, refactorizaciones y mejoras técnicas sobre WordPress."
+      "context": "Algunos proyectos en los que he trabajado incluyen migraciones, refactorizaciones y mejoras técnicas sobre WordPress.",
+      "labels": {
+        "problem": "El problema",
+        "proposal": "La solución",
+        "result": "Resultados",
+        "viewProject": "Ver proyecto"
+      },
+      "items": {
+        "decos": {
+          "problem": "La tienda de sandalias artesanas estaba en manos de una agencia y una plataforma antigua. Cada cambio requería tickets, los tiempos de respuesta eran lentos y el negocio no tenía una visión clara de qué se había hecho a nivel técnico ni de cómo afectaba al SEO y a las ventas.",
+          "proposal": "Plantear una migración controlada a WordPress con WooCommerce, recuperando todos los contenidos importantes y dejando atrás dependencias innecesarias. Simplifiqué la arquitectura, normalicé accesos a hosting y panel de control y dejé una base de tienda que el propio negocio puede entender y mantener.",
+          "result": "Una tienda online más estable y rápida, con accesos claros y sin dependencia de una agencia para cada cambio. El negocio recuperó el control de su catálogo y puede seguir trabajando SEO, campañas y lanzamientos de temporada sobre una base limpia."
+        },
+        "jlgki": {
+          "problem": "El sitio anterior dependía de terceros para actualizaciones y cambios, con un stack poco documentado que generaba miedo a tocar nada. Las mejoras quedaban bloqueadas por costes elevados y falta de claridad sobre qué hacía realmente la agencia.",
+          "proposal": "Replantear la web en WordPress con una estructura clara y documentada, migrando contenidos de forma segura y reduciendo la complejidad técnica. Dejé definidos accesos, hosting y procesos para que futuras mejoras no vuelvan a depender de una única agencia.",
+          "result": "Un sitio WordPress optimizado para velocidad y SEO, con una base técnica transparente y mantenible. El equipo puede planificar cambios y nuevas páginas sabiendo qué hay detrás y cuánto costará, sin sorpresas ni bloqueos por parte de proveedores anteriores."
+        },
+        "vilaLancisV2": {
+          "problem": "La asesoría venía de una web gestionada por agencia con tiempos de respuesta largos, dificultad para conseguir accesos y un rendimiento pobre. Cada pequeño ajuste en contenidos o idiomas se convertía en un proyecto caro y lento.",
+          "proposal": "Migrar y rediseñar la web con WordPress, sacando el proyecto del circuito de agencia y dejando accesos y documentación en manos del cliente. Se reestructuró el contenido, se trabajó el multiidioma y se optimizó el rendimiento sin perder posicionamiento.",
+          "result": "Una web más rápida y clara, con control total por parte de la asesoría. Ahora pueden coordinar cambios de contenidos, idiomas y servicios sin depender de terceros, manteniendo y mejorando el SEO sobre una base técnica ordenada."
+        }
+      }
     },
     "faq": {
       "title": "Preguntas frecuentes",
