@@ -60,7 +60,7 @@ const NotFoundPage: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <Footer translations={translations} />
+      <Footer translations={translations} currentLang={currentLang} />
     </div>
   );
 };

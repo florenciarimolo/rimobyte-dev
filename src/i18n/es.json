@@ -75,7 +75,20 @@
     }
   },
   "footer": {
-    "copyright": "© {year} RimoByte. Todos los derechos reservados."
+      "copyright": "© {year} RimoByte. Todos los derechos reservados.",
+      "services": {
+        "title": "Servicios",
+        "items": {
+          "wordpressFreelance": "Desarrolladora WordPress freelance para negocios",
+          "wordpressMigration": "Migrar tu web WordPress de agencia a freelance",
+          "wordpressRescue": "Rescate WordPress urgente en 24 horas",
+          "wordpressRedesign": "Rediseño web WordPress sin perder SEO",
+          "ecommerce": "Crear tienda online con WooCommerce o Shopify",
+          "speed": "Optimizar velocidad WordPress y PageSpeed",
+          "vueNuxt": "Desarrollo de aplicaciones web con Vue y Nuxt",
+          "pricing": "Precios de desarrollo web WordPress y tiendas online"
+        }
+      }
   },
   "notFound": {
     "title": "404",

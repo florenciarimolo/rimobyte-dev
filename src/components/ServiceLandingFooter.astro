@@ -10,4 +10,4 @@ const { locale = 'es' } = Astro.props;
 const translations = getI18N({ currentLocale: locale as typeof LANG.SPANISH | typeof LANG.ENGLISH });
 ---
 
-<Footer client:only="react" translations={translations} isLanding={true} />
+<Footer client:only="react" translations={translations} isLanding={true} currentLang={locale} />

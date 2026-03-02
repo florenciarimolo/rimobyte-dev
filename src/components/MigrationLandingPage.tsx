@@ -88,7 +88,7 @@ const MigrationLandingPage: React.FC<MigrationLandingPageProps> = ({ cityName, c
           <ContactSection translations={translations} currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} isLanding={true} landingType="migration" />
         </main>
 
-        <Footer translations={translations} isLanding={true} />
+        <Footer translations={translations} isLanding={true} currentLang={currentLang} />
     </div>
   );
 };

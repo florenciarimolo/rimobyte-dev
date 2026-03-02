@@ -89,7 +89,7 @@ const WordPressLandingPage: React.FC<WordPressLandingPageProps> = ({ cityName, c
           <ContactSection translations={translations} currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} isLanding={true} landingType="wordpress" />
         </main>
 
-        <Footer translations={translations} isLanding={true} />
+        <Footer translations={translations} isLanding={true} currentLang={currentLang} />
     </div>
   );
 };

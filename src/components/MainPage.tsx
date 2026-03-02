@@ -124,7 +124,7 @@ const MainPage: React.FC<MainPageProps> = ({ recaptchaSiteKey, initialLocale = L
         <ContactSection translations={translations} currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} />
       </main>
 
-      <Footer translations={translations} />
+      <Footer translations={translations} currentLang={currentLang} />
     </div>
   );
 };

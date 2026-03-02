@@ -75,7 +75,20 @@
     }
   },
   "footer": {
-    "copyright": "© {year} RimoByte. All rights reserved."
+    "copyright": "© {year} RimoByte. All rights reserved.",
+    "services": {
+      "title": "Services",
+      "items": {
+        "wordpressFreelance": "WordPress freelance developer for businesses",
+        "wordpressMigration": "Migrate your WordPress site from agency to freelance",
+        "wordpressRescue": "Emergency WordPress rescue in 24 hours",
+        "wordpressRedesign": "Redesign your WordPress site without losing SEO",
+        "ecommerce": "Create an online store with WooCommerce or Shopify",
+        "speed": "Speed up your WordPress and improve PageSpeed",
+        "vueNuxt": "Build web applications with Vue and Nuxt",
+        "pricing": "Web development pricing for WordPress and online stores"
+      }
+    }
   },
   "notFound": {
     "title": "404",
