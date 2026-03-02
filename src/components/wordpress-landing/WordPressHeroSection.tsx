@@ -133,7 +133,7 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <a
-              href="/#contact"
+              href="#contact"
               className="group flex items-center gap-2 pl-6 pr-5 py-3 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-200 transition-all duration-200 font-sans whitespace-nowrap w-full sm:w-auto justify-center"
             >
               <span className="font-sans">
@@ -142,7 +142,7 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
               <ArrowForwardIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
             </a>
             <a
-              href="/#projects"
+              href="#projects"
               className="group flex items-center justify-center gap-2 px-8 py-3.5 text-base font-medium text-white bg-transparent border border-blue-500 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5),0_0_10px_rgba(168,85,247,0.3),inset_0_0_10px_rgba(59,130,246,0.2)] hover:bg-blue-500/10 hover:border-blue-400 hover:shadow-[0_0_35px_rgba(59,130,246,0.6),0_0_20px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(59,130,246,0.4)] hover:scale-[1.02] transition-all duration-300"
             >
               {getTranslation(translations, 'wordpressLanding.hero.cta.viewProjects')}

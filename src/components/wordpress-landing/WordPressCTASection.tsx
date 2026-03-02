@@ -17,7 +17,7 @@ const WordPressCTASection: React.FC<WordPressCTASectionProps> = ({ translations 
         </h2>
         
         <a
-          href="/#contact"
+          href="#contact"
           className="group inline-flex items-center gap-2 pl-6 pr-5 py-3 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-200 transition-all duration-200 font-sans whitespace-nowrap mb-4"
         >
           <span className="font-sans">

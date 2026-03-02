@@ -370,7 +370,40 @@
     },
     "projects": {
       "title": "Algunos proyectos realizados",
-      "context": "Una selección de proyectos reales desarrollados en WordPress."
+      "context": "Una selección de proyectos reales desarrollados en WordPress.",
+      "labels": {
+        "problem": "Problema",
+        "proposal": "Mi propuesta",
+        "result": "Resultado",
+        "viewProject": "Ver proyecto"
+      },
+      "items": {
+        "rocolegal": {
+          "problem": "El despacho tenía una web antigua que no transmitía la confianza ni la profesionalidad de su trabajo legal. La estructura era poco clara y los formularios de contacto no estaban bien visibles, lo que dificultaba que potenciales clientes encontraran el servicio adecuado y pidieran una cita.",
+          "proposal": "Rediseñar la presencia digital del despacho con un sitio WordPress bilingüe, páginas de servicios claras por área de práctica, perfiles del equipo y llamadas a la acción presentes en todo el recorrido para facilitar el contacto desde varios puntos de la web.",
+          "result": "Un sitio elegante y profesional que refleja mejor la especialización del despacho, mejora la visibilidad en buscadores y convierte más visitas en consultas cualificadas desde el formulario y el contacto directo."
+        },
+        "vilaLancisV2": {
+          "problem": "La asesoría contaba con una web lenta y desactualizada que no explicaba bien todos sus servicios fiscales, laborales y contables. La experiencia de usuario era confusa y el rendimiento penalizaba tanto el posicionamiento SEO como la confianza de potenciales clientes.",
+          "proposal": "Rediseñar por completo la web en WordPress, reorganizando los contenidos por tipo de servicio, añadiendo versión multiidioma y trabajando el SEO técnico (estructura, tiempos de carga e indexación) para reforzar la captación de clientes desde búsquedas relevantes.",
+          "result": "Una web clara y rápida, preparada para crecer, que presenta de forma ordenada todos los servicios de la asesoría y facilita que empresas y autónomos entiendan qué ofrece el despacho y cómo contactar sin fricción."
+        },
+        "decos": {
+          "problem": "La tienda online de sandalias artesanas estaba limitada por una plataforma antigua. Gestionar productos, actualizar contenidos o mejorar la experiencia de compra requería demasiado esfuerzo técnico y afectaba a la imagen de marca y a las ventas.",
+          "proposal": "Migrar la tienda de Prestashop a WordPress con WooCommerce, manteniendo el catálogo y optimizando rendimiento, navegación y fichas de producto. Se planteó una estructura más clara por colecciones, mejorando el checkout y añadiendo newsletter para fidelizar clientes.",
+          "result": "Una tienda online más ágil y fácil de gestionar, con mejor experiencia de compra y una base técnica sólida para seguir trabajando SEO, campañas y lanzamientos de temporada sin depender de terceros."
+        },
+        "reset7": {
+          "problem": "El entrenador personal no contaba con una landing pensada para convertir visitas en reservas. La propuesta de valor no quedaba clara y no había un recorrido definido para que los usuarios entendieran el servicio y dieran el siguiente paso.",
+          "proposal": "Crear una landing en WordPress centrada en el programa RESET7, con un mensaje claro, secciones que explican beneficios y metodología, pruebas sociales y llamadas a la acción visibles para solicitar información o empezar el programa.",
+          "result": "Una landing enfocada en resultados que transmite mejor el valor del servicio, refuerza el posicionamiento en búsquedas relacionadas con entrenamiento personal y facilita que las visitas se conviertan en leads interesados."
+        },
+        "luciaNails": {
+          "problem": "El centro de manicura tenía una presencia online muy básica que no reflejaba el estilo del negocio ni mostraba bien los servicios y trabajos realizados. Los clientes potenciales encontraban difícil hacerse una idea clara de la oferta antes de escribir o reservar.",
+          "proposal": "Diseñar y personalizar un sitio WordPress que pusiera en primer plano la identidad visual del centro, con secciones claras para servicios, tarifas y trabajos destacados, cuidando el rendimiento y el SEO local para que nuevas clientas puedan descubrir el negocio.",
+          "result": "Una web alineada con la marca que transmite confianza desde el primer vistazo, mejora la visibilidad en la zona y ayuda a que más personas lleguen al centro con una idea clara de los servicios y estilo que ofrece."
+        }
+      }
     },
     "cta": {
       "title": "Cuéntame tu proyecto y vemos si encaja.",

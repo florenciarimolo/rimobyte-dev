@@ -1,5 +1,4 @@
 import React from 'react';
-import ProjectCard from '@/components/ProjectCard';
 import { getProjects } from '@/data/projects';
 import { getTranslation } from '@/i18n';
 import type { Project } from '@/data/projects';
@@ -10,9 +9,18 @@ interface WordPressProjectsSectionProps {
 
 const WordPressProjectsSection: React.FC<WordPressProjectsSectionProps> = ({ translations }) => {
   const allProjects = getProjects(translations);
-  
-  // Show 6 projects
-  const displayedProjects = allProjects.slice(0, 6);
+
+  // Only show selected WordPress projects for this landing
+  const wordpressProjectIds = ['rocolegal', 'vilaLancisV2', 'decos', 'reset7', 'luciaNails'];
+
+  const displayedProjects: Project[] = wordpressProjectIds
+    .map((id) => allProjects.find((project) => project.id === id))
+    .filter((project): project is Project => Boolean(project));
+
+  const problemLabel = getTranslation(translations, 'wordpressLanding.projects.labels.problem');
+  const proposalLabel = getTranslation(translations, 'wordpressLanding.projects.labels.proposal');
+  const resultLabel = getTranslation(translations, 'wordpressLanding.projects.labels.result');
+  const viewProjectLabel = getTranslation(translations, 'wordpressLanding.projects.labels.viewProject');
 
   return (
     <section id="projects" className="py-20">
@@ -27,21 +35,98 @@ const WordPressProjectsSection: React.FC<WordPressProjectsSectionProps> = ({ tra
           </p>
         </header>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayedProjects.map((project: Project) => (
-            <article key={project.id}>
-              <ProjectCard
-                project={project}
-                onClick={() => {
-                  // Navigate to project or open modal
-                  if (project.link) {
-                    window.open(project.link, '_blank');
-                  }
-                }}
-                translations={translations}
-              />
-            </article>
-          ))}
+        <div className="grid md:grid-cols-2 gap-10">
+          {displayedProjects.map((project: Project) => {
+            const problemText = getTranslation(
+              translations,
+              `wordpressLanding.projects.items.${project.id}.problem`,
+            );
+            const proposalText = getTranslation(
+              translations,
+              `wordpressLanding.projects.items.${project.id}.proposal`,
+            );
+            const resultText = getTranslation(
+              translations,
+              `wordpressLanding.projects.items.${project.id}.result`,
+            );
+
+            return (
+              <article
+                key={project.id}
+                className="bg-white/5 dark:bg-gray-900/60 border border-white/10 dark:border-gray-700 rounded-2xl overflow-hidden shadow-xl backdrop-blur"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={project.image}
+                    srcSet={`${project.image.replace(/\.webp$/, '-400w.webp')} 400w, ${project.image.replace(
+                      /\.webp$/,
+                      '-664w.webp',
+                    )} 664w, ${project.image.replace(/\.webp$/, '-1328w.webp')} 1328w`}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 480px"
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+
+                <div className="p-6 sm:p-7 space-y-5">
+                  <header>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
+                      {project.title}
+                    </h3>
+                  </header>
+
+                  <div className="space-y-4 text-sm text-gray-800 dark:text-gray-200">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-300 mb-1.5">
+                        {problemLabel}
+                      </p>
+                      <p className="leading-relaxed">{problemText}</p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-300 mb-1.5">
+                        {proposalLabel}
+                      </p>
+                      <p className="leading-relaxed">{proposalText}</p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-300 mb-1.5">
+                        {resultLabel}
+                      </p>
+                      <p className="leading-relaxed">{resultText}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-2">
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.slice(0, 3).map((tech, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 text-xs font-medium rounded-full bg-white/60 text-gray-800 dark:bg-gray-800 dark:text-gray-100"
+                        >
+                          {tech.trim()}
+                        </span>
+                      ))}
+                    </div>
+
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium text-blue-700 dark:text-blue-300 hover:text-blue-500 dark:hover:text-blue-200 transition-colors"
+                      >
+                        {viewProjectLabel}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
