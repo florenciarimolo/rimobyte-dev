@@ -319,6 +319,8 @@
     },
     "services": {
       "title": "Common WordPress services",
+      "intro": "WordPress services focused on real projects, not generic solutions.",
+      "learnMore": "Learn more",
       "items": {
         "corporateWeb": {
           "title": "Corporate website in WordPress",

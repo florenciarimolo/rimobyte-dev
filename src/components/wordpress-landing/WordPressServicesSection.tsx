@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTranslation } from '@/i18n';
+import { getTranslation, LANG } from '@/i18n';
 import GlobeIcon from '@/components/icons/GlobeIcon';
 import ShoppingBagIcon from '@/components/icons/ShoppingBagIcon';
 import SettingsIcon from '@/components/icons/SettingsIcon';
@@ -8,40 +8,85 @@ import LightningIcon from '@/components/icons/LightningIcon';
 
 interface WordPressServicesSectionProps {
   translations: any;
+  currentLang: typeof LANG.ENGLISH | typeof LANG.SPANISH;
 }
 
-const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ translations }) => {
+const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ translations, currentLang }) => {
+  const learnMoreLabel = getTranslation(translations, 'wordpressLanding.services.learnMore');
+
+  const currentLangKey: 'es' | 'en' = currentLang === LANG.ENGLISH ? 'en' : 'es';
+
+  const serviceLinks: Record<
+    string,
+    {
+      es: string;
+      en: string;
+    }
+  > = {
+    // Web corporativa y mantenimiento apuntan a la página de precios (solo en ES por ahora)
+    corporateWeb: {
+      es: '/es/precios-desarrollo-web',
+      en: '/es/precios-desarrollo-web',
+    },
+    onlineStores: {
+      es: '/es/desarrollo-tienda-online',
+      en: '/es/desarrollo-tienda-online',
+    },
+    maintenance: {
+      es: '/es/precios-desarrollo-web',
+      en: '/es/precios-desarrollo-web',
+    },
+    migrations: {
+      es: '/es/migrar-web-agencia-freelance',
+      en: '/en/migrar-web-agencia-freelance',
+    },
+    expressFix: {
+      es: '/es/rescate-wordpress-urgente',
+      en: '/en/wordpress-emergency-rescue',
+    },
+  };
+
   const services = [
     {
+      id: 'corporateWeb',
       title: getTranslation(translations, 'wordpressLanding.services.items.corporateWeb.title'),
       description: getTranslation(translations, 'wordpressLanding.services.items.corporateWeb.description'),
       price: getTranslation(translations, 'wordpressLanding.services.items.corporateWeb.price'),
-      icon: <GlobeIcon />
+      icon: <GlobeIcon />,
+      href: serviceLinks.corporateWeb[currentLangKey],
     },
     {
+      id: 'onlineStores',
       title: getTranslation(translations, 'wordpressLanding.services.items.onlineStores.title'),
       description: getTranslation(translations, 'wordpressLanding.services.items.onlineStores.description'),
       price: getTranslation(translations, 'wordpressLanding.services.items.onlineStores.price'),
-      icon: <ShoppingBagIcon />
+      icon: <ShoppingBagIcon />,
+      href: serviceLinks.onlineStores[currentLangKey],
     },
     {
+      id: 'maintenance',
       title: getTranslation(translations, 'wordpressLanding.services.items.maintenance.title'),
       description: getTranslation(translations, 'wordpressLanding.services.items.maintenance.description'),
       price: getTranslation(translations, 'wordpressLanding.services.items.maintenance.price'),
-      icon: <SettingsIcon />
+      icon: <SettingsIcon />,
+      href: serviceLinks.maintenance[currentLangKey],
     },
     {
+      id: 'migrations',
       title: getTranslation(translations, 'wordpressLanding.services.items.migrations.title'),
       description: getTranslation(translations, 'wordpressLanding.services.items.migrations.description'),
       price: getTranslation(translations, 'wordpressLanding.services.items.migrations.price'),
-      icon: <CloudUploadIcon />
+      icon: <CloudUploadIcon />,
+      href: serviceLinks.migrations[currentLangKey],
     },
     {
+      id: 'expressFix',
       title: getTranslation(translations, 'wordpressLanding.services.items.expressFix.title'),
       description: getTranslation(translations, 'wordpressLanding.services.items.expressFix.description'),
       price: getTranslation(translations, 'wordpressLanding.services.items.expressFix.price'),
-      icon: <LightningIcon />
-    }
+      icon: <LightningIcon />,
+      href: serviceLinks.expressFix[currentLangKey],
+    },
   ];
 
   return (
@@ -75,11 +120,21 @@ const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ tra
                 <p className="text-gray-300 whitespace-pre-line">
                   {service.description}
                 </p>
-                {service.price && (
-                  <p className="text-white font-semibold mt-3">
-                    {service.price}
-                  </p>
-                )}
+                <div className="mt-4 flex items-center justify-between gap-3">
+                  {service.price && (
+                    <p className="text-white font-semibold">
+                      {service.price}
+                    </p>
+                  )}
+                  {service.href && (
+                    <a
+                      href={service.href}
+                      className="inline-flex items-center justify-center px-4 py-2 text-xs font-medium rounded-full border border-blue-400 text-blue-100 hover:bg-blue-500/10 hover:border-blue-300 transition-colors"
+                    >
+                      {learnMoreLabel}
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -101,11 +156,21 @@ const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ tra
                 <p className="text-gray-300 whitespace-pre-line">
                   {service.description}
                 </p>
-                {service.price && (
-                  <p className="text-white font-semibold mt-3">
-                    {service.price}
-                  </p>
-                )}
+                <div className="mt-4 flex items-center justify-between gap-3">
+                  {service.price && (
+                    <p className="text-white font-semibold">
+                      {service.price}
+                    </p>
+                  )}
+                  {service.href && (
+                    <a
+                      href={service.href}
+                      className="inline-flex items-center justify-center px-4 py-2 text-xs font-medium rounded-full border border-blue-400 text-blue-100 hover:bg-blue-500/10 hover:border-blue-300 transition-colors"
+                    >
+                      {learnMoreLabel}
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>

@@ -319,6 +319,7 @@
     "services": {
       "title": "Servicios WordPress habituales",
       "intro": "Servicios WordPress orientados a proyectos reales, no a soluciones genéricas.",
+      "learnMore": "Saber más",
       "items": {
         "corporateWeb": {
           "title": "Web corporativa en WordPress",

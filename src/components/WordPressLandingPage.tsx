@@ -77,7 +77,7 @@ const WordPressLandingPage: React.FC<WordPressLandingPageProps> = ({ cityName, c
           <WordPressHeroSection cityName={cityName} cityInfo={cityInfo} translations={translations} />
           <WordPressProblemSection translations={translations} />
           <WordPressSolutionSection translations={translations} />
-          <WordPressServicesSection translations={translations} />
+          <WordPressServicesSection translations={translations} currentLang={currentLang} />
           <WordPressProcessSection translations={translations} />
           <WordPressProjectsSection translations={translations} />
           <GoogleReviewsSection
