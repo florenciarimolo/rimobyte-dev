@@ -370,7 +370,40 @@
     },
     "projects": {
       "title": "Some completed projects",
-      "context": "A selection of real projects developed in WordPress."
+      "context": "A selection of real projects developed in WordPress.",
+      "labels": {
+        "problem": "Problem",
+        "proposal": "My approach",
+        "result": "Result",
+        "viewProject": "View project"
+      },
+      "items": {
+        "rocolegal": {
+          "problem": "The law firm had an outdated website that didn’t convey the level of trust or professionalism of their legal work. The structure was unclear and contact forms weren’t prominent, making it difficult for potential clients to find the right service and request a consultation.",
+          "proposal": "Redesign the firm’s online presence with a bilingual WordPress site, clear service pages by practice area, team profiles and visible calls to action across the site so visitors can get in touch from different points of the journey.",
+          "result": "An elegant, professional website that better reflects the firm’s expertise, improves visibility in search engines and turns more visits into qualified enquiries via forms and direct contact."
+        },
+        "vilaLancisV2": {
+          "problem": "The accounting and tax advisory firm had a slow, outdated website that didn’t properly explain all their tax, labour and accounting services. The user experience was confusing and poor performance hurt both SEO and the trust of potential clients.",
+          "proposal": "Redesign the website from scratch in WordPress, reorganising content by service type, adding multilingual support and working on technical SEO (structure, loading times and indexing) to strengthen lead generation from relevant searches.",
+          "result": "A clear, fast website ready to grow, presenting all advisory services in an organised way and helping businesses and freelancers understand what the firm offers and how to contact them without friction."
+        },
+        "decos": {
+          "problem": "The handcrafted sandals online store was limited by an old platform. Managing products, updating content or improving the shopping experience required too much technical effort and negatively affected brand perception and sales.",
+          "proposal": "Migrate the store from Prestashop to WordPress with WooCommerce, keeping the catalogue while optimising performance, navigation and product pages. Define a clearer structure by collections, improve checkout and add a newsletter to retain customers.",
+          "result": "A more agile, easier-to-manage online store with a better shopping experience and a solid technical base to keep working on SEO, campaigns and seasonal launches without depending on third parties."
+        },
+        "reset7": {
+          "problem": "The personal trainer didn’t have a landing page designed to turn visits into bookings. The value proposition wasn’t clear and there was no defined path for users to understand the service and take the next step.",
+          "proposal": "Create a WordPress landing page focused on the RESET7 programme, with a clear message, sections explaining benefits and methodology, social proof and visible calls to action to request information or start the programme.",
+          "result": "A results-oriented landing page that better communicates the value of the service, strengthens positioning for personal training searches and helps turn more visits into interested leads."
+        },
+        "luciaNails": {
+          "problem": "The nail studio had a very basic online presence that didn’t reflect the style of the business or properly showcase services and past work. Potential clients struggled to get a clear idea of the offer before writing or booking.",
+          "proposal": "Design and customise a WordPress site that puts the studio’s visual identity first, with clear sections for services, pricing and featured work, while taking care of performance and local SEO so new clients can discover the business.",
+          "result": "A website aligned with the brand that builds trust at first glance, improves local visibility and helps more people arrive at the studio already understanding the services and style it offers."
+        }
+      }
     },
     "cta": {
       "title": "Tell me about your project and let's see if it fits.",
