@@ -40,6 +40,7 @@
   "devDependencies": {
     "@types/node": "^24.10.0",
     "@types/react-google-recaptcha": "^2.1.9",
+    "puppeteer": "^24.38.0",
     "sharp": "^0.34.5",
     "to-ico": "^1.0.1",
     "typescript": "^5.9.3"

@@ -204,6 +204,15 @@
       "link": "https://vila-i-lancis.vercel.app",
       "technologies": "Astro, Resend",
       "category": "services"
+    },
+    "fenix": {
+      "title": "Fénix – Motherhood and productive life",
+      "image": "fenix.webp",
+      "shortDescription": "WordPress site for a mentoring programme integrating motherhood and entrepreneurship, with SEO and lead capture via Systeme.io.",
+      "description": "Website for Fénix, a mentoring programme for entrepreneurial and executive mothers who want to integrate motherhood and productive life. Built with WordPress and Elementor, optimized for SEO to drive organic sales and connected to Systeme.io for lead capture and management. Clear structure by programme levels (Despertar, Construcción, Transformación) and conversion-focused CTAs.",
+      "link": "https://fenixinternacional360.com",
+      "technologies": "WordPress, Elementor, Yoast SEO, Systeme.io",
+      "category": "services"
     }
   },
   "experience": {
@@ -417,6 +426,11 @@
           "problem": "The nail studio had a very basic online presence that didn’t reflect the style of the business or properly showcase services and past work. Potential clients struggled to get a clear idea of the offer before writing or booking.",
           "proposal": "Design and customise a WordPress site that puts the studio’s visual identity first, with clear sections for services, pricing and featured work, while taking care of performance and local SEO so new clients can discover the business.",
           "result": "A website aligned with the brand that builds trust at first glance, improves local visibility and helps more people arrive at the studio already understanding the services and style it offers."
+        },
+        "fenix": {
+          "problem": "The mentoring programme for entrepreneurial mothers needed a website that conveyed authority, explained the value proposition and captured leads organically. Strong SEO was essential to drive sales without relying only on paid traffic.",
+          "proposal": "Build the site in WordPress with Elementor, with a conversion-oriented structure (clear hero, programme levels, CTAs), SEO work for relevant searches and integration with Systeme.io for forms, sequences and lead capture.",
+          "result": "A site that clearly communicates Fénix's offer (Despertar, Construcción, Transformación), improves visibility in search and channels visitors into the free programme and mentoring through Systeme.io."
         }
       }
     },

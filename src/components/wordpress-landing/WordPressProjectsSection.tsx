@@ -13,7 +13,7 @@ const WordPressProjectsSection: React.FC<WordPressProjectsSectionProps> = ({ tra
       contextKey="wordpressLanding.projects.context"
       labelsBaseKey="wordpressLanding.projects.labels"
       itemsBaseKey="wordpressLanding.projects.items"
-      projectIds={['rocolegal', 'vilaLancisV2', 'decos', 'reset7', 'luciaNails']}
+      projectIds={['rocolegal', 'vilaLancisV2', 'decos', 'reset7', 'luciaNails', 'fenix']}
     />
   );
 };

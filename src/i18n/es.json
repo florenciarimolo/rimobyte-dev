@@ -204,6 +204,15 @@
       "link": "https://vila-i-lancis.vercel.app",
       "technologies": "Astro, Resend",
       "category": "services"
+    },
+    "fenix": {
+      "title": "Fénix – Maternidad y vida productiva",
+      "image": "fenix.webp",
+      "shortDescription": "Web WordPress para programa de mentoría que integra maternidad y emprendimiento, con SEO y captación de leads en Systeme.io.",
+      "description": "Sitio web para Fénix, programa de mentoría para madres empresarias y emprendedoras que quieren integrar maternidad y vida productiva. Desarrollado con WordPress y Elementor, optimizado para SEO para generar ventas orgánicas y conectado a Systeme.io para la captación y gestión de leads. Estructura clara por niveles (Despertar, Construcción, Transformación) y CTAs orientados a conversión.",
+      "link": "https://fenixinternacional360.com",
+      "technologies": "WordPress, Elementor, Yoast SEO, Systeme.io",
+      "category": "services"
     }
   },
   "experience": {
@@ -416,6 +425,11 @@
           "problem": "El centro de manicura tenía una presencia online muy básica que no reflejaba el estilo del negocio ni mostraba bien los servicios y trabajos realizados. Los clientes potenciales encontraban difícil hacerse una idea clara de la oferta antes de escribir o reservar.",
           "proposal": "Diseñar y personalizar un sitio WordPress que pusiera en primer plano la identidad visual del centro, con secciones claras para servicios, tarifas y trabajos destacados, cuidando el rendimiento y el SEO local para que nuevas clientas puedan descubrir el negocio.",
           "result": "Una web alineada con la marca que transmite confianza desde el primer vistazo, mejora la visibilidad en la zona y ayuda a que más personas lleguen al centro con una idea clara de los servicios y estilo que ofrece."
+        },
+        "fenix": {
+          "problem": "El programa de mentoría para madres empresarias necesitaba una web que transmitiera autoridad, explicara la propuesta de valor y captara leads de forma orgánica. Era fundamental un buen posicionamiento SEO para generar ventas sin depender solo de paid.",
+          "proposal": "Desarrollar el sitio en WordPress con Elementor, con estructura orientada a conversión (hero claro, niveles del programa, CTAs), SEO trabajado para búsquedas relevantes y conexión con Systeme.io para formularios, secuencias y captación de leads.",
+          "result": "Una web que comunica con claridad la oferta de Fénix (Despertar, Construcción, Transformación), mejora la visibilidad en buscadores y canaliza a las visitas hacia el programa gratuito y las mentorías a través de Systeme.io."
         }
       }
     },
