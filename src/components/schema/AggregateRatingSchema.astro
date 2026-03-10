@@ -1,10 +1,4 @@
 ---
-/**
- * AggregateRating Schema
- * Add this component to pages that display Google Reviews
- * to enhance SEO with structured rating data
- */
-
 export interface Props {
   rating: number;
   reviewCount: number;
@@ -24,6 +18,16 @@ const schema = {
   "@type": "LocalBusiness",
   "name": name,
   "url": url,
+  "image": `${url}/assets/images/programadora-web.webp`,
+  "telephone": "+34684713743",
+  "email": "info@rimobyte.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Barcelona",
+    "addressRegion": "Cataluña",
+    "addressCountry": "ES"
+  },
+  "priceRange": "€€",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": rating.toFixed(1),

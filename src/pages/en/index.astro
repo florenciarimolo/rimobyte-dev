@@ -10,8 +10,45 @@ const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZ
 
 // SEO optimized titles and descriptions for English
 const seoData = {
-  title: "Freelance Web Developer in Spain | WordPress, E-commerce, Web Apps | RimoByte",
-  description: "Professional web development for SMBs and freelancers in Spain. WordPress, online stores, and custom web apps. Clear pricing from €500, no agencies or surprises."
+  title: "Freelance Web Developer in Spain | WordPress, E-commerce & Web Apps | RimoByte",
+  description: "Professional web development for SMBs and freelancers in Spain. WordPress, WooCommerce stores and custom web apps. Fixed pricing from €500, free consultation and 30-day guarantee. No agencies."
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a website cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It depends on the type of project. A corporate website starts from €800, an online store from €1,200, and a custom web app from €2,500. I provide a detailed quote before starting, with no surprises." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a web project take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A landing page can be ready in 1-2 weeks. A corporate website in 3-4 weeks. An online store in 4-6 weeks. Exact timelines depend on scope, but we always agree on them before starting." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you only work with WordPress?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. WordPress is one of my specialties for corporate websites and online stores, but I also work with Vue, Nuxt, Astro, and Shopify for projects that need a different approach." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I maintain the website myself?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. All websites are designed so you can easily manage content. I also offer monthly maintenance if you'd rather not handle the technical side." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work remotely?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. I work remotely with clients across Spain. Communication is direct via email, WhatsApp, or video call — whatever you prefer." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does maintenance include?",
+      "acceptedAnswer": { "@type": "Answer", "text": "WordPress and plugin updates, backups, security monitoring, and technical support to resolve any issues. From €40/month." }
+    }
+  ]
 };
 ---
 
@@ -21,6 +58,7 @@ const seoData = {
   locale={LANG.ENGLISH}
 >
   <AggregateRatingSchema rating={4.9} reviewCount={12} name="RimoByte - Freelance Web Development" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <MainPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} initialLocale={LANG.ENGLISH} />
 </MainLayout>
 

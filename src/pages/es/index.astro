@@ -10,17 +10,48 @@ const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZ
 
 // SEO optimized titles and descriptions based on keyword research
 const seoData = {
-  es: {
-    title: "Desarrolladora Web Freelance en España | WordPress, Tiendas Online, Apps Web | RimoByte",
-    description: "Desarrollo web profesional para pymes y autónomos en España. WordPress, tiendas online y aplicaciones web a medida. Precios claros desde 500 €, sin agencias ni sorpresas."
-  },
-  en: {
-    title: "Freelance Web Developer in Spain | WordPress, E-commerce, Web Apps | RimoByte",
-    description: "Professional web development for SMBs and freelancers in Spain. WordPress, online stores, and custom web apps. Clear pricing from €500, no agencies or surprises."
-  }
+  title: "Desarrolladora Web Freelance en España | WordPress, Tiendas Online y Apps Web | RimoByte",
+  description: "Desarrollo web profesional para pymes y autónomos. WordPress, tiendas online WooCommerce y apps web a medida. Precio fijo desde 500 €, consulta gratuita y 30 días de garantía. Sin agencias ni intermediarios."
 };
 
-const currentSeo = seoData.es;
+const currentSeo = seoData;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta una página web?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende del tipo de proyecto. Una web corporativa parte desde 800 €, una tienda online desde 1.200 € y una aplicación web desde 2.500 €. Te doy un presupuesto detallado antes de empezar, sin sorpresas." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda un proyecto web?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una landing page puede estar lista en 1-2 semanas. Una web corporativa en 3-4 semanas. Una tienda online en 4-6 semanas. Los plazos exactos dependen del alcance, pero siempre los acordamos antes de empezar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajas solo con WordPress?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. WordPress es una de mis especialidades para webs corporativas y tiendas online, pero también trabajo con Vue, Nuxt, Astro y Shopify para proyectos que necesitan otro enfoque." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo mantener la web yo después?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todas las webs están pensadas para que puedas gestionar contenidos fácilmente. Además, ofrezco mantenimiento mensual si prefieres no ocuparte de la parte técnica." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajas en remoto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Trabajo en remoto con clientes en toda España. La comunicación es directa por email, WhatsApp o videollamada, según prefieras." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué incluye el mantenimiento?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Actualizaciones de WordPress y plugins, copias de seguridad, monitoreo de seguridad y soporte técnico para resolver cualquier incidencia. Desde 40 €/mes." }
+    }
+  ]
+};
 ---
 
 <MainLayout 
@@ -29,5 +60,6 @@ const currentSeo = seoData.es;
   locale={LANG.SPANISH}
 >
   <AggregateRatingSchema rating={4.9} reviewCount={12} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <MainPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} initialLocale={LANG.SPANISH} />
 </MainLayout>

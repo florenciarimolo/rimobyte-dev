@@ -10,7 +10,6 @@ const { twj } = await import('tw-to-css');
 
 const publicDir = path.join(process.cwd(), 'public', 'assets', 'images');
 
-// Load hero image (same as main page hero); convert WebP→PNG for Satori compatibility
 const heroImagePath = path.join(publicDir, 'programadora-web.webp');
 let heroImageBase64: string | null = null;
 if (fs.existsSync(heroImagePath)) {
@@ -23,30 +22,42 @@ if (fs.existsSync(heroImagePath)) {
   }
 }
 
-// Load RimoByte logo (opposite side)
 const logoPath = path.join(publicDir, 'logo-rimobyte-light-grey.png');
 const logoBase64 = fs.existsSync(logoPath)
   ? `data:image/png;base64,${fs.readFileSync(logoPath).toString('base64')}`
   : null;
 
 const white = '#ffffff';
+const muted = '#9ca3af';
+const accent = '#60a5fa';
 
-// Hero-style: circular image with blue-to-purple gradient border (same as HeroSection)
 const heroCircleSize = 130;
 const gradientBorderWidth = 4;
-// Photo block height (circle + border)
 const headerBlockHeight = heroCircleSize + gradientBorderWidth * 2;
-// Logo at half the height of the photo
 const logoHeight = Math.round(headerBlockHeight / 2);
 const logoAspect = 160 / 42;
 const logoWidth = Math.round(logoHeight * logoAspect);
+
+function truncate(text: string, max: number): string {
+  if (text.length <= max) return text;
+  const cut = text.lastIndexOf(' ', max);
+  return text.slice(0, cut > 0 ? cut : max) + '…';
+}
 
 export async function brandedLogoWithSubtitle({
   title,
   description,
 }: RenderFunctionInput): Promise<React.ReactNode> {
-  const displayTitle = title.replace(/\s*\|\s*RimoByte\s*$/i, '').trim();
-  const displayDescription = description ? description.trim() : null;
+  // Strip "| RimoByte" and clean up pipe segments for a cleaner visual title
+  const rawTitle = title.replace(/\s*\|\s*RimoByte\s*$/i, '').trim();
+
+  // Split pipe-separated title into main heading + services tagline
+  const parts = rawTitle.split(/\s*\|\s*/);
+  const mainTitle = parts[0];
+  const servicesLine = parts.length > 1 ? parts.slice(1).join(' · ') : null;
+
+  // Extract first sentence of description for OG image (keep it punchy)
+  const descText = description ? truncate(description.trim().split('. ')[0] + '.', 120) : null;
 
   return (
     <div
@@ -69,7 +80,7 @@ export async function brandedLogoWithSubtitle({
           width: '100%',
         }}
       >
-        {/* Line 1: photo left, logo right – same height */}
+        {/* Line 1: photo left, logo right */}
         <div
           style={{
             display: 'flex',
@@ -80,7 +91,6 @@ export async function brandedLogoWithSubtitle({
             flexShrink: 0,
           }}
         >
-          {/* Photo – left */}
           <div
             style={{
               display: 'flex',
@@ -127,7 +137,6 @@ export async function brandedLogoWithSubtitle({
               </div>
             )}
           </div>
-          {/* Logo – right, half the height of the photo */}
           <div
             style={{
               display: 'flex',
@@ -150,27 +159,42 @@ export async function brandedLogoWithSubtitle({
           </div>
         </div>
 
-        {/* Line 2: title */}
+        {/* Main title */}
         <h1
           style={{
             ...twj('text-[44px] font-bold text-left leading-tight'),
             color: white,
             marginTop: 32,
-            marginBottom: 16,
+            marginBottom: 0,
           }}
         >
-          {displayTitle}
+          {mainTitle}
         </h1>
 
-        {/* Line 3: description – one phrase, not cut */}
-        {displayDescription && (
+        {/* Services tagline (from pipe-separated part of title) */}
+        {servicesLine && (
           <p
             style={{
-              ...twj('text-[24px] font-normal text-left leading-snug'),
-              color: white,
+              ...twj('text-[26px] font-normal text-left leading-snug'),
+              color: accent,
+              marginTop: 12,
+              marginBottom: 0,
             }}
           >
-            {displayDescription}
+            {servicesLine}
+          </p>
+        )}
+
+        {/* Description — first sentence only */}
+        {descText && (
+          <p
+            style={{
+              ...twj('text-[22px] font-normal text-left leading-snug'),
+              color: muted,
+              marginTop: 16,
+            }}
+          >
+            {descText}
           </p>
         )}
       </div>
