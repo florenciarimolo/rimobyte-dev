@@ -1,5 +1,5 @@
 import React from 'react';
-import LandingCaseStudiesSection from '@/components/LandingCaseStudiesSection';
+import FeaturedProjectsSection from '@/components/FeaturedProjectsSection';
 
 interface WordPressProjectsSectionProps {
   translations: any;
@@ -7,13 +7,16 @@ interface WordPressProjectsSectionProps {
 
 const WordPressProjectsSection: React.FC<WordPressProjectsSectionProps> = ({ translations }) => {
   return (
-    <LandingCaseStudiesSection
+    <FeaturedProjectsSection
       translations={translations}
+      projectIds={['rocolegal', 'vilaLancisV2', 'decos', 'reset7', 'luciaNails', 'fenix']}
       titleKey="wordpressLanding.projects.title"
-      contextKey="wordpressLanding.projects.context"
+      subtitleKey="wordpressLanding.projects.context"
       labelsBaseKey="wordpressLanding.projects.labels"
       itemsBaseKey="wordpressLanding.projects.items"
-      projectIds={['rocolegal', 'vilaLancisV2', 'decos', 'reset7', 'luciaNails', 'fenix']}
+      detailFields={['problem', 'proposal', 'result']}
+      visitLabelKey="viewProject"
+      sectionClassName="py-20"
     />
   );
 };

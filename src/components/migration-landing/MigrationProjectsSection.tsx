@@ -1,5 +1,5 @@
 import React from 'react';
-import LandingCaseStudiesSection from '@/components/LandingCaseStudiesSection';
+import FeaturedProjectsSection from '@/components/FeaturedProjectsSection';
 
 interface MigrationProjectsSectionProps {
   translations: any;
@@ -7,12 +7,16 @@ interface MigrationProjectsSectionProps {
 
 const MigrationProjectsSection: React.FC<MigrationProjectsSectionProps> = ({ translations }) => {
   return (
-    <LandingCaseStudiesSection
+    <FeaturedProjectsSection
       translations={translations}
-      contextKey="migrationLanding.projects.context"
+      projectIds={['decos', 'jlgki', 'vilaLancisV2']}
+      titleKey={null}
+      subtitleKey="migrationLanding.projects.context"
       labelsBaseKey="migrationLanding.projects.labels"
       itemsBaseKey="migrationLanding.projects.items"
-      projectIds={['decos', 'jlgki', 'vilaLancisV2']}
+      detailFields={['problem', 'proposal', 'result']}
+      visitLabelKey="viewProject"
+      sectionClassName="py-20"
     />
   );
 };
