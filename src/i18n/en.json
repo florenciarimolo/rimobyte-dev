@@ -1,42 +1,187 @@
 {
   "meta": {
-    "title": "RimoByte - Full Stack Developer Portfolio"
+    "title": "RimoByte - Freelance Web Developer in Spain"
   },
   "hero": {
-    "tagline": "Freelance Full Stack Developer in Barcelona. WordPress, e-commerce, and web applications for SMBs and freelancers in Spain and internationally",
+    "headline": "Your professional website, without agencies or surprises",
+    "tagline": "Web development for SMBs and freelancers in Spain. WordPress, online stores and custom web applications — with clear pricing from €500.",
     "available": "Available",
+    "trustBar": {
+      "experience": "10+ years of experience",
+      "projects": "30+ projects delivered",
+      "rating": "4.9 on Google"
+    },
     "cta": {
-      "viewWork": "View My Work",
-      "getInTouch": "Get In Touch"
+      "viewServices": "View services & pricing",
+      "whatsapp": "Contact via WhatsApp"
     }
   },
   "navbar": {
-    "about": "About",
-    "experience": "Experience",
+    "services": "Services",
     "projects": "Projects",
-    "templates": "Templates",
+    "process": "Process",
+    "about": "About",
     "contact": "Contact"
   },
   "sections": {
-    "about": {
-      "title": "About Me",
-      "description1": "Florencia Rímolo is a freelance full stack developer based in Barcelona, specializing in WordPress, Vue.js, and e-commerce. Under the brand RimoByte, she offers professional web development for SMBs and freelancers across Spain and internationally, with prices starting from €500 and a 30-day guarantee.",
-      "description2": "Professional experience in front and backend frameworks (Vue.js, Spring Boot, Django) and WordPress. Proficient in Git, Docker, TypeScript, and SQL. Direct work with no intermediaries, transparent pricing, and clear communication.",
-      "status": {
-        "available": "Available for new opportunities",
-        "remote": "Remote work preferred"
-      },
-      "skills": {
-        "title": "Skills & Technologies",
-        "frontend": "Frontend",
-        "backend": "Backend"
+    "problems": {
+      "title": "Does any of this sound familiar?",
+      "items": {
+        "agencyDependency": {
+          "title": "You depend on an agency for everything",
+          "text": "Every change to your website requires a ticket, a wait, and an unexpected cost."
+        },
+        "noWebOrOutdated": {
+          "title": "Your website doesn't reflect your business",
+          "text": "You have an outdated website that doesn't build trust or attract new clients."
+        },
+        "dontKnowWhereToStart": {
+          "title": "You don't know where to start",
+          "text": "You need a website but aren't sure how much it should cost or what you actually need."
+        },
+        "technicalIssues": {
+          "title": "Your WordPress is slow or broken",
+          "text": "The site loads slowly, has errors, or is outdated and you don't know how to fix it."
+        }
       }
     },
-    "experience": {
-      "title": "Experience"
+    "services": {
+      "title": "Services",
+      "subtitle": "Professional web development tailored to each project",
+      "items": {
+        "corporateWeb": {
+          "title": "Corporate WordPress website",
+          "description": "Professional, fast, and easy-to-maintain websites for your business.",
+          "price": "From €800"
+        },
+        "ecommerce": {
+          "title": "Online store",
+          "description": "E-commerce with WooCommerce or Shopify tailored to your business.",
+          "price": "From €1,200"
+        },
+        "webApp": {
+          "title": "Custom web application",
+          "description": "Apps with Vue, Nuxt or Astro for projects that need more than a CMS.",
+          "price": "From €2,500"
+        },
+        "redesign": {
+          "title": "Website redesign",
+          "description": "Modernize your website without losing the rankings you already have.",
+          "price": "From €600"
+        },
+        "speed": {
+          "title": "Speed optimization",
+          "description": "Improve your WordPress performance and boost your PageSpeed score.",
+          "price": "From €300"
+        },
+        "maintenance": {
+          "title": "Website maintenance",
+          "description": "Updates, security, and ongoing technical support for your website.",
+          "price": "From €40/mo"
+        }
+      },
+      "viewAllPrices": "View all pricing"
     },
-    "education": {
-      "title": "Education"
+    "featuredProjects": {
+      "title": "Projects",
+      "subtitle": "Real results for real businesses",
+      "viewAll": "View all projects",
+      "labels": {
+        "challenge": "The challenge",
+        "solution": "My approach",
+        "result": "Result",
+        "visit": "Visit website"
+      },
+      "items": {
+        "rocolegal": {
+          "challenge": "The law firm had an outdated website that didn't convey professionalism. The structure was confusing and contact forms weren't prominent.",
+          "solution": "Redesigned the digital presence with a bilingual WordPress site, clear service pages, and calls to action throughout the user journey.",
+          "result": "A professional site that better reflects the firm's expertise, improves search visibility, and converts more visits into qualified enquiries."
+        },
+        "vilaLancisV2": {
+          "challenge": "The advisory firm had a slow, outdated website that didn't properly explain their services. Poor UX was hurting SEO and client acquisition.",
+          "solution": "Complete redesign in WordPress, reorganizing content by service type, adding multilingual support, and working on technical SEO.",
+          "result": "A clear, fast website presenting all services in an organized way, making it easy for businesses and freelancers to get in touch."
+        },
+        "decos": {
+          "challenge": "The online store was limited by an outdated platform. Managing products required too much technical effort and was hurting sales.",
+          "solution": "Migration from Prestashop to WordPress with WooCommerce, optimizing performance, navigation, and product pages.",
+          "result": "A more agile, easier-to-manage store with better shopping experience and a solid technical base to keep growing."
+        },
+        "fenix": {
+          "challenge": "The mentoring programme needed a website that conveyed authority, explained the value proposition, and captured leads organically.",
+          "solution": "WordPress site with conversion-oriented structure, SEO work, and Systeme.io integration for lead capture.",
+          "result": "A website that clearly communicates the offer, improves search visibility, and channels visitors into the programme."
+        }
+      }
+    },
+    "process": {
+      "title": "How I work",
+      "subtitle": "A clear process from start to finish",
+      "steps": {
+        "consultation": {
+          "title": "Free consultation",
+          "description": "Tell me about your project and I'll give you my honest assessment, no strings attached."
+        },
+        "proposal": {
+          "title": "Clear proposal",
+          "description": "Detailed quote with defined timelines, scope, and technology."
+        },
+        "development": {
+          "title": "Phased development",
+          "description": "We move forward together with validations at each stage. No surprises."
+        },
+        "delivery": {
+          "title": "Delivery + support",
+          "description": "Website ready, access in your hands, and post-launch support included."
+        }
+      }
+    },
+    "about": {
+      "title": "About me",
+      "description": "I'm Florencia Rímolo, a computer engineer from UPC Barcelona with over 10 years of experience in web development. I've worked in fintech, university systems, and delivered 30+ freelance projects. Today, under the brand RimoByte, I help SMBs and freelancers across Spain build websites that work: fast, professional, and easy to maintain.",
+      "highlights": {
+        "engineering": "Computer Engineer (UPC Barcelona)",
+        "experience": "10+ years in professional web development",
+        "enterprise": "Experience in fintech and university systems",
+        "freelance": "30+ freelance projects delivered",
+        "directWork": "Direct work, no intermediaries",
+        "guarantee": "30-day guarantee on every project"
+      },
+      "technologies": "Technologies",
+      "status": {
+        "available": "Available for new projects",
+        "remote": "Working remotely across Spain"
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "howMuch": {
+          "question": "How much does a website cost?",
+          "answer": "It depends on the type of project. A corporate website starts from €800, an online store from €1,200, and a custom web app from €2,500. I provide a detailed quote before starting, with no surprises."
+        },
+        "howLong": {
+          "question": "How long does a web project take?",
+          "answer": "A landing page can be ready in 1-2 weeks. A corporate website in 3-4 weeks. An online store in 4-6 weeks. Exact timelines depend on scope, but we always agree on them before starting."
+        },
+        "onlyWordPress": {
+          "question": "Do you only work with WordPress?",
+          "answer": "No. WordPress is one of my specialties for corporate websites and online stores, but I also work with Vue, Nuxt, Astro, and Shopify for projects that need a different approach."
+        },
+        "canMaintain": {
+          "question": "Can I maintain the website myself?",
+          "answer": "Yes. All websites are designed so you can easily manage content. I also offer monthly maintenance if you'd rather not handle the technical side."
+        },
+        "remote": {
+          "question": "Do you work remotely?",
+          "answer": "Yes. I work remotely with clients across Spain. Communication is direct via email, WhatsApp, or video call — whatever you prefer."
+        },
+        "whatMaintenance": {
+          "question": "What does maintenance include?",
+          "answer": "WordPress and plugin updates, backups, security monitoring, and technical support to resolve any issues. From €40/month."
+        }
+      }
     },
     "projects": {
       "title": "Projects",
@@ -63,32 +208,48 @@
       "viewResource": "View resource"
     },
     "contact": {
-      "title": "Get In Touch",
+      "title": "Tell me about your project",
       "subtitle": "Let's work together",
-      "description": "If you have questions about your current website or a new project, write to me and we'll look at it calmly.",
+      "description": "No commitment. I reply within 24h by email or instantly via WhatsApp.",
       "contactInfo": {
         "email": "Email",
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "whatsapp": "WhatsApp"
-      }
+      },
+      "whatsappCta": "Message on WhatsApp"
     }
   },
   "footer": {
     "copyright": "© {year} RimoByte. All rights reserved.",
+    "tagline": "Professional web development for SMBs and freelancers in Spain.",
+    "cta": "Have a project in mind?",
+    "ctaButton": "Let's talk",
+    "nav": {
+      "title": "Navigation",
+      "services": "Services",
+      "projects": "Projects",
+      "process": "How I work",
+      "about": "About",
+      "contact": "Contact",
+      "blog": "Blog",
+      "pricing": "Pricing"
+    },
     "services": {
       "title": "Services",
       "items": {
-        "wordpressFreelance": "WordPress freelance developer for businesses",
-        "wordpressMigration": "Migrate your WordPress site from agency to freelance",
-        "wordpressRescue": "Emergency WordPress rescue in 24 hours",
-        "wordpressRedesign": "Redesign your WordPress site without losing SEO",
-        "ecommerce": "Create an online store with WooCommerce or Shopify",
-        "speed": "Speed up your WordPress and improve PageSpeed",
-        "vueNuxt": "Build web applications with Vue and Nuxt",
-        "pricing": "Web development pricing for WordPress and online stores"
+        "wordpressFreelance": "Corporate WordPress website",
+        "wordpressMigration": "Website migration",
+        "wordpressRescue": "Emergency WordPress rescue",
+        "wordpressRedesign": "WordPress redesign",
+        "ecommerce": "Online store",
+        "speed": "Speed optimization",
+        "vueNuxt": "Web applications (Vue/Nuxt)",
+        "pricing": "Pricing"
       }
-    }
+    },
+    "contactTitle": "Contact",
+    "location": "Barcelona, Spain · Remote across Spain"
   },
   "notFound": {
     "title": "404",

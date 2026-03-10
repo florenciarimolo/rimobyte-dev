@@ -16,10 +16,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, translat
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'about', label: getTranslation(translations, 'navbar.about') },
+    { id: 'services', label: getTranslation(translations, 'navbar.services') },
     { id: 'projects', label: getTranslation(translations, 'navbar.projects') },
-    { id: 'templates', label: getTranslation(translations, 'navbar.templates') },
-    { id: 'experience', label: getTranslation(translations, 'navbar.experience') },
+    { id: 'process', label: getTranslation(translations, 'navbar.process') },
+    { id: 'about', label: getTranslation(translations, 'navbar.about') },
     { id: 'contact', label: getTranslation(translations, 'navbar.contact') }
   ];
 

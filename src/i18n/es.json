@@ -1,42 +1,187 @@
 {
   "meta": {
-    "title": "RimoByte - Desarrolladora Full Stack Portfolio"
+    "title": "RimoByte - Desarrolladora Web Freelance en España"
   },
   "hero": {
-    "tagline": "Desarrolladora Full Stack freelance en Barcelona. WordPress, e-commerce y aplicaciones web para pymes y autónomos en España",
+    "headline": "Tu web profesional, sin agencias ni sorpresas",
+    "tagline": "Desarrollo web para pymes y autónomos en España. WordPress, tiendas online y aplicaciones web a medida — con precios claros desde 500 €.",
     "available": "Disponible",
+    "trustBar": {
+      "experience": "10+ años de experiencia",
+      "projects": "30+ proyectos entregados",
+      "rating": "4.9 en Google"
+    },
     "cta": {
-      "viewWork": "Ver Mi Trabajo",
-      "getInTouch": "Contactar"
+      "viewServices": "Ver servicios y precios",
+      "whatsapp": "Contactar por WhatsApp"
     }
   },
   "navbar": {
-    "about": "Sobre mí",
-    "experience": "Experiencia",
+    "services": "Servicios",
     "projects": "Proyectos",
-    "templates": "Templates",
+    "process": "Proceso",
+    "about": "Sobre mí",
     "contact": "Contacto"
   },
   "sections": {
-    "about": {
-      "title": "Sobre Mí",
-      "description1": "Florencia Rímolo es desarrolladora full stack freelance en Barcelona, especializada en WordPress, Vue.js y e-commerce. Bajo la marca RimoByte, ofrece desarrollo web profesional para pymes y autónomos en toda España, con precios desde 500 € y garantía de 30 días.",
-      "description2": "Experiencia profesional en frameworks front y backend (Vue.js, Spring Boot, Django) y WordPress. Dominio de Git, Docker, TypeScript y SQL. Trabajo directo sin intermediarios, con precios transparentes y comunicación clara.",
-      "status": {
-        "available": "Disponible para nuevas oportunidades",
-        "remote": "Trabajo remoto preferido"
-      },
-      "skills": {
-        "title": "Habilidades y Tecnologías",
-        "frontend": "Frontend",
-        "backend": "Backend"
+    "problems": {
+      "title": "¿Te suena alguna de estas situaciones?",
+      "items": {
+        "agencyDependency": {
+          "title": "Dependes de una agencia para todo",
+          "text": "Cada cambio en tu web requiere un ticket, una espera y un coste que no esperabas."
+        },
+        "noWebOrOutdated": {
+          "title": "Tu web no refleja tu negocio",
+          "text": "Tienes una web anticuada que no genera confianza ni atrae clientes nuevos."
+        },
+        "dontKnowWhereToStart": {
+          "title": "No sabes por dónde empezar",
+          "text": "Necesitas una web pero no tienes claro cuánto debería costar ni qué necesitas realmente."
+        },
+        "technicalIssues": {
+          "title": "Tu WordPress va lento o da errores",
+          "text": "La web carga despacio, tiene fallos o está desactualizada y no sabes cómo arreglarlo."
+        }
       }
     },
-    "experience": {
-      "title": "Experiencia"
+    "services": {
+      "title": "Servicios",
+      "subtitle": "Desarrollo web profesional adaptado a cada proyecto",
+      "items": {
+        "corporateWeb": {
+          "title": "Web corporativa WordPress",
+          "description": "Sitios profesionales, rápidos y fáciles de mantener para tu negocio.",
+          "price": "Desde 800 €"
+        },
+        "ecommerce": {
+          "title": "Tienda online",
+          "description": "E-commerce con WooCommerce o Shopify adaptado a tu negocio.",
+          "price": "Desde 1.200 €"
+        },
+        "webApp": {
+          "title": "Aplicación web a medida",
+          "description": "Apps con Vue, Nuxt o Astro para proyectos que necesitan más que un CMS.",
+          "price": "Desde 2.500 €"
+        },
+        "redesign": {
+          "title": "Rediseño web",
+          "description": "Moderniza tu web sin perder el posicionamiento que ya tienes.",
+          "price": "Desde 600 €"
+        },
+        "speed": {
+          "title": "Optimización de velocidad",
+          "description": "Mejora el rendimiento de tu WordPress y sube tu nota en PageSpeed.",
+          "price": "Desde 300 €"
+        },
+        "maintenance": {
+          "title": "Mantenimiento web",
+          "description": "Actualizaciones, seguridad y soporte técnico continuo para tu web.",
+          "price": "Desde 40 €/mes"
+        }
+      },
+      "viewAllPrices": "Ver todos los precios"
     },
-    "education": {
-      "title": "Educación"
+    "featuredProjects": {
+      "title": "Proyectos destacados",
+      "subtitle": "Resultados reales para negocios reales",
+      "viewAll": "Ver todos los proyectos",
+      "labels": {
+        "challenge": "El reto",
+        "solution": "Mi propuesta",
+        "result": "Resultado",
+        "visit": "Visitar web"
+      },
+      "items": {
+        "rocolegal": {
+          "challenge": "El despacho tenía una web antigua que no transmitía profesionalidad. La estructura era confusa y los formularios de contacto no estaban bien visibles.",
+          "solution": "Rediseñar la presencia digital con un sitio WordPress bilingüe, páginas de servicios claras y llamadas a la acción presentes en todo el recorrido.",
+          "result": "Un sitio profesional que refleja mejor la especialización del despacho, mejora la visibilidad en buscadores y convierte más visitas en consultas."
+        },
+        "vilaLancisV2": {
+          "challenge": "La asesoría contaba con una web lenta y desactualizada que no explicaba bien sus servicios. La experiencia de usuario penalizaba el SEO y la captación de clientes.",
+          "solution": "Rediseño completo en WordPress, reorganizando contenidos por servicio, añadiendo multiidioma y trabajando el SEO técnico.",
+          "result": "Una web clara y rápida que presenta todos los servicios de forma ordenada y facilita que empresas y autónomos contacten sin fricción."
+        },
+        "decos": {
+          "challenge": "La tienda online estaba limitada por una plataforma antigua. Gestionar productos requería demasiado esfuerzo técnico y afectaba a las ventas.",
+          "solution": "Migración de Prestashop a WordPress con WooCommerce, optimizando rendimiento, navegación y fichas de producto.",
+          "result": "Una tienda más ágil y fácil de gestionar, con mejor experiencia de compra y base técnica sólida para seguir creciendo."
+        },
+        "fenix": {
+          "challenge": "El programa de mentoría necesitaba una web que transmitiera autoridad, explicara la propuesta de valor y captara leads de forma orgánica.",
+          "solution": "Sitio WordPress con estructura orientada a conversión, SEO trabajado y conexión con Systeme.io para captación de leads.",
+          "result": "Una web que comunica con claridad la oferta, mejora la visibilidad en buscadores y canaliza visitas hacia el programa."
+        }
+      }
+    },
+    "process": {
+      "title": "Cómo trabajo",
+      "subtitle": "Un proceso claro de principio a fin",
+      "steps": {
+        "consultation": {
+          "title": "Consulta gratuita",
+          "description": "Me cuentas tu proyecto y te doy mi valoración honesta, sin compromiso."
+        },
+        "proposal": {
+          "title": "Propuesta clara",
+          "description": "Presupuesto detallado con plazos, alcance y tecnología definidos."
+        },
+        "development": {
+          "title": "Desarrollo por fases",
+          "description": "Avanzamos juntos con validaciones en cada etapa. Sin sorpresas."
+        },
+        "delivery": {
+          "title": "Entrega + soporte",
+          "description": "Web lista, accesos en tu mano y soporte incluido tras la entrega."
+        }
+      }
+    },
+    "about": {
+      "title": "Sobre mí",
+      "description": "Soy Florencia Rímolo, ingeniera informática por la UPC con más de 10 años de experiencia en desarrollo web. He trabajado en fintech, sistemas universitarios y más de 30 proyectos como freelance. Hoy, bajo la marca RimoByte, ayudo a pymes y autónomos en toda España a tener una web que funcione: rápida, profesional y fácil de mantener.",
+      "highlights": {
+        "engineering": "Ingeniera informática (UPC Barcelona)",
+        "experience": "10+ años en desarrollo web profesional",
+        "enterprise": "Experiencia en fintech y sistemas universitarios",
+        "freelance": "30+ proyectos freelance entregados",
+        "directWork": "Trabajo directo, sin intermediarios",
+        "guarantee": "Garantía de 30 días en cada proyecto"
+      },
+      "technologies": "Tecnologías",
+      "status": {
+        "available": "Disponible para nuevos proyectos",
+        "remote": "Trabajo en remoto en toda España"
+      }
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": {
+        "howMuch": {
+          "question": "¿Cuánto cuesta una página web?",
+          "answer": "Depende del tipo de proyecto. Una web corporativa parte desde 800 €, una tienda online desde 1.200 € y una aplicación web desde 2.500 €. Te doy un presupuesto detallado antes de empezar, sin sorpresas."
+        },
+        "howLong": {
+          "question": "¿Cuánto tarda un proyecto web?",
+          "answer": "Una landing page puede estar lista en 1-2 semanas. Una web corporativa en 3-4 semanas. Una tienda online en 4-6 semanas. Los plazos exactos dependen del alcance, pero siempre los acordamos antes de empezar."
+        },
+        "onlyWordPress": {
+          "question": "¿Trabajas solo con WordPress?",
+          "answer": "No. WordPress es una de mis especialidades para webs corporativas y tiendas online, pero también trabajo con Vue, Nuxt, Astro y Shopify para proyectos que necesitan otro enfoque."
+        },
+        "canMaintain": {
+          "question": "¿Puedo mantener la web yo después?",
+          "answer": "Sí. Todas las webs están pensadas para que puedas gestionar contenidos fácilmente. Además, ofrezco mantenimiento mensual si prefieres no ocuparte de la parte técnica."
+        },
+        "remote": {
+          "question": "¿Trabajas en remoto?",
+          "answer": "Sí. Trabajo en remoto con clientes en toda España. La comunicación es directa por email, WhatsApp o videollamada, según prefieras."
+        },
+        "whatMaintenance": {
+          "question": "¿Qué incluye el mantenimiento?",
+          "answer": "Actualizaciones de WordPress y plugins, copias de seguridad, monitoreo de seguridad y soporte técnico para resolver cualquier incidencia. Desde 40 €/mes."
+        }
+      }
     },
     "projects": {
       "title": "Proyectos",
@@ -63,32 +208,48 @@
       "viewResource": "Ver recurso"
     },
     "contact": {
-      "title": "Contactar",
+      "title": "Cuéntame tu proyecto",
       "subtitle": "Trabajemos juntos",
-      "description": "Si tienes dudas sobre tu web actual o un nuevo proyecto, escríbeme y lo vemos con calma.",
+      "description": "Sin compromiso. Respondo en menos de 24h por email o al momento por WhatsApp.",
       "contactInfo": {
         "email": "Email",
         "github": "GitHub",
         "linkedin": "LinkedIn",
         "whatsapp": "WhatsApp"
-      }
+      },
+      "whatsappCta": "Escribir por WhatsApp"
     }
   },
   "footer": {
       "copyright": "© {year} RimoByte. Todos los derechos reservados.",
+      "tagline": "Desarrollo web profesional para pymes y autónomos en España.",
+      "cta": "¿Tienes un proyecto en mente?",
+      "ctaButton": "Hablemos",
+      "nav": {
+        "title": "Navegación",
+        "services": "Servicios",
+        "projects": "Proyectos",
+        "process": "Cómo trabajo",
+        "about": "Sobre mí",
+        "contact": "Contacto",
+        "blog": "Blog",
+        "pricing": "Precios"
+      },
       "services": {
         "title": "Servicios",
         "items": {
-          "wordpressFreelance": "Desarrolladora WordPress freelance para negocios",
-          "wordpressMigration": "Migrar tu web WordPress de agencia a freelance",
-          "wordpressRescue": "Rescate WordPress urgente en 24 horas",
-          "wordpressRedesign": "Rediseño web WordPress sin perder SEO",
-          "ecommerce": "Crear tienda online con WooCommerce o Shopify",
-          "speed": "Optimizar velocidad WordPress y PageSpeed",
-          "vueNuxt": "Desarrollo de aplicaciones web con Vue y Nuxt",
-          "pricing": "Precios de desarrollo web WordPress y tiendas online"
+          "wordpressFreelance": "Web corporativa WordPress",
+          "wordpressMigration": "Migración web sin perder SEO",
+          "wordpressRescue": "Rescate WordPress urgente",
+          "wordpressRedesign": "Rediseño web WordPress",
+          "ecommerce": "Tienda online",
+          "speed": "Optimización de velocidad",
+          "vueNuxt": "Aplicaciones web (Vue/Nuxt)",
+          "pricing": "Precios"
         }
-      }
+      },
+      "contactTitle": "Contacto",
+      "location": "Barcelona, España · Remoto en toda España"
   },
   "notFound": {
     "title": "404",
