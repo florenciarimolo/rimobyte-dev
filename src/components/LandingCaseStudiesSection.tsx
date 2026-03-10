@@ -60,7 +60,7 @@ const LandingCaseStudiesSection: React.FC<LandingCaseStudiesSectionProps> = ({
             return (
               <article
                 key={project.id}
-                className="bg-white/5 dark:bg-gray-900/60 border border-white/10 dark:border-gray-700 rounded-2xl overflow-hidden shadow-xl backdrop-blur"
+                className="bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden shadow-xl backdrop-blur"
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img

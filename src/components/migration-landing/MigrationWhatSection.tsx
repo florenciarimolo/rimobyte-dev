@@ -30,7 +30,7 @@ const MigrationWhatSection: React.FC<MigrationWhatSectionProps> = ({ translation
             {checklistItems.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start gap-3 bg-black/70 backdrop-blur-md rounded-lg p-4 border border-gray-800 scroll-fade-in"
+                className="flex items-start gap-3 bg-white/80 dark:bg-black/70 backdrop-blur-md rounded-lg p-4 border border-gray-200 dark:border-gray-800 scroll-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex-shrink-0 mt-0.5">
@@ -38,7 +38,7 @@ const MigrationWhatSection: React.FC<MigrationWhatSectionProps> = ({ translation
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                   {item}
                 </p>
               </div>

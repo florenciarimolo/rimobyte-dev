@@ -46,16 +46,16 @@ const MigrationWhenSection: React.FC<MigrationWhenSectionProps> = ({ translation
           {items.map((item, index) => (
             <div
               key={index}
-              className="bg-black/70 backdrop-blur-md rounded-xl p-6 border border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 cursor-pointer scroll-fade-in"
+              className="bg-white/80 dark:bg-black/70 backdrop-blur-md rounded-xl p-6 border border-gray-200 dark:border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 cursor-pointer scroll-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white mb-4">
                 {item.icon}
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-3">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">
                 {item.title}
               </h3>
-              <p className="text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300">
                 {item.text}
               </p>
             </div>
@@ -63,7 +63,7 @@ const MigrationWhenSection: React.FC<MigrationWhenSectionProps> = ({ translation
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-lg text-gray-300 dark:text-gray-200 leading-relaxed whitespace-pre-line">
+          <p className="text-lg text-gray-600 dark:text-gray-200 leading-relaxed whitespace-pre-line">
             {getTranslation(translations, 'migrationLanding.when.extraText')}
           </p>
         </div>

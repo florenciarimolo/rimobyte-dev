@@ -108,28 +108,28 @@ const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ tra
             {services.slice(0, 3).map((service, index) => (
               <div
                 key={index}
-                className="bg-black/70 backdrop-blur-md rounded-xl p-6 border border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 cursor-pointer scroll-fade-in"
+                className="bg-white/80 dark:bg-black/70 backdrop-blur-md rounded-xl p-6 border border-gray-200 dark:border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 cursor-pointer scroll-fade-in"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white mb-4">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-300 whitespace-pre-line">
+                <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
                   {service.description}
                 </p>
                 <div className="mt-4 flex items-center justify-between gap-3">
                   {service.price && (
-                    <p className="text-white font-semibold">
+                    <p className="text-gray-900 dark:text-white font-semibold">
                       {service.price}
                     </p>
                   )}
                   {service.href && (
                     <a
                       href={service.href}
-                      className="inline-flex items-center justify-center px-4 py-2 text-xs font-medium rounded-full border border-blue-400 text-blue-100 hover:bg-blue-500/10 hover:border-blue-300 transition-colors"
+                      className="inline-flex items-center justify-center px-4 py-2 text-xs font-medium rounded-full border border-blue-400 text-blue-600 dark:text-blue-100 hover:bg-blue-500/10 hover:border-blue-300 transition-colors"
                     >
                       {learnMoreLabel}
                     </a>
@@ -144,28 +144,28 @@ const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ tra
             {services.slice(3).map((service, index) => (
               <div
                 key={index}
-                className="bg-black/70 backdrop-blur-md rounded-xl p-6 border border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 cursor-pointer scroll-fade-in"
+                className="bg-white/80 dark:bg-black/70 backdrop-blur-md rounded-xl p-6 border border-gray-200 dark:border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 cursor-pointer scroll-fade-in"
                 style={{ animationDelay: `${(index + 3) * 50}ms` }}
               >
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white mb-4">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-300 whitespace-pre-line">
+                <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
                   {service.description}
                 </p>
                 <div className="mt-4 flex items-center justify-between gap-3">
                   {service.price && (
-                    <p className="text-white font-semibold">
+                    <p className="text-gray-900 dark:text-white font-semibold">
                       {service.price}
                     </p>
                   )}
                   {service.href && (
                     <a
                       href={service.href}
-                      className="inline-flex items-center justify-center px-4 py-2 text-xs font-medium rounded-full border border-blue-400 text-blue-100 hover:bg-blue-500/10 hover:border-blue-300 transition-colors"
+                      className="inline-flex items-center justify-center px-4 py-2 text-xs font-medium rounded-full border border-blue-400 text-blue-600 dark:text-blue-100 hover:bg-blue-500/10 hover:border-blue-300 transition-colors"
                     >
                       {learnMoreLabel}
                     </a>

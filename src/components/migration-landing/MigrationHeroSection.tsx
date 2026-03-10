@@ -94,7 +94,7 @@ const MigrationHeroSection: React.FC<MigrationHeroSectionProps> = ({ cityName, c
       <div 
         data-us-project="p7Ff6pfTrb5Gs59C7nLC" 
         id="hero-unicorn-bg"
-        className="absolute inset-0 z-0 pointer-events-none bg-black/20"
+        className="absolute inset-0 z-0 pointer-events-none bg-gray-100 dark:bg-black/20"
         style={{ 
           opacity: 0.9,
           width: '100%',
@@ -108,19 +108,19 @@ const MigrationHeroSection: React.FC<MigrationHeroSectionProps> = ({ cityName, c
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight animate-fade-in-up drop-shadow-lg text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight animate-fade-in-up drop-shadow-lg text-center">
             {getTranslation(translations, 'migrationLanding.hero.title')}
           </h1>
           
-          <p className="text-2xl text-gray-200 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <p className="text-2xl text-gray-700 dark:text-gray-200 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             {getTranslation(translations, 'migrationLanding.hero.subtitle')}
           </p>
 
-          <p className="text-lg text-gray-300 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.12s' }}>
+          <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.12s' }}>
             {getTranslation(translations, 'migrationLanding.hero.extraText')}
           </p>
 
-          <p className="text-sm text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+          <p className="text-sm text-gray-500 dark:text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
             {localSeoText}
           </p>
 
@@ -139,7 +139,7 @@ const MigrationHeroSection: React.FC<MigrationHeroSectionProps> = ({ cityName, c
             </a>
             <a
               href="#projects"
-              className="group flex items-center justify-center gap-2 px-8 py-3.5 text-base font-medium text-white bg-transparent border border-blue-500 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5),0_0_10px_rgba(168,85,247,0.3),inset_0_0_10px_rgba(59,130,246,0.2)] hover:bg-blue-500/10 hover:border-blue-400 hover:shadow-[0_0_35px_rgba(59,130,246,0.6),0_0_20px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(59,130,246,0.4)] hover:scale-[1.02] transition-all duration-300"
+              className="group flex items-center justify-center gap-2 px-8 py-3.5 text-base font-medium text-gray-900 dark:text-white bg-transparent border border-blue-500 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5),0_0_10px_rgba(168,85,247,0.3),inset_0_0_10px_rgba(59,130,246,0.2)] hover:bg-blue-500/10 hover:border-blue-400 hover:shadow-[0_0_35px_rgba(59,130,246,0.6),0_0_20px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(59,130,246,0.4)] hover:scale-[1.02] transition-all duration-300"
             >
               {getTranslation(translations, 'migrationLanding.hero.cta.viewProjects')}
             </a>

@@ -184,43 +184,19 @@ const ogImageAlt = `${AUTHOR_NAME} - ${authorTitle}`;
       </script>
     )}
   </head>
-  <body class="text-gray-900 dark:text-white font-inter text-base antialiased transition-colors duration-300" style={Astro.url.pathname.includes('desarrolladora-wordpress-freelance') ? 'background: #000000 !important;' : ''}>
-    <!-- Background for WordPress landing pages -->
-    {Astro.url.pathname.includes('desarrolladora-wordpress-freelance') && (
-      <style is:inline>
-        {`
-          html, body {
-            background: #000000 !important;
-          }
-          #root {
-            background: #000000 !important;
-          }
-        `}
-      </style>
-    )}
-    <!-- Ensure main page has proper background -->
-    {!Astro.url.pathname.includes('desarrolladora-wordpress-freelance') && (
-      <style is:inline>
-        {`
-          html {
-            background: transparent !important;
-          }
-          body {
-            background: transparent !important;
-          }
-          body.dark {
-            background: #111827 !important;
-          }
-          body:not(.dark) {
-            background: #ffffff !important;
-          }
-          #root {
-            background: transparent !important;
-          }
-        `}
-      </style>
-    )}
-    <div id="root" style={Astro.url.pathname.includes('desarrolladora-wordpress-freelance') ? 'position: relative; z-index: 1; background: #000000;' : ''}>
+  <body class="text-gray-900 dark:text-white font-inter text-base antialiased transition-colors duration-300">
+    <style is:inline>
+      body.dark {
+        background: #111827 !important;
+      }
+      body:not(.dark) {
+        background: #ffffff !important;
+      }
+      #root {
+        background: transparent !important;
+      }
+    </style>
+    <div id="root" style={Astro.url.pathname.includes('desarrolladora-wordpress-freelance') ? 'position: relative; z-index: 1;' : ''}>
       <slot />
     </div>
     

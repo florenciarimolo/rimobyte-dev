@@ -65,14 +65,14 @@ const MigrationLandingPage: React.FC<MigrationLandingPageProps> = ({ cityName, c
   }, []);
 
   return (
-    <div id="app" className="min-h-screen relative bg-black" style={{ zIndex: 1, position: 'relative' }}>
+    <div id="app" className="min-h-screen relative bg-gray-50 dark:bg-gray-900" style={{ zIndex: 1, position: 'relative' }}>
         <MigrationNavbar 
           currentLang={currentLang} 
           onLanguageChange={handleLanguageChange} 
           translations={translations}
         />
         
-        <main className="relative bg-black" style={{ position: 'relative' }}>
+        <main className="relative bg-gray-50 dark:bg-gray-900" style={{ position: 'relative' }}>
           <MigrationHeroSection cityName={cityName} cityInfo={cityInfo} translations={translations} />
           <MigrationWhenSection translations={translations} />
           <MigrationWhatSection translations={translations} />

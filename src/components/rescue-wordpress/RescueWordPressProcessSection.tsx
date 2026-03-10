@@ -37,11 +37,11 @@ const RescueWordPressProcessSection: React.FC<RescueWordPressProcessSectionProps
     <section id="process" className="py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {getTranslation(translations, 'rescueWordPressLanding.sections.process.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6" aria-hidden="true"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             {getTranslation(translations, 'rescueWordPressLanding.process.intro')}
           </p>
         </header>
@@ -50,7 +50,7 @@ const RescueWordPressProcessSection: React.FC<RescueWordPressProcessSectionProps
           {steps.map((step, index) => (
             <div
               key={index}
-              className="bg-black/40 backdrop-blur-md rounded-xl p-8 border border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 scroll-fade-in"
+              className="bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-xl p-8 border border-gray-200 dark:border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 scroll-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-start gap-4">
@@ -58,10 +58,10 @@ const RescueWordPressProcessSection: React.FC<RescueWordPressProcessSectionProps
                   {step.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-3">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-gray-300">
+                  <p className="text-gray-600 dark:text-gray-300">
                     {step.description}
                   </p>
                 </div>

@@ -12,7 +12,7 @@ const MigrationCTASection: React.FC<MigrationCTASectionProps> = ({ translations 
       <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-900/20 blur-[120px] rounded-full pointer-events-none z-0"></div>
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h2 className="text-4xl font-bold text-white mb-6 text-center">
+        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6 text-center">
           {getTranslation(translations, 'migrationLanding.cta.title')}
         </h2>
         

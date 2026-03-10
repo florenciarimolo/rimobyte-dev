@@ -43,7 +43,7 @@ const RescueWordPressFAQSection: React.FC<RescueWordPressFAQSectionProps> = ({ t
     <section id="faq" className="py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {getTranslation(translations, 'rescueWordPressLanding.sections.faq.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto" aria-hidden="true"></div>
@@ -53,15 +53,15 @@ const RescueWordPressFAQSection: React.FC<RescueWordPressFAQSectionProps> = ({ t
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-black/40 backdrop-blur-md rounded-xl border border-gray-800 overflow-hidden scroll-fade-in"
+              className="bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden scroll-fade-in"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-900/50 transition-colors duration-200"
+                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-100 dark:hover:bg-gray-900/50 transition-colors duration-200"
                 aria-expanded={openIndex === index}
               >
-                <h3 className="text-lg font-semibold text-white pr-4">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white pr-4">
                   {faq.question}
                 </h3>
                 <svg
@@ -82,7 +82,7 @@ const RescueWordPressFAQSection: React.FC<RescueWordPressFAQSectionProps> = ({ t
                 }`}
               >
                 <div className="px-6 pb-6">
-                  <p className="text-gray-300">
+                  <p className="text-gray-600 dark:text-gray-300">
                     {faq.answer}
                   </p>
                 </div>

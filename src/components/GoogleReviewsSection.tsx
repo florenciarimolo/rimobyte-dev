@@ -138,22 +138,22 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
 
   const containerClasses =
     variant === 'dark'
-      ? 'relative py-16 bg-black'
+      ? 'relative py-16 bg-gray-50 dark:bg-gray-900'
       : 'relative py-16 bg-gray-50 dark:bg-gray-900';
 
   const titleClasses =
     variant === 'dark'
-      ? 'text-3xl md:text-4xl font-bold text-white text-center'
+      ? 'text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center'
       : 'text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center';
 
   const subtitleClasses =
     variant === 'dark'
-      ? 'mt-3 text-base md:text-lg text-gray-300 text-center max-w-2xl mx-auto'
+      ? 'mt-3 text-base md:text-lg text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto'
       : 'mt-3 text-base md:text-lg text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto';
 
   const cardClasses =
     variant === 'dark'
-      ? 'rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 flex flex-col h-full'
+      ? 'rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 backdrop-blur-sm p-5 flex flex-col h-full'
       : 'rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-gray-900/60 backdrop-blur-sm p-5 flex flex-col h-full';
 
   const ratingColorClasses =

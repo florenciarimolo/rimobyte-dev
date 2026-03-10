@@ -36,8 +36,8 @@ const WordPressLanguageSwitcher: React.FC<WordPressLanguageSwitcherProps> = ({ c
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`language-switcher relative flex items-center space-x-2 px-3 py-2 bg-black/70 backdrop-blur-md text-white rounded-xl border border-gray-800 hover:bg-black/60 transition-all duration-200 focus:outline-none ${
-          isOpen ? 'text-white' : ''
+        className={`language-switcher relative flex items-center space-x-2 px-3 py-2 bg-white/80 dark:bg-black/70 backdrop-blur-md text-gray-900 dark:text-white rounded-xl border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-black/60 transition-all duration-200 focus:outline-none ${
+          isOpen ? 'text-gray-900 dark:text-white' : ''
         }`}
         aria-label="Select language"
       >
@@ -54,7 +54,7 @@ const WordPressLanguageSwitcher: React.FC<WordPressLanguageSwitcherProps> = ({ c
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 overflow-hidden bg-black/70 backdrop-blur-md rounded-xl shadow-lg border border-gray-800 z-50">
+        <div className="absolute right-0 mt-2 w-40 overflow-hidden bg-white/80 dark:bg-black/70 backdrop-blur-md rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 z-50">
           {languages.map((language) => (
             <button
               key={language.code}
@@ -62,8 +62,8 @@ const WordPressLanguageSwitcher: React.FC<WordPressLanguageSwitcherProps> = ({ c
                 onLanguageChange(language.code as typeof LANG.ENGLISH | typeof LANG.SPANISH);
                 setIsOpen(false);
               }}
-              className={`w-full flex items-center space-x-3 px-4 py-3 text-left text-white hover:bg-black/60 transition-colors duration-200 ${
-                currentLang === language.code ? 'bg-black/60' : ''
+              className={`w-full flex items-center space-x-3 px-4 py-3 text-left text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-black/60 transition-colors duration-200 ${
+                currentLang === language.code ? 'bg-white/80 dark:bg-black/60' : ''
               }`}
             >
               <language.flag />

@@ -72,7 +72,7 @@ const WordPressProcessSection: React.FC<WordPressProcessSectionProps> = ({ trans
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-lg text-gray-300 dark:text-gray-200 font-medium">
+          <p className="text-lg text-gray-600 dark:text-gray-200 font-medium">
             {getTranslation(translations, 'wordpressLanding.process.pricing')}
           </p>
         </div>

@@ -32,15 +32,15 @@ const RescueWordPressHeroSection: React.FC<RescueWordPressHeroSectionProps> = ({
           URGENTE - Respuesta en 2 horas
         </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight animate-fade-in-up drop-shadow-lg">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight animate-fade-in-up drop-shadow-lg">
           {getTranslation(translations, 'rescueWordPressLanding.hero.title')}
         </h1>
 
-        <p className="text-xl md:text-2xl text-gray-300 mb-6 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
           {getTranslation(translations, 'rescueWordPressLanding.hero.subtitle')}
         </p>
 
-        <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <p className="text-lg text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           {getTranslation(translations, 'rescueWordPressLanding.hero.extraText')}
         </p>
 
@@ -58,14 +58,14 @@ const RescueWordPressHeroSection: React.FC<RescueWordPressHeroSectionProps> = ({
 
           <button
             onClick={scrollToProcess}
-            className="px-8 py-4 bg-transparent border-2 border-gray-700 text-white rounded-lg font-semibold text-lg hover:border-blue-500 hover:bg-blue-500/10 transform hover:scale-105 transition-all duration-300"
+            className="px-8 py-4 bg-transparent border-2 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg font-semibold text-lg hover:border-blue-500 hover:bg-blue-500/10 transform hover:scale-105 transition-all duration-300"
           >
             {getTranslation(translations, 'rescueWordPressLanding.hero.cta.viewProcess')}
           </button>
         </div>
 
         {/* Trust indicators */}
-        <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-400 text-sm animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-500 dark:text-gray-400 text-sm animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           <div className="flex items-center gap-2">
             <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />

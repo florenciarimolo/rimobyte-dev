@@ -101,7 +101,7 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
       <div 
         data-us-project="p7Ff6pfTrb5Gs59C7nLC" 
         id="hero-unicorn-bg"
-        className="absolute inset-0 z-0 pointer-events-none bg-black/20"
+        className="absolute inset-0 z-0 pointer-events-none bg-gray-100 dark:bg-black/20"
         style={{ 
           opacity: 0.9,
           width: '100%',
@@ -113,21 +113,24 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
         }}
       ></div>
       
+      {/* Light-mode overlay to keep dark animation readable with dark text */}
+      <div className="absolute inset-0 z-[1] bg-white/80 dark:bg-transparent pointer-events-none" aria-hidden="true"></div>
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight animate-fade-in-up drop-shadow-lg text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight animate-fade-in-up drop-shadow-lg text-center">
             {getTranslation(translations, 'wordpressLanding.hero.title')}
           </h1>
           
-          <p className="text-lg text-gray-200 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             {getTranslation(translations, 'wordpressLanding.hero.subtitle')}
           </p>
 
-          <p className="text-base text-gray-300 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.12s' }}>
+          <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.12s' }}>
             {getTranslation(translations, 'wordpressLanding.hero.extraText')}
           </p>
 
-          <p className="text-sm text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+          <p className="text-sm text-gray-500 dark:text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
             {localSeoText}
           </p>
 
@@ -143,7 +146,7 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
             </a>
             <a
               href="#projects"
-              className="group flex items-center justify-center gap-2 px-8 py-3.5 text-base font-medium text-white bg-transparent border border-blue-500 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5),0_0_10px_rgba(168,85,247,0.3),inset_0_0_10px_rgba(59,130,246,0.2)] hover:bg-blue-500/10 hover:border-blue-400 hover:shadow-[0_0_35px_rgba(59,130,246,0.6),0_0_20px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(59,130,246,0.4)] hover:scale-[1.02] transition-all duration-300"
+              className="group flex items-center justify-center gap-2 px-8 py-3.5 text-base font-medium text-blue-600 dark:text-white bg-transparent border border-blue-500 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5),0_0_10px_rgba(168,85,247,0.3),inset_0_0_10px_rgba(59,130,246,0.2)] hover:bg-blue-500/10 hover:border-blue-400 hover:shadow-[0_0_35px_rgba(59,130,246,0.6),0_0_20px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(59,130,246,0.4)] hover:scale-[1.02] transition-all duration-300"
             >
               {getTranslation(translations, 'wordpressLanding.hero.cta.viewProjects')}
             </a>
@@ -159,7 +162,7 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
                     srcSet="/assets/images/projects/rocolegal-400w.webp 400w, /assets/images/projects/rocolegal-664w.webp 664w"
                     sizes="(max-width: 640px) 100px, (max-width: 768px) 200px, (max-width: 1024px) 240px, 280px"
                     alt="Roco Legal - WordPress Project"
-                    className="w-full max-w-[100px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] rounded-lg shadow-xl border border-gray-800/50"
+                    className="w-full max-w-[100px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] rounded-lg shadow-xl border border-gray-200 dark:border-gray-800/50"
                     loading="lazy"
                   />
                 </div>
@@ -171,7 +174,7 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
                     srcSet="/assets/images/projects/upnext-400w.webp 400w, /assets/images/projects/upnext-664w.webp 664w"
                     sizes="(max-width: 640px) 120px, (max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
                     alt="UpNext - WordPress Project"
-                    className="w-full max-w-[120px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px] rounded-lg shadow-xl border border-gray-800/50"
+                    className="w-full max-w-[120px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px] rounded-lg shadow-xl border border-gray-200 dark:border-gray-800/50"
                     loading="lazy"
                   />
                 </div>
@@ -183,7 +186,7 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
                     srcSet="/assets/images/projects/reset7-400w.webp 400w, /assets/images/projects/reset7-664w.webp 664w"
                     sizes="(max-width: 640px) 100px, (max-width: 768px) 200px, (max-width: 1024px) 240px, 280px"
                     alt="RESET7 - WordPress Project"
-                    className="w-full max-w-[100px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] rounded-lg shadow-xl border border-gray-800/50"
+                    className="w-full max-w-[100px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-[280px] rounded-lg shadow-xl border border-gray-200 dark:border-gray-800/50"
                     loading="lazy"
                   />
                 </div>

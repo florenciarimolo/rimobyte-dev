@@ -30,7 +30,7 @@ const MigrationFAQSection: React.FC<MigrationFAQSectionProps> = ({ translations,
     <section id="faq" className="py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
             {getTranslation(translations, 'migrationLanding.faq.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto" aria-hidden="true"></div>
@@ -40,16 +40,16 @@ const MigrationFAQSection: React.FC<MigrationFAQSectionProps> = ({ translations,
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-black/60 backdrop-blur-md rounded-xl p-6 border border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+              className="bg-white/80 dark:bg-black/60 backdrop-blur-md rounded-xl p-6 border border-gray-200 dark:border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
               itemScope
               itemType="https://schema.org/Question"
             >
-              <h3 className="text-lg font-semibold text-white mb-3 flex items-start gap-2" itemProp="name">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-start gap-2" itemProp="name">
                 <span className="text-purple-500 flex-shrink-0">{currentLang === LANG.SPANISH ? 'P:' : 'Q:'}</span>
                 <span>{faq.question}</span>
               </h3>
               <div itemScope itemType="https://schema.org/Answer">
-                <p className="text-gray-300 leading-relaxed pl-6" itemProp="text">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed pl-6" itemProp="text">
                   {faq.answer}
                 </p>
               </div>
@@ -58,7 +58,7 @@ const MigrationFAQSection: React.FC<MigrationFAQSectionProps> = ({ translations,
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-lg text-gray-300 dark:text-gray-200 leading-relaxed">
+          <p className="text-lg text-gray-600 dark:text-gray-200 leading-relaxed">
             {getTranslation(translations, 'migrationLanding.faq.extraText')}
           </p>
         </div>

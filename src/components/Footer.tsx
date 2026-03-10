@@ -40,33 +40,33 @@ const Footer: React.FC<FooterProps> = ({ translations, isLanding = false, curren
   const isDark = isLanding;
 
   const headingClasses = isDark
-    ? 'text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3'
+    ? 'text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3'
     : 'text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3';
 
   const linkClasses = isDark
-    ? 'text-sm text-gray-300 hover:text-white transition-colors duration-150'
+    ? 'text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-150'
     : 'text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-150';
 
   const mutedClasses = isDark
-    ? 'text-sm text-gray-400'
+    ? 'text-sm text-gray-500 dark:text-gray-400'
     : 'text-sm text-gray-500 dark:text-gray-400';
 
   const socialClasses = isDark
-    ? 'text-gray-400 hover:text-white transition-colors duration-200'
+    ? 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-colors duration-200'
     : 'text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-white transition-colors duration-200';
 
   return (
     <footer className={isDark
-      ? 'bg-black/95 backdrop-blur-md border-t border-gray-800'
+      ? 'bg-white/95 dark:bg-black/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-800'
       : 'bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800'
     }>
       {/* Mini CTA bar */}
       <div className={isDark
-        ? 'border-b border-gray-800'
+        ? 'border-b border-gray-200 dark:border-gray-800'
         : 'border-b border-gray-200 dark:border-gray-800'
       }>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className={`text-base font-medium ${isDark ? 'text-white' : 'text-gray-900 dark:text-white'}`}>
+          <p className={`text-base font-medium ${isDark ? 'text-gray-900 dark:text-white' : 'text-gray-900 dark:text-white'}`}>
             {getTranslation(translations, 'footer.cta')}
           </p>
           <a
@@ -87,7 +87,7 @@ const Footer: React.FC<FooterProps> = ({ translations, isLanding = false, curren
           <div className="col-span-2 md:col-span-1">
             <a href={`${langPrefix}/`} className="flex items-center gap-2 mb-3 group">
               <img src="/favicon-96x96.png" alt="RimoByte" width={28} height={28} className="w-7 h-7" />
-              <span className={`font-semibold text-lg ${isDark ? 'text-white' : 'text-gray-900 dark:text-white'}`}>
+              <span className={`font-semibold text-lg ${isDark ? 'text-gray-900 dark:text-white' : 'text-gray-900 dark:text-white'}`}>
                 RimoByte
               </span>
             </a>
@@ -166,7 +166,7 @@ const Footer: React.FC<FooterProps> = ({ translations, isLanding = false, curren
 
       {/* Copyright bar */}
       <div className={isDark
-        ? 'border-t border-gray-800'
+        ? 'border-t border-gray-200 dark:border-gray-800'
         : 'border-t border-gray-200 dark:border-gray-800'
       }>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">

@@ -169,14 +169,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
 
   return (
     <div className={isLanding 
-      ? "bg-black/60 backdrop-blur-md rounded-xl p-8 border border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
+      ? "bg-white/80 dark:bg-black/60 backdrop-blur-md rounded-xl p-8 border border-gray-200 dark:border-gray-800 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
       : "bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 shadow-lg transition-all duration-300"
     }>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="name" className={isLanding 
-              ? "block text-sm font-medium text-gray-300 mb-2"
+              ? "block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2"
               : "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
             }>
               {t.name}
@@ -190,7 +190,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
               placeholder={t.placeholder.name}
               required
               className={isLanding
-                ? "w-full px-4 py-3 bg-black/50 backdrop-blur-sm border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                ? "w-full px-4 py-3 bg-white dark:bg-black/50 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
                 : "w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
               }
             />
@@ -198,7 +198,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
           
           <div>
             <label htmlFor="email" className={isLanding 
-              ? "block text-sm font-medium text-gray-300 mb-2"
+              ? "block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2"
               : "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
             }>
               {t.email}
@@ -212,7 +212,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
               placeholder={t.placeholder.email}
               required
               className={isLanding
-                ? "w-full px-4 py-3 bg-black/50 backdrop-blur-sm border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                ? "w-full px-4 py-3 bg-white dark:bg-black/50 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
                 : "w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
               }
             />
@@ -221,7 +221,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
 
         <div>
           <label htmlFor="subject" className={isLanding 
-            ? "block text-sm font-medium text-gray-300 mb-2"
+            ? "block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2"
             : "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           }>
             {t.subject}
@@ -235,7 +235,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
             placeholder={t.placeholder.subject}
             required
             className={isLanding
-              ? "w-full px-4 py-3 bg-black/50 backdrop-blur-sm border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+              ? "w-full px-4 py-3 bg-white dark:bg-black/50 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
               : "w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
             }
           />
@@ -243,7 +243,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
 
         <div>
           <label htmlFor="message" className={isLanding 
-            ? "block text-sm font-medium text-gray-300 mb-2"
+            ? "block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2"
             : "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           }>
             {t.message}
@@ -257,7 +257,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
             required
             rows={6}
             className={isLanding
-              ? "w-full px-4 py-3 bg-black/50 backdrop-blur-sm border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
+              ? "w-full px-4 py-3 bg-white dark:bg-black/50 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
               : "w-full px-4 py-3 dark:bg-gray-700 bg-gray-50 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
             }
           />

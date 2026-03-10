@@ -87,41 +87,41 @@ const faqSchema = {
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <header class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Desarrollo Tienda Online
         </h1>
         <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Tienda online profesional con WooCommerce o Shopify. Todo listo para vender desde el día 1.
         </p>
       </header>
 
       <section class="mb-20">
-        <h2 class="text-3xl font-bold text-white text-center mb-12">WooCommerce vs Shopify</h2>
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">WooCommerce vs Shopify</h2>
         <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-black/40 backdrop-blur-md rounded-xl p-8 border border-gray-800 hover:border-blue-500 transition-all duration-300">
+          <div class="bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-xl p-8 border border-gray-200 dark:border-gray-800 hover:border-blue-500 transition-all duration-300">
             <div class="flex items-center gap-3 mb-6">
               <img src={woocommerceSvg.src} alt="WooCommerce" width="48" height="29" class="flex-shrink-0" />
-              <h3 class="text-2xl font-bold text-white">WooCommerce</h3>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white">WooCommerce</h3>
             </div>
-            <p class="text-gray-300 mb-6">WordPress + WooCommerce. Máxima flexibilidad y personalización.</p>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">WordPress + WooCommerce. Máxima flexibilidad y personalización.</p>
             <div class="space-y-3 mb-6">
               {['✓ Control total del código', '✓ Sin comisiones por venta', '✓ Personalización ilimitada', '✓ Mejor para contenido+tienda', '✓ Hosting propio'].map((item) => (
-                <div class="text-gray-300">{item}</div>
+                <div class="text-gray-600 dark:text-gray-300">{item}</div>
               ))}
             </div>
             <div class="text-blue-400 font-bold text-xl">Desde 1.200€</div>
           </div>
 
-          <div class="bg-black/40 backdrop-blur-md rounded-xl p-8 border border-gray-800 hover:border-purple-500 transition-all duration-300">
+          <div class="bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-xl p-8 border border-gray-200 dark:border-gray-800 hover:border-purple-500 transition-all duration-300">
             <div class="flex items-center gap-3 mb-6">
               <img src={shopifySvg.src} alt="Shopify" width="42" height="48" class="flex-shrink-0" />
-              <h3 class="text-2xl font-bold text-white">Shopify</h3>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Shopify</h3>
             </div>
-            <p class="text-gray-300 mb-6">Plataforma todo-en-uno. Fácil de usar y mantener.</p>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">Plataforma todo-en-uno. Fácil de usar y mantener.</p>
             <div class="space-y-3 mb-6">
               {['✓ Muy fácil de gestionar', '✓ Actualizaciones automáticas', '✓ Hosting incluido', '✓ Apps para todo', '✓ Soporte 24/7'].map((item) => (
-                <div class="text-gray-300">{item}</div>
+                <div class="text-gray-600 dark:text-gray-300">{item}</div>
               ))}
             </div>
             <div class="text-purple-400 font-bold text-xl">Desde 900€ + cuota Shopify</div>
@@ -130,7 +130,7 @@ const faqSchema = {
       </section>
 
       <section class="mb-20">
-        <h2 class="text-3xl font-bold text-white text-center mb-12">Funcionalidades Incluidas</h2>
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">Funcionalidades Incluidas</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             { title: 'Catálogo de productos', desc: 'Productos ilimitados con imágenes, variantes y stock', icon: '📦' },
@@ -140,17 +140,17 @@ const faqSchema = {
             { title: 'Panel de administración', desc: 'Gestiona pedidos, clientes y productos', icon: '⚙️' },
             { title: 'SEO optimizado', desc: 'Estructura SEO-friendly para Google', icon: '📈' }
           ].map((feature) => (
-            <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-800 hover:border-blue-500 transition-all duration-300">
+            <div class="bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-200 dark:border-gray-800 hover:border-blue-500 transition-all duration-300">
               <div class="text-4xl mb-4">{feature.icon}</div>
-              <h3 class="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-              <p class="text-gray-300 text-sm">{feature.desc}</p>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">{feature.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section class="mb-16">
-        <h2 class="text-3xl font-bold text-white text-center mb-12">Proceso de Desarrollo</h2>
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">Proceso de Desarrollo</h2>
         <div class="grid md:grid-cols-4 gap-4">
           {[
             { num: '1', title: 'Planificación', desc: 'Definimos catálogo, pasarelas y funcionalidades' },
@@ -158,27 +158,27 @@ const faqSchema = {
             { num: '3', title: 'Desarrollo', desc: 'Implementación y configuración completa' },
             { num: '4', title: 'Lanzamiento', desc: 'Formación, pruebas y publicación' }
           ].map((step) => (
-            <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-800 text-center">
+            <div class="bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-200 dark:border-gray-800 text-center">
               <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4">
                 {step.num}
               </div>
-              <h3 class="text-lg font-semibold text-white mb-2">{step.title}</h3>
-              <p class="text-gray-400 text-sm">{step.desc}</p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">{step.title}</h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm">{step.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section class="text-center">
-          <h2 class="text-3xl font-bold text-white mb-4 pt-12">¿Listo para vender online?</h2>
-          <p class="text-xl text-gray-300 mb-8">Cuéntame tu proyecto y te ayudo a elegir la mejor plataforma</p>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 pt-12">¿Listo para vender online?</h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">Cuéntame tu proyecto y te ayudo a elegir la mejor plataforma</p>
           <a 
             href="https://wa.me/34684713743?text=Hola,%20quiero%20crear%20una%20tienda%20online"
             class="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-bold text-xl hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-2xl"
           >
             Hablar sobre mi Tienda Online
           </a>
-          <div class="mt-6 text-gray-400 text-sm">
+          <div class="mt-6 text-gray-500 dark:text-gray-400 text-sm">
             <p>Primera consulta gratuita • Presupuesto en 24h • Sin compromiso</p>
           </div>
       </section>

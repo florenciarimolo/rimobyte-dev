@@ -84,11 +84,11 @@ const faqSchema = {
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <header class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Optimización Velocidad WordPress
         </h1>
         <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Acelera tu WordPress. Mejora mínima de 30 puntos en PageSpeed garantizada. Web rápida = mejor SEO y más conversiones.
         </p>
       </header>
@@ -100,11 +100,11 @@ const faqSchema = {
             { metric: 'Tiempo Carga', before: '5.8s', after: '1.2s', color: 'purple' },
             { metric: 'SEO Ranking', before: '↓', after: '↑', color: 'green' }
           ].map((stat) => (
-            <div class="bg-black/40 backdrop-blur-md rounded-xl p-8 border border-gray-800 text-center">
-              <h3 class="text-lg text-gray-400 mb-4">{stat.metric}</h3>
+            <div class="bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-xl p-8 border border-gray-200 dark:border-gray-800 text-center">
+              <h3 class="text-lg text-gray-500 dark:text-gray-400 mb-4">{stat.metric}</h3>
               <div class="flex items-center justify-center gap-4 mb-2">
                 <span class="text-2xl font-bold text-red-400">{stat.before}</span>
-                <svg class="w-6 h-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-6 h-6 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
                 <span class={`text-3xl font-bold text-${stat.color}-400`}>{stat.after}</span>
@@ -116,7 +116,7 @@ const faqSchema = {
       </section>
 
       <section class="mb-20">
-        <h2 class="text-3xl font-bold text-white text-center mb-12">Por qué la velocidad importa</h2>
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">Por qué la velocidad importa</h2>
         <div class="grid md:grid-cols-2 gap-6">
           {[
             { title: 'Mejor posicionamiento SEO', desc: 'Google prioriza webs rápidas en los resultados de búsqueda', icon: '🔍' },
@@ -124,12 +124,12 @@ const faqSchema = {
             { title: 'Mejor experiencia usuario', desc: 'Visitantes felices = más tiempo en tu web', icon: '😊' },
             { title: 'Menor tasa de rebote', desc: '53% de usuarios abandonan si tarda +3 segundos', icon: '⚡' }
           ].map((reason) => (
-            <div class="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-800 hover:border-blue-500 transition-all duration-300">
+            <div class="bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-200 dark:border-gray-800 hover:border-blue-500 transition-all duration-300">
               <div class="flex items-start gap-4">
                 <div class="text-4xl">{reason.icon}</div>
                 <div>
-                  <h3 class="text-xl font-semibold text-white mb-2">{reason.title}</h3>
-                  <p class="text-gray-300">{reason.desc}</p>
+                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{reason.title}</h3>
+                  <p class="text-gray-600 dark:text-gray-300">{reason.desc}</p>
                 </div>
               </div>
             </div>
@@ -138,7 +138,7 @@ const faqSchema = {
       </section>
 
       <section class="mb-20">
-        <h2 class="text-3xl font-bold text-white text-center mb-12">Qué optimizo</h2>
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">Qué optimizo</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             'Compresión de imágenes (WebP)',
@@ -151,18 +151,18 @@ const faqSchema = {
             'Servidor response time',
             'Core Web Vitals'
           ].map((item) => (
-            <div class="bg-black/40 backdrop-blur-md rounded-xl p-4 border border-gray-800 flex items-center gap-3">
+            <div class="bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-xl p-4 border border-gray-200 dark:border-gray-800 flex items-center gap-3">
               <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              <span class="text-gray-300">{item}</span>
+              <span class="text-gray-600 dark:text-gray-300">{item}</span>
             </div>
           ))}
         </div>
       </section>
 
       <section class="mb-16">
-        <h2 class="text-3xl font-bold text-white text-center mb-12">Proceso de Optimización</h2>
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">Proceso de Optimización</h2>
           <div class="space-y-6">
             {[
               { step: '1', title: 'Auditoría inicial', desc: 'Test PageSpeed completo y análisis de problemas', time: '1h' },
@@ -177,10 +177,10 @@ const faqSchema = {
                 </div>
                 <div class="flex-1">
                   <div class="flex items-center justify-between mb-1">
-                    <h3 class="text-lg font-semibold text-white">{step.title}</h3>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{step.title}</h3>
                     <span class="text-sm text-gray-500">{step.time}</span>
                   </div>
-                  <p class="text-gray-300">{step.desc}</p>
+                  <p class="text-gray-600 dark:text-gray-300">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -188,18 +188,18 @@ const faqSchema = {
       </section>
 
       <section class="mb-16">
-          <h2 class="text-3xl font-bold text-white text-center mb-6">Precio</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-6">Precio</h2>
           <div class="text-center mb-6">
             <div class="text-4xl font-bold text-blue-400 mb-2">Desde 300€</div>
-            <p class="text-gray-300">Precio fijo. Sin sorpresas.</p>
+            <p class="text-gray-600 dark:text-gray-300">Precio fijo. Sin sorpresas.</p>
           </div>
           <div class="bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-lg p-6 border border-green-500/30 mb-6">
             <div class="text-center">
               <div class="text-2xl font-bold text-green-400 mb-2">💯 Garantía</div>
-              <p class="text-gray-300">Si no mejoro mínimo 30 puntos en PageSpeed, te devuelvo el dinero</p>
+              <p class="text-gray-600 dark:text-gray-300">Si no mejoro mínimo 30 puntos en PageSpeed, te devuelvo el dinero</p>
             </div>
           </div>
-          <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-400">
+          <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-500 dark:text-gray-400">
             <div>✓ Auditoría PageSpeed antes/después</div>
             <div>✓ Backup completo incluido</div>
             <div>✓ Informe detallado de mejoras</div>
@@ -208,8 +208,8 @@ const faqSchema = {
       </section>
 
       <section class="text-center">
-          <h2 class="text-3xl font-bold text-white mb-4 pt-12">¿Tu WordPress va lento?</h2>
-          <p class="text-xl text-gray-300 mb-8">Te hago una auditoría gratuita PageSpeed ahora mismo</p>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 pt-12">¿Tu WordPress va lento?</h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">Te hago una auditoría gratuita PageSpeed ahora mismo</p>
           <a 
             href="https://wa.me/34684713743?text=Hola,%20mi%20WordPress%20va%20lento,%20necesito%20optimización"
             class="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-bold text-xl hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-2xl"

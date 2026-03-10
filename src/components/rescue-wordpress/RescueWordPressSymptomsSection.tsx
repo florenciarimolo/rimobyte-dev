@@ -43,11 +43,11 @@ const RescueWordPressSymptomsSection: React.FC<RescueWordPressSymptomsSectionPro
     <section id="symptoms" className="py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {getTranslation(translations, 'rescueWordPressLanding.sections.symptoms.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6" aria-hidden="true"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             {getTranslation(translations, 'rescueWordPressLanding.symptoms.intro')}
           </p>
         </header>
@@ -56,16 +56,16 @@ const RescueWordPressSymptomsSection: React.FC<RescueWordPressSymptomsSectionPro
           {symptoms.map((symptom, index) => (
             <div
               key={index}
-              className="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-800 hover:border-red-500 hover:shadow-lg hover:shadow-red-500/20 hover:-translate-y-1 transition-all duration-300 scroll-fade-in"
+              className="bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-xl p-6 border border-gray-200 dark:border-gray-800 hover:border-red-500 hover:shadow-lg hover:shadow-red-500/20 hover:-translate-y-1 transition-all duration-300 scroll-fade-in"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg flex items-center justify-center text-white mb-4">
                 {symptom.icon}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                 {symptom.title}
               </h3>
-              <p className="text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300">
                 {symptom.description}
               </p>
             </div>
