@@ -1,8 +1,8 @@
 {
   "name": "rimobyte-portfolio",
   "type": "module",
-  "version": "1.2.6",
-  "description": "RimoByte - Full Stack Developer Portfolio",
+  "version": "1.3.0",
+  "description": "RimoByte - Freelance Web Developer in Spain",
   "author": "Florencia Rímolo",
   "license": "MIT",
   "scripts": {
