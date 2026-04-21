@@ -15,7 +15,7 @@ interface FeaturedProjectsSectionProps {
 }
 
 const DEFAULTS = {
-  projectIds: ['rocolegal', 'vilaLancisV2', 'decos', 'fenix'],
+  projectIds: ['rocolegal', 'vilaLancisV2', 'decos', 'fenix', 'vibrantskin', 'ariadnaVilalta'],
   titleKey: 'sections.featuredProjects.title',
   subtitleKey: 'sections.featuredProjects.subtitle',
   labelsBaseKey: 'sections.featuredProjects.labels',

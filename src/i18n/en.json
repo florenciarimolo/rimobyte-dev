@@ -112,6 +112,16 @@
           "challenge": "The mentoring programme needed a website that conveyed authority, explained the value proposition, and captured leads organically.",
           "solution": "WordPress site with conversion-oriented structure, SEO work, and Systeme.io integration for lead capture.",
           "result": "A website that clearly communicates the offer, improves search visibility, and channels visitors into the programme."
+        },
+        "vibrantskin": {
+          "challenge": "The brand needed a polished e-commerce experience for microbiome-friendly skincare and supplements, with clear product storytelling and performance that supports conversions and international orders.",
+          "solution": "Built a clean Shopify store with custom Liquid sections, structured collections and navigation, mobile-first UX, and technical SEO plus optimized imagery.",
+          "result": "A fast, conversion-focused store that presents the line clearly, reinforces the science-led positioning, and supports shipping and merchandising without friction."
+        },
+        "ariadnaVilalta": {
+          "challenge": "An international cyberpsychology expert needed a credible site that explains a complex field—neurotechnology, ethics, and mental health—and supports speaking, media, and a book launch.",
+          "solution": "WordPress site with a clear narrative: pillars, talk topics, Q&A, and press appearances, structured for SEO and easy scanning on every device.",
+          "result": "Strong expert positioning online: institutions, media, and readers can quickly understand her focus on neurorights and digital mental health, and find ways to collaborate."
         }
       }
     },
@@ -349,7 +359,7 @@
       "category": "services"
     },
     "vilaLancisV2": {
-      "title": "Vila & Lancis (v2) - Tax, Labor and Accounting Advisory",
+      "title": "Vila & Lancis - Tax, Labor and Accounting Advisory",
       "image": "vila-lancis-v2.webp",
       "shortDescription": "Complete WordPress redesign with multilingual support, PageSpeed optimization, and advanced SEO work.",
       "description": "Complete redesign of Vila & Lancis website from scratch with WordPress, improving speed and user experience. Added multilingual support, PageSpeed optimization, SEO work with keyword review and image compression for optimal performance.",
@@ -373,6 +383,15 @@
       "description": "Website for Fénix, a mentoring programme for entrepreneurial and executive mothers who want to integrate motherhood and productive life. Built with WordPress and Elementor, optimized for SEO to drive organic sales and connected to Systeme.io for lead capture and management. Clear structure by programme levels (Despertar, Construcción, Transformación) and conversion-focused CTAs.",
       "link": "https://fenixinternacional360.com",
       "technologies": "WordPress, Elementor, Yoast SEO, Systeme.io",
+      "category": "services"
+    },
+    "ariadnaVilalta": {
+      "title": "Ariadna Vilalta - Cyberpsychology, speaking, and authorship",
+      "image": "ariadna-vilalta.webp",
+      "shortDescription": "Professional site for an international cyberpsychology expert: conferences, research themes, book promotion, and media presence.",
+      "description": "Website for Ariadna Vilalta, cyberpsychologist, speaker, and author, focused on how neurotechnology and artificial intelligence intersect with mental health, ethics, and human rights. Built with WordPress and Elementor, with a structure for pillars, talk topics, Q&A, and press coverage, plus SEO fundamentals so institutions, organizers, and readers can discover her work and book.",
+      "link": "https://ariadnavilalta.com",
+      "technologies": "WordPress, Elementor, Yoast SEO",
       "category": "services"
     }
   },
