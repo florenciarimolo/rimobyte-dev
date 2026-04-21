@@ -63,14 +63,14 @@ export const GET: APIRoute = async ({ request }) => {
     const postDate = post.data.pubDate.toISOString().split('T')[0];
     // Add ES version
     urls.push({
-      loc: `${baseUrl}${LANG_PREFIXES.SPANISH}/blog/${post.slug}`,
+      loc: `${baseUrl}${LANG_PREFIXES.SPANISH}/blog/${post.id}`,
       lastmod: postDate,
       changefreq: 'monthly',
       priority: '0.7'
     });
     // Add EN version
     urls.push({
-      loc: `${baseUrl}${LANG_PREFIXES.ENGLISH}/blog/${post.slug}`,
+      loc: `${baseUrl}${LANG_PREFIXES.ENGLISH}/blog/${post.id}`,
       lastmod: postDate,
       changefreq: 'monthly',
       priority: '0.7'

@@ -18,17 +18,17 @@
     "generate-responsive-images": "node scripts/generate-responsive-images.js"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/react": "^4.4.2",
-    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/check": "^0.9.8",
+    "@astrojs/react": "^5.0.3",
+    "@astrojs/sitemap": "^3.7.2",
     "@astrojs/tailwind": "^6.0.2",
-    "@astrojs/vercel": "^9.0.4",
+    "@astrojs/vercel": "^10.0.4",
     "@fontsource/inter": "^5.2.8",
     "@google-cloud/recaptcha-enterprise": "^6.3.1",
     "@tailwindcss/typography": "^0.5.19",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
-    "astro": "^5.18.0",
+    "astro": "^6.1.8",
     "astro-opengraph-images": "^1.14.3",
     "framer-motion": "^12.26.1",
     "react": "^19.2.0",
@@ -58,5 +58,8 @@
     "type": "git",
     "url": "https://github.com/rimobyte/portfolio"
   },
-  "homepage": "https://rimobyte.com"
+  "homepage": "https://rimobyte.com",
+  "engines": {
+    "node": ">=22"
+  }
 }

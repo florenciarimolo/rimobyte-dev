@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import MainLayout from '@/layouts/MainLayout.astro';
 import BlogNavbar from '@/components/BlogNavbar';
 import Footer from '@/components/Footer';
@@ -9,17 +9,17 @@ import { SITE_URL } from '@/constants';
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post },
   }));
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const locale = LANG.ENGLISH;
 const translations = getI18N({ currentLocale: locale });
-const currentUrl = `${SITE_URL}/en/blog/${post.slug}`;
+const currentUrl = `${SITE_URL}/en/blog/${post.id}`;
 const title = `${post.data.title} | Blog RimoByte`;
 const description = post.data.description;
 const keywords = post.data.tags.join(', ');
