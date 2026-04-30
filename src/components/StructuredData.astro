@@ -2,14 +2,12 @@
 
 export interface Props {
   type: 'person' | 'website' | 'professionalService';
-  locale?: string;
 }
 
-const { type, locale = 'es' } = Astro.props;
+const { type } = Astro.props;
 const siteUrl = 'https://rimobyte.com';
-const isEs = locale === 'es';
 
-let structuredData: any = {};
+let structuredData: Record<string, unknown> = {};
 
 if (type === 'person') {
   structuredData = {
@@ -19,7 +17,7 @@ if (type === 'person') {
     "alternateName": "RimoByte",
     "url": siteUrl,
     "image": `${siteUrl}/assets/images/programadora-web.webp`,
-    "jobTitle": isEs ? "Desarrolladora Web Freelance" : "Freelance Web Developer",
+    "jobTitle": "Desarrolladora Web Freelance",
     "worksFor": {
       "@type": "Organization",
       "name": "RimoByte"
@@ -36,7 +34,7 @@ if (type === 'person') {
       "addressLocality": "Barcelona",
       "addressRegion": "Cataluña"
     },
-    "knowsLanguage": ["es", "en"],
+    "knowsLanguage": ["es"],
     "knowsAbout": [
       "WordPress",
       "WooCommerce",
@@ -59,39 +57,30 @@ if (type === 'person') {
     "@type": "WebSite",
     "name": "RimoByte",
     "url": siteUrl,
-    "description": isEs
-      ? "Desarrolladora web freelance en España. WordPress, tiendas online WooCommerce y aplicaciones web a medida para pymes y autónomos. Precios claros desde 500 €."
-      : "Freelance web developer in Spain. WordPress, WooCommerce online stores and custom web apps for SMBs and freelancers. Clear pricing from €500.",
+    "description":
+      "Desarrolladora web freelance en España. WordPress, tiendas online WooCommerce y aplicaciones web a medida para pymes y autónomos. Precios claros desde 500 €.",
     "author": {
       "@type": "Person",
       "name": "Florencia Rímolo"
     },
-    "inLanguage": isEs ? ["es-ES", "en"] : ["en", "es-ES"]
+    "inLanguage": ["es-ES"]
   };
 } else if (type === 'professionalService') {
-  const services = isEs ? [
+  const services = [
     { name: "Web corporativa WordPress", desc: "Sitios profesionales, rápidos y fáciles de mantener para tu negocio.", price: "800" },
     { name: "Tienda online WooCommerce/Shopify", desc: "E-commerce adaptado a tu negocio con pasarelas de pago y gestión de stock.", price: "1200" },
     { name: "Aplicación web a medida", desc: "Apps con Vue, Nuxt o Astro para proyectos que necesitan más que un CMS.", price: "2500" },
     { name: "Rediseño web", desc: "Moderniza tu web sin perder el posicionamiento SEO que ya tienes.", price: "600" },
     { name: "Optimización de velocidad WordPress", desc: "Mejora el rendimiento de tu WordPress y sube tu nota en PageSpeed.", price: "300" },
     { name: "Mantenimiento web", desc: "Actualizaciones, seguridad y soporte técnico continuo para tu web.", price: "40", unit: "MES" }
-  ] : [
-    { name: "Corporate WordPress Website", desc: "Professional, fast, easy-to-maintain business websites.", price: "800" },
-    { name: "WooCommerce/Shopify Online Store", desc: "E-commerce tailored to your business with payment gateways and stock management.", price: "1200" },
-    { name: "Custom Web Application", desc: "Apps with Vue, Nuxt or Astro for projects that need more than a CMS.", price: "2500" },
-    { name: "Website Redesign", desc: "Modernise your website without losing your SEO rankings.", price: "600" },
-    { name: "WordPress Speed Optimisation", desc: "Improve your WordPress performance and PageSpeed score.", price: "300" },
-    { name: "Website Maintenance", desc: "Updates, security and ongoing technical support for your site.", price: "40", unit: "MONTH" }
   ];
 
   structuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "RimoByte",
-    "description": isEs
-      ? "Desarrolladora web freelance en España. WordPress, tiendas online, rediseño web y aplicaciones a medida para pymes y autónomos. Precio fijo desde 500 €, sin intermediarios."
-      : "Freelance web developer in Spain. WordPress, online stores, website redesign and custom apps for SMBs and freelancers. Fixed pricing from €500, no intermediaries.",
+    "description":
+      "Desarrolladora web freelance en España. WordPress, tiendas online, rediseño web y aplicaciones a medida para pymes y autónomos. Precio fijo desde 500 €, sin intermediarios.",
     "url": siteUrl,
     "image": `${siteUrl}/assets/images/programadora-web.webp`,
     "telephone": "+34684713743",
@@ -99,7 +88,7 @@ if (type === 'person') {
     "provider": {
       "@type": "Person",
       "name": "Florencia Rímolo",
-      "jobTitle": isEs ? "Desarrolladora Web Freelance" : "Freelance Web Developer",
+      "jobTitle": "Desarrolladora Web Freelance",
       "email": "info@rimobyte.com"
     },
     "address": {
@@ -117,13 +106,11 @@ if (type === 'person') {
       { "@type": "City", "name": "Zaragoza", "addressCountry": "ES" },
       { "@type": "Country", "name": "Spain" }
     ],
-    "serviceType": isEs
-      ? ["Desarrollo WordPress", "Tienda Online WooCommerce", "Desarrollo Web a Medida", "Rediseño Web", "Optimización Velocidad WordPress", "Mantenimiento Web"]
-      : ["WordPress Development", "WooCommerce Online Store", "Custom Web Development", "Website Redesign", "WordPress Speed Optimisation", "Website Maintenance"],
+    "serviceType": ["Desarrollo WordPress", "Tienda Online WooCommerce", "Desarrollo Web a Medida", "Rediseño Web", "Optimización Velocidad WordPress", "Mantenimiento Web"],
     "priceRange": "€€",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": isEs ? "Servicios de Desarrollo Web" : "Web Development Services",
+      "name": "Servicios de Desarrollo Web",
       "itemListElement": services.map((s, i) => ({
         "@type": "Offer",
         "position": i + 1,
@@ -136,7 +123,7 @@ if (type === 'person') {
           "@type": "PriceSpecification",
           "minPrice": s.price,
           "priceCurrency": "EUR",
-          ...((s as any).unit ? { "unitText": (s as any).unit } : {})
+          ...('unit' in s && s.unit ? { unitText: s.unit } : {})
         }
       }))
     }

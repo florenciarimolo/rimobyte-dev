@@ -1,40 +1,36 @@
 import React from 'react';
-import { getTranslation, LANG } from '@/i18n';
+import { getTranslation } from '@/i18n';
 import { WhatsAppIcon, LinkedInIcon, InstagramIcon } from '@/components/icons';
 
 interface FooterProps {
-  translations: any;
+  translations: unknown;
   isLanding?: boolean;
-  currentLang?: typeof LANG.ENGLISH | typeof LANG.SPANISH;
 }
 
-const Footer: React.FC<FooterProps> = ({ translations, isLanding = false, currentLang = LANG.SPANISH }) => {
+const SERVICE_PATHS: Record<string, string> = {
+  wordpressFreelance: '/desarrolladora-wordpress-freelance',
+  wordpressMigration: '/migrar-web-agencia-freelance',
+  wordpressRescue: '/rescate-wordpress-urgente',
+  wordpressRedesign: '/rediseno-web-wordpress',
+  ecommerce: '/desarrollo-tienda-online',
+  speed: '/optimizacion-velocidad-wordpress',
+  vueNuxt: '/desarrollo-vue-nuxt-astro',
+  pricing: '/precios-desarrollo-web',
+};
+
+const Footer: React.FC<FooterProps> = ({ translations, isLanding = false }) => {
   const currentYear = new Date().getFullYear();
   const copyrightText = getTranslation(translations, 'footer.copyright');
   const copyright = copyrightText.replace('{year}', currentYear.toString());
 
-  const langKey: 'es' | 'en' = currentLang === LANG.ENGLISH ? 'en' : 'es';
-  const langPrefix = currentLang === LANG.ENGLISH ? '/en' : '/es';
-
-  const servicesConfig = translations.footer?.services;
+  const servicesConfig = (translations as { footer?: { services?: { title?: string; items?: Record<string, string> } } }).footer?.services;
   const servicesTitle: string | undefined = servicesConfig?.title;
   const serviceLabels: Record<string, string> = servicesConfig?.items || {};
 
-  const allServiceLinks: { id: string; paths: { es?: string; en?: string } }[] = [
-    { id: 'wordpressFreelance', paths: { es: '/es/desarrolladora-wordpress-freelance', en: '/en/desarrolladora-wordpress-freelance' } },
-    { id: 'wordpressMigration', paths: { es: '/es/migrar-web-agencia-freelance', en: '/en/migrar-web-agencia-freelance' } },
-    { id: 'wordpressRescue', paths: { es: '/es/rescate-wordpress-urgente', en: '/en/wordpress-emergency-rescue' } },
-    { id: 'wordpressRedesign', paths: { es: '/es/rediseno-web-wordpress' } },
-    { id: 'ecommerce', paths: { es: '/es/desarrollo-tienda-online' } },
-    { id: 'speed', paths: { es: '/es/optimizacion-velocidad-wordpress' } },
-    { id: 'vueNuxt', paths: { es: '/es/desarrollo-vue-nuxt-astro' } },
-    { id: 'pricing', paths: { es: '/es/precios-desarrollo-web' } },
-  ];
-
   const servicesToShow = servicesTitle
-    ? allServiceLinks
-        .map((service) => ({ id: service.id, href: service.paths[langKey], label: serviceLabels[service.id] }))
-        .filter((item) => item.href && item.label)
+    ? Object.entries(SERVICE_PATHS)
+        .map(([id, href]) => ({ id, href, label: serviceLabels[id] }))
+        .filter((item) => item.label)
     : [];
 
   const isDark = isLanding;
@@ -60,7 +56,6 @@ const Footer: React.FC<FooterProps> = ({ translations, isLanding = false, curren
       ? 'bg-white/95 dark:bg-black/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-800'
       : 'bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800'
     }>
-      {/* Mini CTA bar */}
       <div className={isDark
         ? 'border-b border-gray-200 dark:border-gray-800'
         : 'border-b border-gray-200 dark:border-gray-800'
@@ -70,7 +65,7 @@ const Footer: React.FC<FooterProps> = ({ translations, isLanding = false, curren
             {getTranslation(translations, 'footer.cta')}
           </p>
           <a
-            href={`${langPrefix}/#contact`}
+            href="/#contact"
             className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] transition-all duration-200"
           >
             {getTranslation(translations, 'footer.ctaButton')}
@@ -79,13 +74,11 @@ const Footer: React.FC<FooterProps> = ({ translations, isLanding = false, curren
         </div>
       </div>
 
-      {/* Main footer content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
 
-          {/* Column 1: Brand */}
           <div className="col-span-2 md:col-span-1">
-            <a href={`${langPrefix}/`} className="flex items-center gap-2 mb-3 group">
+            <a href="/" className="flex items-center gap-2 mb-3 group">
               <img src="/favicon-96x96.png" alt="RimoByte" width={28} height={28} className="w-7 h-7" />
               <span className={`font-semibold text-lg ${isDark ? 'text-gray-900 dark:text-white' : 'text-gray-900 dark:text-white'}`}>
                 RimoByte
@@ -107,22 +100,20 @@ const Footer: React.FC<FooterProps> = ({ translations, isLanding = false, curren
             </div>
           </div>
 
-          {/* Column 2: Navigation */}
           <div>
             <h3 className={headingClasses}>
               {getTranslation(translations, 'footer.nav.title')}
             </h3>
             <ul className="space-y-2">
-              <li><a href={`${langPrefix}/#services`} className={linkClasses}>{getTranslation(translations, 'footer.nav.services')}</a></li>
-              <li><a href={`${langPrefix}/#projects`} className={linkClasses}>{getTranslation(translations, 'footer.nav.projects')}</a></li>
-              <li><a href={`${langPrefix}/#process`} className={linkClasses}>{getTranslation(translations, 'footer.nav.process')}</a></li>
-              <li><a href={`${langPrefix}/#about`} className={linkClasses}>{getTranslation(translations, 'footer.nav.about')}</a></li>
-              <li><a href={`${langPrefix}/blog`} className={linkClasses}>{getTranslation(translations, 'footer.nav.blog')}</a></li>
-              <li><a href={`${langPrefix}/precios-desarrollo-web`} className={linkClasses}>{getTranslation(translations, 'footer.nav.pricing')}</a></li>
+              <li><a href="/#services" className={linkClasses}>{getTranslation(translations, 'footer.nav.services')}</a></li>
+              <li><a href="/#projects" className={linkClasses}>{getTranslation(translations, 'footer.nav.projects')}</a></li>
+              <li><a href="/#process" className={linkClasses}>{getTranslation(translations, 'footer.nav.process')}</a></li>
+              <li><a href="/#about" className={linkClasses}>{getTranslation(translations, 'footer.nav.about')}</a></li>
+              <li><a href="/blog" className={linkClasses}>{getTranslation(translations, 'footer.nav.blog')}</a></li>
+              <li><a href="/precios-desarrollo-web" className={linkClasses}>{getTranslation(translations, 'footer.nav.pricing')}</a></li>
             </ul>
           </div>
 
-          {/* Column 3: Services */}
           {servicesToShow.length > 0 && (
             <div>
               <h3 className={headingClasses}>
@@ -138,7 +129,6 @@ const Footer: React.FC<FooterProps> = ({ translations, isLanding = false, curren
             </div>
           )}
 
-          {/* Column 4: Contact */}
           <div>
             <h3 className={headingClasses}>
               {getTranslation(translations, 'footer.contactTitle')}
@@ -164,7 +154,6 @@ const Footer: React.FC<FooterProps> = ({ translations, isLanding = false, curren
         </div>
       </div>
 
-      {/* Copyright bar */}
       <div className={isDark
         ? 'border-t border-gray-200 dark:border-gray-800'
         : 'border-t border-gray-200 dark:border-gray-800'

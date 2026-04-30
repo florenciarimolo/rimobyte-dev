@@ -4,10 +4,7 @@ import LandingBackground from '@/components/LandingBackground.astro';
 import RescueWordPressLandingPage from '@/components/RescueWordPressLandingPage';
 import ServiceLandingNavbar from '@/components/ServiceLandingNavbar.astro';
 import ServiceLandingFooter from '@/components/ServiceLandingFooter.astro';
-import { LANG } from '@/i18n/index';
 import { SITE_URL } from '@/constants';
-
-const locale = LANG.SPANISH;
 const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
 
 const title = "Rescate WordPress Urgente en 24h | Ayuda Inmediata | RimoByte";
@@ -89,7 +86,6 @@ const faqSchema = {
   title={title}
   description={description}
   keywords={keywords}
-  locale={locale}
   canonical={currentUrl}
 >
   <!-- Service Schema -->
@@ -99,7 +95,7 @@ const faqSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   
   <LandingBackground />
-  <ServiceLandingNavbar locale={locale} />
-  <RescueWordPressLandingPage client:only="react" initialLocale={locale} />
-  <ServiceLandingFooter locale={locale} />
+  <ServiceLandingNavbar />
+  <RescueWordPressLandingPage client:only="react" />
+  <ServiceLandingFooter />
 </MainLayout>

@@ -1,28 +1,31 @@
 import React from 'react';
 import ContactForm from './ContactForm';
-import { getTranslation, LANG } from '@/i18n';
+import { getTranslation } from '@/i18n';
 import { MailIcon, WhatsAppIcon } from '@/components/icons';
 
 interface ContactSectionProps {
-  translations: any;
-  currentLang: typeof LANG.ENGLISH | typeof LANG.SPANISH;
+  translations: unknown;
   recaptchaSiteKey?: string;
   isLanding?: boolean;
   landingType?: 'wordpress' | 'migration';
 }
 
-const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLang, recaptchaSiteKey, isLanding = false, landingType }) => {
+const ContactSection: React.FC<ContactSectionProps> = ({ translations, recaptchaSiteKey, isLanding = false, landingType }) => {
+  const t = translations as {
+    migrationLanding?: { contactForm?: { button?: string } };
+    wordpressLanding?: { cta?: { button?: string } };
+  };
   let buttonText: string | undefined;
   if (isLanding) {
-    if (landingType === 'migration' && translations?.migrationLanding?.contactForm?.button) {
-      buttonText = translations.migrationLanding.contactForm.button;
-    } else if (landingType === 'wordpress' && translations?.wordpressLanding?.cta?.button) {
-      buttonText = translations.wordpressLanding.cta.button;
+    if (landingType === 'migration' && t.migrationLanding?.contactForm?.button) {
+      buttonText = t.migrationLanding.contactForm.button;
+    } else if (landingType === 'wordpress' && t.wordpressLanding?.cta?.button) {
+      buttonText = t.wordpressLanding.cta.button;
     } else if (!landingType) {
-      if (translations?.migrationLanding?.contactForm?.button) {
-        buttonText = translations.migrationLanding.contactForm.button;
-      } else if (translations?.wordpressLanding?.cta?.button) {
-        buttonText = translations.wordpressLanding.cta.button;
+      if (t.migrationLanding?.contactForm?.button) {
+        buttonText = t.migrationLanding.contactForm.button;
+      } else if (t.wordpressLanding?.cta?.button) {
+        buttonText = t.wordpressLanding.cta.button;
       }
     }
   }
@@ -84,7 +87,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ translations, currentLa
             </address>
           </div>
 
-          <ContactForm currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} isLanding={isLanding} buttonText={buttonText} />
+          <ContactForm recaptchaSiteKey={recaptchaSiteKey} isLanding={isLanding} buttonText={buttonText} />
         </div>
       </div>
     </section>

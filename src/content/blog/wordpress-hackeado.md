@@ -182,7 +182,7 @@ Configura backups diarios:
 
 Si este proceso te supera o quieres asegurarte al 100%, puedo ayudarte:
 
-**[Servicio de rescate WordPress urgente](/es/rescate-wordpress-urgente)**
+**[Servicio de rescate WordPress urgente](/rescate-wordpress-urgente)**
 - Respuesta en 2 horas
 - Limpieza completa garantizada
 - Hardening de seguridad incluido

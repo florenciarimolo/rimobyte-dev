@@ -134,7 +134,7 @@ Suficiente para 80% de proyectos.
 
 **Precio justo:** €40-80/mes para web normal, €100-150/mes para e-commerce
 
-[Mi servicio de mantenimiento desde €40/mes](/es/precios-desarrollo-web#mantenimiento)
+[Mi servicio de mantenimiento desde €40/mes](/precios-desarrollo-web#mantenimiento)
 
 ### 7. Backups externos (€0-10/mes)
 
@@ -201,7 +201,7 @@ Ofrezco servicio de mantenimiento mensual desde €40/mes:
 - Monitoreo 24/7
 - Soporte por email/WhatsApp
 
-[Ver planes de mantenimiento](/es/precios-desarrollo-web)
+[Ver planes de mantenimiento](/precios-desarrollo-web)
 
 ---
 

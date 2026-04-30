@@ -1,9 +1,8 @@
 import React from 'react';
-import { getTranslation, LANG } from '@/i18n';
+import { getTranslation } from '@/i18n';
 
 interface ServicesSectionProps {
-  translations: any;
-  currentLang?: typeof LANG.ENGLISH | typeof LANG.SPANISH;
+  translations: unknown;
 }
 
 const SERVICE_KEYS = ['corporateWeb', 'ecommerce', 'webApp', 'redesign', 'speed', 'maintenance'] as const;
@@ -29,27 +28,18 @@ const SERVICE_ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-const SERVICE_LINKS_ES: Record<string, string> = {
-  corporateWeb: '/es/desarrolladora-wordpress-freelance',
-  ecommerce: '/es/desarrollo-tienda-online',
-  webApp: '/es/desarrollo-vue-nuxt-astro',
-  redesign: '/es/rediseno-web-wordpress',
-  speed: '/es/optimizacion-velocidad-wordpress',
-  maintenance: '/es/precios-desarrollo-web',
+const SERVICE_LINKS: Record<string, string> = {
+  corporateWeb: '/desarrolladora-wordpress-freelance',
+  ecommerce: '/desarrollo-tienda-online',
+  webApp: '/desarrollo-vue-nuxt-astro',
+  redesign: '/rediseno-web-wordpress',
+  speed: '/optimizacion-velocidad-wordpress',
+  maintenance: '/precios-desarrollo-web',
 };
 
-const SERVICE_LINKS_EN: Record<string, string> = {
-  corporateWeb: '/en/desarrolladora-wordpress-freelance',
-  ecommerce: '/es/desarrollo-tienda-online',
-  webApp: '/es/desarrollo-vue-nuxt-astro',
-  redesign: '/es/rediseno-web-wordpress',
-  speed: '/es/optimizacion-velocidad-wordpress',
-  maintenance: '/es/precios-desarrollo-web',
-};
-
-const ServicesSection: React.FC<ServicesSectionProps> = ({ translations, currentLang = LANG.SPANISH }) => {
-  const links = currentLang === LANG.ENGLISH ? SERVICE_LINKS_EN : SERVICE_LINKS_ES;
-  const pricingLink = currentLang === LANG.ENGLISH ? '/es/precios-desarrollo-web' : '/es/precios-desarrollo-web';
+const ServicesSection: React.FC<ServicesSectionProps> = ({ translations }) => {
+  const links = SERVICE_LINKS;
+  const pricingLink = '/precios-desarrollo-web';
 
   return (
     <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900">

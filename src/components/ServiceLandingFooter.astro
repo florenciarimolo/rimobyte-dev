@@ -1,13 +1,13 @@
 ---
 import Footer from './Footer';
-import { getI18N, LANG } from '@/i18n/index';
+import { getI18N } from '@/i18n/index';
 
 export interface Props {
   locale?: string;
 }
 
-const { locale = 'es' } = Astro.props;
-const translations = getI18N({ currentLocale: locale as typeof LANG.SPANISH | typeof LANG.ENGLISH });
+const { locale: _locale = 'es' } = Astro.props;
+const translations = getI18N();
 ---
 
-<Footer client:only="react" translations={translations} isLanding={true} currentLang={locale} />
+<Footer client:only="react" translations={translations} isLanding={true} />

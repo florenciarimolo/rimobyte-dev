@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
-import LanguageSwitcher from './LanguageSwitcher';
-import { LANG } from '@/i18n';
 
-interface BlogNavbarProps {
-  currentLang: typeof LANG.ENGLISH | typeof LANG.SPANISH;
-}
-
-const BlogNavbar: React.FC<BlogNavbarProps> = ({ currentLang }) => {
+const BlogNavbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,24 +9,6 @@ const BlogNavbar: React.FC<BlogNavbarProps> = ({ currentLang }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleLanguageChange = (lang: typeof LANG.ENGLISH | typeof LANG.SPANISH) => {
-    const currentPath = window.location.pathname;
-    // Replace /es/ with /en/ or vice versa
-    let newPath: string;
-    if (currentPath.startsWith('/es/')) {
-      newPath = currentPath.replace('/es/', '/en/');
-    } else if (currentPath.startsWith('/en/')) {
-      newPath = currentPath.replace('/en/', '/es/');
-    } else {
-      newPath = `/${lang}/blog`;
-    }
-    window.location.href = newPath;
-  };
-
-  const homeUrl = currentLang === LANG.SPANISH ? '/es' : '/en';
-  const blogUrl = currentLang === LANG.SPANISH ? '/es/blog' : '/en/blog';
-  const blogLabel = currentLang === LANG.SPANISH ? 'Blog' : 'Blog';
 
   return (
     <>
@@ -45,9 +21,8 @@ const BlogNavbar: React.FC<BlogNavbarProps> = ({ currentLang }) => {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Left: Logo + Blog */}
             <div className="flex items-center gap-6">
-              <a href={homeUrl} className="flex items-center space-x-2 group">
+              <a href="/" className="flex items-center space-x-2 group">
                 <img
                   src="/favicon-96x96.png"
                   alt="RimoByte"
@@ -58,25 +33,19 @@ const BlogNavbar: React.FC<BlogNavbarProps> = ({ currentLang }) => {
                 </span>
               </a>
               <a
-                href={blogUrl}
+                href="/blog"
                 className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 border-l border-gray-300 dark:border-gray-700 pl-6"
               >
-                {blogLabel}
+                Blog
               </a>
             </div>
 
-            {/* Right: Theme + Language */}
             <div className="flex items-center gap-3">
               <ThemeSwitcher />
-              <LanguageSwitcher
-                currentLang={currentLang}
-                onLanguageChange={handleLanguageChange}
-              />
             </div>
           </div>
         </div>
       </nav>
-      {/* Spacer */}
       <div className="h-16" />
     </>
   );

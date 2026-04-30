@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import WordPressLanguageSwitcher from '../wordpress-landing/WordPressLanguageSwitcher';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
-import { getTranslation, LANG } from '@/i18n';
+import { getTranslation } from '@/i18n';
 
 interface MigrationNavbarProps {
-  currentLang: typeof LANG.ENGLISH | typeof LANG.SPANISH;
-  onLanguageChange: (lang: typeof LANG.ENGLISH | typeof LANG.SPANISH) => void;
-  translations: any;
+  translations: unknown;
 }
 
-const MigrationNavbar: React.FC<MigrationNavbarProps> = ({ currentLang, onLanguageChange, translations }) => {
+const MigrationNavbar: React.FC<MigrationNavbarProps> = ({ translations }) => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -81,7 +78,6 @@ const MigrationNavbar: React.FC<MigrationNavbarProps> = ({ currentLang, onLangua
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-    // Close mobile menu when navigating
     setIsMobileMenuOpen(false);
   };
 
@@ -97,9 +93,8 @@ const MigrationNavbar: React.FC<MigrationNavbarProps> = ({ currentLang, onLangua
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo + back link */}
           <div className="flex items-center gap-3">
-            <a href={currentLang === LANG.ENGLISH ? '/en/' : '/es/'} className="flex items-center space-x-2 group">
+            <a href="/" className="flex items-center space-x-2 group">
               <img 
                 src="/favicon-96x96.png" 
                 alt="RimoByte" 
@@ -111,7 +106,6 @@ const MigrationNavbar: React.FC<MigrationNavbarProps> = ({ currentLang, onLangua
             </a>
           </div>
 
-          {/* Navigation Items */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
@@ -120,23 +114,18 @@ const MigrationNavbar: React.FC<MigrationNavbarProps> = ({ currentLang, onLangua
                 className="relative group text-gray-800 dark:text-white/90 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
               >
                 {item.label}
-                {/* Active indicator */}
                 {activeSection === item.id && (
                   <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse" />
                 )}
-                {/* Hover indicator */}
                 <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
           </div>
 
-          {/* Controls */}
           <div className="hidden md:flex items-center space-x-4">
             <ThemeSwitcher />
-            <WordPressLanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
           </div>
             
-          {/* Mobile menu button */}
           <button 
             onClick={toggleMobileMenu}
             className="md:hidden p-2 rounded-md text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
@@ -155,7 +144,6 @@ const MigrationNavbar: React.FC<MigrationNavbarProps> = ({ currentLang, onLangua
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 dark:bg-black/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-800">
@@ -170,7 +158,6 @@ const MigrationNavbar: React.FC<MigrationNavbarProps> = ({ currentLang, onLangua
                 }`}
               >
                 {item.label}
-                {/* Active indicator */}
                 {activeSection === item.id && (
                   <div className="absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500" />
                 )}
@@ -178,7 +165,6 @@ const MigrationNavbar: React.FC<MigrationNavbarProps> = ({ currentLang, onLangua
             ))}
             <div className="flex items-center justify-start space-x-4 px-3 py-2 mt-2">
               <ThemeSwitcher />
-              <WordPressLanguageSwitcher currentLang={currentLang} onLanguageChange={onLanguageChange} />
             </div>
           </div>
         </div>

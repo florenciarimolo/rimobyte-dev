@@ -1,23 +1,17 @@
 ---
 import type { CityInfo } from '@/constants/cities';
-import { getI18N, LANG } from '@/i18n/index';
+import { getI18N } from '@/i18n/index';
 
 export interface Props {
   url: string;
   city: string | null;
   cityInfo?: CityInfo | null;
-  locale?: typeof LANG.ENGLISH | typeof LANG.SPANISH;
 }
 
-const { url, city, cityInfo, locale = LANG.SPANISH } = Astro.props;
+const { url, city, cityInfo } = Astro.props;
 const siteUrl = 'https://rimobyte.com';
-const translations = getI18N({ currentLocale: locale });
+const translations = getI18N();
 
-// Determine if this is an international city (non-Spain)
-const isInternational = cityInfo && cityInfo.country !== 'Spain';
-const isEnglish = locale === LANG.ENGLISH;
-
-// Get services from translations
 const services = [
   {
     title: translations.wordpressLanding.services.items.corporateWeb.title,
@@ -46,7 +40,6 @@ const services = [
   }
 ];
 
-// Build services for schema
 const serviceItems = services.map((service) => ({
   "@type": "Service",
   "name": service.title,
@@ -65,25 +58,21 @@ const serviceItems = services.map((service) => ({
   }
 }));
 
-let structuredData: any = {
+let structuredData: Record<string, unknown> = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": city 
-    ? (isInternational 
-        ? `WordPress freelance developer in ${city}`
-        : `Desarrolladora WordPress freelance en ${city}`)
+    ? `Desarrolladora WordPress freelance en ${city}`
     : "Desarrolladora WordPress freelance",
   "description": city
-    ? (isInternational
-        ? `WordPress freelance development services in ${city} and internationally. Professional website development, e-commerce and maintenance.`
-        : `Servicios de desarrollo WordPress freelance en ${city} y en remoto en toda España. Desarrollo de sitios web profesionales, e-commerce y mantenimiento.`)
+    ? `Servicios de desarrollo WordPress freelance en ${city} y en remoto en toda España. Desarrollo de sitios web profesionales, e-commerce y mantenimiento.`
     : "Servicios de desarrollo WordPress freelance para negocios profesionales. Desarrollo de sitios web, e-commerce y mantenimiento. Trabajo directo sin intermediarios.",
   "url": url,
   "image": `${siteUrl}/assets/images/programadora-web.webp`,
   "provider": {
     "@type": "Person",
     "name": "Florencia Rímolo",
-    "jobTitle": isInternational ? "WordPress freelance developer" : "Desarrolladora WordPress freelance",
+    "jobTitle": "Desarrolladora WordPress freelance",
     "email": "info@rimobyte.com"
   },
   "areaServed": city && cityInfo
@@ -102,28 +91,18 @@ let structuredData: any = {
       "@type": "Country",
       "name": "Spain"
     },
-  "serviceType": isInternational
-    ? [
-        "WordPress Development",
-        "Corporate Website Development",
-        "E-commerce Development",
-        "WordPress Maintenance",
-        "WordPress Migrations"
-      ]
-    : [
-        "Desarrollo WordPress",
-        "Desarrollo de sitios web corporativos",
-        "Desarrollo de e-commerce",
-        "Mantenimiento WordPress",
-        "Migraciones WordPress"
-      ],
+  "serviceType": [
+    "Desarrollo WordPress",
+    "Desarrollo de sitios web corporativos",
+    "Desarrollo de e-commerce",
+    "Mantenimiento WordPress",
+    "Migraciones WordPress"
+  ],
   "jobLocationType": "TELECOMMUTE",
   "priceRange": "$$",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": isEnglish 
-      ? "WordPress Development Services"
-      : "Servicios de Desarrollo WordPress",
+    "name": "Servicios de Desarrollo WordPress",
     "itemListElement": serviceItems.map((service, index) => ({
       "@type": "OfferCatalogItem",
       "position": index + 1,

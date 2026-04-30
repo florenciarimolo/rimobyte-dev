@@ -77,7 +77,7 @@ Si identificas 3 o más de estas señales, es momento de considerar un rediseño
 4. Rediseño manteniendo SEO
 5. Testing y optimización
 
-¿Necesitas ayuda con el rediseño de tu web? [Contáctame](/es/rediseno-web-wordpress) para una auditoría gratuita.
+¿Necesitas ayuda con el rediseño de tu web? [Contáctame](/rediseno-web-wordpress) para una auditoría gratuita.
 
 ---
 

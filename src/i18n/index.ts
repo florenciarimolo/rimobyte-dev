@@ -1,33 +1,18 @@
 import spanish from '@/i18n/es.json';
-import english from '@/i18n/en.json';
 
 export const LANG = {
 	SPANISH: 'es',
-	ENGLISH: 'en'
-};
+} as const;
 
-// HTML lang codes (RFC 5646 format)
+// HTML lang code (RFC 5646 format)
 export const LANG_CODES = {
 	SPANISH: 'es-ES',
-	ENGLISH: 'en-US'
 } as const;
 
-// URL path prefixes for language routing
-export const LANG_PREFIXES = {
-	SPANISH: '/es',
-	ENGLISH: '/en'
-} as const;
-
-export const getI18N = ({
-	currentLocale = 'es',
-}: {
-	currentLocale: string | undefined;
-}) => {
-	if (currentLocale === LANG.ENGLISH) return english;
-	return spanish;
-};
+export const getI18N = (_args?: { currentLocale?: string }) => spanish;
 
 // Utility function to get nested translation values using dot notation
-export const getTranslation = (translations: any, key: string): string => {
-	return key.split('.').reduce((obj, k) => obj?.[k], translations) || key;
+export const getTranslation = (translations: unknown, key: string): string => {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	return key.split('.').reduce((obj: any, k) => obj?.[k], translations) || key;
 };

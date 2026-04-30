@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { LANG } from '@/i18n';
 
 // Extend Window interface for grecaptcha
 declare global {
@@ -14,13 +13,30 @@ declare global {
 }
 
 interface ContactFormProps {
-  currentLang: typeof LANG.ENGLISH | typeof LANG.SPANISH;
   recaptchaSiteKey?: string;
   isLanding?: boolean;
   buttonText?: string;
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey, isLanding = false, buttonText }) => {
+const FORM_LABELS = {
+  name: 'Nombre',
+  email: 'Correo',
+  subject: 'Asunto',
+  message: 'Mensaje',
+  send: 'Enviar Mensaje',
+  sending: 'Enviando...',
+  success: '¡Mensaje enviado exitosamente!',
+  error: 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.',
+  recaptchaError: 'Por favor, completa la verificación reCAPTCHA.',
+  placeholder: {
+    name: 'Tu nombre',
+    email: 'tu.correo@ejemplo.com',
+    subject: 'Asunto de tu mensaje',
+    message: 'Tu mensaje aquí...'
+  }
+};
+
+const ContactForm: React.FC<ContactFormProps> = ({ recaptchaSiteKey, isLanding = false, buttonText }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -34,44 +50,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentLang, recaptchaSiteKey
   // Use reCAPTCHA site key passed from server (SSR) or fallback to test key
   const RECAPTCHA_SITE_KEY = recaptchaSiteKey || '6LcR8iUsAAAAAJAFkXt5Wgnw_6X49csU9Y26aoPt';
 
-  const translations = {
-    en: {
-      name: 'Name',
-      email: 'Email',
-      subject: 'Subject',
-      message: 'Message',
-      send: 'Send Message',
-      sending: 'Sending...',
-      success: 'Message sent successfully!',
-      error: 'Error sending message. Please try again.',
-      recaptchaError: 'Please complete the reCAPTCHA verification.',
-      placeholder: {
-        name: 'Your name',
-        email: 'your.email@example.com',
-        subject: 'Subject of your message',
-        message: 'Your message here...'
-      }
-    },
-    es: {
-      name: 'Nombre',
-      email: 'Correo',
-      subject: 'Asunto',
-      message: 'Mensaje',
-      send: 'Enviar Mensaje',
-      sending: 'Enviando...',
-      success: '¡Mensaje enviado exitosamente!',
-      error: 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.',
-      recaptchaError: 'Por favor, completa la verificación reCAPTCHA.',
-      placeholder: {
-        name: 'Tu nombre',
-        email: 'tu.correo@ejemplo.com',
-        subject: 'Asunto de tu mensaje',
-        message: 'Tu mensaje aquí...'
-      }
-    }
-  };
-
-  const t = translations[currentLang as keyof typeof translations];
+  const t = FORM_LABELS;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({

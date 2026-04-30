@@ -228,7 +228,7 @@ Desarrollo con Vue, Nuxt y Astro principalmente. Si necesitas:
 
 [Hablamos gratis por WhatsApp](https://wa.me/34684713743?text=Hola,%20tengo%20dudas%20sobre%20qué%20framework%20usar)
 
-O mira mi [página de desarrollo Vue/Nuxt/Astro](/es/desarrollo-vue-nuxt-astro).
+O mira mi [página de desarrollo Vue/Nuxt/Astro](/desarrollo-vue-nuxt-astro).
 
 ---
 

@@ -1,12 +1,11 @@
 import React from 'react';
-import { getTranslation, LANG } from '@/i18n';
+import { getTranslation } from '@/i18n';
 
 interface MigrationFAQSectionProps {
-  translations: any;
-  currentLang?: typeof LANG.ENGLISH | typeof LANG.SPANISH;
+  translations: unknown;
 }
 
-const MigrationFAQSection: React.FC<MigrationFAQSectionProps> = ({ translations, currentLang = LANG.SPANISH }) => {
+const MigrationFAQSection: React.FC<MigrationFAQSectionProps> = ({ translations }) => {
   const faqs = [
     {
       question: getTranslation(translations, 'migrationLanding.faq.items.contentLoss.question'),
@@ -45,7 +44,7 @@ const MigrationFAQSection: React.FC<MigrationFAQSectionProps> = ({ translations,
               itemType="https://schema.org/Question"
             >
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-start gap-2" itemProp="name">
-                <span className="text-purple-500 flex-shrink-0">{currentLang === LANG.SPANISH ? 'P:' : 'Q:'}</span>
+                <span className="text-purple-500 flex-shrink-0">P:</span>
                 <span>{faq.question}</span>
               </h3>
               <div itemScope itemType="https://schema.org/Answer">

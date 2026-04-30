@@ -11,11 +11,9 @@ import MigrationCTASection from './migration-landing/MigrationCTASection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
 import GoogleReviewsSection from './GoogleReviewsSection';
-import { getI18N, LANG, LANG_PREFIXES } from '@/i18n';
+import { getI18N } from '@/i18n';
 import { initScrollAnimations } from './wordpress-landing/scroll-animations';
-import type { CityInfo } from '@/constants/cities';
 
-// Declare UnicornStudio types
 declare global {
   interface Window {
     UnicornStudio?: {
@@ -27,68 +25,34 @@ declare global {
 
 interface MigrationLandingPageProps {
   cityName?: string;
-  cityInfo?: CityInfo | null;
   recaptchaSiteKey?: string;
-  initialLocale?: typeof LANG.ENGLISH | typeof LANG.SPANISH;
 }
 
-const MigrationLandingPage: React.FC<MigrationLandingPageProps> = ({ cityName, cityInfo, recaptchaSiteKey, initialLocale = LANG.SPANISH }) => {
-  const [currentLang, setCurrentLang] = React.useState<typeof LANG.ENGLISH | typeof LANG.SPANISH>(initialLocale);
-  const translations = React.useMemo(() => getI18N({ currentLocale: currentLang }), [currentLang]);
-
-  const handleLanguageChange = (lang: typeof LANG.ENGLISH | typeof LANG.SPANISH) => {
-    setCurrentLang(lang);
-    // Update URL - navigate to the correct language version with prefix
-    const currentPath = window.location.pathname;
-    let newPath = currentPath;
-    
-    // Extract the path without language prefix
-    let pathWithoutLang = currentPath;
-    if (currentPath.startsWith(`${LANG_PREFIXES.ENGLISH}/`)) {
-      pathWithoutLang = currentPath.replace(LANG_PREFIXES.ENGLISH, '');
-    } else if (currentPath.startsWith(`${LANG_PREFIXES.SPANISH}/`)) {
-      pathWithoutLang = currentPath.replace(LANG_PREFIXES.SPANISH, '');
-    }
-    
-    // Build new path with correct language prefix
-    const langPrefix = lang === LANG.ENGLISH ? LANG_PREFIXES.ENGLISH : LANG_PREFIXES.SPANISH;
-    newPath = pathWithoutLang === '/' ? `${langPrefix}/` : `${langPrefix}${pathWithoutLang}`;
-    
-    if (newPath !== currentPath) {
-      window.location.href = newPath;
-    }
-  };
+const MigrationLandingPage: React.FC<MigrationLandingPageProps> = ({ cityName, recaptchaSiteKey }) => {
+  const translations = React.useMemo(() => getI18N(), []);
 
   useEffect(() => {
     initScrollAnimations();
-    // UnicornStudio initialization is now handled within individual sections (Hero and CTA)
   }, []);
 
   return (
     <div id="app" className="min-h-screen relative bg-gray-50 dark:bg-gray-900" style={{ zIndex: 1, position: 'relative' }}>
-        <MigrationNavbar 
-          currentLang={currentLang} 
-          onLanguageChange={handleLanguageChange} 
-          translations={translations}
-        />
+        <MigrationNavbar translations={translations} />
         
         <main className="relative bg-gray-50 dark:bg-gray-900" style={{ position: 'relative' }}>
-          <MigrationHeroSection cityName={cityName} cityInfo={cityInfo} translations={translations} />
+          <MigrationHeroSection cityName={cityName} translations={translations} />
           <MigrationWhenSection translations={translations} />
           <MigrationWhatSection translations={translations} />
           <MigrationProcessSection translations={translations} />
           <MigrationBenefitsSection translations={translations} />
           <MigrationProjectsSection translations={translations} />
-          <GoogleReviewsSection
-            variant="dark"
-            locale={currentLang === LANG.ENGLISH ? 'en' : 'es'}
-          />
+          <GoogleReviewsSection variant="dark" />
           <MigrationCTASection translations={translations} />
-          <MigrationFAQSection translations={translations} currentLang={currentLang} />
-          <ContactSection translations={translations} currentLang={currentLang} recaptchaSiteKey={recaptchaSiteKey} isLanding={true} landingType="migration" />
+          <MigrationFAQSection translations={translations} />
+          <ContactSection translations={translations} recaptchaSiteKey={recaptchaSiteKey} isLanding={true} landingType="migration" />
         </main>
 
-        <Footer translations={translations} isLanding={true} currentLang={currentLang} />
+        <Footer translations={translations} isLanding={true} />
     </div>
   );
 };

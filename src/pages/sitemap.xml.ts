@@ -2,14 +2,10 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { SITE_URL } from '@/constants';
 import { getAllowedCities } from '@/constants/cities';
-import { LANG_PREFIXES } from '@/i18n/index';
 
-// Generate sitemap.xml at build time
 export const GET: APIRoute = async ({ request }) => {
   const currentDate = new Date().toISOString().split('T')[0];
   
-  // Use APP_BASE_URL for local development, SITE_URL for production
-  // Fallback to request origin if neither is available
   const requestUrl = new URL(request.url);
   const baseUrl = import.meta.env.APP_BASE_URL || SITE_URL || `${requestUrl.protocol}//${requestUrl.host}`;
   
@@ -22,83 +18,44 @@ export const GET: APIRoute = async ({ request }) => {
 
   const urls: SitemapUrl[] = [];
 
-  // Helper function to add URL with language prefix
-  const addUrl = (path: string, priority: string, changefreq: string = 'monthly', lang?: 'es' | 'en') => {
-    const prefixes = lang 
-      ? [lang === 'es' ? LANG_PREFIXES.SPANISH : LANG_PREFIXES.ENGLISH]
-      : [LANG_PREFIXES.SPANISH, LANG_PREFIXES.ENGLISH];
-    
-    prefixes.forEach(prefix => {
-      const fullPath = path === '/' ? `${prefix}/` : `${prefix}${path}`;
-      urls.push({
-        loc: `${baseUrl}${fullPath}`,
-        lastmod: currentDate,
-        changefreq,
-        priority
-      });
+  const addPath = (path: string, priority: string, changefreq: string = 'monthly') => {
+    const fullPath = path === '/' ? '/' : path.startsWith('/') ? path : `/${path}`;
+    urls.push({
+      loc: `${baseUrl}${fullPath === '/' ? '' : fullPath}`,
+      lastmod: currentDate,
+      changefreq,
+      priority
     });
   };
 
-  // Homepage
-  addUrl('/', '1.0');
+  addPath('/', '1.0', 'weekly');
+  addPath('/desarrolladora-wordpress-freelance', '0.9');
+  addPath('/migrar-web-agencia-freelance', '0.9');
+  addPath('/rescate-wordpress-urgente', '0.9', 'weekly');
+  addPath('/precios-desarrollo-web', '0.9', 'monthly');
+  addPath('/rediseno-web-wordpress', '0.8', 'monthly');
+  addPath('/desarrollo-tienda-online', '0.8', 'monthly');
+  addPath('/optimizacion-velocidad-wordpress', '0.8', 'monthly');
+  addPath('/desarrollo-vue-nuxt-astro', '0.8', 'monthly');
+  addPath('/blog', '0.7', 'weekly');
 
-  // Main landing pages
-  addUrl('/desarrolladora-wordpress-freelance', '0.9');
-  addUrl('/migrar-web-agencia-freelance', '0.9');
-  
-  // Service pages (Spanish only for now)
-  addUrl('/rescate-wordpress-urgente', '0.9', 'weekly', 'es');
-  addUrl('/precios-desarrollo-web', '0.9', 'monthly', 'es');
-  addUrl('/rediseno-web-wordpress', '0.8', 'monthly', 'es');
-  addUrl('/desarrollo-tienda-online', '0.8', 'monthly', 'es');
-  addUrl('/optimizacion-velocidad-wordpress', '0.8', 'monthly', 'es');
-  addUrl('/desarrollo-vue-nuxt-astro', '0.8', 'monthly', 'es');
-  
-  // Blog index
-  addUrl('/blog', '0.7', 'weekly', 'es');
-
-  // Blog posts - individual articles in both languages
   const blogPosts = await getCollection('blog', ({ data }) => !data.draft);
   blogPosts.forEach(post => {
     const postDate = post.data.pubDate.toISOString().split('T')[0];
-    // Add ES version
     urls.push({
-      loc: `${baseUrl}${LANG_PREFIXES.SPANISH}/blog/${post.id}`,
-      lastmod: postDate,
-      changefreq: 'monthly',
-      priority: '0.7'
-    });
-    // Add EN version
-    urls.push({
-      loc: `${baseUrl}${LANG_PREFIXES.ENGLISH}/blog/${post.id}`,
+      loc: `${baseUrl}/blog/${post.id}`,
       lastmod: postDate,
       changefreq: 'monthly',
       priority: '0.7'
     });
   });
 
-  // City landing pages - WordPress (Spanish cities for ES, all cities for EN)
-  const spanishCities = getAllowedCities('es');
-  const englishCities = getAllowedCities('en');
-  
-  Object.keys(spanishCities).forEach(city => {
-    addUrl(`/desarrolladora-wordpress-freelance/${city}`, '0.8', 'monthly', 'es');
-  });
-  
-  Object.keys(englishCities).forEach(city => {
-    addUrl(`/desarrolladora-wordpress-freelance/${city}`, '0.8', 'monthly', 'en');
+  const cities = getAllowedCities();
+  Object.keys(cities).forEach(city => {
+    addPath(`/desarrolladora-wordpress-freelance/${city}`, '0.8', 'monthly');
+    addPath(`/migrar-web-agencia-freelance/${city}`, '0.8', 'monthly');
   });
 
-  // City landing pages - Migration (Spanish cities for ES, all cities for EN)
-  Object.keys(spanishCities).forEach(city => {
-    addUrl(`/migrar-web-agencia-freelance/${city}`, '0.8', 'monthly', 'es');
-  });
-  
-  Object.keys(englishCities).forEach(city => {
-    addUrl(`/migrar-web-agencia-freelance/${city}`, '0.8', 'monthly', 'en');
-  });
-
-  // Generate XML sitemap
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(url => `  <url>

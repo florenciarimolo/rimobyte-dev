@@ -2,7 +2,6 @@
 import MainLayout from '@/layouts/MainLayout.astro';
 import AggregateRatingSchema from '@/components/schema/AggregateRatingSchema.astro';
 import MainPage from '@/components/MainPage';
-import { LANG } from '@/i18n/index';
 
 // Get reCAPTCHA site key from environment variable
 // Site key is public and safe to expose to the client
@@ -57,9 +56,8 @@ const faqSchema = {
 <MainLayout 
   title={currentSeo.title}
   description={currentSeo.description}
-  locale={LANG.SPANISH}
 >
   <AggregateRatingSchema rating={4.9} reviewCount={12} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  <MainPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} initialLocale={LANG.SPANISH} />
+  <MainPage client:only="react" recaptchaSiteKey={recaptchaSiteKey} />
 </MainLayout>

@@ -15,68 +15,31 @@ type ReviewsResponse = {
   reviews: NormalizedReview[];
 };
 
-const REVIEWS_COPY: Record<
-  'es' | 'en',
-  {
-    title: string;
-    subtitle: string;
-    basedOn: string;
-    reviewOne: string;
-    reviewMany: string;
-    onGoogle: string;
-    viewAllReviews: string;
-    viewReviewsOnGoogle: string;
-    errorLoading: string;
-  }
-> = {
-  es: {
-    title: 'Opiniones de clientes en',
-    subtitle:
-      'Estas son algunas de las reseñas reales que han dejado mis clientes después de trabajar juntos.',
-    basedOn: 'Basado en',
-    reviewOne: 'reseña',
-    reviewMany: 'reseñas',
-    onGoogle: 'en Google',
-    viewAllReviews: 'Ver todas las reseñas en Google',
-    viewReviewsOnGoogle: 'Ver reseñas directamente en Google',
-    errorLoading: 'No se han podido cargar las reseñas en este momento.',
-  },
-  en: {
-    title: 'Customer reviews on',
-    subtitle:
-      'Here are some of the real reviews my clients have left after working together.',
-    basedOn: 'Based on',
-    reviewOne: 'review',
-    reviewMany: 'reviews',
-    onGoogle: 'on Google',
-    viewAllReviews: 'View all reviews on Google',
-    viewReviewsOnGoogle: 'View reviews directly on Google',
-    errorLoading: 'Reviews could not be loaded at this time.',
-  },
+const REVIEWS_COPY = {
+  title: 'Opiniones de clientes en',
+  subtitle:
+    'Estas son algunas de las reseñas reales que han dejado mis clientes después de trabajar juntos.',
+  basedOn: 'Basado en',
+  reviewOne: 'reseña',
+  reviewMany: 'reseñas',
+  onGoogle: 'en Google',
+  viewAllReviews: 'Ver todas las reseñas en Google',
+  viewReviewsOnGoogle: 'Ver reseñas directamente en Google',
+  errorLoading: 'No se han podido cargar las reseñas en este momento.',
 };
 
 interface GoogleReviewsSectionProps {
-  /**
-   * Visual variant for different backgrounds.
-   * Use "dark" on black/dark landing pages, default for main page.
-   */
   variant?: 'default' | 'dark';
-  /**
-   * Locale to request reviews in.
-   * When "es", reviews will be requested in Spanish; when "en", in English.
-   */
-  locale?: 'es' | 'en';
 }
 
 const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
   variant = 'default',
-  locale = 'es',
 }) => {
   const [data, setData] = React.useState<ReviewsResponse | null>(null);
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<string | null>(null);
 
-  const t = REVIEWS_COPY[locale];
+  const t = REVIEWS_COPY;
 
   React.useEffect(() => {
     let cancelled = false;
@@ -84,13 +47,7 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
 
     const loadReviews = async () => {
       try {
-        const params = new URLSearchParams();
-        if (locale) {
-          params.set('lang', locale);
-        }
-        const endpoint = `/api/google-reviews${
-          params.toString() ? `?${params.toString()}` : ''
-        }`;
+        const endpoint = `/api/google-reviews?lang=es`;
 
         const response = await fetch(endpoint, {
           signal: controller.signal,
@@ -110,7 +67,7 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
           if (import.meta.env.MODE === 'development') {
             console.error('Error fetching Google reviews:', err);
           }
-          setError(REVIEWS_COPY[locale].errorLoading);
+          setError(REVIEWS_COPY.errorLoading);
         }
       } finally {
         if (!cancelled) {
@@ -125,7 +82,7 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
       cancelled = true;
       controller.abort();
     };
-  }, [locale]);
+  }, []);
 
   const hasReviews = Boolean(
     data && Array.isArray(data.reviews) && data.reviews.length > 0,
@@ -284,7 +241,7 @@ const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
                   <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
                     {review.publishedRelative ||
                       new Date(review.publishTime as string).toLocaleDateString(
-                        locale === 'en' ? 'en-GB' : 'es',
+                        'es',
                       )}
                   </p>
                 )}

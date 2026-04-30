@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTranslation, LANG } from '@/i18n';
+import { getTranslation } from '@/i18n';
 import GlobeIcon from '@/components/icons/GlobeIcon';
 import ShoppingBagIcon from '@/components/icons/ShoppingBagIcon';
 import SettingsIcon from '@/components/icons/SettingsIcon';
@@ -7,44 +7,19 @@ import CloudUploadIcon from '@/components/icons/CloudUploadIcon';
 import LightningIcon from '@/components/icons/LightningIcon';
 
 interface WordPressServicesSectionProps {
-  translations: any;
-  currentLang: typeof LANG.ENGLISH | typeof LANG.SPANISH;
+  translations: unknown;
 }
 
-const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ translations, currentLang }) => {
+const SERVICE_LINKS: Record<string, string> = {
+  corporateWeb: '/precios-desarrollo-web',
+  onlineStores: '/desarrollo-tienda-online',
+  maintenance: '/precios-desarrollo-web',
+  migrations: '/migrar-web-agencia-freelance',
+  expressFix: '/rescate-wordpress-urgente',
+};
+
+const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ translations }) => {
   const learnMoreLabel = getTranslation(translations, 'wordpressLanding.services.learnMore');
-
-  const currentLangKey: 'es' | 'en' = currentLang === LANG.ENGLISH ? 'en' : 'es';
-
-  const serviceLinks: Record<
-    string,
-    {
-      es: string;
-      en: string;
-    }
-  > = {
-    // Web corporativa y mantenimiento apuntan a la página de precios (solo en ES por ahora)
-    corporateWeb: {
-      es: '/es/precios-desarrollo-web',
-      en: '/es/precios-desarrollo-web',
-    },
-    onlineStores: {
-      es: '/es/desarrollo-tienda-online',
-      en: '/es/desarrollo-tienda-online',
-    },
-    maintenance: {
-      es: '/es/precios-desarrollo-web',
-      en: '/es/precios-desarrollo-web',
-    },
-    migrations: {
-      es: '/es/migrar-web-agencia-freelance',
-      en: '/en/migrar-web-agencia-freelance',
-    },
-    expressFix: {
-      es: '/es/rescate-wordpress-urgente',
-      en: '/en/wordpress-emergency-rescue',
-    },
-  };
 
   const services = [
     {
@@ -53,7 +28,7 @@ const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ tra
       description: getTranslation(translations, 'wordpressLanding.services.items.corporateWeb.description'),
       price: getTranslation(translations, 'wordpressLanding.services.items.corporateWeb.price'),
       icon: <GlobeIcon />,
-      href: serviceLinks.corporateWeb[currentLangKey],
+      href: SERVICE_LINKS.corporateWeb,
     },
     {
       id: 'onlineStores',
@@ -61,7 +36,7 @@ const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ tra
       description: getTranslation(translations, 'wordpressLanding.services.items.onlineStores.description'),
       price: getTranslation(translations, 'wordpressLanding.services.items.onlineStores.price'),
       icon: <ShoppingBagIcon />,
-      href: serviceLinks.onlineStores[currentLangKey],
+      href: SERVICE_LINKS.onlineStores,
     },
     {
       id: 'maintenance',
@@ -69,7 +44,7 @@ const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ tra
       description: getTranslation(translations, 'wordpressLanding.services.items.maintenance.description'),
       price: getTranslation(translations, 'wordpressLanding.services.items.maintenance.price'),
       icon: <SettingsIcon />,
-      href: serviceLinks.maintenance[currentLangKey],
+      href: SERVICE_LINKS.maintenance,
     },
     {
       id: 'migrations',
@@ -77,7 +52,7 @@ const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ tra
       description: getTranslation(translations, 'wordpressLanding.services.items.migrations.description'),
       price: getTranslation(translations, 'wordpressLanding.services.items.migrations.price'),
       icon: <CloudUploadIcon />,
-      href: serviceLinks.migrations[currentLangKey],
+      href: SERVICE_LINKS.migrations,
     },
     {
       id: 'expressFix',
@@ -85,7 +60,7 @@ const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ tra
       description: getTranslation(translations, 'wordpressLanding.services.items.expressFix.description'),
       price: getTranslation(translations, 'wordpressLanding.services.items.expressFix.price'),
       icon: <LightningIcon />,
-      href: serviceLinks.expressFix[currentLangKey],
+      href: SERVICE_LINKS.expressFix,
     },
   ];
 
@@ -103,7 +78,6 @@ const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ tra
         </header>
 
         <div className="space-y-8">
-          {/* Primera fila: 3 servicios */}
           <div className="grid md:grid-cols-3 gap-6">
             {services.slice(0, 3).map((service, index) => (
               <div
@@ -139,7 +113,6 @@ const WordPressServicesSection: React.FC<WordPressServicesSectionProps> = ({ tra
             ))}
           </div>
 
-          {/* Segunda fila: 2 servicios centrados */}
           <div className="grid md:grid-cols-2 gap-6 md:max-w-3xl mx-auto">
             {services.slice(3).map((service, index) => (
               <div

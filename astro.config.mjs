@@ -26,15 +26,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     react(),
-    sitemap({
-      i18n: {
-        defaultLocale: 'es',
-        locales: {
-          es: 'es-ES',
-          en: 'en-US'
-        }
-      }
-    }),
+    sitemap(),
     opengraphImages({
       options: {
         width: 1200,
@@ -59,16 +51,6 @@ export default defineConfig({
   ],
   output: 'static',
   site: 'https://rimobyte.com',
-  i18n: {
-    defaultLocale: 'es',
-    locales: ['es', 'en'],
-    routing: {
-      prefixDefaultLocale: true
-    },
-    fallback: {
-      'en': 'es'
-    }
-  },
   adapter: vercel(),
   vite: {
     resolve: {

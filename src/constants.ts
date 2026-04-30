@@ -6,7 +6,6 @@ export const TWITTER_HANDLE = '@rimobyte';
 // Author information
 export const AUTHOR_NAME = 'Florencia Rímolo';
 export const AUTHOR_TITLE_ES = 'Desarrolladora Web Freelance';
-export const AUTHOR_TITLE_EN = 'Freelance Web Developer';
 
 // Email configuration constants
 export const EMAIL = 'info@rimobyte.com';

@@ -1,13 +1,12 @@
 import React from 'react';
-import { getTranslation, LANG } from '@/i18n';
+import { getTranslation } from '@/i18n';
 
 interface WordPressFAQSectionProps {
   cityName?: string;
-  translations: any;
-  currentLang?: typeof LANG.ENGLISH | typeof LANG.SPANISH;
+  translations: unknown;
 }
 
-const WordPressFAQSection: React.FC<WordPressFAQSectionProps> = ({ cityName, translations, currentLang = LANG.SPANISH }) => {
+const WordPressFAQSection: React.FC<WordPressFAQSectionProps> = ({ cityName, translations }) => {
   const faqs = [
     {
       question: getTranslation(translations, 'wordpressLanding.faq.items.onlyWordPress.question'),
@@ -50,7 +49,7 @@ const WordPressFAQSection: React.FC<WordPressFAQSectionProps> = ({ cityName, tra
               itemType="https://schema.org/Question"
             >
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-start gap-2" itemProp="name">
-                <span className="text-purple-500 flex-shrink-0">{currentLang === LANG.SPANISH ? 'P:' : 'Q:'}</span>
+                <span className="text-purple-500 flex-shrink-0">P:</span>
                 <span>{faq.question}</span>
               </h3>
               <div itemScope itemType="https://schema.org/Answer">
