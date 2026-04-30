@@ -63,8 +63,7 @@ src/
 │   ├── experience.ts  # Work experience data
 │   ├── education.ts   # Education timeline data
 │   └── templates.ts   # Template showcase data
-├── constants/          # Constants and configuration
-│   └── cities.ts      # City data for landing pages
+├── constants.ts       # Site URL, emails, shared constants
 ├── utils/             # Utility functions
 │   ├── recaptcha.ts   # reCAPTCHA verification
 │   └── i18n-urls.ts   # i18n URL utilities
@@ -147,13 +146,12 @@ The site supports multiple languages with automatic routing:
 - **Routing**: Language prefix is required for all routes
 - **Fallback**: English pages fall back to Spanish if translation is missing
 
-### Landing Pages
+### Landing pages de servicio
 
-The project includes dynamic landing pages for services:
-- **WordPress Development**: `/es/desarrolladora-wordpress-freelance/[city]`
-- **Website Migration**: `/es/migrar-web-agencia-freelance/[city]`
+- **WordPress freelance**: `/desarrolladora-wordpress-freelance`
+- **Migración desde agencia**: `/migrar-web-agencia-freelance`
 
-These pages are automatically generated for multiple cities and languages.
+Las rutas antiguas con segmento de ciudad redirigen a la URL base (ver `astro.config.mjs`).
 
 ## 📱 Responsive Design
 

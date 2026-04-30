@@ -505,8 +505,6 @@
       "title": "Desarrolladora WordPress freelance en Barcelona",
       "subtitle": "Trabajo directamente contigo para crear tu web en WordPress: rápida, bien posicionada en Google y que puedas gestionar tú sola. Sin agencias, sin intermediarios, con resultados claros.",
       "extraText": "Diseño webs en Barcelona para autónomos y pequeños negocios. También trabajo en remoto con clientes de toda España.",
-      "localSeo": "Trabajo con negocios en {city} y en remoto en toda España.",
-      "localSeoDefault": "Trabajo con negocios en remoto, tanto en España como a nivel internacional.",
       "cta": {
         "contact": "Pide presupuesto gratis",
         "viewProjects": "Ver proyectos"
@@ -663,10 +661,6 @@
         "smallBusinesses": {
           "question": "¿Trabajas con negocios pequeños?",
           "answer": "Sí, adapto cada proyecto al tamaño y necesidades reales del negocio."
-        },
-        "cityBusinesses": {
-          "question": "¿Trabajas con negocios en {city}?",
-          "answer": "Sí, trabajo con proyectos en {city} y también en remoto."
         }
       }
     }
@@ -685,7 +679,6 @@
       "title": "Migración y rescate de webs WordPress sin depender de agencias",
       "subtitle": "Ayudo a recuperar el control de tu web WordPress, migrarla con seguridad y dejarla preparada para que puedas gestionarla sin bloqueos técnicos.",
       "extraText": "Migración completa sin perder SEO, contenidos ni accesos. Te devuelvo el control de tu web.",
-      "localSeo": "Trabajo con negocios en {city} y en remoto en toda España.",
       "localSeoDefault": "Trabajo con negocios en remoto, tanto en España como a nivel internacional.",
       "cta": {
         "contact": "Quiero migrar mi web sin perder nada",

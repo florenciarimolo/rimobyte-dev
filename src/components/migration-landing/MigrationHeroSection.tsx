@@ -12,17 +12,11 @@ declare global {
 }
 
 interface MigrationHeroSectionProps {
-  cityName?: string;
   translations: any;
 }
 
-const MigrationHeroSection: React.FC<MigrationHeroSectionProps> = ({ cityName, translations }) => {
-  let localSeoText: string;
-  if (!cityName) {
-    localSeoText = getTranslation(translations, 'migrationLanding.hero.localSeoDefault');
-  } else {
-    localSeoText = getTranslation(translations, 'migrationLanding.hero.localSeo').replace('{city}', cityName);
-  }
+const MigrationHeroSection: React.FC<MigrationHeroSectionProps> = ({ translations }) => {
+  const localSeoText = getTranslation(translations, 'migrationLanding.hero.localSeoDefault');
 
   useEffect(() => {
     // Ensure Unicorn Studio initializes (script loads from MainLayout.astro)

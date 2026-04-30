@@ -1,24 +1,17 @@
 ---
-import type { CityInfo } from '@/constants/cities';
-
 export interface Props {
   url: string;
-  city: string | null;
-  cityInfo?: CityInfo | null;
 }
 
-const { url, city, cityInfo } = Astro.props;
+const { url } = Astro.props;
 const siteUrl = 'https://rimobyte.com';
 
 const structuredData: Record<string, unknown> = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": city 
-    ? `Migración y rescate de webs WordPress en ${city}`
-    : "Migración y rescate de webs WordPress",
-  "description": city
-    ? `Servicios de migración y rescate de webs WordPress en ${city} y en remoto en toda España. Recupera el control de tu web WordPress sin depender de agencias.`
-    : "Servicios de migración y rescate de webs WordPress. Ayudo a recuperar el control de tu web, migrarla con seguridad y dejarla preparada para que puedas gestionarla sin bloqueos técnicos.",
+  "name": "Migración y rescate de webs WordPress",
+  "description":
+    "Servicios de migración y rescate de webs WordPress. Ayudo a recuperar el control de tu web, migrarla con seguridad y dejarla preparada para que puedas gestionarla sin bloqueos técnicos.",
   "url": url,
   "image": `${siteUrl}/assets/images/programadora-web.webp`,
   "provider": {
@@ -27,22 +20,10 @@ const structuredData: Record<string, unknown> = {
     "jobTitle": "Desarrolladora WordPress freelance",
     "email": "info@rimobyte.com"
   },
-  "areaServed": city && cityInfo
-    ? [
-        {
-          "@type": "City",
-          "name": city,
-          "addressCountry": cityInfo.countryCode
-        },
-        {
-          "@type": "Country",
-          "name": cityInfo.country
-        }
-      ]
-    : {
-      "@type": "Country",
-      "name": "Spain"
-    },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Spain"
+  },
   "serviceType": [
     "Migración WordPress",
     "Rescate de webs WordPress",

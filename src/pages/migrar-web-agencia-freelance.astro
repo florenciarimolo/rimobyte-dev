@@ -27,10 +27,7 @@ const faqItems = [
   title={title}
   description={description}
 >
-  <MigrationStructuredData 
-    url={currentUrl}
-    city={null}
-  />
+  <MigrationStructuredData url={currentUrl} />
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",

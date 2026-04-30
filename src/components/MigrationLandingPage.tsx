@@ -24,11 +24,10 @@ declare global {
 }
 
 interface MigrationLandingPageProps {
-  cityName?: string;
   recaptchaSiteKey?: string;
 }
 
-const MigrationLandingPage: React.FC<MigrationLandingPageProps> = ({ cityName, recaptchaSiteKey }) => {
+const MigrationLandingPage: React.FC<MigrationLandingPageProps> = ({ recaptchaSiteKey }) => {
   const translations = React.useMemo(() => getI18N(), []);
 
   useEffect(() => {
@@ -40,7 +39,7 @@ const MigrationLandingPage: React.FC<MigrationLandingPageProps> = ({ cityName, r
         <MigrationNavbar translations={translations} />
         
         <main className="relative bg-gray-50 dark:bg-gray-900" style={{ position: 'relative' }}>
-          <MigrationHeroSection cityName={cityName} translations={translations} />
+          <MigrationHeroSection translations={translations} />
           <MigrationWhenSection translations={translations} />
           <MigrationWhatSection translations={translations} />
           <MigrationProcessSection translations={translations} />

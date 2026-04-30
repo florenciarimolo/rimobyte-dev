@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { getTranslation } from '@/i18n';
-import type { CityInfo } from '@/constants/cities';
 import ArrowForwardIcon from '@/components/icons/ArrowForwardIcon';
 
 // Declare UnicornStudio types
@@ -14,27 +13,10 @@ declare global {
 }
 
 interface WordPressHeroSectionProps {
-  cityName?: string;
-  cityInfo?: CityInfo | null;
   translations: any;
 }
 
-const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, cityInfo, translations }) => {
-  // For non-city pages, use general remote wording
-  // For international cities (non-Spain), use international wording
-  // For Spanish cities, use local wording
-  let localSeoText: string;
-  if (!cityName) {
-    localSeoText = '';
-  } else if (cityInfo && cityInfo.country !== 'Spain') {
-    // International city - use international wording
-    localSeoText = getTranslation(translations, 'wordpressLanding.hero.localSeoInternational')?.replace('{city}', cityName) 
-      || getTranslation(translations, 'wordpressLanding.hero.localSeo').replace('{city}', cityName);
-  } else {
-    // Spanish city - use local wording
-    localSeoText = getTranslation(translations, 'wordpressLanding.hero.localSeo').replace('{city}', cityName);
-  }
-
+const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ translations }) => {
   useEffect(() => {
     // Ensure Unicorn Studio initializes (script loads from MainLayout.astro)
     // The div is scoped to this Hero section only
@@ -129,12 +111,6 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
           <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.12s' }}>
             {getTranslation(translations, 'wordpressLanding.hero.extraText')}
           </p>
-
-          {localSeoText.trim() !== '' && (
-            <p className="text-sm text-gray-500 dark:text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
-              {localSeoText}
-            </p>
-          )}
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <a

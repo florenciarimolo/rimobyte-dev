@@ -23,15 +23,11 @@ declare global {
   }
 }
 
-import type { CityInfo } from '@/constants/cities';
-
 interface WordPressLandingPageProps {
-  cityName?: string;
-  cityInfo?: CityInfo | null;
   recaptchaSiteKey?: string;
 }
 
-const WordPressLandingPage: React.FC<WordPressLandingPageProps> = ({ cityName, cityInfo, recaptchaSiteKey }) => {
+const WordPressLandingPage: React.FC<WordPressLandingPageProps> = ({ recaptchaSiteKey }) => {
   const translations = React.useMemo(() => getI18N(), []);
 
   useEffect(() => {
@@ -43,7 +39,7 @@ const WordPressLandingPage: React.FC<WordPressLandingPageProps> = ({ cityName, c
         <WordPressNavbar translations={translations} />
         
         <main className="relative bg-gray-50 dark:bg-gray-900" style={{ position: 'relative' }}>
-          <WordPressHeroSection cityName={cityName} cityInfo={cityInfo} translations={translations} />
+          <WordPressHeroSection translations={translations} />
           <WordPressProblemSection translations={translations} />
           <WordPressSolutionSection translations={translations} />
           <WordPressServicesSection translations={translations} />
@@ -51,7 +47,7 @@ const WordPressLandingPage: React.FC<WordPressLandingPageProps> = ({ cityName, c
           <WordPressProjectsSection translations={translations} />
           <GoogleReviewsSection variant="dark" />
           <WordPressCTASection translations={translations} />
-          <WordPressFAQSection cityName={cityName} translations={translations} />
+          <WordPressFAQSection translations={translations} />
           <ContactSection translations={translations} recaptchaSiteKey={recaptchaSiteKey} isLanding={true} landingType="wordpress" />
         </main>
 

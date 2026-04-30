@@ -1,14 +1,11 @@
 ---
-import type { CityInfo } from '@/constants/cities';
 import { getI18N } from '@/i18n/index';
 
 export interface Props {
   url: string;
-  city: string | null;
-  cityInfo?: CityInfo | null;
 }
 
-const { url, city, cityInfo } = Astro.props;
+const { url } = Astro.props;
 const siteUrl = 'https://rimobyte.com';
 const translations = getI18N();
 
@@ -58,15 +55,12 @@ const serviceItems = services.map((service) => ({
   }
 }));
 
-let structuredData: Record<string, unknown> = {
+const structuredData: Record<string, unknown> = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": city 
-    ? `Desarrolladora WordPress freelance en ${city}`
-    : "Desarrolladora WordPress freelance",
-  "description": city
-    ? `Servicios de desarrollo WordPress freelance en ${city} y en remoto en toda España. Desarrollo de sitios web profesionales, e-commerce y mantenimiento.`
-    : "Servicios de desarrollo WordPress freelance para negocios profesionales. Desarrollo de sitios web, e-commerce y mantenimiento. Trabajo directo sin intermediarios.",
+  "name": "Desarrolladora WordPress freelance",
+  "description":
+    "Servicios de desarrollo WordPress freelance para negocios profesionales. Desarrollo de sitios web, e-commerce y mantenimiento. Trabajo directo sin intermediarios.",
   "url": url,
   "image": `${siteUrl}/assets/images/programadora-web.webp`,
   "provider": {
@@ -75,22 +69,10 @@ let structuredData: Record<string, unknown> = {
     "jobTitle": "Desarrolladora WordPress freelance",
     "email": "info@rimobyte.com"
   },
-  "areaServed": city && cityInfo
-    ? [
-        {
-          "@type": "City",
-          "name": city,
-          "addressCountry": cityInfo.countryCode
-        },
-        {
-          "@type": "Country",
-          "name": cityInfo.country
-        }
-      ]
-    : {
-      "@type": "Country",
-      "name": "Spain"
-    },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Spain"
+  },
   "serviceType": [
     "Desarrollo WordPress",
     "Desarrollo de sitios web corporativos",

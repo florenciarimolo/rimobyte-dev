@@ -28,10 +28,7 @@ const faqItems = [
   title={title}
   description={description}
 >
-  <WordPressStructuredData 
-    url={currentUrl}
-    city={null}
-  />
+  <WordPressStructuredData url={currentUrl} />
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",

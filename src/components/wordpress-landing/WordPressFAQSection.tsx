@@ -2,11 +2,10 @@ import React from 'react';
 import { getTranslation } from '@/i18n';
 
 interface WordPressFAQSectionProps {
-  cityName?: string;
   translations: unknown;
 }
 
-const WordPressFAQSection: React.FC<WordPressFAQSectionProps> = ({ cityName, translations }) => {
+const WordPressFAQSection: React.FC<WordPressFAQSectionProps> = ({ translations }) => {
   const faqs = [
     {
       question: getTranslation(translations, 'wordpressLanding.faq.items.onlyWordPress.question'),
@@ -21,12 +20,8 @@ const WordPressFAQSection: React.FC<WordPressFAQSectionProps> = ({ cityName, tra
       answer: getTranslation(translations, 'wordpressLanding.faq.items.canMaintain.answer')
     },
     {
-      question: cityName 
-        ? getTranslation(translations, 'wordpressLanding.faq.items.cityBusinesses.question').replace('{city}', cityName)
-        : getTranslation(translations, 'wordpressLanding.faq.items.smallBusinesses.question'),
-      answer: cityName
-        ? getTranslation(translations, 'wordpressLanding.faq.items.cityBusinesses.answer').replace('{city}', cityName)
-        : getTranslation(translations, 'wordpressLanding.faq.items.smallBusinesses.answer')
+      question: getTranslation(translations, 'wordpressLanding.faq.items.smallBusinesses.question'),
+      answer: getTranslation(translations, 'wordpressLanding.faq.items.smallBusinesses.answer')
     }
   ];
 
