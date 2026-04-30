@@ -25,7 +25,7 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
   // For Spanish cities, use local wording
   let localSeoText: string;
   if (!cityName) {
-    localSeoText = getTranslation(translations, 'wordpressLanding.hero.localSeoDefault');
+    localSeoText = '';
   } else if (cityInfo && cityInfo.country !== 'Spain') {
     // International city - use international wording
     localSeoText = getTranslation(translations, 'wordpressLanding.hero.localSeoInternational')?.replace('{city}', cityName) 
@@ -130,9 +130,11 @@ const WordPressHeroSection: React.FC<WordPressHeroSectionProps> = ({ cityName, c
             {getTranslation(translations, 'wordpressLanding.hero.extraText')}
           </p>
 
-          <p className="text-sm text-gray-500 dark:text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
-            {localSeoText}
-          </p>
+          {localSeoText.trim() !== '' && (
+            <p className="text-sm text-gray-500 dark:text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+              {localSeoText}
+            </p>
+          )}
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <a

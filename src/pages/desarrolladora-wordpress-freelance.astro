@@ -8,8 +8,9 @@ import { SITE_URL } from '@/constants';
 const translations = getI18N();
 
 const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
-const title = `${translations.wordpressLanding.hero.title} | RimoByte`;
-const description = translations.wordpressLanding.hero.subtitle;
+const title = 'Desarrolladora WordPress Freelance en Barcelona | RimoByte';
+const description =
+  'Desarrolladora WordPress freelance en Barcelona. Webs profesionales para autónomos y negocios desde 700€, entregadas en plazo y sin sorpresas. Pide presupuesto gratis.';
 
 // Get reCAPTCHA site key from environment variable
 const recaptchaSiteKey = import.meta.env.RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';

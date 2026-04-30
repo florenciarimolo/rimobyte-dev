@@ -502,13 +502,13 @@
       }
     },
     "hero": {
-      "title": "Desarrolladora WordPress freelance para negocios",
-      "subtitle": "Trabajo directamente contigo para diseñar y desarrollar sitios WordPress optimizados para rendimiento, SEO y mantenimiento a largo plazo, pensados para durar, escalar y no depender de agencias.",
-      "extraText": "Web WordPress profesional para negocios — sin agencias, sin intermediarios y con resultados claros.",
+      "title": "Desarrolladora WordPress freelance en Barcelona",
+      "subtitle": "Trabajo directamente contigo para crear tu web en WordPress: rápida, bien posicionada en Google y que puedas gestionar tú sola. Sin agencias, sin intermediarios, con resultados claros.",
+      "extraText": "Diseño webs en Barcelona para autónomos y pequeños negocios. También trabajo en remoto con clientes de toda España.",
       "localSeo": "Trabajo con negocios en {city} y en remoto en toda España.",
       "localSeoDefault": "Trabajo con negocios en remoto, tanto en España como a nivel internacional.",
       "cta": {
-        "contact": "Quiero crear mi web WordPress",
+        "contact": "Pide presupuesto gratis",
         "viewProjects": "Ver proyectos"
       }
     },
@@ -531,7 +531,7 @@
       "extraText": "¿Tu web va lenta, da errores o no sabes por dónde meterle mano?\nPuedo ayudarte aunque no la haya hecho yo."
     },
     "solution": {
-      "description": "Como desarrolladora WordPress freelance, trabajo sin intermediarios y con foco técnico.",
+      "description": "Como desarrolladora WordPress freelance en Barcelona, me encargo de todo para que tú te centres en tu negocio.",
       "features": {
         "directContact": "Contacto directo durante todo el proyecto",
         "explainedDecisions": "Decisiones técnicas explicadas, no impuestas",
@@ -641,9 +641,9 @@
       }
     },
     "cta": {
-      "title": "Cuéntame tu proyecto y vemos si encaja.",
-      "button": "Quiero mi web en WordPress",
-      "subtitle": "Sin compromiso ni propuestas cerradas."
+      "title": "¿Hablamos? Cuéntame qué necesitas",
+      "button": "Pide presupuesto gratis",
+      "subtitle": "Sin compromiso. Te respondo en menos de 24 horas."
     },
     "faq": {
       "title": "Preguntas frecuentes",
