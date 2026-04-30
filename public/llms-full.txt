@@ -2,6 +2,8 @@
 
 > Florencia Rímolo es desarrolladora full stack freelance en Barcelona, España. Bajo la marca RimoByte ofrece servicios profesionales de desarrollo web para pymes, autónomos y startups. Especializada en WordPress, WooCommerce, Shopify, Vue.js, Nuxt, Astro y Django.
 
+**URLs:** El sitio es solo en español; las rutas públicas son directamente `https://rimobyte.com/...` (sin prefijo `/es/` ni versión en inglés `/en/`).
+
 ## Sobre Florencia Rímolo
 
 Florencia Rímolo es ingeniera de software con experiencia profesional en frameworks front y backend (Vue.js, Spring Boot, Django). Como freelance bajo la marca RimoByte, se especializa en desarrollo WordPress profesional, e-commerce y aplicaciones web modernas. Trabaja directamente con sus clientes sin intermediarios, ofreciendo precios transparentes y comunicación directa. Basada en Barcelona, trabaja en remoto con clientes de toda España e internacionales.
@@ -11,16 +13,16 @@ Tecnologías que domina: WordPress, WooCommerce, Shopify, Vue.js 3, Nuxt 3, Astr
 ## Servicios detallados
 
 ### Web corporativa WordPress
-- **Precio**: desde 700 €
+- **Precio**: desde 500 €
 - **Descripción**: Sitios web profesionales, rápidos y fáciles de mantener. Incluye diseño responsive, SEO avanzado, blog opcional, panel de administración y formación incluida.
 - **Ideal para**: empresas y profesionales que necesitan un sitio web completo.
-- **URL**: https://rimobyte.com/es/desarrolladora-wordpress-freelance
+- **URL**: https://rimobyte.com/desarrolladora-wordpress-freelance
 
 ### Tienda online (E-commerce)
 - **WooCommerce**: desde 1.200 € — Control total del código, sin comisiones por venta, personalización ilimitada, hosting propio.
 - **Shopify**: desde 900 € + cuota Shopify — Muy fácil de gestionar, actualizaciones automáticas, hosting incluido, apps para todo.
 - **Incluye**: catálogo de productos ilimitados, pasarelas de pago (Stripe, PayPal, Redsys, Bizum), gestión de envíos, cupones descuento, panel de administración, SEO optimizado.
-- **URL**: https://rimobyte.com/es/desarrollo-tienda-online
+- **URL**: https://rimobyte.com/desarrollo-tienda-online
 
 ### Rescate WordPress urgente
 - **Precio**: desde 200 €
@@ -31,36 +33,36 @@ Tecnologías que domina: WordPress, WooCommerce, Shopify, Vue.js 3, Nuxt 3, Astr
   - Recuperación de backup: desde 100 €
   - Mantenimiento preventivo: desde 40 €/mes
 - **Garantía**: si no resuelvo el problema, devuelvo el 100% del pago.
-- **URL**: https://rimobyte.com/es/rescate-wordpress-urgente
+- **URL**: https://rimobyte.com/rescate-wordpress-urgente
 
 ### Arreglo WordPress express (48h)
-- **Precio**: desde 120 €
+- **Precio**: desde 100 €
 - **Descripción**: Solución rápida para errores, web lenta, conflictos de plugins o problemas menores de WordPress.
 
 ### Migración web desde agencia
 - **Precio**: desde 400 €
 - **Descripción**: Migración completa sin perder SEO, contenidos ni accesos. Ideal para negocios que dependen de una agencia para cualquier cambio en su web.
 - **Incluye**: auditoría técnica, migración segura, limpieza de dependencias innecesarias, documentación.
-- **URL**: https://rimobyte.com/es/migrar-web-agencia-freelance
+- **URL**: https://rimobyte.com/migrar-web-agencia-freelance
 
 ### Rediseño web WordPress
 - **Precio**: desde 600 €
 - **Descripción**: Modernización del sitio web manteniendo todo el posicionamiento SEO y tráfico existente. Incluye diseño mobile-first, velocidad optimizada, mejor UX y conversión.
 - **Garantía**: si pierdes SEO, lo recupero gratis.
-- **URL**: https://rimobyte.com/es/rediseno-web-wordpress
+- **URL**: https://rimobyte.com/rediseno-web-wordpress
 
 ### Optimización velocidad WordPress
 - **Precio**: desde 300 €
 - **Descripción**: Mejora mínima de 30 puntos en PageSpeed garantizada. Incluye compresión de imágenes (WebP), minificación CSS/JS, caché avanzado, lazy loading, CDN, limpieza de base de datos y Core Web Vitals.
 - **Garantía**: si no mejoro mínimo 30 puntos en PageSpeed, devuelvo el dinero.
-- **URL**: https://rimobyte.com/es/optimizacion-velocidad-wordpress
+- **URL**: https://rimobyte.com/optimizacion-velocidad-wordpress
 
 ### Desarrollo Vue.js, Nuxt y Astro
 - **SaaS / Aplicación Web**: desde 3.500 € — Plataforma completa con autenticación, base de datos, pagos.
 - **Dashboard / Panel Admin**: desde 2.000 € — Panel de control con gráficos, tablas, gestión de datos.
 - **Landing Page / Portfolio**: desde 800 € — Web estática ultra-rápida con Astro y animaciones.
 - **Single Page Application**: desde 1.500 € — App interactiva sin recargas de página.
-- **URL**: https://rimobyte.com/es/desarrollo-vue-nuxt-astro
+- **URL**: https://rimobyte.com/desarrollo-vue-nuxt-astro
 
 ### Mantenimiento mensual
 - **Precio**: desde 40 €/mes
@@ -83,7 +85,7 @@ Tecnologías que domina: WordPress, WooCommerce, Shopify, Vue.js 3, Nuxt 3, Astr
 | Dashboard / Panel admin | Desde 2.000 € |
 | Mantenimiento mensual | Desde 40 €/mes |
 
-**URL de precios**: https://rimobyte.com/es/precios-desarrollo-web
+**URL de precios**: https://rimobyte.com/precios-desarrollo-web
 
 ## Por qué elegir RimoByte
 
@@ -135,11 +137,11 @@ Sí, Florencia trabaja con negocios en toda España y a nivel internacional de f
 
 ## Blog (artículos recientes)
 
-- [WordPress vs Wix: ¿Qué conviene a tu negocio en 2026?](https://rimobyte.com/es/blog/wordpress-vs-wix)
-- [Vue vs React: ¿Cuál elegir para tu proyecto en 2026?](https://rimobyte.com/es/blog/vue-vs-react)
-- [WordPress Hackeado: Qué hacer en 5 pasos (Guía 2026)](https://rimobyte.com/es/blog/wordpress-hackeado)
-- [¿Cuánto cuesta mantener una web WordPress en 2026?](https://rimobyte.com/es/blog/cuanto-cuesta-mantener-wordpress)
-- [¿Cuándo necesitas rediseñar tu web? 7 señales claras](https://rimobyte.com/es/blog/cuando-redisenar-web)
+- [WordPress vs Wix: ¿Qué conviene a tu negocio en 2026?](https://rimobyte.com/blog/wordpress-vs-wix)
+- [Vue vs React: ¿Cuál elegir para tu proyecto en 2026?](https://rimobyte.com/blog/vue-vs-react)
+- [WordPress Hackeado: Qué hacer en 5 pasos (Guía 2026)](https://rimobyte.com/blog/wordpress-hackeado)
+- [¿Cuánto cuesta mantener una web WordPress en 2026?](https://rimobyte.com/blog/cuanto-cuesta-mantener-wordpress)
+- [¿Cuándo necesitas rediseñar tu web? 7 señales claras](https://rimobyte.com/blog/cuando-redisenar-web)
 
 ## Templates y recursos digitales
 

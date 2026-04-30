@@ -41,17 +41,18 @@
 
 ## Páginas principales
 
-- [Portfolio y servicios (ES)](https://rimobyte.com/es/)
-- [Portfolio and services (EN)](https://rimobyte.com/en/)
-- [Desarrolladora WordPress freelance](https://rimobyte.com/es/desarrolladora-wordpress-freelance)
-- [Precios desarrollo web 2026](https://rimobyte.com/es/precios-desarrollo-web)
-- [Desarrollo tienda online](https://rimobyte.com/es/desarrollo-tienda-online)
-- [Migración web desde agencia](https://rimobyte.com/es/migrar-web-agencia-freelance)
-- [Rescate WordPress urgente](https://rimobyte.com/es/rescate-wordpress-urgente)
-- [Rediseño web WordPress](https://rimobyte.com/es/rediseno-web-wordpress)
-- [Optimización velocidad WordPress](https://rimobyte.com/es/optimizacion-velocidad-wordpress)
-- [Desarrollo Vue, Nuxt y Astro](https://rimobyte.com/es/desarrollo-vue-nuxt-astro)
-- [Blog](https://rimobyte.com/es/blog)
+Sitio en español; rutas sin prefijo `/es/` ni `/en/`.
+
+- [Inicio](https://rimobyte.com/)
+- [Desarrolladora WordPress freelance](https://rimobyte.com/desarrolladora-wordpress-freelance)
+- [Precios desarrollo web 2026](https://rimobyte.com/precios-desarrollo-web)
+- [Desarrollo tienda online](https://rimobyte.com/desarrollo-tienda-online)
+- [Migración web desde agencia](https://rimobyte.com/migrar-web-agencia-freelance)
+- [Rescate WordPress urgente](https://rimobyte.com/rescate-wordpress-urgente)
+- [Rediseño web WordPress](https://rimobyte.com/rediseno-web-wordpress)
+- [Optimización velocidad WordPress](https://rimobyte.com/optimizacion-velocidad-wordpress)
+- [Desarrollo Vue, Nuxt y Astro](https://rimobyte.com/desarrollo-vue-nuxt-astro)
+- [Blog](https://rimobyte.com/blog)
 
 ## Optional
 

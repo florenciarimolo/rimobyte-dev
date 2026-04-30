@@ -54,7 +54,7 @@
         "corporateWeb": {
           "title": "Web corporativa que posiciona en Google",
           "description": "Sitios profesionales, rápidos y fáciles de mantener para tu negocio.",
-          "price": "Desde 800 €"
+          "price": "Desde 500 €"
         },
         "ecommerce": {
           "title": "Tienda online que vende mientras duermes",
@@ -74,7 +74,7 @@
         "speed": {
           "title": "Arreglo WordPress express",
           "description": "Errores, web caída, lentitud o conflictos de plugins. Diagnóstico rápido y solución clara.",
-          "price": "Desde 120 €"
+          "price": "Desde 100 €"
         },
         "maintenance": {
           "title": "Migraciones y mejoras",
@@ -190,7 +190,7 @@
       "items": {
         "howMuch": {
           "question": "¿Cuánto cuesta una página web?",
-          "answer": "Depende del tipo de proyecto. Una web corporativa parte desde 800 €, una tienda online desde 1.200 € y una aplicación web desde 2.500 €. Te doy un presupuesto detallado antes de empezar, sin sorpresas."
+          "answer": "Depende del tipo de proyecto. Una web corporativa parte desde 500 €, una tienda online desde 1.200 € y una aplicación web desde 2.500 €. Te doy un presupuesto detallado antes de empezar, sin sorpresas."
         },
         "howLong": {
           "question": "¿Cuánto tarda un proyecto web?",
@@ -547,7 +547,7 @@
         "corporateWeb": {
           "title": "Web corporativa en WordPress",
           "description": "Sitios profesionales, rápidos y fáciles de mantener.",
-          "price": "Desde 700 €"
+          "price": "Desde 500 €"
         },
         "onlineStores": {
           "title": "Tiendas online",
@@ -557,7 +557,7 @@
         "maintenance": {
           "title": "Mantenimiento y soporte",
           "description": "Actualizaciones, seguridad y mejoras continuas.",
-          "price": "Desde 60 €/mes"
+          "price": "Desde 40 €/mes"
         },
         "migrations": {
           "title": "Migraciones y mejoras",
@@ -567,7 +567,7 @@
         "expressFix": {
           "title": "Arreglo WordPress express (48h)",
           "description": "Errores, web caída, lentitud, conflictos de plugins o problemas tras tocar algo.\nDiagnóstico rápido y solución clara.",
-          "price": "Desde 120 €"
+          "price": "Desde 100 €"
         }
       }
     },
@@ -590,7 +590,7 @@
           "description": "Entrego una web mantenible y doy soporte tras la entrega."
         }
       },
-      "pricing": "Proyectos web desde 700 € · E-commerce desde 1200 € · Mantenimiento desde 60 €/mes · Arreglos desde 120 €"
+      "pricing": "Proyectos web desde 500 € · E-commerce desde 1200 € · Mantenimiento desde 60 €/mes · Arreglos desde 100 €"
     },
     "projects": {
       "title": "Algunos proyectos realizados",
