@@ -1,7 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { SITE_URL } from '@/constants';
-import { getAllowedCities } from '@/constants/cities';
 
 export const GET: APIRoute = async ({ request }) => {
   const currentDate = new Date().toISOString().split('T')[0];
@@ -48,12 +47,6 @@ export const GET: APIRoute = async ({ request }) => {
       changefreq: 'monthly',
       priority: '0.7'
     });
-  });
-
-  const cities = getAllowedCities();
-  Object.keys(cities).forEach(city => {
-    addPath(`/desarrolladora-wordpress-freelance/${city}`, '0.8', 'monthly');
-    addPath(`/migrar-web-agencia-freelance/${city}`, '0.8', 'monthly');
   });
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
