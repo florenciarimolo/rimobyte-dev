@@ -31,10 +31,10 @@ const SERVICE_ICONS: Record<string, React.ReactNode> = {
 const SERVICE_LINKS: Record<string, string> = {
   corporateWeb: '/desarrolladora-wordpress-freelance',
   ecommerce: '/desarrollo-tienda-online',
-  webApp: '/desarrollo-vue-nuxt-astro',
+  webApp: '/precios-desarrollo-web',
   redesign: '/rediseno-web-wordpress',
-  speed: '/optimizacion-velocidad-wordpress',
-  maintenance: '/precios-desarrollo-web',
+  speed: '/rescate-wordpress-urgente',
+  maintenance: '/migrar-web-agencia-freelance',
 };
 
 const ServicesSection: React.FC<ServicesSectionProps> = ({ translations }) => {

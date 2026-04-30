@@ -53,6 +53,18 @@ const ProblemsSection: React.FC<ProblemsSectionProps> = ({ translations }) => {
             </div>
           ))}
         </div>
+
+        <div className="mt-12 text-center max-w-2xl mx-auto space-y-6">
+          <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+            {getTranslation(translations, 'sections.problems.closing')}
+          </p>
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:opacity-95 transition-opacity duration-200"
+          >
+            {getTranslation(translations, 'sections.problems.closingCta')}
+          </a>
+        </div>
       </div>
     </section>
   );

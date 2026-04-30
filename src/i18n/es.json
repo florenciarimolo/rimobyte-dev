@@ -3,8 +3,8 @@
     "title": "RimoByte - Desarrolladora Web Freelance en España"
   },
   "hero": {
-    "headline": "Tu web profesional, sin agencias ni sorpresas",
-    "tagline": "Desarrollo web para pymes y autónomos en España. WordPress, tiendas online y aplicaciones web a medida — con precios claros desde 500 €.",
+    "headline": "Tu web profesional en Barcelona, sin agencias ni sorpresas",
+    "tagline": "Creo webs en WordPress para autónomos y pequeños negocios en Barcelona y toda España. Sin intermediarios, con precios claros desde 500€ y entregadas en plazo.",
     "available": "Disponible",
     "trustBar": {
       "experience": "10+ años de experiencia",
@@ -12,8 +12,8 @@
       "rating": "4.9 en Google"
     },
     "cta": {
-      "viewServices": "Ver servicios y precios",
-      "whatsapp": "Contactar por WhatsApp"
+      "primary": "Pide presupuesto gratis",
+      "secondary": "Ver proyectos"
     }
   },
   "navbar": {
@@ -43,41 +43,43 @@
           "title": "Tu WordPress va lento o da errores",
           "text": "La web carga despacio, tiene fallos o está desactualizada y no sabes cómo arreglarlo."
         }
-      }
+      },
+      "closing": "Yo me encargo de todo lo técnico. Tú te dedicas a tu negocio.",
+      "closingCta": "Cuéntame tu proyecto"
     },
     "services": {
       "title": "Servicios",
-      "subtitle": "Desarrollo web profesional adaptado a cada proyecto",
+      "subtitle": "Webs que atraen clientes, no solo escaparates bonitos",
       "items": {
         "corporateWeb": {
-          "title": "Web corporativa WordPress",
+          "title": "Web corporativa que posiciona en Google",
           "description": "Sitios profesionales, rápidos y fáciles de mantener para tu negocio.",
           "price": "Desde 800 €"
         },
         "ecommerce": {
-          "title": "Tienda online",
+          "title": "Tienda online que vende mientras duermes",
           "description": "E-commerce con WooCommerce o Shopify adaptado a tu negocio.",
           "price": "Desde 1.200 €"
         },
         "webApp": {
-          "title": "Aplicación web a medida",
-          "description": "Apps con Vue, Nuxt o Astro para proyectos que necesitan más que un CMS.",
-          "price": "Desde 2.500 €"
+          "title": "Mantenimiento y soporte WordPress",
+          "description": "Actualizaciones, copias de seguridad, corrección de errores y soporte técnico continuo para que tu web esté siempre segura y funcionando.",
+          "price": "Desde 40 €/mes"
         },
         "redesign": {
-          "title": "Rediseño web",
+          "title": "Rediseño web que convierte visitas en clientes",
           "description": "Moderniza tu web sin perder el posicionamiento que ya tienes.",
           "price": "Desde 600 €"
         },
         "speed": {
-          "title": "Optimización de velocidad",
-          "description": "Mejora el rendimiento de tu WordPress y sube tu nota en PageSpeed.",
-          "price": "Desde 300 €"
+          "title": "Arreglo WordPress express",
+          "description": "Errores, web caída, lentitud o conflictos de plugins. Diagnóstico rápido y solución clara.",
+          "price": "Desde 120 €"
         },
         "maintenance": {
-          "title": "Mantenimiento web",
-          "description": "Actualizaciones, seguridad y soporte técnico continuo para tu web.",
-          "price": "Desde 40 €/mes"
+          "title": "Migraciones y mejoras",
+          "description": "Cambios desde agencias o sistemas antiguos a una solución clara.",
+          "price": "Desde 400 €"
         }
       },
       "viewAllPrices": "Ver todos los precios"
@@ -94,34 +96,52 @@
       },
       "items": {
         "rocolegal": {
+          "tagline": "Web que convierte visitas en consultas jurídicas",
           "challenge": "El despacho tenía una web antigua que no transmitía profesionalidad. La estructura era confusa y los formularios de contacto no estaban bien visibles.",
           "solution": "Rediseñar la presencia digital con un sitio WordPress bilingüe, páginas de servicios claras y llamadas a la acción presentes en todo el recorrido.",
           "result": "Un sitio profesional que refleja mejor la especialización del despacho, mejora la visibilidad en buscadores y convierte más visitas en consultas."
         },
         "vilaLancisV2": {
+          "tagline": "Presencia profesional que transmite confianza desde el primer clic",
           "challenge": "La asesoría contaba con una web lenta y desactualizada que no explicaba bien sus servicios. La experiencia de usuario penalizaba el SEO y la captación de clientes.",
           "solution": "Rediseño completo en WordPress, reorganizando contenidos por servicio, añadiendo multiidioma y trabajando el SEO técnico.",
           "result": "Una web clara y rápida que presenta todos los servicios de forma ordenada y facilita que empresas y autónomos contacten sin fricción."
         },
         "decos": {
+          "tagline": "Tienda online para vender calzado artesanal en toda España",
           "challenge": "La tienda online estaba limitada por una plataforma antigua. Gestionar productos requería demasiado esfuerzo técnico y afectaba a las ventas.",
           "solution": "Migración de Prestashop a WordPress con WooCommerce, optimizando rendimiento, navegación y fichas de producto.",
           "result": "Una tienda más ágil y fácil de gestionar, con mejor experiencia de compra y base técnica sólida para seguir creciendo."
         },
         "fenix": {
+          "tagline": "Web que impulsa el programa en Google y convierte visitas en leads",
           "challenge": "El programa de mentoría necesitaba una web que transmitiera autoridad, explicara la propuesta de valor y captara leads de forma orgánica.",
           "solution": "Sitio WordPress con estructura orientada a conversión, SEO trabajado y conexión con Systeme.io para captación de leads.",
           "result": "Una web que comunica con claridad la oferta, mejora la visibilidad en buscadores y canaliza visitas hacia el programa."
         },
         "vibrantskin": {
+          "tagline": "Tienda online para una marca de cosmética natural",
           "challenge": "La marca necesitaba una tienda online cuidada para cosmética y suplementos respetuosos con el microbioma, con narrativa de producto clara y rendimiento que apoyara la conversión y pedidos internacionales.",
           "solution": "Tienda Shopify limpia con secciones Liquid a medida, colecciones y navegación ordenadas, UX mobile-first y SEO técnico con imágenes optimizadas.",
           "result": "Una tienda rápida y orientada a ventas que presenta el catálogo con claridad, refuerza el posicionamiento científico y facilita envíos y merchandising."
         },
         "ariadnaVilalta": {
+          "tagline": "Web que refuerza autoridad y conecta ponencias, medios y libro",
           "challenge": "Una experta internacional en ciberpsicología necesitaba una web creíble que explicara un ámbito complejo—neurotecnología, ética y salud mental—y apoyara conferencias, medios y el lanzamiento de un libro.",
           "solution": "Sitio WordPress con relato claro: pilares, ejes de ponencias, preguntas frecuentes y prensa, estructurado para SEO y lectura cómoda en cualquier dispositivo.",
           "result": "Refuerzo del posicionamiento como referente: instituciones, medios y lectores entienden su enfoque en neurorights, ética y salud mental digital y encuentran vías de colaboración."
+        },
+        "reset7": {
+          "tagline": "Landing page enfocada en captar nuevos alumnos",
+          "challenge": "El entrenador personal no contaba con una landing pensada para convertir visitas en reservas. La propuesta de valor no quedaba clara y no había un recorrido definido para que los usuarios entendieran el servicio y dieran el siguiente paso.",
+          "solution": "Crear una landing en WordPress centrada en el programa RESET7, con un mensaje claro, secciones que explican beneficios y metodología, pruebas sociales y llamadas a la acción visibles para solicitar información o empezar el programa.",
+          "result": "Una landing enfocada en resultados que transmite mejor el valor del servicio, refuerza el posicionamiento en búsquedas relacionadas con entrenamiento personal y facilita que las visitas se conviertan en leads interesados."
+        },
+        "luciaNails": {
+          "tagline": "Web que llena la agenda del centro de estética",
+          "challenge": "El centro de manicura tenía una presencia online muy básica que no reflejaba el estilo del negocio ni mostraba bien los servicios y trabajos realizados. Los clientes potenciales encontraban difícil hacerse una idea clara de la oferta antes de escribir o reservar.",
+          "solution": "Diseñar y personalizar un sitio WordPress que pusiera en primer plano la identidad visual del centro, con secciones claras para servicios, tarifas y trabajos destacados, cuidando el rendimiento y el SEO local para que nuevas clientas puedan descubrir el negocio.",
+          "result": "Una web alineada con la marca que transmite confianza desde el primer vistazo, mejora la visibilidad en la zona y ayuda a que más personas lleguen al centro con una idea clara de los servicios y estilo que ofrece."
         }
       }
     },
@@ -149,6 +169,7 @@
     },
     "about": {
       "title": "Sobre mí",
+      "intro": "Soy Florencia, desarrolladora WordPress freelance con base en Barcelona. Llevo años ayudando a autónomos y pequeños negocios a tener una presencia online que realmente les consigue clientes.",
       "description": "Soy Florencia Rímolo, ingeniera informática por la UPC con más de 10 años de experiencia en desarrollo web. He trabajado en fintech, sistemas universitarios y más de 30 proyectos como freelance. Hoy, bajo la marca RimoByte, ayudo a pymes y autónomos en toda España a tener una web que funcione: rápida, profesional y fácil de mantener.",
       "highlights": {
         "engineering": "Ingeniera informática (UPC Barcelona)",
@@ -218,9 +239,9 @@
       "viewResource": "Ver recurso"
     },
     "contact": {
-      "title": "Cuéntame tu proyecto",
-      "subtitle": "Trabajemos juntos",
-      "description": "Sin compromiso. Respondo en menos de 24h por email o al momento por WhatsApp.",
+      "title": "¿Hablamos? Cuéntame qué necesitas",
+      "subtitle": "Sin compromiso. Te respondo en menos de 24 horas.",
+      "description": "Escríbeme por email o por WhatsApp cuando te venga bien.",
       "contactInfo": {
         "email": "Email",
         "github": "GitHub",
@@ -582,31 +603,37 @@
       },
       "items": {
         "rocolegal": {
+          "tagline": "Web que convierte visitas en consultas jurídicas",
           "problem": "El despacho tenía una web antigua que no transmitía la confianza ni la profesionalidad de su trabajo legal. La estructura era poco clara y los formularios de contacto no estaban bien visibles, lo que dificultaba que potenciales clientes encontraran el servicio adecuado y pidieran una cita.",
           "proposal": "Rediseñar la presencia digital del despacho con un sitio WordPress bilingüe, páginas de servicios claras por área de práctica, perfiles del equipo y llamadas a la acción presentes en todo el recorrido para facilitar el contacto desde varios puntos de la web.",
           "result": "Un sitio elegante y profesional que refleja mejor la especialización del despacho, mejora la visibilidad en buscadores y convierte más visitas en consultas cualificadas desde el formulario y el contacto directo."
         },
         "vilaLancisV2": {
+          "tagline": "Presencia profesional que transmite confianza desde el primer clic",
           "problem": "La asesoría contaba con una web lenta y desactualizada que no explicaba bien todos sus servicios fiscales, laborales y contables. La experiencia de usuario era confusa y el rendimiento penalizaba tanto el posicionamiento SEO como la confianza de potenciales clientes.",
           "proposal": "Rediseñar por completo la web en WordPress, reorganizando los contenidos por tipo de servicio, añadiendo versión multiidioma y trabajando el SEO técnico (estructura, tiempos de carga e indexación) para reforzar la captación de clientes desde búsquedas relevantes.",
           "result": "Una web clara y rápida, preparada para crecer, que presenta de forma ordenada todos los servicios de la asesoría y facilita que empresas y autónomos entiendan qué ofrece el despacho y cómo contactar sin fricción."
         },
         "decos": {
+          "tagline": "Tienda online para vender calzado artesanal en toda España",
           "problem": "La tienda online de sandalias artesanas estaba limitada por una plataforma antigua. Gestionar productos, actualizar contenidos o mejorar la experiencia de compra requería demasiado esfuerzo técnico y afectaba a la imagen de marca y a las ventas.",
           "proposal": "Migrar la tienda de Prestashop a WordPress con WooCommerce, manteniendo el catálogo y optimizando rendimiento, navegación y fichas de producto. Se planteó una estructura más clara por colecciones, mejorando el checkout y añadiendo newsletter para fidelizar clientes.",
           "result": "Una tienda online más ágil y fácil de gestionar, con mejor experiencia de compra y una base técnica sólida para seguir trabajando SEO, campañas y lanzamientos de temporada sin depender de terceros."
         },
         "reset7": {
+          "tagline": "Landing page enfocada en captar nuevos alumnos",
           "problem": "El entrenador personal no contaba con una landing pensada para convertir visitas en reservas. La propuesta de valor no quedaba clara y no había un recorrido definido para que los usuarios entendieran el servicio y dieran el siguiente paso.",
           "proposal": "Crear una landing en WordPress centrada en el programa RESET7, con un mensaje claro, secciones que explican beneficios y metodología, pruebas sociales y llamadas a la acción visibles para solicitar información o empezar el programa.",
           "result": "Una landing enfocada en resultados que transmite mejor el valor del servicio, refuerza el posicionamiento en búsquedas relacionadas con entrenamiento personal y facilita que las visitas se conviertan en leads interesados."
         },
         "luciaNails": {
+          "tagline": "Web que llena la agenda del centro de estética",
           "problem": "El centro de manicura tenía una presencia online muy básica que no reflejaba el estilo del negocio ni mostraba bien los servicios y trabajos realizados. Los clientes potenciales encontraban difícil hacerse una idea clara de la oferta antes de escribir o reservar.",
           "proposal": "Diseñar y personalizar un sitio WordPress que pusiera en primer plano la identidad visual del centro, con secciones claras para servicios, tarifas y trabajos destacados, cuidando el rendimiento y el SEO local para que nuevas clientas puedan descubrir el negocio.",
           "result": "Una web alineada con la marca que transmite confianza desde el primer vistazo, mejora la visibilidad en la zona y ayuda a que más personas lleguen al centro con una idea clara de los servicios y estilo que ofrece."
         },
         "fenix": {
+          "tagline": "Web que impulsa el programa en Google y convierte visitas en leads",
           "problem": "El programa de mentoría para madres empresarias necesitaba una web que transmitiera autoridad, explicara la propuesta de valor y captara leads de forma orgánica. Era fundamental un buen posicionamiento SEO para generar ventas sin depender solo de paid.",
           "proposal": "Desarrollar el sitio en WordPress con Elementor, con estructura orientada a conversión (hero claro, niveles del programa, CTAs), SEO trabajado para búsquedas relevantes y conexión con Systeme.io para formularios, secuencias y captación de leads.",
           "result": "Una web que comunica con claridad la oferta de Fénix (Despertar, Construcción, Transformación), mejora la visibilidad en buscadores y canaliza a las visitas hacia el programa gratuito y las mentorías a través de Systeme.io."
@@ -745,6 +772,7 @@
       },
       "items": {
         "decos": {
+          "tagline": "Tienda online para vender calzado artesanal en toda España",
           "problem": "La tienda de sandalias artesanas estaba en manos de una agencia y una plataforma antigua. Cada cambio requería tickets, los tiempos de respuesta eran lentos y el negocio no tenía una visión clara de qué se había hecho a nivel técnico ni de cómo afectaba al SEO y a las ventas.",
           "proposal": "Plantear una migración controlada a WordPress con WooCommerce, recuperando todos los contenidos importantes y dejando atrás dependencias innecesarias. Simplifiqué la arquitectura, normalicé accesos a hosting y panel de control y dejé una base de tienda que el propio negocio puede entender y mantener.",
           "result": "Una tienda online más estable y rápida, con accesos claros y sin dependencia de una agencia para cada cambio. El negocio recuperó el control de su catálogo y puede seguir trabajando SEO, campañas y lanzamientos de temporada sobre una base limpia."
@@ -755,6 +783,7 @@
           "result": "Un sitio WordPress optimizado para velocidad y SEO, con una base técnica transparente y mantenible. El equipo puede planificar cambios y nuevas páginas sabiendo qué hay detrás y cuánto costará, sin sorpresas ni bloqueos por parte de proveedores anteriores."
         },
         "vilaLancisV2": {
+          "tagline": "Presencia profesional que transmite confianza desde el primer clic",
           "problem": "La asesoría venía de una web gestionada por agencia con tiempos de respuesta largos, dificultad para conseguir accesos y un rendimiento pobre. Cada pequeño ajuste en contenidos o idiomas se convertía en un proyecto caro y lento.",
           "proposal": "Migrar y rediseñar la web con WordPress, sacando el proyecto del circuito de agencia y dejando accesos y documentación en manos del cliente. Se reestructuró el contenido, se trabajó el multiidioma y se optimizó el rendimiento sin perder posicionamiento.",
           "result": "Una web más rápida y clara, con control total por parte de la asesoría. Ahora pueden coordinar cambios de contenidos, idiomas y servicios sin depender de terceros, manteniendo y mejorando el SEO sobre una base técnica ordenada."

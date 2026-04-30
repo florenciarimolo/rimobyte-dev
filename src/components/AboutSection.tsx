@@ -28,11 +28,6 @@ const HIGHLIGHT_ICONS: Record<string, React.ReactNode> = {
 
 const HIGHLIGHT_KEYS = ['engineering', 'experience', 'enterprise', 'freelance', 'directWork', 'guarantee'] as const;
 
-const TECH_BADGES = [
-  'WordPress', 'WooCommerce', 'Shopify', 'Vue.js', 'Nuxt', 'Astro',
-  'React', 'TypeScript', 'TailwindCSS', 'Java', 'Python', 'PostgreSQL',
-];
-
 const AboutSection: React.FC<AboutSectionProps> = ({ translations }) => {
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-800">
@@ -46,6 +41,9 @@ const AboutSection: React.FC<AboutSectionProps> = ({ translations }) => {
 
         <div className="grid md:grid-cols-5 gap-10 items-start">
           <div className="md:col-span-3 space-y-6">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
+              {getTranslation(translations, 'sections.about.intro')}
+            </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
               {getTranslation(translations, 'sections.about.description')}
             </p>
@@ -72,23 +70,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({ translations }) => {
               </div>
             ))}
           </aside>
-        </div>
-
-        {/* Technology badges */}
-        <div className="mt-10 pt-8 border-t border-gray-200 dark:border-gray-700">
-          <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4 text-center">
-            {getTranslation(translations, 'sections.about.technologies')}
-          </h3>
-          <div className="flex flex-wrap justify-center gap-2">
-            {TECH_BADGES.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1.5 text-xs font-medium rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

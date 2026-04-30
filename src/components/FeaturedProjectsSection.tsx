@@ -27,6 +27,18 @@ const DEFAULTS = {
 
 const DETAIL_COLORS = ['text-blue-500', 'text-purple-500', 'text-green-500'];
 
+function getFeaturedProjectTagline(translations: unknown, itemsBaseKey: string, projectId: string): string | undefined {
+  const parts = `${itemsBaseKey}.${projectId}.tagline`.split('.');
+  let cur: unknown = translations;
+  for (const part of parts) {
+    if (cur === null || typeof cur !== 'object' || !(part in (cur as object))) {
+      return undefined;
+    }
+    cur = (cur as Record<string, unknown>)[part];
+  }
+  return typeof cur === 'string' ? cur : undefined;
+}
+
 const FeaturedProjectsSection: React.FC<FeaturedProjectsSectionProps> = ({
   translations,
   projectIds = DEFAULTS.projectIds,
@@ -77,6 +89,9 @@ const FeaturedProjectsSection: React.FC<FeaturedProjectsSectionProps> = ({
         <div className="space-y-6">
           {projects.map((project) => {
             const isExpanded = expandedProject === project.id;
+            const subtitleLine =
+              getFeaturedProjectTagline(translations, itemsBaseKey, project.id) ??
+              project.technologies.join(', ');
 
             return (
               <article
@@ -100,8 +115,8 @@ const FeaturedProjectsSection: React.FC<FeaturedProjectsSectionProps> = ({
                     <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white truncate">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
-                      {project.technologies.join(', ')}
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5 truncate">
+                      {subtitleLine}
                     </p>
                   </div>
                   <svg
