@@ -81,7 +81,7 @@ const RescueWordPressServicesSection: React.FC<RescueWordPressServicesSectionPro
             {getTranslation(translations, 'rescueWordPressLanding.guarantees.title')}
           </h3>
           <div className="grid md:grid-cols-2 gap-4">
-            {Object.keys(translations.rescueWordPressLanding.guarantees.items).map((key, index) => (
+            {Object.keys(translations.rescueWordPressLanding.guarantees.items).map((key) => (
               <div key={key} className="flex items-start gap-3">
                 <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
