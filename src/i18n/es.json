@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "RimoByte - Desarrolladora Web Freelance en España"
+    "title": "Desarrolladora WordPress Freelance en Barcelona | RimoByte"
   },
   "hero": {
-    "headline": "Tu web profesional en Barcelona, sin agencias ni sorpresas",
-    "tagline": "Creo webs en WordPress para autónomos y pequeños negocios en Barcelona y toda España. Sin intermediarios, con precios claros desde 500€ y entregadas en plazo.",
+    "headline": "Tu web profesional en Barcelona, con todo claro desde el día uno",
+    "tagline": "Creo webs en WordPress para autónomos y pequeños negocios en Barcelona y toda España, y colaboro con estudios cuando necesitan refuerzo técnico WordPress u otros stacks. Precios claros desde 500€ y entrega en el plazo acordado.",
     "available": "Disponible",
     "trustBar": {
       "experience": "7+ años de experiencia",
       "projects": "20+ proyectos entregados",
-      "rating": "5.0 en Google"
+      "rating": "4.9 en Google"
     },
     "cta": {
       "primary": "Pide presupuesto gratis",
@@ -28,8 +28,8 @@
       "title": "¿Te suena alguna de estas situaciones?",
       "items": {
         "agencyDependency": {
-          "title": "Dependes de una agencia para todo",
-          "text": "Cada cambio en tu web requiere un ticket, una espera y un coste que no esperabas."
+          "title": "Cada cambio en la web tarda y cuesta más de lo que esperabas",
+          "text": "Tickets, esperas y costes poco claros cuando solo quieres un ajuste o una página nueva."
         },
         "noWebOrOutdated": {
           "title": "Tu web no refleja tu negocio",
@@ -78,7 +78,7 @@
         },
         "maintenance": {
           "title": "Migraciones y mejoras",
-          "description": "Cambios desde agencias o sistemas antiguos a una solución clara.",
+          "description": "Migrar desde sistemas antiguos o setups poco claros hacia algo ligero que puedas hacer evolucionar con tranquilidad.",
           "price": "Desde 400 €"
         }
       },
@@ -169,14 +169,14 @@
     },
     "about": {
       "title": "Sobre mí",
-      "intro": "Soy Florencia, desarrolladora WordPress freelance con base en Barcelona. Llevo años ayudando a autónomos y pequeños negocios a tener una presencia online que realmente les consigue clientes.",
-      "description": "Soy Florencia Rímolo, ingeniera informática por la UPC con más de 7 años de experiencia en desarrollo web. He trabajado en fintech, sistemas universitarios y más de 30 proyectos como freelance. Hoy, bajo la marca RimoByte, ayudo a pymes y autónomos en toda España a tener una web que funcione: rápida, profesional y fácil de mantener.",
+      "intro": "Soy Florencia Rímolo, desarrolladora web especializada en WordPress, con sede en Barcelona. Trabajo con autónomos y pymes en toda España y colaboro con estudios cuando buscan refuerzo técnico con plazos y alcance bien definidos.",
+      "description": "Ingeniera informática por la UPC, con más de 7 años de experiencia profesional entre fintech, sistemas universitarios y más de 20 proyectos como freelance en la marca RimoByte. Me centro en webs rápidas, bien planteadas y fáciles de mantener; explico el alcance y el precio antes de empezar y, al entregar, dejo accesos y criterios claros para evolucionar la web sin empezar de cero cada vez.",
       "highlights": {
         "engineering": "Ingeniera informática (UPC Barcelona)",
         "experience": "7+ años en desarrollo web profesional",
         "enterprise": "Experiencia en fintech y sistemas universitarios",
         "freelance": "20+ proyectos freelance entregados",
-        "directWork": "Trabajo directo, sin intermediarios",
+        "directWork": "Presupuesto y comunicación claros desde el inicio del proyecto",
         "guarantee": "Garantía de 30 días en cada proyecto"
       },
       "technologies": "Tecnologías",
@@ -207,6 +207,10 @@
         "remote": {
           "question": "¿Trabajas en remoto?",
           "answer": "Sí. Trabajo en remoto con clientes en toda España. La comunicación es directa por email, WhatsApp o videollamada, según prefieras."
+        },
+        "agencyPartners": {
+          "question": "¿Colaboras con estudios de desarrollo o agencias?",
+          "answer": "Sí. Aporto refuerzo técnico en WordPress y en otros stacks cuando necesitáis capacidad extra o un perfil puntual, además de trabajar con clientes finales directamente."
         },
         "whatMaintenance": {
           "question": "¿Qué incluye el mantenimiento?",

@@ -5,7 +5,7 @@ interface FAQSectionProps {
   translations: any;
 }
 
-const FAQ_KEYS = ['howMuch', 'howLong', 'onlyWordPress', 'canMaintain', 'remote', 'whatMaintenance'] as const;
+const FAQ_KEYS = ['howMuch', 'howLong', 'onlyWordPress', 'agencyPartners', 'canMaintain', 'remote', 'whatMaintenance'] as const;
 
 const FAQSection: React.FC<FAQSectionProps> = ({ translations }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
