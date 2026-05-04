@@ -160,6 +160,18 @@ const FeaturedProjectsSection: React.FC<FeaturedProjectsSectionProps> = ({
             );
           })}
         </div>
+
+        <div className="text-center mt-10">
+          <a
+            href="/proyectos"
+            className="inline-flex items-center gap-2 text-base font-medium text-blue-500 hover:text-blue-400 transition-colors duration-200"
+          >
+            {getTranslation(translations, 'sections.featuredProjects.viewAll')}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   );

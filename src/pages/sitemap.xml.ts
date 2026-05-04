@@ -36,6 +36,7 @@ export const GET: APIRoute = async ({ request }) => {
   addPath('/desarrollo-tienda-online', '0.8', 'monthly');
   addPath('/optimizacion-velocidad-wordpress', '0.8', 'monthly');
   addPath('/desarrollo-vue-nuxt-astro', '0.8', 'monthly');
+  addPath('/proyectos', '0.85', 'monthly');
   addPath('/blog', '0.7', 'weekly');
 
   const blogPosts = await getCollection('blog', ({ data }) => !data.draft);

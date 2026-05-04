@@ -7,9 +7,9 @@
     "tagline": "Creo webs en WordPress para autónomos y pequeños negocios en Barcelona y toda España. Sin intermediarios, con precios claros desde 500€ y entregadas en plazo.",
     "available": "Disponible",
     "trustBar": {
-      "experience": "10+ años de experiencia",
-      "projects": "30+ proyectos entregados",
-      "rating": "4.9 en Google"
+      "experience": "7+ años de experiencia",
+      "projects": "20+ proyectos entregados",
+      "rating": "5.0 en Google"
     },
     "cta": {
       "primary": "Pide presupuesto gratis",
@@ -87,7 +87,7 @@
     "featuredProjects": {
       "title": "Proyectos destacados",
       "subtitle": "Resultados reales para negocios reales",
-      "viewAll": "Ver todos los proyectos",
+      "viewAll": "Ver todo",
       "labels": {
         "challenge": "El reto",
         "solution": "Mi propuesta",
@@ -170,12 +170,12 @@
     "about": {
       "title": "Sobre mí",
       "intro": "Soy Florencia, desarrolladora WordPress freelance con base en Barcelona. Llevo años ayudando a autónomos y pequeños negocios a tener una presencia online que realmente les consigue clientes.",
-      "description": "Soy Florencia Rímolo, ingeniera informática por la UPC con más de 10 años de experiencia en desarrollo web. He trabajado en fintech, sistemas universitarios y más de 30 proyectos como freelance. Hoy, bajo la marca RimoByte, ayudo a pymes y autónomos en toda España a tener una web que funcione: rápida, profesional y fácil de mantener.",
+      "description": "Soy Florencia Rímolo, ingeniera informática por la UPC con más de 7 años de experiencia en desarrollo web. He trabajado en fintech, sistemas universitarios y más de 30 proyectos como freelance. Hoy, bajo la marca RimoByte, ayudo a pymes y autónomos en toda España a tener una web que funcione: rápida, profesional y fácil de mantener.",
       "highlights": {
         "engineering": "Ingeniera informática (UPC Barcelona)",
-        "experience": "10+ años en desarrollo web profesional",
+        "experience": "7+ años en desarrollo web profesional",
         "enterprise": "Experiencia en fintech y sistemas universitarios",
-        "freelance": "30+ proyectos freelance entregados",
+        "freelance": "20+ proyectos freelance entregados",
         "directWork": "Trabajo directo, sin intermediarios",
         "guarantee": "Garantía de 30 días en cada proyecto"
       },
@@ -254,8 +254,6 @@
   "footer": {
       "copyright": "© {year} RimoByte. Todos los derechos reservados.",
       "tagline": "Desarrollo web profesional para pymes y autónomos en España.",
-      "cta": "¿Tienes un proyecto en mente?",
-      "ctaButton": "Hablemos",
       "nav": {
         "title": "Navegación",
         "services": "Servicios",

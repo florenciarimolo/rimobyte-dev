@@ -1,0 +1,47 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import LandingBackground from '@/components/LandingBackground.astro';
+import ServiceLandingNavbar from '@/components/ServiceLandingNavbar.astro';
+import ServiceLandingFooter from '@/components/ServiceLandingFooter.astro';
+import ProjectsPageHero from '@/components/ProjectsPageHero';
+import ProjectsPortfolioGrid from '@/components/ProjectsPortfolioGrid';
+import GoogleReviewsSection from '@/components/GoogleReviewsSection';
+import { SITE_URL } from '@/constants';
+
+const currentUrl = `${SITE_URL}${Astro.url.pathname}`;
+const title = 'Proyectos realizados | RimoByte';
+const description =
+  'Casos reales de webs y tiendas online lanzadas con alcance claro: retos, propuesta y resultados. Desarrollo web freelance para pymes y autónomos en España.';
+---
+
+<MainLayout title={title} description={description} canonical={currentUrl}>
+  <LandingBackground />
+  <ServiceLandingNavbar />
+  <ProjectsPageHero client:only="react" />
+  <main class="relative">
+    <ProjectsPortfolioGrid client:only="react" />
+
+    <GoogleReviewsSection client:visible />
+
+    <section id="contact" class="relative py-16 md:py-24 border-t border-gray-200 dark:border-gray-800 bg-gray-50/80 dark:bg-gray-900/40">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          ¿Te gustaría que el siguiente proyecto sea el tuyo?
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
+          Cuéntame qué necesitas y te respondo con una primera propuesta clara. Sin compromiso.
+        </p>
+        <a
+          href="https://wa.me/34684713743?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto%20web"
+          class="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-bold text-lg hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-2xl"
+        >
+          Escríbeme por WhatsApp
+        </a>
+        <div class="mt-6 text-gray-500 dark:text-gray-400 text-sm">
+          <p>Respuesta en menos de 24 h · Presupuesto sin sorpresas</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <ServiceLandingFooter />
+</MainLayout>

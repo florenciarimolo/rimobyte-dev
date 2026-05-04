@@ -56,24 +56,6 @@ const Footer: React.FC<FooterProps> = ({ translations, isLanding = false }) => {
       ? 'bg-white/95 dark:bg-black/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-800'
       : 'bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800'
     }>
-      <div className={isDark
-        ? 'border-b border-gray-200 dark:border-gray-800'
-        : 'border-b border-gray-200 dark:border-gray-800'
-      }>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className={`text-base font-medium ${isDark ? 'text-gray-900 dark:text-white' : 'text-gray-900 dark:text-white'}`}>
-            {getTranslation(translations, 'footer.cta')}
-          </p>
-          <a
-            href="/#contact"
-            className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] transition-all duration-200"
-          >
-            {getTranslation(translations, 'footer.ctaButton')}
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </a>
-        </div>
-      </div>
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
 
